@@ -1,0 +1,37 @@
+{
+  "en": "English",
+  "es": "Español",
+  "languages": {
+    "espanol": "Español",
+    "english": "English",
+    "languageSelection": "Language selection"
+  },
+  "menu": {
+    "liZero": "Home",
+    "liOne": "What it is accessibility",
+    "liTwo": "Digital accessibility"
+  },
+  "submenu": {
+    "liOne": "Projects",
+    "liTwo": "Prototypes",
+    "liThree": "Everything Else"
+  },
+  "header": {
+    "logo": "Logo of Gabriel Garcia",
+    "title": "accessibility first"
+  },
+
+  "home": {
+    "mainContent": "Go to main content"
+  },
+
+  "me": {},
+
+  "a11y": {
+    "title": "Accessibility Options"
+  },
+
+  "footer": {
+    "text": "2024 GAGD. All rights reserved "
+  }
+}

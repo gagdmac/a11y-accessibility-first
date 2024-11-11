@@ -1,0 +1,153 @@
+<header
+  class="container-fluid bg-light cb1 position-fixed top-0 u__position m-0 p-0"
+>
+  <div class="container-fluid cb2 p-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light cb2 pt-1 pb-1">
+      <div class="container-fluid">
+        <!--LOGO STARTS-->
+        <span class="me-4 mt-1">
+          <img
+            src="../../../assets/img/a11y-gab-logo.svg"
+            alt="{{ 'header.logo' | translate }}"
+            width="140"
+            height="45"
+            class="d-inline-block align-text-top pe-0"
+          />
+
+          <h1 class="mb-0 fw-bold fs-6 ps-2">
+            {{ "header.title" | translate }}
+          </h1>
+
+          <!-- <h1 class="text-light fs-5 sr-only">GAGD</h1> -->
+        </span>
+        <!--LOGO ENDS-->
+
+        <!--APP MENU toggler STARTS-->
+        <button
+          class="navbar-toggler fs-1"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--APP MENU toggler ENDS-->
+
+        <!--APP MENU STARTS-->
+        <div
+          class="collapse navbar-collapse d-lg-flex justify-content-lg-end"
+          id="navbarSupportedContent"
+        >
+          <!--boton modulo accesibilidad starts-->
+          <button
+            class="btn btn-link mt-1"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#staticBackdrop"
+            aria-controls="staticBackdrop"
+            aria-label="Opens accesibility options"
+          >
+            <span class="sr-only">Accesibility Options</span>
+            <i class="fas fa-universal-access fa-2x"></i>
+          </button>
+          <!--boton modulo accesibilidad ends-->
+          <span>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  routerLink="/"
+                  routerLinkActive="active"
+                >
+                  {{ "menu.liZero" | translate }}</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  aria-current="page"
+                  routerLink="me"
+                  routerLinkActive="active"
+                >
+                  {{ "menu.liOne" | translate }}</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle disabled"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  {{ "menu.liTwo" | translate }}
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" routerLink="projects">
+                      {{ "submenu.liOne" | translate }}</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" routerLink="prototypes">{{
+                      "submenu.liTwo" | translate
+                    }}</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" routerLink="designs">{{
+                      "submenu.liThree" | translate
+                    }}</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </span>
+
+          <!--APP LANGUAGUES SELECTION STARTS-->
+          <div class="dropdown">
+            <button
+              class="btn border border-secondary dropdown-toggle btn-sm mb-2 mb-lg-0"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              [attr.aria-label]="'languages.languageSelection' | translate"
+            >
+              {{ "languages.languageSelection" | translate }}
+              <span *ngIf="'en' === translate.currentLang; else es">
+                <span class="fi fi-gb px-3"></span>
+              </span>
+
+              <ng-template #es><span class="fi fi-es px-3"></span></ng-template>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item d-flex justify-content-between"
+                  (click)="changeLanguage('es')"
+                  routerLink=""
+                  >Español <span class="fi fi-es px-3"></span
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item d-flex justify-content-between"
+                  routerLink=""
+                  (click)="changeLanguage('en')"
+                  >English <span class="fi fi-gb px-3"></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <!--APP LANGUAGUES SELECTION ENDS-->
+        </div>
+        <!--APP MENU ENDS-->
+      </div>
+    </nav>
+  </div>
+</header>

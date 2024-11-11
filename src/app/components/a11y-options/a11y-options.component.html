@@ -1,0 +1,53 @@
+<div
+  class="offcanvas offcanvas-start"
+  data-bs-backdrop="static"
+  tabindex="-1"
+  id="staticBackdrop"
+  aria-labelledby="staticBackdropLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>I will not close if you click outside of me.</div>
+
+    <div class="container">
+      <div class="text-center">
+        <button (click)="toggleLinkHighlight()">
+          {{ buttonText }}
+        </button>
+
+        <p>
+          {{ fontSize }}% ({{ fontSizeService.getMinFontSize() }}% -
+          {{ fontSizeService.getMaxFontSize() }}%)
+        </p>
+        <button (click)="decreaseFontSize()">MENOS -</button>
+        <button (click)="increaseFontSize()">MAS +</button>
+        <button (click)="resetFontSize()">Reset</button>
+        <p>Welcome to the Angular theme switcher with Bootstrap!</p>
+        <button class="btn btn-primary" (click)="switchTheme('light')">
+          Light Mode
+        </button>
+        <button class="btn btn-dark" (click)="switchTheme('dark')">
+          Dark Mode
+        </button>
+        <button class="btn btn-warning" (click)="switchTheme('creamy')">
+          Creamy Mode
+        </button>
+        <button class="btn btn-danger" (click)="switchTheme('blind-color')">
+          Blind-Color Mode
+        </button>
+        <br /><br />
+        <button class="btn btn-info" (click)="toggleTheme()">
+          Toggle Theme
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,134 @@
+// .cb1 {
+//   border: 0.5px solid red;
+// }
+// .cb2 {
+//   border: 0.5px solid green;
+// }
+// .cb3 {
+//   border: 0.5px solid blue;
+// }
+// .cb4 {
+//   border: 0.5px solid purple;
+// }
+////////////////////////////////////////////////////////////
+////////////////// Accesibility ////////////////////////////
+//////////////////////////////////////////////////////////
+
+.sr-only {
+  position: absolute;
+  width: rem-calc(1);
+  height: rem-calc(1);
+  padding: 0;
+  margin: rem-calc(-1);
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+.skiplink {
+  background: transparent;
+  color: #212121;
+  left: 0;
+  padding: rem-calc(16 24);
+  position: absolute;
+  top: -rem-calc(-72);
+  transition: all 0.2s ease-in-out;
+  z-index: 1040 !important;
+  text-decoration: underline !important;
+}
+
+.skiplink:focus {
+  background: #ffffff;
+  left: 0;
+  outline: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Styles where only focus is supported */
+input:focus,
+button:focus,
+a[href]:focus {
+  outline: #7fb7ff dotted rem-calc(3);
+  outline-offset: rem-calc(2);
+}
+
+/* Reset styles where focus-visible is supported (we'll add them back
+ * in the next block)
+*/
+input:focus,
+button:focus:not(:focus-visible),
+a[href]:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* The final, focus-visible styles. You could elect to make this even more
+ * obvious, if stakeholders or whomever is pushing against focus styles this
+ * week are now off your back.
+*/
+input:focus,
+button:focus-visible,
+a[href]:focus-visible {
+  outline: #7fb7ff dotted rem-calc(3);
+  outline-offset: rem-calc(2);
+}
+
+////////////////////////////////////////////////////////////
+////////////////// GENERAL CLASES /////////////////////////
+//////////////////////////////////////////////////////////
+
+html,
+body {
+  font-family: SourceSansPro;
+
+  // min-height: 100vh;
+  // overflow: auto;
+}
+
+// main {
+//   * {
+//     box-sizing: border-box !important;
+//     margin: 0 !important;
+//     padding: 0 !important;
+//   }
+// }
+
+p {
+  font-family: Open Sans;
+}
+
+//=======================================
+// =========== SKIP CONTENT =============
+//=======================================
+
+a.skip-to-content {
+  color: transparent;
+  font-size: rem-calc(11);
+  position: absolute;
+  top: rem-calc(8);
+  left: rem-calc(140);
+  z-index: 1031;
+  font-weight: 400;
+  padding-top: rem-calc(2);
+
+  &:focus {
+    color: #000000;
+    outline: $focus !important;
+    box-shadow: none !important;
+    outline-style: $f-style;
+    outline-offset: rem-calc(1) !important;
+  }
+}
+
+//font size clases//

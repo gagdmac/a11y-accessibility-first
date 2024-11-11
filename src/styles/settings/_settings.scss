@@ -1,0 +1,58 @@
+@import "../tools/tools";
+
+//////////////////////////////
+///////// FONTS /////////////
+////////////////////////////
+
+@font-face {
+  font-family: "SourceSansPro";
+  src: local("SourceSansPro"),
+    url("../../assets/fonts/SourceSansPro-Regular.ttf") format("truetype");
+}
+
+.open-sans {
+  &-titles {
+    font-family: "Open Sans", sans-serif;
+    // font-optical-sizing: auto;
+    // font-weight: 900;
+    // font-style: normal;
+    // font-variation-settings: "wdth" 300;
+  }
+}
+
+//////////////////////////////
+///////// GRADIENTS /////////////
+////////////////////////////
+
+.g {
+  &c {
+    &-1 {
+      background: -webkit-linear-gradient(
+        198deg,
+        rgba(51, 130, 180, 1) 0%,
+        rgba(195, 1, 198, 1) 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: rgba(253, 249, 235, 0.1) 1px 0 5px;
+      filter: drop-shadow(0 2mm 1mm rgba(160, 160, 160, 0.7));
+    }
+    &-2 {
+      background: -webkit-linear-gradient(
+        198deg,
+        rgba(9, 112, 185, 1) 0%,
+        rgba(106, 117, 0, 1) 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: rgba(253, 249, 235, 0.1) 1px 0 5px;
+      filter: drop-shadow(0 2mm 1mm rgba(160, 160, 160, 0.7));
+    }
+  }
+}
+
+//FOCUS
+$focus: #7fb7ff dotted rem-calc(3);
+$f-style: rem-calc(-3);

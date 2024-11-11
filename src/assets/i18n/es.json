@@ -1,0 +1,37 @@
+{
+  "en": "English",
+  "es": "Español",
+  "languages": {
+    "espanol": "Español",
+    "english": "English",
+    "languageSelection": "Selección de idioma"
+  },
+  "menu": {
+    "liZero": "Inicio",
+    "liOne": "Que es la accesibilidad",
+    "liTwo": "Accesibilidad digital"
+  },
+  "submenu": {
+    "liOne": "Projectos",
+    "liTwo": "Prototipos",
+    "liThree": "Todo lo demas"
+  },
+  "header": {
+    "logo": "Logo de Gabriel Garcia",
+    "title": "accesibilidad primero"
+  },
+
+  "home": {
+    "mainContent": "Ir al contenido principal"
+  },
+
+  "me": {},
+
+  "a11y": {
+    "title": "Opciones de accesibilidad"
+  },
+
+  "footer": {
+    "text": "2024 GADG. Todos los derechos reservados."
+  }
+}
