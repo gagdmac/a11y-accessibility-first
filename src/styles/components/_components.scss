@@ -1,7 +1,10 @@
 /*COMPONENTs*/
 
 /*========= HOME COMPONENT =============*/
-@import "./c-home";
+@import './c-header';
+
+/*========= HOME COMPONENT =============*/
+@import './c-home';
 
 /*========= a11y =============*/
-@import "./c-a11y";
+@import './c-a11y';

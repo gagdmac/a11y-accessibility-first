@@ -1,23 +1,23 @@
 /*ITCSS styles*/
 
 /*========= SETTINGS =============*/
-@import "styles/settings/settings";
-@import "styles/settings/theme";
+@import 'styles/settings/settings';
+@import 'styles/settings/theme';
 
 /*========= TOOLS =============*/
-@import "styles/tools/tools";
+@import 'styles/tools/tools';
 
 /*========= GENERIC =============*/
-@import "styles/generic/generic";
+@import 'styles/generic/generic';
 
 /*========= ELEMENTS =============*/
-@import "styles/elements/elements";
+@import 'styles/elements/elements';
 
 // /*========= OBJECTS =============*/
 // @import "styles/objects/objects";
 
-// /*========= COMPONENTS =============*/
-// @import "styles/components/components";
+/*========= COMPONENTS =============*/
+@import 'styles/components/components';
 
 /*========= UTILITIES =============*/
-@import "styles/utilities/utilities";
+@import 'styles/utilities/utilities';

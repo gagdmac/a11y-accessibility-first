@@ -1,18 +1,18 @@
-@import "../tools/tools";
+@import '../tools/tools';
 
 //////////////////////////////
 ///////// FONTS /////////////
 ////////////////////////////
 
 @font-face {
-  font-family: "SourceSansPro";
-  src: local("SourceSansPro"),
-    url("../../assets/fonts/SourceSansPro-Regular.ttf") format("truetype");
+  font-family: 'SourceSansPro';
+  src: local('SourceSansPro'),
+    url('../../assets/fonts/SourceSansPro-Regular.ttf') format('truetype');
 }
 
 .open-sans {
   &-titles {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     // font-optical-sizing: auto;
     // font-weight: 900;
     // font-style: normal;
