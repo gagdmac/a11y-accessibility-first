@@ -22,7 +22,8 @@
 
   "home": {
     "mainContent": "Ir al contenido principal",
-    "accessibilityOptions": "Opciones de accesibilidad"
+    "accessibilityOptions": "Opciones de accesibilidad",
+    "accessibility": " La accesibilidad se refiere al diseño de productos, dispositivos, servicios o entornos para que puedan ser utilizados por todas las personas, en la mayor medida posible, sin necesidad de adaptación o diseño especializado. El objetivo de la accesibilidad es garantizar que las personas con una amplia gama de capacidades y discapacidades puedan acceder a ellos y utilizarlos de forma similar a quienes no tienen esas limitaciones."
   },
 
   "me": {},

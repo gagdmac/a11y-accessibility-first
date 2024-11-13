@@ -22,7 +22,8 @@
 
   "home": {
     "mainContent": "Go to main content",
-    "accessibilityOptions": "Accessibility Options"
+    "accessibilityOptions": "Accessibility Options",
+    "accessibility": " Accessibility refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible, without the need for adaptation or specialized design. The goal of accessibility is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
   },
 
   "me": {},
