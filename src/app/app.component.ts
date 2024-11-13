@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-// import { ThemeService } from './services/theme.service';
-// import { FontSizeService } from './services/font-size.service';
+import { AnimationService } from './services/animation/animation.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'a11y';
 
-  constructor() {}
+  constructor(private animationService: AnimationService) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.animationService.initAOS();
+  }
 }
