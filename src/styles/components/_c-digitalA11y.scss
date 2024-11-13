@@ -1,6 +1,6 @@
-.c-home {
-  .home-img {
-    background-image: url('../../assets/img/a11y-home-f-image.svg');
+.c-digitalA11Y {
+  .digitalA11Y-img {
+    background-image: url('../../assets/img/a11y-home-i-image.svg');
     width: 100%;
     height: 42.7vw;
     background-repeat: no-repeat;
@@ -8,7 +8,7 @@
     background-size: cover;
   }
   @include respond-below(sm) {
-    .home-img {
+    .digitalA11Y-img {
       width: 100%;
       height: 47vw;
     }

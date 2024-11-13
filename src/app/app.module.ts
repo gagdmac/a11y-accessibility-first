@@ -16,6 +16,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeaderComponent } from '././core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { DigitalAccessibilityComponent } from './components/digital-accessibility/digital-accessibility.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -29,6 +30,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    DigitalAccessibilityComponent,
   ],
   imports: [
     // ngx-translate and the loader module
