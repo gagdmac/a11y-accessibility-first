@@ -45,7 +45,9 @@
             data-bs-target="#staticBackdrop"
             aria-controls="staticBackdrop"
             aria-label="Opens accesibility options">
-            <span class="sr-only">Accesibility Options</span>
+            <span class="sr-only">{{
+              'home.accessibilityOptions' | translate
+            }}</span>
             <i class="fas fa-universal-access fa-2x"></i>
           </button>
           <!--boton modulo accesibilidad ends-->
@@ -64,12 +66,13 @@
                 <a
                   class="nav-link"
                   aria-current="page"
-                  routerLink="me"
-                  routerLinkActive="active">
+                  routerLink="accesibility"
+                  routerLinkActive="">
                   {{ 'menu.liOne' | translate }}</a
                 >
               </li>
-              <li class="nav-item dropdown">
+
+              <!-- <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -97,7 +100,7 @@
                     }}</a>
                   </li>
                 </ul>
-              </li>
+              </li> -->
             </ul>
           </span>
 

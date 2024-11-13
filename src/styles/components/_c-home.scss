@@ -5,11 +5,12 @@
     // border-width: rem-calc(3);
     background-image: url('../../assets/img/a11y-home-f-image.svg');
     width: 100%;
-    height: 54vw;
+    height: 42.7vw;
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: cover;
   }
-  @include respond-above(sm) {
+  @include respond-below(sm) {
     .home-img {
       width: 100%;
       height: 47vw;

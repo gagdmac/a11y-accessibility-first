@@ -8,8 +8,7 @@
   },
   "menu": {
     "liZero": "Home",
-    "liOne": "What it is accessibility",
-    "liTwo": "Digital accessibility"
+    "liOne": "Digital accessibility"
   },
   "submenu": {
     "liOne": "Projects",
@@ -22,7 +21,8 @@
   },
 
   "home": {
-    "mainContent": "Go to main content"
+    "mainContent": "Go to main content",
+    "accessibilityOptions": "Accessibility Options"
   },
 
   "me": {},
