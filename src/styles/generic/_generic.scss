@@ -90,7 +90,7 @@ a[href]:focus-visible {
 
 html,
 body {
-  font-family: SourceSansPro;
+  font-family: 'Open Sans', sans-serif !important;
   margin-top: rem-calc(65);
   margin-bottom: rem-calc(48);
   // min-height: 100vh;
@@ -98,25 +98,6 @@ body {
 
   padding: 0;
   // overflow: hidden;
-  svg {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-}
-
-// main {
-//   * {
-//     box-sizing: border-box !important;
-//     margin: 0 !important;
-//     padding: 0 !important;
-//   }
-// }
-
-p {
-  font-family: Open Sans;
 }
 
 //=======================================

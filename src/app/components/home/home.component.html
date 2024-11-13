@@ -8,22 +8,52 @@
       "></div>
     <ng-template #largeScreenTemplate>
       <div class="home-img">
-        <div class="cb1 col-12 col-lg-4 px-5 py-3">
-          <p>
-            {{ 'home.accessibility' | translate }}
+        <div class="col-12 col-lg-4 ps-5 pe-2 py-3 mt-5">
+          <p class="mt-5 px-5">
+            <span
+              class="fs-2 fw-bold text-primary text-decoration-underline px-2">
+              {{ 'home.accessibilityTitle' | translate }}
+            </span>
+            <span class="fs-2 fw-bold">
+              {{ 'home.accessibilityInfo' | translate }}
+            </span>
+            <span class="fs-2 fw-bold bg-danger text-white px-2">
+              {{ 'home.accessibilityExtra' | translate }}
+            </span>
+          </p>
+          <p class="px-5">
+            <span class="lead">
+              {{ 'home.accessibilityExtraB' | translate }}
+            </span>
           </p>
         </div>
       </div>
     </ng-template>
+
+    <!--SMALL SCREEN TEMPLATE-->
     <ng-template #smallScreenTemplate>
       <div class="col home-img"></div>
-      <div class="col"></div>
-
       <div class="small-screen-styles">
         <div class="cb1 col-12 px-5 py-3">
-          <p>
-            {{ 'home.accessibility' | translate }}
-          </p>
+          <div class="col-12 px-2 pe-2">
+            <p class="">
+              <span
+                class="fs-2 fw-bold text-primary text-decoration-underline px-2">
+                {{ 'home.accessibilityTitle' | translate }}
+              </span>
+              <span class="fs-2 fw-bold">
+                {{ 'home.accessibilityInfo' | translate }}
+              </span>
+              <span class="fs-2 fw-bold bg-danger text-white px-2">
+                {{ 'home.accessibilityExtra' | translate }}
+              </span>
+            </p>
+            <p class="">
+              <span class="lead">
+                {{ 'home.accessibilityExtraB' | translate }}
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </ng-template>

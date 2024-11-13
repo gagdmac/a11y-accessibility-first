@@ -1,4 +1,12 @@
 .c-home {
+  svg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
   .home-img {
     background-image: url('../../assets/img/a11y-home-f-image.svg');
     width: 100%;
@@ -7,13 +15,11 @@
     background-position: center center;
     background-size: cover;
   }
-  @include respond-below(sm) {
-    .home-img .small {
+  @include respond-below(mdl) {
+    .home-img {
       background-image: url('../../assets/img/a11y-home-j-image.svg');
       width: 100%;
       height: 47vw;
     }
   }
 }
-
-//media queries

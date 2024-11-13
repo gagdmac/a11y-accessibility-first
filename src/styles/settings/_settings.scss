@@ -5,19 +5,17 @@
 ////////////////////////////
 
 @font-face {
-  font-family: 'SourceSansPro';
-  src: local('SourceSansPro'),
-    url('../../assets/fonts/SourceSansPro-Regular.ttf') format('truetype');
+  font-family: 'Open Sans', sans-serif;
+  src: local('Open Sans'),
+    url('../../assets/fonts/OpenSans-VariableFont_wdth,wght.ttf')
+      format('truetype');
 }
 
-.open-sans {
-  &-titles {
-    font-family: 'Open Sans', sans-serif;
-    // font-optical-sizing: auto;
-    // font-weight: 900;
-    // font-style: normal;
-    // font-variation-settings: "wdth" 300;
-  }
+@font-face {
+  font-family: 'Bodoni', sans-serif;
+  src: local('Bodoni'),
+    url('../../assets/fonts/BodoniModa-VariableFont_opsz\,wght.ttf')
+      format('truetype');
 }
 
 //////////////////////////////
