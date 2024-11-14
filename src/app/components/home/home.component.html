@@ -106,6 +106,51 @@
       <div class="small-screen-styles">
         <div class="col-12 p-2 px-lg-5 py-lg-3">
           <div class="col-12 px-2 pe-2">
+            <br />
+            <div class="my-3">
+              <span class="p-0 px-lg-5">
+                <a
+                  [routerLink]="['home']"
+                  [class]="
+                    'btn me-2 btn-sm ' +
+                    (isActive('home') ? 'btn-primary' : 'btn-secondary')
+                  "
+                  role="button">
+                  {{ 'home.a11y-accessibility' | translate }}
+                </a>
+                <a
+                  class="btn btn-secondary me-2 btn-sm mb-2"
+                  href="#"
+                  role="button"
+                  >{{ 'home.a11y-universal' | translate }}</a
+                >
+                <a
+                  class="btn btn-secondary me-2 btn-sm mb-2"
+                  href="#"
+                  role="button"
+                  >{{ 'home.a11y-healcare' | translate }}</a
+                >
+                <a
+                  class="btn btn-secondary me-2 btn-sm mb-2"
+                  href="#"
+                  role="button"
+                  >{{ 'home.a11y-rights' | translate }}</a
+                >
+                <a
+                  class="btn btn-secondary me-2 btn-sm mb-2"
+                  href="#"
+                  role="button"
+                  >{{ 'home.a11y-inclusivity' | translate }}</a
+                >
+                <a
+                  class="btn btn-secondary me-2 btn-sm mb-2"
+                  href="#"
+                  role="button"
+                  >{{ 'home.a11y-phisical' | translate }}</a
+                ></span
+              >
+            </div>
+
             <p class="">
               <span
                 class="u-fs fw-bold text-primary text-decoration-underline pe-1">
@@ -123,47 +168,6 @@
                 {{ 'home.accessibilityExtraB' | translate }}
               </span>
             </p>
-            <span class="p-0 px-lg-5">
-              <a
-                [routerLink]="['home']"
-                [class]="
-                  'btn me-2 btn-sm ' +
-                  (isActive('home') ? 'btn-primary' : 'btn-secondary')
-                "
-                role="button">
-                {{ 'home.a11y-accessibility' | translate }}
-              </a>
-              <a
-                class="btn btn-secondary me-2 btn-sm mb-2"
-                href="#"
-                role="button"
-                >{{ 'home.a11y-universal' | translate }}</a
-              >
-              <a
-                class="btn btn-secondary me-2 btn-sm mb-2"
-                href="#"
-                role="button"
-                >{{ 'home.a11y-healcare' | translate }}</a
-              >
-              <a
-                class="btn btn-secondary me-2 btn-sm mb-2"
-                href="#"
-                role="button"
-                >{{ 'home.a11y-rights' | translate }}</a
-              >
-              <a
-                class="btn btn-secondary me-2 btn-sm mb-2"
-                href="#"
-                role="button"
-                >{{ 'home.a11y-inclusivity' | translate }}</a
-              >
-              <a
-                class="btn btn-secondary me-2 btn-sm mb-2"
-                href="#"
-                role="button"
-                >phisical</a
-              ></span
-            >
           </div>
         </div>
       </div>
