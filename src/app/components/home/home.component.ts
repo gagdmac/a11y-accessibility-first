@@ -17,6 +17,6 @@ export class HomeComponent {
   }
 
   checkScreenSize() {
-    this.isSmallScreen = window.innerWidth < 993;
+    this.isSmallScreen = window.innerWidth < 1025;
   }
 }

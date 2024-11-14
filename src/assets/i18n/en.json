@@ -23,9 +23,9 @@
   "home": {
     "mainContent": "Go to main content",
     "accessibilityOptions": "Accessibility Options",
-    "accessibilityTitle": "Accessibility ",
+    "accessibilityTitle": "Accessibility",
     "accessibilityInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
-    "accessibilityExtra": "without the need for adaptation or specialized design.",
+    "accessibilityExtra": " without the need for adaptation or specialized design.",
     "accessibilityExtraB": "The goal of accessibility is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
   },
 

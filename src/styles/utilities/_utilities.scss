@@ -1,3 +1,24 @@
 ///////////////////
 /// UTILITIES ///
 ////////////////
+
+//font size home
+.u-fs {
+  font-size: 1rem;
+}
+@include respond-above(sm) {
+  .u-fs {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+}
+// @include respond-above(md) {
+//   .u-fs-home {
+//     font-size: 1.8vw;
+//   }
+// }
+// @include respond-above(mdl) {
+//   .u-fs-home {
+//     font-size: 1.3vw;
+//   }
+// }
