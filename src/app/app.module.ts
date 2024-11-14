@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 //routing
 import appRoutes from './routing/routerConfig';
 
@@ -43,6 +45,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
       },
     }),
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ServicesModule,
     RouterModule.forRoot(appRoutes),

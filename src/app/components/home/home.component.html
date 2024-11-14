@@ -11,8 +11,8 @@
 
     <!--BIG SCREEN TEMPLATE STARTS-->
     <ng-template #largeScreenTemplate>
-      <div class="home-img">
-        <div class="col-12 col-xl-5 col-xxl-4 ps-2 pe-3 py-3 mt-0">
+      <div class="home-img" data-aos="zoom-in">
+        <div class="col-12 col-xl-5 col-xxl-4 ps-2 pe-3 py-3 mt-5">
           <p class="mt-5 px-5">
             <span
               class="u-fs fw-bold text-primary text-decoration-underline px-2">
@@ -44,10 +44,10 @@
               {{ 'home.a11y-accessibility' | translate }}
             </a>
             <a
-              [routerLink]="['/path2']"
+              [routerLink]="['/digital']"
               [class]="
                 'btn me-2 btn-sm ' +
-                (isActive('path2') ? 'btn-primary' : 'btn-secondary')
+                (isActive('digital') ? 'btn-primary' : 'btn-secondary')
               "
               role="button">
               {{ 'home.a11y-universal' | translate }}

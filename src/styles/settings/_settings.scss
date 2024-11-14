@@ -54,3 +54,14 @@
 //FOCUS
 $focus: #7fb7ff dotted rem-calc(3);
 $f-style: rem-calc(-3);
+
+////////////////////////////////////////////////////////////
+///////// prefers-reduced-motion //////////////////////////
+//////////////////////////////////////////////////////////
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    transition: none !important;
+    transform: none !important;
+  }
+}

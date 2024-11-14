@@ -26,6 +26,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
+              "node_modules/aos/dist/aos.css",
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/flag-icons/css/flag-icons.min.css"
             ],
