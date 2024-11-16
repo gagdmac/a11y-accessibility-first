@@ -1,11 +1,18 @@
-/*COMPONENTs*/
+/*CORE*/
 
-/*========= HOME COMPONENT =============*/
+/*========= HEADER =============*/
 @import './c-header';
 
-/*========= HOME COMPONENT =============*/
-@import './c-home';
-@import './c-digitalA11y';
+/*========= FOOTER =============*/
+@import './c-footer';
 
-/*========= a11y =============*/
+/*========= CONTENT =============*/
+@import './c-content-display';
+
+/*COMPONENTs*/
+
+/*========= HOME =============*/
+@import './c-home';
+
+/*========= ACCESSIBILITY OPTIONS  =============*/
 @import './c-a11y';
