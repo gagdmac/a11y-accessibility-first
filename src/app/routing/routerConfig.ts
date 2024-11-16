@@ -4,6 +4,11 @@ import { Routes } from '@angular/router';
 import { A11yOptionsComponent } from '../components/a11y-options/a11y-options.component';
 import { HomeComponent } from '../components/home/home.component';
 import { DigitalAccessibilityComponent } from '../components/digital-accessibility/digital-accessibility.component';
+import { UniversalDesignComponent } from '../components/universal-design/universal-design.component';
+import { AccessibleHealthcareComponent } from '../components/accessible-healthcare/accessible-healthcare.component';
+import { DisabilityRightsComponent } from '../components/disability-rights/disability-rights.component';
+import { InclusivityComponent } from '../components/inclusivity/inclusivity.component';
+import { PhisicalAccessibilityComponent } from '../components/phisical-accessibility/phisical-accessibility.component';
 
 // core components
 
@@ -14,7 +19,33 @@ const appRoutes: Routes = [
     component: DigitalAccessibilityComponent,
     title: 'Digital accessibility',
   },
+  {
+    path: 'universal',
+    component: UniversalDesignComponent,
+    title: 'Universal design',
+  },
   { path: 'a11y', component: A11yOptionsComponent, title: 'A11Y' },
+  {
+    path: 'healthcare',
+    component: AccessibleHealthcareComponent,
+    title: 'Accessible Healthcare',
+  },
+  {
+    path: 'rights',
+    component: DisabilityRightsComponent,
+    title: 'Disability Rights',
+  },
+  {
+    path: 'inclusivity',
+    component: InclusivityComponent,
+    title: 'Inclusivity',
+  },
+  {
+    path: 'phisical',
+    component: PhisicalAccessibilityComponent,
+    title: 'Phisical Accessibility',
+  },
+
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 export default appRoutes;

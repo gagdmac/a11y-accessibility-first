@@ -19,6 +19,11 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeaderComponent } from '././core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { DigitalAccessibilityComponent } from './components/digital-accessibility/digital-accessibility.component';
+import { UniversalDesignComponent } from './components/universal-design/universal-design.component';
+import { AccessibleHealthcareComponent } from './components/accessible-healthcare/accessible-healthcare.component';
+import { DisabilityRightsComponent } from './components/disability-rights/disability-rights.component';
+import { InclusivityComponent } from './components/inclusivity/inclusivity.component';
+import { PhisicalAccessibilityComponent } from './components/phisical-accessibility/phisical-accessibility.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -33,6 +38,11 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     HeaderComponent,
     FooterComponent,
     DigitalAccessibilityComponent,
+    UniversalDesignComponent,
+    AccessibleHealthcareComponent,
+    DisabilityRightsComponent,
+    InclusivityComponent,
+    PhisicalAccessibilityComponent,
   ],
   imports: [
     // ngx-translate and the loader module
