@@ -1,6 +1,5 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
-import * as AOS from 'aos';
 // import { AnimationService } from './services/animation/animation.service';
 
 @Component({
@@ -30,10 +29,5 @@ export class AppComponent implements OnInit {
   }
   // private animationService: AnimationService
 
-  ngOnInit() {
-    AOS.init({
-      duration: 800, // Make sure this matches the timeout above
-      once: true,
-    });
-  }
+  ngOnInit() {}
 }
