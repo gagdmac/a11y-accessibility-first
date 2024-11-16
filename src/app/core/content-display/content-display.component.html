@@ -1,6 +1,96 @@
 <section class="content-display" [attr.aria-label]="ariaLabel">
-  <h2 class="content-display__title">{{ title }}</h2>
-  <div class="content-display__content">
-    {{ content }}
-  </div>
+  <article class="container-fluid p-0">
+    <!--SMALL BIG TEMPLATE STARTS CONDITION-->
+    <div
+      *ngIf="
+        isSmallScreen;
+        then smallScreenTemplate;
+        else largeScreenTemplate
+      "></div>
+    <!--SMALL BIG TEMPLATE CONDITION ENDS-->
+
+    <!--BIG SCREEN TEMPLATE STARTS-->
+    <ng-template #largeScreenTemplate>
+      <div class="content-display__background" [ngClass]="backgroundClass">
+        <div class="col-12 col-xl-5 col-xxl-4 ps-2 pe-3 py-3 mt-5">
+          <!--Defition content START -->
+          <p class="mt-5 px-5">
+            <span
+              class="u-fs fw-bold text-primary text-decoration-underline px-2">
+              {{ title }}
+            </span>
+            <span class="u-fs fw-bold">
+              {{ info }}
+            </span>
+            <span class="u-fs fw-bold bg-danger text-white px-2">
+              {{ extra }}
+            </span>
+          </p>
+          <p class="px-5">
+            <span class="u-fs">
+              {{ more }}
+            </span>
+          </p>
+          <!--Defition content ENDS -->
+
+          <!--Content buttons STARS-->
+          <nav aria-label="Section navigation" role="navigation">
+            <ul class="nav nav-pills px-5">
+              <li class="nav-item me-2 mb-2" *ngFor="let link of links">
+                <a
+                  class="nav-link px-2 custom-nav-link"
+                  [routerLink]="[link.route]"
+                  routerLinkActive="active"
+                  aria-current="page">
+                  {{ link.text }}
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!--Content buttons ENDS-->
+        </div>
+      </div>
+    </ng-template>
+    <!-- BIG SCREEN TEMPLATE ENDS-->
+
+    <!--SMALL SCREEN TEMPLATE STARTS-->
+    <ng-template #smallScreenTemplate> </ng-template>
+    <div class="content-display__background" [ngClass]="backgroundClass"></div>
+    <div class="col-12">
+      <!--Content buttons STARS-->
+      <nav aria-label="Section navigation" role="navigation">
+        <ul class="nav nav-pills px-3 py-2">
+          <li class="nav-item me-2 mb-2" *ngFor="let link of links">
+            <a
+              class="nav-link px-2 custom-nav-link"
+              [routerLink]="[link.route]"
+              routerLinkActive="active"
+              aria-current="page">
+              {{ link.text }}
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!--Content buttons ENDS-->
+      <!--Content info Starts-->
+      <p class="px-3">
+        <span class="u-fs fw-bold text-primary text-decoration-underline px-2">
+          {{ title }}
+        </span>
+        <span class="u-fs fw-bold">
+          {{ info }}
+        </span>
+        <span class="u-fs fw-bold bg-danger text-white px-2">
+          {{ extra }}
+        </span>
+      </p>
+      <p class="px-3">
+        <span class="u-fs">
+          {{ more }}
+        </span>
+      </p>
+      <!--Content info ENDS-->
+    </div>
+    <!--SMALL SCREEN TEMPLATE ENDS-->
+  </article>
 </section>
