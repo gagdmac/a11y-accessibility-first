@@ -8,6 +8,8 @@ export class LinkHighlightService {
   private renderer: Renderer2;
   private highlightedLinks: HTMLAnchorElement[] = [];
   private highlightColor = 'yellow';
+  private isHighlightActive = false;
+  isHighlightActive$: any;
 
   constructor(
     private rendererFactory: RendererFactory2,
@@ -21,12 +23,20 @@ export class LinkHighlightService {
   }
 
   toggleLinkHighlight(): string {
-    if (this.highlightedLinksCount === 0) {
+    this.isHighlightActive = !this.isHighlightActive;
+    if (this.isHighlightActive) {
       this.highlightLinks();
       return 'a11y.removeHighlights';
     } else {
       this.removeHighlights();
       return 'a11y.highlightLinks';
+    }
+  }
+
+  refreshHighlights() {
+    if (this.isHighlightActive) {
+      this.removeHighlights();
+      this.highlightLinks();
     }
   }
 

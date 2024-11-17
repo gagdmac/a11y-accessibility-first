@@ -4,18 +4,28 @@ import {
   HostListener,
   ViewChild,
   ElementRef,
+  OnInit,
+  OnDestroy,
 } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { Subscription } from 'rxjs';
+import { LinkHighlightService } from 'src/app/services/links-hightligh/links-highlight.service';
 
 @Component({
   selector: 'app-content-display',
   templateUrl: './content-display.component.html',
   styleUrls: ['./content-display.component.scss'],
 })
-export class ContentDisplayComponent {
-  constructor(private router: Router) {}
+export class ContentDisplayComponent implements OnInit, OnDestroy {
+  constructor(
+    private router: Router,
+    private linkHighlightService: LinkHighlightService
+  ) {}
   //template condition to show the content
   isSmallScreen = false;
+  isHighlightActive = false;
+  private highlightSubscription: Subscription | undefined;
 
   @Input() title: string = '';
   @Input() info: string = '';
@@ -36,6 +46,16 @@ export class ContentDisplayComponent {
 
   ngOnInit() {
     this.checkScreenSize();
+    this.highlightSubscription =
+      this.linkHighlightService.isHighlightActive$.subscribe(
+        (isActive: boolean) => (this.isHighlightActive = isActive)
+      );
+  }
+
+  ngOnDestroy() {
+    if (this.highlightSubscription) {
+      this.highlightSubscription.unsubscribe();
+    }
   }
 
   checkScreenSize() {
