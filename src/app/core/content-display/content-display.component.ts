@@ -47,12 +47,12 @@ export class ContentDisplayComponent {
   }
 
   slideLeft() {
-    const element = this.sliderContent.nativeElement;
-    element.scrollLeft -= 200;
+    const container = this.sliderContent.nativeElement;
+    container.scrollLeft -= 200; // Adjust scroll amount as needed
   }
 
   slideRight() {
-    const element = this.sliderContent.nativeElement;
-    element.scrollLeft += 200;
+    const container = this.sliderContent.nativeElement;
+    container.scrollLeft += 200; // Adjust scroll amount as needed
   }
 }
