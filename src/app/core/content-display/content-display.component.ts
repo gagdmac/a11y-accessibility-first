@@ -21,6 +21,8 @@ export class ContentDisplayComponent {
   @Input() info: string = '';
   @Input() extra: string = '';
   @Input() more: string = '';
+  @Input() staticLink: string = '';
+  @Input() link: string = '';
   @Input() links: Array<{ text: string; route: string }> = [];
   @Input() ariaLabel?: string;
   @Input() backgroundClass: string = '';

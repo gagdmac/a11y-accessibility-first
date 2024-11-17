@@ -33,6 +33,12 @@
           <!--Content buttons STARS-->
           <nav aria-label="Section navigation" role="tablist">
             <ul class="nav nav-pills px-5" role="presentation">
+              <!-- Static link first -->
+              <li class="nav-item me-2 mb-2" *ngIf="staticLink">
+                <a class="nav-link active px-2" aria-current="page" href="#">
+                  {{ staticLink }}
+                </a>
+              </li>
               <li class="nav-item me-2 mb-2" *ngFor="let link of links">
                 <a
                   class="nav-link px-2 custom-nav-link"
@@ -71,6 +77,15 @@
                 aria-label="Previous items"></button>
               <div class="slider-wrapper py-2">
                 <div class="nav-items-container" #sliderContent>
+                  <!-- Static link first -->
+                  <li class="nav-item me-2" *ngIf="staticLink">
+                    <a
+                      class="nav-link active px-2 py-1 custom-nav-link"
+                      aria-current="page"
+                      href="#">
+                      {{ staticLink }}
+                    </a>
+                  </li>
                   <li class="nav-item me-2" *ngFor="let link of links">
                     <a
                       class="nav-link px-2 py-1 custom-nav-link"
