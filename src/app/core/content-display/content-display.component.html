@@ -31,15 +31,18 @@
           <!--Defition content ENDS -->
 
           <!--Content buttons STARS-->
-          <nav aria-label="Section navigation" role="navigation">
-            <ul class="nav nav-pills px-5">
+          <nav aria-label="Section navigation" role="tablist">
+            <ul class="nav nav-pills px-5" role="presentation">
               <li class="nav-item me-2 mb-2" *ngFor="let link of links">
                 <a
                   class="nav-link px-2 custom-nav-link"
                   [routerLink]="[link.route]"
                   [routerLinkActive]="'active'"
                   [routerLinkActiveOptions]="{ exact: true }"
-                  [attr.aria-current]="isActive(link.route) ? 'page' : null">
+                  [attr.aria-current]="isActive(link.route) ? 'page' : null"
+                  [attr.aria-selected]="isActive(link.route)"
+                  role="tab"
+                  [attr.tabindex]="isActive(link.route) ? 0 : -1">
                   {{ link.text }}
                 </a>
               </li>
@@ -56,8 +59,8 @@
         [ngClass]="backgroundClass"></div>
       <div class="col-12">
         <!--Content buttons STARS-->
-        <nav aria-label="Section navigation" role="navigation">
-          <ul class="nav nav-pills px-3 py-2 my-4">
+        <nav aria-label="Section navigation" role="tablist">
+          <ul class="nav nav-pills px-3 py-2 my-4" role="presentation">
             <div class="slider-container">
               <button
                 class="slider-btn prev ms-2"
@@ -74,9 +77,10 @@
                       [routerLink]="[link.route]"
                       [routerLinkActive]="'active'"
                       [routerLinkActiveOptions]="{ exact: true }"
-                      [attr.aria-current]="
-                        isActive(link.route) ? 'page' : null
-                      ">
+                      [attr.aria-current]="isActive(link.route) ? 'page' : null"
+                      [attr.aria-selected]="isActive(link.route)"
+                      role="tab"
+                      [attr.tabindex]="isActive(link.route) ? 0 : -1">
                       {{ link.text }}
                     </a>
                   </li>

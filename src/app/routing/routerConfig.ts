@@ -52,5 +52,6 @@ const appRoutes: Routes = [
   },
 
   { path: '', redirectTo: '/accessibility', pathMatch: 'full' },
+  { path: '**', redirectTo: '/accessibility' }, // Add wildcard route at the end
 ];
 export default appRoutes;
