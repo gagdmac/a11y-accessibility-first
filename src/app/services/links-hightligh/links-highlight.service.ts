@@ -20,11 +20,13 @@ export class LinkHighlightService {
     return this.highlightedLinks.length;
   }
 
-  toggleLinkHighlight() {
+  toggleLinkHighlight(): string {
     if (this.highlightedLinksCount === 0) {
       this.highlightLinks();
+      return 'a11y.removeHighlights';
     } else {
       this.removeHighlights();
+      return 'a11y.highlightLinks';
     }
   }
 

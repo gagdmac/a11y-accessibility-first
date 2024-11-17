@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FontSizeService } from 'src/app/services/font-size/font-size.service';
 import { LinkHighlightService } from 'src/app/services/links-hightligh/links-highlight.service';
 import { ThemeService } from 'src/app/services/themes-color/theme.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-a11y-options',
@@ -19,7 +20,8 @@ export class A11yOptionsComponent {
   constructor(
     private themeService: ThemeService,
     public fontSizeService: FontSizeService,
-    public linkHighlightService: LinkHighlightService
+    public linkHighlightService: LinkHighlightService,
+    private translate: TranslateService
   ) {}
 
   ngOnInit(): void {}
@@ -61,8 +63,8 @@ export class A11yOptionsComponent {
 
   get buttonText() {
     return this.linkHighlightService.highlightedLinksCount > 0
-      ? 'Remove Highlights'
-      : 'Highlight Links';
+      ? this.translate.instant('a11y.removeHighlights')
+      : this.translate.instant('a11y.highlightLinks');
   }
 
   toggleLinkHighlight() {

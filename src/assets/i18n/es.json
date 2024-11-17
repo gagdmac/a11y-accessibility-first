@@ -46,7 +46,9 @@
     "fontSizeLess": "Menos -",
     "fontSizeReset": "Resetear",
     "toggleLinkHighlightTitle": "Enlaces destacados",
-    "toggleLinkHighlightDescription": "Puede Resaltar todos los enlaces."
+    "toggleLinkHighlightDescription": "Puede Resaltar todos los enlaces.",
+    "highlightLinks": "Reseltar Enlaces",
+    "removeHighlights": "Eliminar Resaltado"
   },
 
   "footer": {

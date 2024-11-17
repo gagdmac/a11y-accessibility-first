@@ -47,7 +47,8 @@
     "fontSizeReset": "Reset",
     "toggleLinkHighlightTitle": "Links Highlight",
     "toggleLinkHighlightDescription": "You can Highlight all the links.",
-    "toggleLinkHighligh": "You can Highlight all the links."
+    "highlightLinks": "Highlight Links",
+    "removeHighlights": "Remove Highlight"
   },
 
   "footer": {
