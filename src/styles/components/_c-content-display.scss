@@ -20,6 +20,63 @@
     background-position: center center;
     background-size: cover;
   }
+
+  .slider-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+
+    .slider-wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      padding: 0 40px;
+
+      .nav-items-container {
+        display: flex;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        transition: transform 0.3s ease;
+        white-space: nowrap;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+
+    .slider-btn {
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      cursor: pointer;
+      height: 32px;
+      width: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:hover {
+        background: rgba(255, 255, 255, 1);
+      }
+
+      &.prev {
+        left: 0;
+      }
+
+      &.next {
+        right: 0;
+      }
+    }
+  }
 }
 
 // Example background classes that can be used
