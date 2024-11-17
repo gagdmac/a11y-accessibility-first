@@ -41,9 +41,10 @@ export class ContentDisplayComponent {
   }
 
   isActive(route: string): boolean {
-    return (
-      this.router.url === route || (route === 'home' && this.router.url === '/')
-    );
+    if (route === 'home') {
+      return this.router.url === '/' || this.router.url === '/home';
+    }
+    return this.router.url.includes(route);
   }
 
   slideLeft() {

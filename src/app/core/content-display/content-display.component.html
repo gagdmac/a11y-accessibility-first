@@ -37,7 +37,8 @@
                 <a
                   class="nav-link px-2 custom-nav-link"
                   [routerLink]="[link.route]"
-                  routerLinkActive="active"
+                  [routerLinkActive]="'active'"
+                  [routerLinkActiveOptions]="{ exact: true }"
                   [attr.aria-current]="isActive(link.route) ? 'page' : null">
                   {{ link.text }}
                 </a>
@@ -71,7 +72,8 @@
                     <a
                       class="nav-link px-2 py-1 custom-nav-link"
                       [routerLink]="[link.route]"
-                      routerLinkActive="active"
+                      [routerLinkActive]="'active'"
+                      [routerLinkActiveOptions]="{ exact: true }"
                       [attr.aria-current]="
                         isActive(link.route) ? 'page' : null
                       ">
