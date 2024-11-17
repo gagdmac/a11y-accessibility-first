@@ -38,7 +38,15 @@
   "me": {},
 
   "a11y": {
-    "title": "Opciones de accesibilidad"
+    "title": "Opciones de accesibilidad",
+    "fontSizeTitle": "Tamaño de Fuente",
+    "fontSizeDescription": "Cambia el tamaño de la fuente de la web",
+    "fontSize": "Tamaño de fuente: ",
+    "fontSizeMore": "Mas +",
+    "fontSizeLess": "Menos -",
+    "fontSizeReset": "Resetear",
+    "toggleLinkHighlightTitle": "Enlaces destacados",
+    "toggleLinkHighlightDescription": "Puede Resaltar todos los enlaces."
   },
 
   "footer": {

@@ -5,9 +5,9 @@
   id="offcanvasWithBothOptions"
   aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
-      Backdrop with scrolling
-    </h5>
+    <p class="offcanvas-title lead fw-bold" id="offcanvasWithBothOptionsLabel">
+      {{ 'a11y.title' | translate }}
+    </p>
     <button
       type="button"
       class="btn-close"
@@ -15,20 +15,68 @@
       aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    <div class="container">
-      <div class="text-center">
-        <button (click)="toggleLinkHighlight()">
+    <!--Font size STARS-->
+    <div class="card cb2">
+      <div class="card-body">
+        <p class="card-title fs-6 fw-bold">
+          {{ 'a11y.fontSizeTitle' | translate }}
+        </p>
+        <p class="card-text fs-6">
+          {{ 'a11y.fontSizeDescription' | translate }}
+        </p>
+        <button class="btn btn-primary py-0 me-1" (click)="increaseFontSize()">
+          {{ 'a11y.fontSizeMore' | translate }}
+        </button>
+        <button
+          class="btn btn-secondary py-0 me-1"
+          (click)="decreaseFontSize()">
+          {{ 'a11y.fontSizeLess' | translate }}
+        </button>
+        <button class="btn btn-dark py-0 me-1" (click)="resetFontSize()">
+          {{ 'a11y.fontSizeReset' | translate }}
+        </button>
+      </div>
+      <span class="badge text-bg-light d-flex justify-content-start px-3"
+        >{{ 'a11y.fontSize' | translate }}{{ fontSize }}%</span
+      >
+    </div>
+    <!--Font size ENDS-->
+    <!--toggle Link Highlight STARTS-->
+    <div class="card mt-3 cb2">
+      <div class="card-body">
+        <p class="card-title fs-6 fw-bold">
+          {{ 'a11y.toggleLinkHighlightTitle' | translate }}
+        </p>
+        <p class="card-text fs-6">
+          {{ 'a11y.toggleLinkHighlightDescription' | translate }}
+        </p>
+
+        <button
+          class="btn btn-primary py-0 me-1"
+          (click)="toggleLinkHighlight()">
           {{ buttonText }}
         </button>
+      </div>
+    </div>
+    <!--toggle Link Highlight ENDS-->
+    <!--Font size STARTS-->
 
-        <p>
-          {{ fontSize }}% ({{ fontSizeService.getMinFontSize() }}% -
-          {{ fontSizeService.getMaxFontSize() }}%)
-        </p>
-        <button (click)="decreaseFontSize()">MENOS -</button>
-        <button (click)="increaseFontSize()">MAS +</button>
-        <button (click)="resetFontSize()">Reset</button>
-        <p>Welcome to the Angular theme switcher with Bootstrap!</p>
+    <!-- <p>
+      {{ fontSize }}%
+      <span class="sr-only"
+        >({{ fontSizeService.getMinFontSize() }}% -
+        {{ fontSizeService.getMaxFontSize() }}%)</span
+      >
+    </p>
+    <button (click)="decreaseFontSize()">MENOS -</button>
+    <button (click)="increaseFontSize()">MAS +</button>
+    <button (click)="resetFontSize()">Reset</button> -->
+    <!--Font size ENDS-->
+
+    <div class="container">
+      <div class="text-center">
+        <!--theme color starts-->
+        <!-- <p>Welcome to the Angular theme switcher with Bootstrap!</p>
         <button class="btn btn-primary" (click)="switchTheme('light')">
           Light Mode
         </button>
@@ -44,7 +92,8 @@
         <br /><br />
         <button class="btn btn-info" (click)="toggleTheme()">
           Toggle Theme
-        </button>
+        </button> -->
+        <!--theme color ends-->
       </div>
     </div>
   </div>
