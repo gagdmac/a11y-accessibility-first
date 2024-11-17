@@ -39,6 +39,7 @@ export class LinkHighlightService {
         'background-color',
         this.highlightColor
       );
+      this.renderer.setStyle(linkElement, 'color', '#222222');
       this.highlightedLinks.push(linkElement);
     });
   }
@@ -46,6 +47,7 @@ export class LinkHighlightService {
   private removeHighlights() {
     this.highlightedLinks.forEach((link) => {
       this.renderer.setStyle(link, 'background-color', 'transparent');
+      this.renderer.setStyle(link, 'color', '');
     });
     this.highlightedLinks = [];
   }
