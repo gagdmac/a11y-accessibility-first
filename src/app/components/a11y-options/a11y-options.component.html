@@ -27,12 +27,13 @@
         <button class="btn btn-primary py-0 me-1" (click)="increaseFontSize()">
           {{ 'a11y.fontSizeMore' | translate }}
         </button>
-        <button
-          class="btn btn-secondary py-0 me-1"
-          (click)="decreaseFontSize()">
+        <button class="btn btn-primary py-0 me-1" (click)="decreaseFontSize()">
           {{ 'a11y.fontSizeLess' | translate }}
         </button>
-        <button class="btn btn-dark py-0 me-1" (click)="resetFontSize()">
+        <button
+          *ngIf="fontSize !== 100"
+          class="btn btn-dark py-0 me-1"
+          (click)="resetFontSize()">
           {{ 'a11y.fontSizeReset' | translate }}
         </button>
       </div>
