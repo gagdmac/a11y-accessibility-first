@@ -31,23 +31,17 @@
           <!--Defition content ENDS -->
 
           <!--Content buttons STARS-->
-          <nav aria-label="Section navigation">
-            <ul class="nav nav-pills px-5" role="navigation">
+          <nav aria-label="Section navigation" role="tablist">
+            <ul class="nav nav-pills px-5" role="presentation">
               <!-- Static link first -->
               <li class="nav-item me-2 mb-2" *ngIf="staticLink">
-                <a
-                  class="nav-link active px-2"
-                  [class.active]="true"
-                  [class.highlighted]="isHighlightActive"
-                  aria-current="page"
-                  href="#">
+                <a class="nav-link active px-2" aria-current="page" href="#">
                   {{ staticLink }}
                 </a>
               </li>
               <li class="nav-item me-2 mb-2" *ngFor="let link of links">
                 <a
                   class="nav-link px-2 custom-nav-link"
-                  [class.highlighted]="isHighlightActive"
                   [routerLink]="[link.route]"
                   [routerLinkActive]="'active'"
                   [routerLinkActiveOptions]="{ exact: true }"
@@ -71,8 +65,8 @@
         [ngClass]="backgroundClass"></div>
       <div class="col-12">
         <!--Content buttons STARS-->
-        <nav aria-label="Section navigation">
-          <ul class="nav nav-pills px-3 py-2 my-4" role="navegation">
+        <nav aria-label="Section navigation" role="tablist">
+          <ul class="nav nav-pills px-3 py-2 my-4" role="presentation">
             <div class="slider-container">
               <button
                 class="slider-btn prev ms-2"
@@ -87,8 +81,6 @@
                   <li class="nav-item me-2" *ngIf="staticLink">
                     <a
                       class="nav-link active px-2 py-1 custom-nav-link"
-                      [class.active]="true"
-                      [class.highlighted]="isHighlightActive"
                       aria-current="page"
                       href="#">
                       {{ staticLink }}
@@ -97,7 +89,6 @@
                   <li class="nav-item me-2" *ngFor="let link of links">
                     <a
                       class="nav-link px-2 py-1 custom-nav-link"
-                      [class.highlighted]="isHighlightActive"
                       [routerLink]="[link.route]"
                       [routerLinkActive]="'active'"
                       [routerLinkActiveOptions]="{ exact: true }"
