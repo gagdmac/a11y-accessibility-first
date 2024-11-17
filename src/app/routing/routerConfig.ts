@@ -9,11 +9,16 @@ import { AccessibleHealthcareComponent } from '../components/accessible-healthca
 import { DisabilityRightsComponent } from '../components/disability-rights/disability-rights.component';
 import { InclusivityComponent } from '../components/inclusivity/inclusivity.component';
 import { PhisicalAccessibilityComponent } from '../components/phisical-accessibility/phisical-accessibility.component';
+import { AccessibilityComponent } from '../components/accessibility/accessibility.component';
 
 // core components
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent, title: 'Home' },
+  {
+    path: 'accessibility',
+    component: AccessibilityComponent,
+    title: 'Accessibility fisrt',
+  },
   {
     path: 'digital',
     component: DigitalAccessibilityComponent,
@@ -46,6 +51,6 @@ const appRoutes: Routes = [
     title: 'Phisical Accessibility',
   },
 
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/accessibility', pathMatch: 'full' },
 ];
 export default appRoutes;
