@@ -1,0 +1,50 @@
+// ...existing styles...
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+  .slider-wrapper {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    padding: 0 40px;
+
+    .nav-items-container {
+      display: flex;
+      transition: transform 0.3s ease;
+      white-space: nowrap;
+    }
+  }
+
+  .slider-btn {
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    &.prev {
+      left: 0;
+    }
+
+    &.next {
+      right: 0;
+    }
+  }
+}

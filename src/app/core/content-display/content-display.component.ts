@@ -1,4 +1,10 @@
-import { Component, Input, HostListener } from '@angular/core';
+import {
+  Component,
+  Input,
+  HostListener,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,6 +25,8 @@ export class ContentDisplayComponent {
   @Input() ariaLabel?: string;
   @Input() backgroundClass: string = '';
 
+  @ViewChild('sliderContent') sliderContent!: ElementRef;
+
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.checkScreenSize();
@@ -36,5 +44,15 @@ export class ContentDisplayComponent {
     return (
       this.router.url === route || (route === 'home' && this.router.url === '/')
     );
+  }
+
+  slideLeft() {
+    const element = this.sliderContent.nativeElement;
+    element.scrollLeft -= 200;
+  }
+
+  slideRight() {
+    const element = this.sliderContent.nativeElement;
+    element.scrollLeft += 200;
   }
 }

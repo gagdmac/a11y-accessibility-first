@@ -57,15 +57,35 @@
         <!--Content buttons STARS-->
         <nav aria-label="Section navigation" role="navigation">
           <ul class="nav nav-pills px-3 py-2">
-            <li class="nav-item me-2 mb-2" *ngFor="let link of links">
-              <a
-                class="nav-link px-2 custom-nav-link"
-                [routerLink]="[link.route]"
-                routerLinkActive="active"
-                [attr.aria-current]="isActive(link.route) ? 'page' : null">
-                {{ link.text }}
-              </a>
-            </li>
+            <div class="slider-container">
+              <button
+                class="slider-btn prev"
+                (click)="slideLeft()"
+                aria-label="Previous items">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <div class="slider-wrapper">
+                <div class="nav-items-container" #sliderContent>
+                  <li class="nav-item me-2 mb-2" *ngFor="let link of links">
+                    <a
+                      class="nav-link px-2 custom-nav-link"
+                      [routerLink]="[link.route]"
+                      routerLinkActive="active"
+                      [attr.aria-current]="
+                        isActive(link.route) ? 'page' : null
+                      ">
+                      {{ link.text }}
+                    </a>
+                  </li>
+                </div>
+              </div>
+              <button
+                class="slider-btn next"
+                (click)="slideRight()"
+                aria-label="Next items">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
           </ul>
         </nav>
         <!--Content buttons ENDS-->
