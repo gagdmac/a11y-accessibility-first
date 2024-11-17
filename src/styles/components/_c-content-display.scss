@@ -51,11 +51,10 @@
     .slider-btn {
       background: rgba(255, 255, 255, 0.8);
       border: none;
-      border-radius: 50%;
-      color: #fff;
+      color: #000000;
       cursor: pointer;
-      height: 32px;
-      width: 32px;
+      height: rem-calc(16);
+      width: rem-calc(16);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -63,6 +62,7 @@
       z-index: 1;
       top: 50%;
       transform: translateY(-50%);
+      background-repeat: no-repeat;
 
       &:hover {
         background: rgba(255, 255, 255, 1);
@@ -70,10 +70,12 @@
 
       &.prev {
         left: 0;
+        background-image: url('../../assets/img/left.svg');
       }
 
       &.next {
         right: 0;
+        background-image: url('../../assets/img/right.svg');
       }
     }
   }

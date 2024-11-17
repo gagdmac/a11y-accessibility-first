@@ -56,22 +56,20 @@
       <div class="col-12">
         <!--Content buttons STARS-->
         <nav aria-label="Section navigation" role="navigation">
-          <ul class="nav nav-pills px-3 py-2">
+          <ul class="nav nav-pills px-3 py-2 my-4">
             <div class="slider-container">
               <button
-                class="slider-btn prev"
+                class="slider-btn prev ms-2"
                 (click)="slideLeft()"
                 (keydown.enter)="slideLeft()"
                 (keydown.space)="slideLeft()"
                 tabindex="0"
-                aria-label="Previous items">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <div class="slider-wrapper">
+                aria-label="Previous items"></button>
+              <div class="slider-wrapper py-2">
                 <div class="nav-items-container" #sliderContent>
-                  <li class="nav-item me-2 mb-2" *ngFor="let link of links">
+                  <li class="nav-item me-2" *ngFor="let link of links">
                     <a
-                      class="nav-link px-2 custom-nav-link"
+                      class="nav-link px-2 py-1 custom-nav-link"
                       [routerLink]="[link.route]"
                       routerLinkActive="active"
                       [attr.aria-current]="
@@ -83,14 +81,12 @@
                 </div>
               </div>
               <button
-                class="slider-btn next"
+                class="slider-btn next me-2"
                 (click)="slideRight()"
                 (keydown.enter)="slideRight()"
                 (keydown.space)="slideRight()"
                 tabindex="0"
-                aria-label="Next items">
-                <i class="fas fa-chevron-right"></i>
-              </button>
+                aria-label="Next items"></button>
             </div>
           </ul>
         </nav>
