@@ -34,6 +34,64 @@
     "a11y-inclusivity": "Inclusivity",
     "a11y-phisical": "Phisical accessibility"
   },
+  "app-content-links": {
+    "accessibility": "Accessibility",
+    "universal": "Universal design",
+    "healcare": "Accessible healthcare",
+    "rights": "Disabilty rights",
+    "inclusivity": "Inclusivity",
+    "phisical": "Phisical accessibility"
+  },
+
+  "accessibility": {
+    "accessibilityTitle": "Accesibility",
+    "accessibilityInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
+    "accessibilityExtra": " without the need for adaptation or specialized design.",
+    "accessibilityExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+  },
+
+  "universal": {
+    "universalTitle": "Universal Design",
+    "universalInfo": "is an approach to creating environments, products, and services that are inherently accessible to all people, regardless of their age, ability, or status in life ",
+    "universalExtra": " without the need for adaptation or specialized design.",
+    "universalExtraB": "It goes beyond basic accessibility requirements to create solutions that work well for everyone from the start.",
+    "universalDataTitle": "The 7 key principles of universal design are:",
+    "universalData": [
+      "Equitable Use",
+      "Flexibility in Use",
+      "Simple and Intuitive",
+      "Perceptible Information",
+      "Tolerance for Error",
+      "Low Physical Effort",
+      "Size and Space for Approach and Use"
+    ]
+  },
+
+  "accessible-healhcare": {
+    "accessible-healhcareTitle": "accessible-healhcare Design",
+    "accessible-healhcareInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
+    "accessible-healhcareExtra": " without the need for adaptation or specialized design.",
+    "accessible-healhcareExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+  },
+
+  "disability-rights": {
+    "disability-rightsTitle": "disability-rights Design",
+    "disability-rightsInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
+    "disability-rightsExtra": " without the need for adaptation or specialized design.",
+    "disability-rightsExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+  },
+  "inclusivity": {
+    "inclusivityTitle": "inclusivity Design",
+    "inclusivityInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
+    "inclusivityExtra": " without the need for adaptation or specialized design.",
+    "inclusivityExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+  },
+  "phisical-accessibility": {
+    "phisical-accessibilityTitle": "phisical-accessibility Design",
+    "phisical-accessibilityInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
+    "phisical-accessibilityExtra": " without the need for adaptation or specialized design.",
+    "phisical-accessibilityExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+  },
 
   "me": {},
 

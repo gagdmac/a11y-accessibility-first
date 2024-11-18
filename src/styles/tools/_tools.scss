@@ -9,7 +9,7 @@ $rem-base: 16px !default;
 
 // list-separator polyfill by Hugo Giraudel (https://sass-compatibility.github.io/#list_separator_function)
 @function rem-separator($list) {
-  @if function-exists("list-separator") ==true {
+  @if function-exists('list-separator') ==true {
     @return list-separator($list);
   }
 
@@ -32,18 +32,18 @@ $rem-base: 16px !default;
   $separator: rem-separator($values);
 
   @each $value in $values {
-    @if type-of($value) == "number" and unit($value) == "rem" and $to== "px" {
+    @if type-of($value) == 'number' and unit($value) == 'rem' and $to== 'px' {
       $result: append($result, $value / 1rem * $rem-base, $separator);
     } @else if
       type-of($value) ==
-      "number" and
+      'number' and
       unit($value) ==
-      "px" and
+      'px' and
       $to==
-      "rem"
+      'rem'
     {
       $result: append($result, $value / ($rem-base / 1rem), $separator);
-    } @else if type-of($value) == "list" {
+    } @else if type-of($value) == 'list' {
       $result: append($result, rem-convert($to, $value...), $separator);
     } @else {
       $result: append($result, $value, $separator);
@@ -58,7 +58,7 @@ $rem-base: 16px !default;
 }
 
 @mixin rem($properties, $values...) {
-  @if type-of($properties) == "map" {
+  @if type-of($properties) == 'map' {
     @each $property in map-keys($properties) {
       @include rem($property, map-get($properties, $property));
     }
@@ -145,6 +145,17 @@ $breakpoints: (
   xxl: 1800px,
   xxxl: 2560px,
 );
+
+// bootstrap breakpoints
+
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+//   xxl: 1400px
+// );
 
 //
 //  RESPOND ABOVE

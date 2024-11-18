@@ -34,6 +34,47 @@
     "a11y-inclusivity": "Inclusividad",
     "a11y-phisical": "Accesibilidad física"
   },
+  "app-content-links": {
+    "accessibility": "Accessibility",
+    "universal": "Universal design",
+    "healcare": "Accessible healthcare",
+    "rights": "Disabilty rights",
+    "inclusivity": "Inclusivity",
+    "phisical": "Phisical accessibility"
+  },
+
+  "universal": {
+    "universalTitle": "Universal Design",
+    "universalInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
+    "universalExtra": " without the need for adaptation or specialized design.",
+    "universalExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+  },
+
+  "accessible-healhcare": {
+    "universalTitle": "Universal Design",
+    "universalInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
+    "universalExtra": " without the need for adaptation or specialized design.",
+    "universalExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+  },
+
+  "disability-rights": {
+    "universalTitle": "Universal Design",
+    "universalInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
+    "universalExtra": " without the need for adaptation or specialized design.",
+    "universalExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+  },
+  "inclusivity": {
+    "universalTitle": "Universal Design",
+    "universalInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
+    "universalExtra": " without the need for adaptation or specialized design.",
+    "universalExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+  },
+  "phisical-accessibility": {
+    "universalTitle": "Universal Design",
+    "universalInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
+    "universalExtra": " without the need for adaptation or specialized design.",
+    "universalExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+  },
 
   "me": {},
 
@@ -53,5 +94,18 @@
 
   "footer": {
     "text": "2024 GADG a11d 1º"
+  },
+
+  "universalB": {
+    "universalTitle": "Diseño Universal",
+    "universalInfo": "se refiere al diseño de productos, dispositivos, servicios o entornos para que puedan ser utilizados por todas las personas, en la mayor medida posible,",
+    "universalExtra": "sin necesidad de adaptación o diseño especializado.",
+    "universalExtraB": "El objetivo del diseño universal es garantizar que las personas con una amplia gama de capacidades y discapacidades puedan acceder a ellos y utilizarlos de forma similar a quienes no tienen esas limitaciones.",
+    "a11y-accessibility": "Accesibilidad",
+    "a11y-universal": "Diseño universal",
+    "a11y-healcare": "Sanidad accesible",
+    "a11y-rights": "Derechos a la accesibilidad",
+    "a11y-inclusivity": "Inclusividad",
+    "a11y-phisical": "Accesibilidad física"
   }
 }

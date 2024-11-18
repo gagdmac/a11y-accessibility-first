@@ -28,32 +28,59 @@
               {{ more }}
             </span>
           </p>
+          <p class="px-5">
+            <ng-container *ngIf="isArray(data); else singleData">
+              <span class="fs-6 d-block mb-2">{{ dataTitle }}</span>
+
+              <ul class="nav nav-pills">
+                <li *ngFor="let principle of dataAsArray" class="mb-1 nav-item">
+                  <a class="btn btn-sm btn-outline-primary me-2">{{
+                    principle
+                  }}</a>
+                </li>
+              </ul>
+
+              <!-- <ul class="fs-6 list-unstyled">
+                <li *ngFor="let principle of dataAsArray" class="mb-1 list-group-item">
+                  <i class="bi bi-arrow-right-short"></i> {{ principle }}
+                </li>
+              </ul> -->
+            </ng-container>
+
+            <ng-template #singleData>
+              <span class="fs-6">{{ data }}</span>
+            </ng-template>
+          </p>
           <!--Defition content ENDS -->
 
           <!--Content buttons STARS-->
-          <nav aria-label="Section navigation" role="tablist">
-            <ul class="nav nav-pills px-5" role="presentation">
-              <!-- Static link first -->
-              <li class="nav-item me-2 mb-2" *ngIf="staticLink">
-                <a class="nav-link active px-2" aria-current="page" href="#">
-                  {{ staticLink }}
-                </a>
-              </li>
-              <li class="nav-item me-2 mb-2" *ngFor="let link of links">
-                <a
-                  class="nav-link px-2 custom-nav-link"
-                  [routerLink]="[link.route]"
-                  [routerLinkActive]="'active'"
-                  [routerLinkActiveOptions]="{ exact: true }"
-                  [attr.aria-current]="isActive(link.route) ? 'page' : null"
-                  [attr.aria-selected]="isActive(link.route)"
-                  role="tab"
-                  [attr.tabindex]="isActive(link.route) ? 0 : -1">
-                  {{ link.text }}
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <div class="px-5">
+            <hr />
+            <nav aria-label="Section navigation" role="tablist">
+              <ul class="nav nav-pills" role="presentation">
+                <!-- Static link first -->
+                <li class="nav-item me-2 mb-2" *ngIf="staticLink">
+                  <a class="nav-link active px-2" aria-current="page" href="#">
+                    {{ staticLink }}
+                  </a>
+                </li>
+                <li class="nav-item me-2 mb-2" *ngFor="let link of links">
+                  <a
+                    class="nav-link px-2 custom-nav-link"
+                    [routerLink]="[link.route]"
+                    [routerLinkActive]="'active'"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    [attr.aria-current]="isActive(link.route) ? 'page' : null"
+                    [attr.aria-selected]="isActive(link.route)"
+                    role="tab"
+                    [attr.tabindex]="isActive(link.route) ? 0 : -1">
+                    {{ link.text }}
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
           <!--Content buttons ENDS-->
         </div>
       </div>

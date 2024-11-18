@@ -18,6 +18,7 @@ import { LinkHighlightService } from 'src/app/services/links-hightligh/links-hig
   styleUrls: ['./content-display.component.scss'],
 })
 export class ContentDisplayComponent implements OnInit, OnDestroy {
+  Array: any;
   constructor(
     private router: Router,
     private linkHighlightService: LinkHighlightService
@@ -31,6 +32,8 @@ export class ContentDisplayComponent implements OnInit, OnDestroy {
   @Input() info: string = '';
   @Input() extra: string = '';
   @Input() more: string = '';
+  @Input() dataTitle: string = '';
+  @Input() data: string | string[] = '';
   @Input() staticLink: string = '';
   @Input() link: string = '';
   @Input() links: Array<{ text: string; route: string }> = [];
@@ -77,5 +80,13 @@ export class ContentDisplayComponent implements OnInit, OnDestroy {
   slideRight() {
     const container = this.sliderContent.nativeElement;
     container.scrollLeft += 200; // Adjust scroll amount as needed
+  }
+
+  isArray(value: any): boolean {
+    return Array.isArray(value);
+  }
+
+  get dataAsArray(): string[] {
+    return Array.isArray(this.data) ? this.data : [];
   }
 }
