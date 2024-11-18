@@ -1,25 +1,27 @@
-<app-content-display
-  title="{{ 'accessible-healhcare.accessible-healhcareTitle' | translate }}"
-  info="{{ 'accessible-healhcare.accessible-healhcareInfo' | translate }}"
-  extra="{{ 'accessible-healhcare.accessible-healhcareExtra' | translate }}"
-  more="{{ 'accessible-healhcare.accessible-healhcareExtraB' | translate }}"
-  [links]="[
-    { text: ('app-content-links.accessibility' | translate), route: '/' },
-    {
-      text: ('app-content-links.universal' | translate),
-      route: '/universal'
-    },
-    {
-      text: ('app-content-links.healcare' | translate),
-      route: '/healthcare'
-    },
-    { text: ('app-content-links.rights' | translate), route: '/rights' },
-    {
-      text: ('app-content-links.inclusivity' | translate),
-      route: '/inclusivity'
-    },
-    { text: ('app-content-links.phisical' | translate), route: '/phisical' }
-  ]"
-  ariaLabel="Section containing my content"
-  backgroundClass="bg-pattern-1">
-</app-content-display>
+<div class="mt-xl-5">
+  <app-content-display
+    title="{{ 'accessible-healhcare.accessible-healhcareTitle' | translate }}"
+    info="{{ 'accessible-healhcare.accessible-healhcareInfo' | translate }}"
+    extra="{{ 'accessible-healhcare.accessible-healhcareExtra' | translate }}"
+    more="{{ 'accessible-healhcare.accessible-healhcareExtraB' | translate }}"
+    [links]="[
+      { text: ('app-content-links.accessibility' | translate), route: '/' },
+      {
+        text: ('app-content-links.universal' | translate),
+        route: '/universal'
+      },
+      {
+        text: ('app-content-links.healcare' | translate),
+        route: '/healthcare'
+      },
+      { text: ('app-content-links.rights' | translate), route: '/rights' },
+      {
+        text: ('app-content-links.inclusivity' | translate),
+        route: '/inclusivity'
+      },
+      { text: ('app-content-links.phisical' | translate), route: '/phisical' }
+    ]"
+    ariaLabel="Section containing my content"
+    backgroundClass="bg-pattern-1">
+  </app-content-display>
+</div>

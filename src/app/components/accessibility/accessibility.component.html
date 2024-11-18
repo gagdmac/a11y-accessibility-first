@@ -1,19 +1,27 @@
-<app-content-display
-  title="{{ 'accessibility.accessibilityTitle' | translate }}"
-  info="{{ 'accessibility.accessibilityInfo' | translate }}"
-  extra="{{ 'accessibility.accessibilityExtra' | translate }}"
-  more="{{ 'accessibility.accessibilityExtraB' | translate }}"
-  [staticLink]="'app-content-links.accessibility' | translate"
-  [links]="[
-    { text: ('app-content-links.universal' | translate), route: '/universal' },
-    { text: ('app-content-links.healcare' | translate), route: '/healthcare' },
-    { text: ('app-content-links.rights' | translate), route: '/rights' },
-    {
-      text: ('app-content-links.inclusivity' | translate),
-      route: '/inclusivity'
-    },
-    { text: ('app-content-links.phisical' | translate), route: '/phisical' }
-  ]"
-  ariaLabel="Section containing my content"
-  backgroundClass="bg-pattern-1">
-</app-content-display>
+<div class="mt-xl-5">
+  <app-content-display
+    title="{{ 'accessibility.accessibilityTitle' | translate }}"
+    info="{{ 'accessibility.accessibilityInfo' | translate }}"
+    extra="{{ 'accessibility.accessibilityExtra' | translate }}"
+    more="{{ 'accessibility.accessibilityExtraB' | translate }}"
+    [staticLink]="'app-content-links.accessibility' | translate"
+    [links]="[
+      {
+        text: ('app-content-links.universal' | translate),
+        route: '/universal'
+      },
+      {
+        text: ('app-content-links.healcare' | translate),
+        route: '/healthcare'
+      },
+      { text: ('app-content-links.rights' | translate), route: '/rights' },
+      {
+        text: ('app-content-links.inclusivity' | translate),
+        route: '/inclusivity'
+      },
+      { text: ('app-content-links.phisical' | translate), route: '/phisical' }
+    ]"
+    ariaLabel="Section containing my content"
+    backgroundClass="bg-pattern-1">
+  </app-content-display>
+</div>

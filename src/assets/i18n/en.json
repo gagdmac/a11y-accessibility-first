@@ -75,22 +75,22 @@
   },
 
   "disability-rights": {
-    "disability-rightsTitle": "disability-rights Design",
-    "disability-rightsInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
-    "disability-rightsExtra": " without the need for adaptation or specialized design.",
-    "disability-rightsExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+    "disability-rightsTitle": "Disability rights",
+    "disability-rightsInfo": "are legal and social protections ensuring that individuals with disabilities have equal opportunities, access, and treatment in all aspects of society. These rights aim to guarantee,",
+    "disability-rightsExtra": "full participation in economic, social, political, and cultural life freedoms as complete and equal members of society.",
+    "disability-rightsExtraB": "This encompasses protection against discrimination and ensures access to education, healthcare, transportation, and technology, and recognizes disability as a form of human diversity."
   },
   "inclusivity": {
-    "inclusivityTitle": "inclusivity Design",
-    "inclusivityInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
-    "inclusivityExtra": " without the need for adaptation or specialized design.",
-    "inclusivityExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+    "inclusivityTitle": "inclusivity",
+    "inclusivityInfo": " when related to accessibility, is the deliberate practice of designing environments, systems, and experiences that welcome and accommodate all individuals,",
+    "inclusivityExtra": " regardless of their physical, cognitive, sensory, or economic abilities.",
+    "inclusivityExtraB": "It ensures that every person can fully participate, understand, and engage without barriers, by creating adaptable spaces, communication methods, and services that recognize and respect diverse human capabilities."
   },
   "phisical-accessibility": {
-    "phisical-accessibilityTitle": "phisical-accessibility Design",
-    "phisical-accessibilityInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
-    "phisical-accessibilityExtra": " without the need for adaptation or specialized design.",
-    "phisical-accessibilityExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+    "phisical-accessibilityTitle": "Phisical accessibility",
+    "phisical-accessibilityInfo": "is the design and implementation of spaces, environments, and infrastructure that can be independently and safely navigated and used by all individuals,",
+    "phisical-accessibilityExtra": " regardless of their physical abilities, mobility limitations, or assistive device requirements.",
+    "phisical-accessibilityExtraB": "It involves removing physical barriers and creating environments with features like ramps, wide doorways, level entrances, appropriate signage, adaptable equipment, and thoughtful spatial arrangements without assistance or unnecessary obstacles."
   },
 
   "me": {},

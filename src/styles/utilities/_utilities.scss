@@ -6,7 +6,7 @@
 .u-fs {
   font-size: 1rem;
 }
-@include respond-above(sm) {
+@include respond-above(xl) {
   .u-fs {
     font-size: 1.3rem;
     line-height: 1.5;
