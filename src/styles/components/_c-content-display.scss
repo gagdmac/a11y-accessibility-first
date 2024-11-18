@@ -81,24 +81,96 @@
     }
   }
 }
+////////////////////////
+//  background classes
+//////////////////////
 
-// Example background classes that can be used
-.bg-pattern-1 {
-  background-image: url('../../assets/img/a11y-home-f-image.svg');
+//accessibility
+.bg-accessibility {
+  background-image: url('../../assets/img/accesibility-image.svg');
   width: 100%;
   height: 42.7vw;
 }
 @include respond-below(mdl) {
-  .bg-pattern-1 {
-    background-image: url('../../assets/img/a11y-home-j-image.svg');
+  .bg-accessibility {
+    background-image: url('../../assets/img/accesibility-mobile-image.svg');
     width: 100%;
     height: 47vw;
     margin-top: rem-calc(60);
   }
 }
 
-.bg-pattern-2 {
-  background-image: url('../../assets/img/a11y-gab-logo.svg');
-  width: 50px;
-  height: 50px;
+//universal
+.bg-universal {
+  background-image: url('../../assets/img/accesibility-image.svg');
+  width: 100%;
+  height: 42.7vw;
+}
+@include respond-below(mdl) {
+  .bg-universal {
+    background-image: url('../../assets/img/accesibility-mobile-image.svg');
+    width: 100%;
+    height: 47vw;
+    margin-top: rem-calc(60);
+  }
+}
+
+//accessible-healthcare
+.bg-accessible-healthcare {
+  background-image: url('../../assets/img/accesibility-image.svg');
+  width: 100%;
+  height: 42.7vw;
+}
+@include respond-below(mdl) {
+  .bg-accessible-healthcare {
+    background-image: url('../../assets/img/accesibility-mobile-image.svg');
+    width: 100%;
+    height: 47vw;
+    margin-top: rem-calc(60);
+  }
+}
+
+//disability-rights
+.bg-disability-rights {
+  background-image: url('../../assets/img/accesibility-image.svg');
+  width: 100%;
+  height: 42.7vw;
+}
+@include respond-below(mdl) {
+  .bg-disability-rights {
+    background-image: url('../../assets/img/accesibility-mobile-image.svg');
+    width: 100%;
+    height: 47vw;
+    margin-top: rem-calc(60);
+  }
+}
+
+//inclusivity
+.bg-inclusivity {
+  background-image: url('../../assets/img/accesibility-image.svg');
+  width: 100%;
+  height: 42.7vw;
+}
+@include respond-below(mdl) {
+  .bg-inclusivity {
+    background-image: url('../../assets/img/accesibility-mobile-image.svg');
+    width: 100%;
+    height: 47vw;
+    margin-top: rem-calc(60);
+  }
+}
+
+//phisical-accessibility
+.bg-phisical-accessibility {
+  background-image: url('../../assets/img/accesibility-image.svg');
+  width: 100%;
+  height: 42.7vw;
+}
+@include respond-below(mdl) {
+  .bg-phisical-accessibility {
+    background-image: url('../../assets/img/accesibility-mobile-image.svg');
+    width: 100%;
+    height: 47vw;
+    margin-top: rem-calc(60);
+  }
 }
