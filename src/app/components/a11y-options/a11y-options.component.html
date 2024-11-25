@@ -17,10 +17,10 @@
     <!--Font size STARS-->
     <div class="card cb2">
       <div class="card-body">
-        <p class="card-title fs-6 fw-bold">
+        <p class="card-title fs-6 fw-bold" [tabindex]="0">
           {{ 'a11y.fontSizeTitle' | translate }}
         </p>
-        <p class="card-text fs-6">
+        <p class="card-text fs-6" [tabindex]="0">
           {{ 'a11y.fontSizeDescription' | translate }}
         </p>
         <button class="btn btn-primary py-0 me-1" (click)="increaseFontSize()">
@@ -36,7 +36,9 @@
           {{ 'a11y.fontSizeReset' | translate }}
         </button>
       </div>
-      <span class="badge text-bg-light d-flex justify-content-start px-3"
+      <span
+        class="badge text-bg-light d-flex justify-content-start px-3"
+        [tabIndex]="0"
         >{{ 'a11y.fontSize' | translate }}{{ fontSize }}%</span
       >
     </div>
