@@ -26,6 +26,7 @@ import { InclusivityComponent } from './components/inclusivity/inclusivity.compo
 import { PhisicalAccessibilityComponent } from './components/phisical-accessibility/phisical-accessibility.component';
 import { ContentDisplayComponent } from './core/content-display/content-display.component';
 import { AccessibilityComponent } from './components/accessibility/accessibility.component';
+import { MenuContentComponent } from './core/menu-content/menu-content.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -47,6 +48,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     PhisicalAccessibilityComponent,
     ContentDisplayComponent,
     AccessibilityComponent,
+    MenuContentComponent,
   ],
   imports: [
     // ngx-translate and the loader module
