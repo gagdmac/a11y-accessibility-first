@@ -22,7 +22,7 @@
 
   "home": {
     "mainContent": "Ir al contenido principal",
-    "accessibilityOptions": "Opciones de accesibilidad",
+    "accessibilityOptions": "Abre las opciones de accesibilidad",
     "accessibilityTitle": "Accesibilidad",
     "accessibilityInfo": "se refiere al diseño de productos, dispositivos, servicios o entornos para que puedan ser utilizados por todas las personas, en la mayor medida posible,",
     "accessibilityExtra": "sin necesidad de adaptación o diseño especializado.",
