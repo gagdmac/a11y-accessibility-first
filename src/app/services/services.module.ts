@@ -2,8 +2,14 @@ import { NgModule } from '@angular/core';
 import { ThemeService } from './themes-color/theme.service';
 import { FontSizeService } from './font-size/font-size.service';
 import { LinkHighlightService } from './links-hightligh/links-highlight.service';
+import { MetaTagService } from './MetaTag/meta-tag.service';
 
 @NgModule({
-  providers: [ThemeService, FontSizeService, LinkHighlightService],
+  providers: [
+    ThemeService,
+    FontSizeService,
+    LinkHighlightService,
+    MetaTagService,
+  ],
 })
 export class ServicesModule {}
