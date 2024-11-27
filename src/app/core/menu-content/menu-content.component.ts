@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 interface MenuItem {
   route: string;
   label: string;
+  active?: boolean;
 }
 
 @Component({
@@ -41,12 +42,36 @@ export class MenuContentComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.checkScrollButtons();
+    this.router.events.subscribe(() => {
+      this.updateActiveItem();
+      this.centerActiveItem();
+    });
   }
 
   private checkScrollButtons() {
     const el = this.slider.nativeElement;
     this.canScrollLeft = el.scrollLeft > 0;
     this.canScrollRight = el.scrollLeft < el.scrollWidth - el.clientWidth;
+  }
+
+  private updateActiveItem() {
+    const currentRoute = this.router.url;
+    this.menuItems.forEach(item => {
+      item.active = item.route === currentRoute;
+    });
+  }
+
+  private centerActiveItem() {
+    const activeItem = this.slider.nativeElement.querySelector('.active');
+    if (activeItem) {
+      const container = this.slider.nativeElement;
+      const scrollLeft = activeItem.offsetLeft - (container.clientWidth / 2) + (activeItem.offsetWidth / 2);
+      container.scrollTo({
+        left: scrollLeft,
+        behavior: 'smooth'
+      });
+      setTimeout(() => this.checkScrollButtons(), 100);
+    }
   }
 
   scroll(direction: 'left' | 'right') {
