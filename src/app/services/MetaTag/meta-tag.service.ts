@@ -76,4 +76,24 @@ export class MetaTagService {
       });
     }
   }
+
+  setTags(config: { title?: string; description?: string; keywords?: string }) {
+    if (config.title) {
+      this.titleService.setTitle(config.title);
+    }
+
+    if (config.description) {
+      this.metaService.updateTag({
+        name: 'description',
+        content: config.description,
+      });
+    }
+
+    if (config.keywords) {
+      this.metaService.updateTag({
+        name: 'keywords',
+        content: config.keywords,
+      });
+    }
+  }
 }
