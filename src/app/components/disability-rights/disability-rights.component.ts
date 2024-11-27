@@ -1,4 +1,7 @@
+// Angular imports
 import { Component, OnInit } from '@angular/core';
+
+// Application services
 import { MetaTagService } from 'src/app/services/MetaTag/meta-tag.service';
 
 @Component({

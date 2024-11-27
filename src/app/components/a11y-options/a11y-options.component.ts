@@ -1,9 +1,14 @@
+// Angular imports
 import { Component, OnInit } from '@angular/core';
+
+// NgX imports
+import { TranslateService } from '@ngx-translate/core';
+
+// Application services
 import { FontSizeService } from 'src/app/services/font-size/font-size.service';
 import { LinkHighlightService } from 'src/app/services/links-hightligh/links-highlight.service';
-import { ThemeService } from 'src/app/services/themes-color/theme.service';
-import { TranslateService } from '@ngx-translate/core';
 import { MetaTagService } from 'src/app/services/MetaTag/meta-tag.service';
+import { ThemeService } from 'src/app/services/themes-color/theme.service';
 
 @Component({
   selector: 'app-a11y-options',
