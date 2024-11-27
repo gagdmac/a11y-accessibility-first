@@ -1,16 +1,48 @@
 <div class="px-5 py-3">
-  <span
-    *ngFor="let item of menuItems"
-    class="badge fw-normal rounded-pill me-2 mb-2"
-    [class.text-bg-primary]="router.isActive(item.route, true)"
-    [class.text-bg-light]="!router.isActive(item.route, true)">
-    <a
-      class="nav-link"
-      aria-current="page"
-      [routerLink]="item.route"
-      [routerLinkActive]="'active'"
-      >{{ item.label | translate }}</a
-    >
-  </span>
-  <hr />
+  <!-- Large screen layout -->
+  <div class="desktop-menu" *ngIf="screenWidth > 1024">
+    <span
+      *ngFor="let item of menuItems"
+      class="badge fw-normal rounded-pill me-2 mb-2"
+      [class.text-bg-primary]="router.isActive(item.route, true)"
+      [class.text-bg-light]="!router.isActive(item.route, true)">
+      <a
+        class="nav-link"
+        aria-current="page"
+        [routerLink]="item.route"
+        [routerLinkActive]="'active'"
+        >{{ item.label | translate }}</a
+      >
+    </span>
+  </div>
+  
+  <!-- Small screen slider -->
+  <div class="mobile-menu cb1" *ngIf="screenWidth <= 1025">
+    <button class="scroll-btn left" (click)="scroll('left')" *ngIf="canScrollLeft">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="slider-container">
+      <div class="slider" #slider 
+           (touchstart)="onTouchStart($event)"
+           (touchmove)="onTouchMove($event)"
+           (touchend)="onTouchEnd()">
+        <span
+          *ngFor="let item of menuItems"
+          class="badge fw-normal rounded-pill me-2"
+          [class.text-bg-primary]="router.isActive(item.route, true)"
+          [class.text-bg-light]="!router.isActive(item.route, true)">
+          <a
+            class="nav-link"
+            aria-current="page"
+            [routerLink]="item.route"
+            [routerLinkActive]="'active'"
+            >{{ item.label | translate }}</a
+          >
+        </span>
+      </div>
+    </div>
+    <button class="scroll-btn right" (click)="scroll('right')" *ngIf="canScrollRight">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
 </div>

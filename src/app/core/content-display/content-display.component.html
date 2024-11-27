@@ -54,9 +54,7 @@
         class="content-display__background"
         [ngClass]="backgroundClass"></div>
       <div class="col-12">
-        <nav aria-label="Section navigation" role="tablist">
-          <ul class="nav nav-pills px-3 py-2 my-4" role="presentation"></ul>
-        </nav>
+        <app-menu-content></app-menu-content>
         <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
       </div>
     </ng-template>
