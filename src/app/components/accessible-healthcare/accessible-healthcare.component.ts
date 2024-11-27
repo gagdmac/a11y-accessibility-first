@@ -17,9 +17,13 @@ export class AccessibleHealthcareComponent implements OnInit {
     this.metaTagService.setTags({
       title: 'Accessible Healthcare',
       description:
-        'Information about accessible healthcare services and resources for people with disabilities.',
+        'Information about accessible healthcare services and facilities for people with disabilities.',
       keywords:
-        'accessible healthcare, medical accessibility, healthcare services, disability healthcare',
+        'accessible healthcare, medical accessibility, healthcare facilities, disability healthcare',
+      ogTitle: 'Accessible Healthcare - A11Y',
+      ogDescription:
+        'Information about accessible healthcare services and facilities for people with disabilities.',
+      twitterCard: 'summary',
     });
   }
 }

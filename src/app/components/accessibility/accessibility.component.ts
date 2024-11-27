@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MetaTagService } from 'src/app/services/MetaTag/meta-tag.service';
 
 @Component({
@@ -6,13 +6,23 @@ import { MetaTagService } from 'src/app/services/MetaTag/meta-tag.service';
   templateUrl: './accessibility.component.html',
   styleUrls: ['./accessibility.component.scss'],
 })
-export class AccessibilityComponent {
-  constructor(private metaTagService: MetaTagService) {
-    // Set custom meta tags for this route
-    this.metaTagService.setCustomMetaTags({
-      title: 'Accessibility first',
+export class AccessibilityComponent implements OnInit {
+  constructor(private metaTagService: MetaTagService) {}
+
+  ngOnInit() {
+    this.setMetaTags();
+  }
+
+  setMetaTags() {
+    this.metaTagService.setTags({
+      title: 'Web Accessibility',
       description:
-        'Accesibilityrefers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible, without the need for adaptation or specialized design',
+        'Learn about web accessibility standards and best practices for creating inclusive digital experiences.',
+      keywords: 'web accessibility, WCAG, digital inclusion, accessible design',
+      ogTitle: 'Web Accessibility - A11Y',
+      ogDescription:
+        'Learn about web accessibility standards and best practices for creating inclusive digital experiences.',
+      twitterCard: 'summary',
     });
   }
 }

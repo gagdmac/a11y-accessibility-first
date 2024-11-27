@@ -20,6 +20,10 @@ export class UniversalDesignComponent implements OnInit {
         'Learn about universal design principles and their application in creating inclusive environments.',
       keywords:
         'universal design, inclusive design, accessibility, design for all',
+      ogTitle: 'Universal Design - A11Y',
+      ogDescription:
+        'Learn about universal design principles and their application in creating inclusive environments.',
+      twitterCard: 'summary',
     });
   }
 }

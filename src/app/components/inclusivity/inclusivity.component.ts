@@ -17,9 +17,13 @@ export class InclusivityComponent implements OnInit {
     this.metaTagService.setTags({
       title: 'Inclusivity',
       description:
-        'Learn about inclusivity practices and creating inclusive environments for all.',
+        'Learn about inclusive practices and creating environments that welcome everyone.',
       keywords:
-        'inclusivity, inclusion, diversity, accessibility, inclusive practices',
+        'inclusivity, diversity, inclusion, accessible environment, equal participation',
+      ogTitle: 'Inclusivity - A11Y',
+      ogDescription:
+        'Learn about inclusive practices and creating environments that welcome everyone.',
+      twitterCard: 'summary',
     });
   }
 }

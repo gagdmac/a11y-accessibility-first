@@ -3,28 +3,39 @@ import { FontSizeService } from 'src/app/services/font-size/font-size.service';
 import { LinkHighlightService } from 'src/app/services/links-hightligh/links-highlight.service';
 import { ThemeService } from 'src/app/services/themes-color/theme.service';
 import { TranslateService } from '@ngx-translate/core';
+import { MetaTagService } from 'src/app/services/MetaTag/meta-tag.service';
 
 @Component({
   selector: 'app-a11y-options',
   templateUrl: './a11y-options.component.html',
   styleUrls: ['./a11y-options.component.scss'],
 })
-export class A11yOptionsComponent {
-  //Default and reset font size
-  // font_size = 16;
-
-  ////////////////////////////
-  //Font Size Increade Decrease
-  ////////////////////////////
-
+export class A11yOptionsComponent implements OnInit {
   constructor(
     private themeService: ThemeService,
     public fontSizeService: FontSizeService,
     public linkHighlightService: LinkHighlightService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private metaTagService: MetaTagService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.setMetaTags();
+  }
+
+  setMetaTags() {
+    this.metaTagService.setTags({
+      title: 'Accessibility Options',
+      description:
+        'Explore various accessibility options and features to enhance your browsing experience.',
+      keywords:
+        'accessibility options, accessibility features, assistive technology, user preferences',
+      ogTitle: 'Accessibility Options - A11Y',
+      ogDescription:
+        'Explore various accessibility options and features to enhance your browsing experience.',
+      twitterCard: 'summary',
+    });
+  }
 
   get fontSize() {
     return this.fontSizeService.getFontSize();

@@ -17,9 +17,13 @@ export class DisabilityRightsComponent implements OnInit {
     this.metaTagService.setTags({
       title: 'Disability Rights',
       description:
-        'Information about disability rights, laws, and advocacy resources.',
+        'Information about disability rights, laws, and advocacy for equal access and opportunities.',
       keywords:
-        'disability rights, disability law, advocacy, accessibility rights',
+        'disability rights, ADA, equality, accessibility laws, disability advocacy',
+      ogTitle: 'Disability Rights - A11Y',
+      ogDescription:
+        'Information about disability rights, laws, and advocacy for equal access and opportunities.',
+      twitterCard: 'summary',
     });
   }
 }
