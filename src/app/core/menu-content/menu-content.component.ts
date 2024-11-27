@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 interface MenuItem {
   route: string;
@@ -12,14 +13,17 @@ interface MenuItem {
   styleUrls: ['./menu-content.component.scss'],
 })
 export class MenuContentComponent {
-  constructor(public router: Router) {}
+  constructor(
+    public router: Router,
+    private translate: TranslateService
+  ) {}
 
   menuItems: MenuItem[] = [
-    { route: '/accessibility', label: 'Accessibility' },
-    { route: '/universal', label: 'Universal design' },
-    { route: '/healthcare', label: 'Accessible Healthcare' },
-    { route: '/rights', label: 'Disability Rights' },
-    { route: '/inclusivity', label: 'Inclusivity' },
-    { route: '/phisical', label: 'Physical Accessibility' },
+    { route: '/accessibility', label: 'app-content-links.accessibility' },
+    { route: '/universal', label: 'app-content-links.universal' },
+    { route: '/healthcare', label: 'app-content-links.healcare' },
+    { route: '/rights', label: 'app-content-links.rights' },
+    { route: '/inclusivity', label: 'app-content-links.inclusivity' },
+    { route: '/phisical', label: 'app-content-links.phisical' },
   ];
 }
