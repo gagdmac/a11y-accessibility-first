@@ -7,81 +7,44 @@
         else largeScreenTemplate
       "></div>
 
+    <ng-template #contentTemplate>
+      <p
+        [class.px-5]="!isSmallScreen"
+        [class.px-3]="isSmallScreen"
+        tabindex="0">
+        <span
+          class="u-fs fw-bold text-primary text-decoration-underline pe-2"
+          >{{ title }}</span
+        >
+        <span class="u-fs fw-bold">{{ info }}</span>
+        <span class="u-fs fw-bold bg-danger text-white px-2">{{ extra }}</span>
+      </p>
+      <p
+        [class.px-5]="!isSmallScreen"
+        [class.px-3]="isSmallScreen"
+        tabindex="0">
+        <span class="u-fs">{{ more }}</span>
+      </p>
+      <p [class.px-5]="!isSmallScreen" [class.px-3]="isSmallScreen">
+        <ng-container *ngIf="isArray(data); else singleData">
+          <span class="fs-6 d-block mb-2">{{ dataTitle }}</span>
+          <ul class="nav nav-pills">
+            <li *ngFor="let principle of dataAsArray" class="mb-1 nav-item">
+              <a class="btn btn-sm btn-outline-primary me-2">{{ principle }}</a>
+            </li>
+          </ul>
+        </ng-container>
+        <ng-template #singleData>
+          <span class="fs-6">{{ data }}</span>
+        </ng-template>
+      </p>
+    </ng-template>
+
     <ng-template #largeScreenTemplate>
       <div class="content-display__background" [ngClass]="backgroundClass">
         <div class="col-12 col-xl-5 col-xxl-4 ps-2 pe-3 py-3">
-          <!--Defition content START -->
-          <p class="px-5" tabindex="0">
-            <span
-              class="u-fs fw-bold text-primary text-decoration-underline px-2">
-              {{ title }}
-            </span>
-            <span class="u-fs fw-bold">
-              {{ info }}
-            </span>
-            <span class="u-fs fw-bold bg-danger text-white px-2">
-              {{ extra }}
-            </span>
-          </p>
-          <p class="px-5" tabindex="0">
-            <span class="u-fs">
-              {{ more }}
-            </span>
-          </p>
-          <p class="px-5">
-            <ng-container *ngIf="isArray(data); else singleData">
-              <span class="fs-6 d-block mb-2">{{ dataTitle }}</span>
-
-              <ul class="nav nav-pills">
-                <li *ngFor="let principle of dataAsArray" class="mb-1 nav-item">
-                  <a class="btn btn-sm btn-outline-primary me-2">{{
-                    principle
-                  }}</a>
-                </li>
-              </ul>
-
-              <!-- <ul class="fs-6 list-unstyled">
-                <li *ngFor="let principle of dataAsArray" class="mb-1 list-group-item">
-                  <i class="bi bi-arrow-right-short"></i> {{ principle }}
-                </li>
-              </ul> -->
-            </ng-container>
-
-            <ng-template #singleData>
-              <span class="fs-6">{{ data }}</span>
-            </ng-template>
-          </p>
-          <!--Defition content ENDS -->
-
-          <!--Content buttons STARS-->
-          <div class="px-5">
-            <hr />
-            <nav aria-label="Section navigation" role="tablist">
-              <ul class="nav nav-pills" role="presentation">
-                <!-- Static link first -->
-                <li class="nav-item me-2 mb-2" *ngIf="staticLink">
-                  <a class="nav-link active px-2" aria-current="page" href="#">
-                    {{ staticLink }}
-                  </a>
-                </li>
-                <li class="nav-item me-2 mb-2" *ngFor="let link of links">
-                  <a
-                    class="nav-link px-2 custom-nav-link"
-                    [routerLink]="[link.route]"
-                    [routerLinkActive]="'active'"
-                    [routerLinkActiveOptions]="{ exact: true }"
-                    [attr.aria-current]="isActive(link.route) ? 'page' : null"
-                    [attr.aria-selected]="isActive(link.route)"
-                    role="tab"
-                    [attr.tabindex]="isActive(link.route) ? 0 : -1">
-                    {{ link.text }}
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-          <!--Content buttons ENDS-->
+          <app-menu-content></app-menu-content>
+          <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
         </div>
       </div>
     </ng-template>
@@ -91,73 +54,10 @@
         class="content-display__background"
         [ngClass]="backgroundClass"></div>
       <div class="col-12">
-        <!--Content buttons STARS-->
         <nav aria-label="Section navigation" role="tablist">
-          <ul class="nav nav-pills px-3 py-2 my-4" role="presentation">
-            <div class="slider-container">
-              <button
-                class="slider-btn prev ms-2"
-                (click)="slideLeft()"
-                (keydown.enter)="slideLeft()"
-                (keydown.space)="slideLeft()"
-                tabindex="0"
-                aria-label="Previous items"></button>
-              <div class="slider-wrapper py-2">
-                <div class="nav-items-container" #sliderContent>
-                  <!-- Static link first -->
-                  <li class="nav-item me-2" *ngIf="staticLink">
-                    <a
-                      class="nav-link active px-2 py-1 custom-nav-link"
-                      aria-current="page"
-                      href="#">
-                      {{ staticLink }}
-                    </a>
-                  </li>
-                  <li class="nav-item me-2" *ngFor="let link of links">
-                    <a
-                      class="nav-link px-2 py-1 custom-nav-link"
-                      [routerLink]="[link.route]"
-                      [routerLinkActive]="'active'"
-                      [routerLinkActiveOptions]="{ exact: true }"
-                      [attr.aria-current]="isActive(link.route) ? 'page' : null"
-                      [attr.aria-selected]="isActive(link.route)"
-                      role="tab"
-                      [attr.tabindex]="isActive(link.route) ? 0 : -1">
-                      {{ link.text }}
-                    </a>
-                  </li>
-                </div>
-              </div>
-              <button
-                class="slider-btn next me-2"
-                (click)="slideRight()"
-                (keydown.enter)="slideRight()"
-                (keydown.space)="slideRight()"
-                tabindex="0"
-                aria-label="Next items"></button>
-            </div>
-          </ul>
+          <ul class="nav nav-pills px-3 py-2 my-4" role="presentation"></ul>
         </nav>
-        <!--Content buttons ENDS-->
-        <!--Content info Starts-->
-        <p class="px-3">
-          <span
-            class="u-fs fw-bold text-primary text-decoration-underline px-2">
-            {{ title }}
-          </span>
-          <span class="u-fs fw-bold">
-            {{ info }}
-          </span>
-          <span class="u-fs fw-bold bg-danger text-white px-2">
-            {{ extra }}
-          </span>
-        </p>
-        <p class="px-3">
-          <span class="u-fs">
-            {{ more }}
-          </span>
-        </p>
-        <!--Content info ENDS-->
+        <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
       </div>
     </ng-template>
   </article>

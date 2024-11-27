@@ -24,7 +24,7 @@ export class ContentDisplayComponent implements OnInit, OnDestroy {
     private linkHighlightService: LinkHighlightService
   ) {}
   //template condition to show the content
-  isSmallScreen = false;
+  isSmallScreen = window.innerWidth < 768;
   isHighlightActive = false;
   private highlightSubscription: Subscription | undefined;
 
@@ -33,11 +33,11 @@ export class ContentDisplayComponent implements OnInit, OnDestroy {
   @Input() extra: string = '';
   @Input() more: string = '';
   @Input() dataTitle: string = '';
-  @Input() data: string | string[] = '';
+  @Input() data: any;
   @Input() staticLink: string = '';
   @Input() link: string = '';
   @Input() links: Array<{ text: string; route: string }> = [];
-  @Input() ariaLabel?: string;
+  @Input() ariaLabel: string = '';
   @Input() backgroundClass: string = '';
 
   @ViewChild('sliderContent') sliderContent!: ElementRef;
@@ -86,7 +86,7 @@ export class ContentDisplayComponent implements OnInit, OnDestroy {
     return Array.isArray(value);
   }
 
-  get dataAsArray(): string[] {
+  get dataAsArray(): any[] {
     return Array.isArray(this.data) ? this.data : [];
   }
 }

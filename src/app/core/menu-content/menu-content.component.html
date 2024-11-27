@@ -1,1 +1,12 @@
-<p>menu-content works!</p>
+<div class="px-5 py-3">
+  <span
+    *ngFor="let item of menuItems"
+    class="badge fw-normal rounded-pill me-2 mb-2"
+    [class.text-bg-primary]="router.isActive(item.route, true)"
+    [class.text-bg-light]="!router.isActive(item.route, true)">
+    <a class="nav-link" aria-current="page" [routerLink]="item.route">{{
+      item.label
+    }}</a>
+  </span>
+  <hr />
+</div>
