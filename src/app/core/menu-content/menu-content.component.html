@@ -19,7 +19,9 @@
   <!-- Small screen slider -->
   <div class="mobile-menu px-3 py-2" *ngIf="screenWidth <= 1025">
     <button class="scroll-btn left" (click)="scroll('left')" *ngIf="canScrollLeft">
-      <i class="fas fa-chevron-left"></i>
+       <span class="sr-only">{{
+              'app-content-links.left' | translate
+            }}</span>
     </button>
     <div class="slider-container">
       <div class="slider" #slider 
@@ -42,7 +44,9 @@
       </div>
     </div>
     <button class="scroll-btn right" (click)="scroll('right')" *ngIf="canScrollRight">
-      <i class="fas fa-chevron-right"></i>
+     <span class="sr-only">{{
+              'app-content-links.right' | translate
+            }}</span>
     </button>
   </div>
 </div>

@@ -40,7 +40,9 @@
     "healcare": "Sanidad accesible",
     "rights": "Derechos a la accesibilidad",
     "inclusivity": "Inclusividad",
-    "phisical": "Accesibilidad física"
+    "phisical": "Accesibilidad física",
+      "left": "mover a la derecha",
+    "right": "mover a la izquierda"
   },
 
   "accessibility": {

@@ -41,7 +41,10 @@
     "healcare": "Accessible healthcare",
     "rights": "Disabilty rights",
     "inclusivity": "Inclusivity",
-    "phisical": "Phisical accessibility"
+    "phisical": "Phisical accessibility",
+    "left": "move to the right",
+    "right": "move to the left"
+
   },
 
   "accessibility": {
