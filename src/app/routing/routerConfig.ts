@@ -15,6 +15,11 @@ import { AccessibilityComponent } from '../components/accessibility/accessibilit
 
 const appRoutes: Routes = [
   {
+    path: 'home',
+    component: HomeComponent,
+    title: 'home',
+  },
+  {
     path: 'accessibility',
     component: AccessibilityComponent,
     title: 'Accessibility fisrt',
@@ -51,7 +56,7 @@ const appRoutes: Routes = [
     title: 'Phisical Accessibility',
   },
 
-  { path: '', redirectTo: '/accessibility', pathMatch: 'full' },
-  { path: '**', redirectTo: '/accessibility' }, // Add wildcard route at the end
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home' }, // Add wildcard route at the end
 ];
 export default appRoutes;

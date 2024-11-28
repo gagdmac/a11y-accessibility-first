@@ -6,15 +6,20 @@
     "english": "English",
     "languageSelection": "Language selection"
   },
+
   "menu": {
-    "liZero": "Home",
-    "liOne": "Digital accessibility"
+    "home": "Home",
+    "accessibility": "Accessibility"
   },
   "submenu": {
-    "liOne": "Projects",
-    "liTwo": "Prototypes",
-    "liThree": "Everything Else"
+    "accessibility": "Accessibility",
+    "universal": "Universal design",
+    "healthcare": "Accessible Healthcare",
+    "rights": "Disability Rights",
+    "inclusivity": "Inclusivity",
+    "phisical": "Phisical Accessibility"
   },
+
   "header": {
     "logo": "Logo of Gabriel Garcia",
     "title": "accessibility first"
@@ -44,7 +49,6 @@
     "phisical": "Phisical accessibility",
     "left": "move to the right",
     "right": "move to the left"
-
   },
 
   "accessibility": {

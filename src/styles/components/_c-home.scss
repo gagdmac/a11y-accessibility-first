@@ -1,18 +1,3 @@
-// .c-home {
-//   .home-img {
-//     background-image: url('../../assets/img/a11y-home-f-image.svg');
-//     width: 100%;
-//     height: 42.7vw;
-//     background-repeat: no-repeat;
-//     background-position: center center;
-//     background-size: cover;
-//   }
-//   @include respond-below(mdl) {
-//     .home-img {
-//       background-image: url('../../assets/img/a11y-home-j-image.svg');
-//       width: 100%;
-//       height: 47vw;
-//       margin-top: rem-calc(60);
-//     }
-//   }
-// }
+.c-home {
+  margin-top: rem-calc(48);
+}

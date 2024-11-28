@@ -55,14 +55,14 @@
           <!--boton modulo accesibilidad ends-->
 
           <nav aria-label="Primary navigation" role="navigation">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-2 mb-2 mb-lg-0">
               <li class="nav-item">
                 <a
                   class="nav-link active"
                   aria-current="page"
                   routerLink="/"
                   routerLinkActive="active">
-                  {{ 'menu.liZero' | translate }}</a
+                  {{ 'menu.home' | translate }}</a
                 >
               </li>
               <!-- <li class="nav-item">
@@ -71,11 +71,11 @@
                   aria-current="page"
                   routerLink="digital"
                   routerLinkActive="">
-                  {{ 'menu.liOne' | translate }}</a
+                  {{ 'menu.a11y' | translate }}</a
                 >
               </li> -->
 
-              <!-- <li class="nav-item dropdown">
+              <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -83,27 +83,42 @@
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  {{ 'menu.liTwo' | translate }}
+                  {{ 'menu.accessibility' | translate }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" routerLink="projects">
-                      {{ 'submenu.liOne' | translate }}</a
+                    <a class="dropdown-item" routerLink="accessibility">
+                      {{ 'submenu.accessibility' | translate }}</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" routerLink="prototypes">{{
-                      'submenu.liTwo' | translate
+                    <a class="dropdown-item" routerLink="universal">{{
+                      'submenu.universal' | translate
                     }}</a>
                   </li>
-                  <li><hr class="dropdown-divider" /></li>
+                  <!-- <li><hr class="dropdown-divider" /></li> -->
                   <li>
-                    <a class="dropdown-item" routerLink="designs">{{
-                      'submenu.liThree' | translate
+                    <a class="dropdown-item" routerLink="healthcare">{{
+                      'submenu.healthcare' | translate
+                    }}</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" routerLink="rights">{{
+                      'submenu.rights' | translate
+                    }}</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" routerLink="inclusivity">{{
+                      'submenu.inclusivity' | translate
+                    }}</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" routerLink="phisical">{{
+                      'submenu.phisical' | translate
                     }}</a>
                   </li>
                 </ul>
-              </li> -->
+              </li>
             </ul>
           </nav>
 
