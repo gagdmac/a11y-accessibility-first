@@ -1,3 +1,32 @@
 .c-home {
   margin-top: rem-calc(48);
+  height: 100%;
+
+  .a11y-today {
+    display: inline-block;
+    background-image: url('../../assets/img/icons/accessibility-future.svg');
+    width: 60%;
+    height: 20vw;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .tutorials {
+    display: inline-block;
+    background-image: url('../../assets/img/icons/tutorials.svg');
+    width: 60%;
+    height: 20vw;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .courses {
+    display: inline-block;
+    background-image: url('../../assets/img/icons/courses.svg');
+    width: 60%;
+    height: 20vw;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
 }
