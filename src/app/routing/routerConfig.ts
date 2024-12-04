@@ -2,7 +2,7 @@
 
 import { Routes } from '@angular/router';
 import { A11yOptionsComponent } from '../components/a11y-options/a11y-options.component';
-import { HomeComponent } from '../components/home/home.component';
+import { HomeComponent } from '../core/home/home.component';
 import { DigitalAccessibilityComponent } from '../components/digital-accessibility/digital-accessibility.component';
 import { UniversalDesignComponent } from '../components/universal-design/universal-design.component';
 import { AccessibleHealthcareComponent } from '../components/accessible-healthcare/accessible-healthcare.component';

@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { ServicesModule } from './services/services.module';
 import { A11yOptionsComponent } from './components/a11y-options/a11y-options.component';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './core/home/home.component';
 
 // import ngx-translate and the http loader
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -27,6 +27,7 @@ import { PhisicalAccessibilityComponent } from './components/phisical-accessibil
 import { ContentDisplayComponent } from './core/content-display/content-display.component';
 import { AccessibilityComponent } from './components/accessibility/accessibility.component';
 import { MenuContentComponent } from './core/menu-content/menu-content.component';
+import { AccessibilityTodayComponent } from './components/accessibility-today/accessibility-today.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -49,6 +50,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     ContentDisplayComponent,
     AccessibilityComponent,
     MenuContentComponent,
+    AccessibilityTodayComponent,
   ],
   imports: [
     // ngx-translate and the loader module
