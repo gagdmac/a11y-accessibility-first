@@ -1,0 +1,37 @@
+<section class="content-display" [attr.aria-label]="ariaLabel">
+  <article class="container-fluid p-0">
+    <div
+      *ngIf="
+        isSmallScreen;
+        then smallScreenTemplate;
+        else largeScreenTemplate
+      "></div>
+    <ng-template #largeScreenTemplate>
+      <div class="content-display__background" [ngClass]="backgroundClass">
+        <div class="col-12 col-xl-5 col-xxl-4 ps-2 pe-3 py-3">
+          <!--Defition content START -->
+          <p class="px-5">
+            <span
+              class="u-fs fw-bold text-primary text-decoration-underline px-2">
+              {{ title }}
+            </span>
+            <span class="u-fs fw-bold">
+              {{ info }}
+            </span>
+            <span class="u-fs fw-bold bg-danger text-white px-2">
+              {{ extra }}
+            </span>
+          </p>
+          <p class="px-5">
+            <span class="u-fs">
+              {{ more }}
+            </span>
+          </p>
+          <!--Defition content ENDS -->
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #smallScreenTemplate>g</ng-template>
+  </article>
+</section>

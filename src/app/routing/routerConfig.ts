@@ -10,6 +10,7 @@ import { DisabilityRightsComponent } from '../components/disability-rights/disab
 import { InclusivityComponent } from '../components/inclusivity/inclusivity.component';
 import { PhisicalAccessibilityComponent } from '../components/phisical-accessibility/phisical-accessibility.component';
 import { AccessibilityComponent } from '../components/accessibility/accessibility.component';
+import { AccessibilityTodayComponent } from '../components/accessibility-today/accessibility-today.component';
 
 // core components
 
@@ -20,9 +21,14 @@ const appRoutes: Routes = [
     title: 'home',
   },
   {
+    path: 'accessibility-today',
+    component: AccessibilityTodayComponent,
+    title: 'Accessibility today',
+  },
+  {
     path: 'accessibility',
     component: AccessibilityComponent,
-    title: 'Accessibility fisrt',
+    title: 'Accessibility first',
   },
   {
     path: 'digital',
