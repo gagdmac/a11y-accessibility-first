@@ -9,32 +9,24 @@
   margin-top: rem-calc(48);
   height: 100%;
 
-  .a11y-today {
+  .svg {
     display: inline-block;
-    background-image: url('../../assets/img/icons/accessibility-future.svg');
-    width: 60%;
-    height: 20vw;
+    width: 55%;
+    height: 18vw;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-  }
-  .tutorials {
-    display: inline-block;
-    background-image: url('../../assets/img/icons/tutorials.svg');
-    width: 60%;
-    height: 20vw;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }
-  .courses {
-    display: inline-block;
-    background-image: url('../../assets/img/icons/courses.svg');
-    width: 60%;
-    height: 20vw;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+
+    &-a11y-today {
+      background-image: url('../../assets/img/icons/accessibility-future.svg');
+    }
+
+    &-tutorials {
+      background-image: url('../../assets/img/icons/tutorials.svg');
+    }
+    &-courses {
+      background-image: url('../../assets/img/icons/courses.svg');
+    }
   }
 }
 
