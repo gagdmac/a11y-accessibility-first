@@ -1,0 +1,38 @@
+// SVG IMAGE
+.svg {
+  display: inline-block;
+  width: 40%;
+  height: 13vw;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &-a11y-today {
+    background-image: url('../../assets/img/icons/accessibility-future.svg');
+  }
+
+  &-tutorials {
+    background-image: url('../../assets/img/icons/tutorials.svg');
+  }
+  &-courses {
+    background-image: url('../../assets/img/icons/courses.svg');
+  }
+}
+
+@include respond-above(xl) {
+  .svg {
+    width: 51%;
+    height: 15vw;
+  }
+}
+
+//CARD BODY
+.card-body {
+  align-content: center;
+  height: 48.6vh;
+}
+@include respond-above(xl) {
+  .card-body {
+    height: 53.4vh;
+  }
+}

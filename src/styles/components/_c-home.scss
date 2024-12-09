@@ -1,46 +1,9 @@
 .c-home {
+  margin-top: rem-calc(48);
   &__background {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     place-content: center;
   }
-
-  margin-top: rem-calc(48);
-  // height: 27vw;
-
-  .svg {
-    display: inline-block;
-    width: 51%;
-    height: 15vw;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-
-    &-a11y-today {
-      background-image: url('../../assets/img/icons/accessibility-future.svg');
-    }
-
-    &-tutorials {
-      background-image: url('../../assets/img/icons/tutorials.svg');
-    }
-    &-courses {
-      background-image: url('../../assets/img/icons/courses.svg');
-    }
-  }
 }
-
-// Example background classes that can be used
-.bg-pattern-1 {
-  background-image: url('../../assets/img/icons/accessibility-future.svg');
-  width: 100%;
-  height: 42.7vw;
-}
-// @include respond-below(mdl) {
-//   .bg-pattern-1 {
-//     background-image: url('../../assets/img/a11y-home-j-image.svg');
-//     width: 100%;
-//     height: 47vw;
-//     margin-top: rem-calc(60);
-//   }
-// }
