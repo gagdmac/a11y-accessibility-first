@@ -6,6 +6,8 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease-out;
 
   &-a11y-today {
     background-image: url('../../assets/img/icons/accessibility-future.svg');
@@ -23,6 +25,23 @@
   .svg {
     width: 51%;
     height: 15vw;
+  }
+}
+
+.card:hover .svg {
+  filter: grayscale(0%);
+}
+
+//CARD
+
+.card {
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+  &:hover {
+    color: var(--bs-button-text);
+    background: var(--bs-link-color);
   }
 }
 
