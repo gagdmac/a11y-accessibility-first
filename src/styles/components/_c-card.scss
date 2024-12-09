@@ -75,11 +75,13 @@
   //CARD BODY
   .card-body {
     align-content: center;
-    height: 48.6vh;
+    height: 100%;
+    margin-top: 14px;
   }
   @include respond-above(xl) {
     .card-body {
       height: 53.4vh;
+      margin-top: 0;
     }
   }
 }
