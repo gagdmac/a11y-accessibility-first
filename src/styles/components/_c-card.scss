@@ -1,57 +1,64 @@
-// SVG IMAGE
-.svg {
-  display: inline-block;
-  width: 40%;
-  height: 13vw;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  filter: grayscale(100%);
-  transition: filter 0.5s ease-out;
-
-  &-a11y-today {
-    background-image: url('../../assets/img/icons/accessibility-future.svg');
-  }
-
-  &-tutorials {
-    background-image: url('../../assets/img/icons/tutorials.svg');
-  }
-  &-courses {
-    background-image: url('../../assets/img/icons/courses.svg');
-  }
-}
-
-@include respond-above(xl) {
+.c-home {
+  // SVG IMAGE
   .svg {
-    width: 51%;
-    height: 15vw;
+    display: inline-block;
+    width: 40%;
+    height: 13vw;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease-out;
+
+    &-a11y-today {
+      background-image: url('../../assets/img/icons/accessibility-future.svg');
+    }
+
+    &-tutorials {
+      background-image: url('../../assets/img/icons/tutorials.svg');
+    }
+    &-courses {
+      background-image: url('../../assets/img/icons/courses.svg');
+    }
   }
-}
 
-.card:hover .svg {
-  filter: grayscale(0%);
-}
-
-//CARD
-
-.card {
-  -webkit-transition: background-color 0.5s ease-out;
-  -moz-transition: background-color 0.5s ease-out;
-  -o-transition: background-color 0.5s ease-out;
-  transition: background-color 0.5s ease-out;
-  &:hover {
-    color: var(--bs-button-text);
-    background: var(--bs-link-color);
+  @include respond-above(xl) {
+    .svg {
+      width: 51%;
+      height: 15vw;
+    }
   }
-}
 
-//CARD BODY
-.card-body {
-  align-content: center;
-  height: 48.6vh;
-}
-@include respond-above(xl) {
+  //CARD
+
+  .card {
+    -webkit-transition: background-color 0.5s ease-out;
+    -moz-transition: background-color 0.5s ease-out;
+    -o-transition: background-color 0.5s ease-out;
+    transition: background-color 0.5s ease-out;
+    &:hover {
+      .svg {
+        filter: grayscale(0%);
+      }
+      color: var(--bs-button-text);
+      background: var(--bs-link-color);
+
+      .btn-primary {
+        background-color: var(--bg-creme-color);
+        border-color: var(--border-creme-color);
+        color: var(--text-creme-color);
+      }
+    }
+  }
+
+  //CARD BODY
   .card-body {
-    height: 53.4vh;
+    align-content: center;
+    height: 48.6vh;
+  }
+  @include respond-above(xl) {
+    .card-body {
+      height: 53.4vh;
+    }
   }
 }
