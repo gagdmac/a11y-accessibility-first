@@ -29,6 +29,7 @@ import { AccessibilityComponent } from './components/accessibility/accessibility
 import { MenuContentComponent } from './core/menu-content/menu-content.component';
 import { AccessibilityTodayComponent } from './components/accessibility-today/accessibility-today.component';
 import { HomeContentComponent } from './core/home-content/home-content.component';
+import { CardComponent } from './shared/components/card/card.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -37,6 +38,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
 @NgModule({
   declarations: [
+    CardComponent,
     AppComponent,
     A11yOptionsComponent,
     HomeComponent,

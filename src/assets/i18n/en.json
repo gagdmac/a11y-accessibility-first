@@ -28,10 +28,20 @@
   "home": {
     "intro-title": "Accessible Creativity",
     "intro": "It represents a fundamental approach to design that seeks to maintain aesthetics while eliminating graphic and interaction barriers so that anyone can access the information and services offered by a website.",
-    "card": {
+    "card1": {
       "title": "Accessibility Today",
       "text": "What does the future of accessibility hold?.",
       "link": "Learn more about accessibility"
+    },
+    "card2": {
+      "title": "Tutorials",
+      "text": "Open our minds to the importance of accessibility.",
+      "link": "Tools to make my website accessible"
+    },
+    "card3": {
+      "title": "Courses",
+      "text": "Accessibility throughout the product lifecycle.",
+      "link": "Learn accessible design and development"
     }
   },
 

@@ -11,45 +11,28 @@
       </div>
     </div>
 
-    <div class="card col-4 text-center rounded-0">
-      <div class="card-body">
-        <h2 class="card-title fs-1 fw-bolder">
-          <span [tabIndex]="0">{{ 'home.card.title' | translate }}</span>
-        </h2>
-        <span class="svg svg-a11y-today"></span>
-        <p class="card-text">
-          <span [tabIndex]="0">{{ 'home.card.text' | translate }}</span>
-        </p>
-        <a href="#" class="btn btn-primary">{{
-          'home.card.link' | translate
-        }}</a>
-      </div>
-    </div>
+    <app-card
+      class="col-4 p-0"
+      title="{{ 'home.card1.title' | translate }}"
+      text="{{ 'home.card1.text' | translate }}"
+      link="{{ 'home.card1.link' | translate }}"
+      iconClass="svg-a11y-today"
+      routerLink="/a11y-today"></app-card>
 
-    <div class="card col-4 text-center rounded-0">
-      <div class="card-body">
-        <h2 class="card-title fs-1 fw-bolder">Tutoriales</h2>
-        <span class="svg svg-tutorials"></span>
-        <p class="card-text">
-          Abrir nuestras mentes a la importancia de la accesibilidad
-        </p>
-        <a href="#" class="btn btn-primary"
-          >Herramientas para hacer mi web accesible</a
-        >
-      </div>
-    </div>
+    <app-card
+      class="col-4 p-0"
+      title="{{ 'home.card2.title' | translate }}"
+      text="{{ 'home.card2.text' | translate }}"
+      link="{{ 'home.card2.link' | translate }}"
+      iconClass="svg-tutorials"
+      routerLink="/tutorials"></app-card>
 
-    <div class="card col-4 text-center rounded-0">
-      <div class="card-body">
-        <h2 class="card-title fs-1 fw-bolder">Cursos</h2>
-        <span class="svg svg-courses"></span>
-        <p class="card-text">
-          Accesibilidad en todo el ciclo de vida del producto
-        </p>
-        <a href="#" class="btn btn-primary"
-          >aprende diseño y desarrollo accesible</a
-        >
-      </div>
-    </div>
+    <app-card
+      class="col-4 p-0"
+      title="{{ 'home.card3.title' | translate }}"
+      text="{{ 'home.card3.text' | translate }}"
+      link="{{ 'home.card3.link' | translate }}"
+      iconClass="svg-courses"
+      routerLink="/courses"></app-card>
   </div>
 </div>

@@ -26,12 +26,22 @@
   },
 
   "home": {
-    "intro-title": "Creatividad Accesible",
-    "intro": "Representa un enfoque fundamental en el diseño que busca mantener la estética eliminando las barreras gráficas y de interacción, para que cualquier persona pueda acceder a la información y servicios que ofrece un sitio web.",
-    "card": {
-      "title": "accesibilidad hoy",
-      "text": "¿Qué nos depara el futuro de la accesibilidad?.",
-      "link": "Saber más sobre accesibilidad"
+    "intro-title": "Creatividad accesible",
+    "intro": "Representa un enfoque fundamental del diseño que busca mantener la estética al tiempo que elimina las barreras gráficas y de interacción para que cualquier persona pueda acceder a la información y los servicios que ofrece un sitio web.",
+    "card1": {
+      "title": "Accessibility Today",
+      "text": "What does the future of accessibility hold?.",
+      "link": "Learn more about accessibility"
+    },
+    "card2": {
+      "title": "Tutoriales",
+      "text": "Abrir nuestras mentes a la importancia de la accesibilidad.",
+      "link": "Herramientas para hacer mi web accesible"
+    },
+    "card3": {
+      "title": "Cursos",
+      "text": "Accesibilidad en todo el ciclo de vida del producto.",
+      "link": "Aprende diseño y desarrollo accesible"
     }
   },
 

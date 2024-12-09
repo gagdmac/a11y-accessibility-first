@@ -1,0 +1,12 @@
+<div class="card text-center rounded-0">
+  <div class="card-body">
+    <h2 class="card-title fs-1 fw-bolder">
+      <span [tabIndex]="0">{{ title }}</span>
+    </h2>
+    <span class="svg" [ngClass]="iconClass"></span>
+    <p class="card-text">
+      <span [tabIndex]="0">{{ text }}</span>
+    </p>
+    <a [routerLink]="routerLink" class="btn btn-primary">{{ link }}</a>
+  </div>
+</div>
