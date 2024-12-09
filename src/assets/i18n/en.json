@@ -26,18 +26,13 @@
   },
 
   "home": {
-    "mainContent": "Go to main content",
-    "accessibilityOptions": "Opens accesibility options",
-    "accessibilityTitle": "Accessibility",
-    "accessibilityInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
-    "accessibilityExtra": "without the need for adaptation or specialized design.",
-    "accessibilityExtraB": "The goal of accessibility is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations.",
-    "a11y-accessibility": "Accessibility",
-    "a11y-universal": "Universal design",
-    "a11y-healcare": "Accessible healthcare",
-    "a11y-rights": "Disabilty rights",
-    "a11y-inclusivity": "Inclusivity",
-    "a11y-phisical": "Phisical accessibility"
+    "intro-title": "Accessible Creativity",
+    "intro": "It represents a fundamental approach to design that seeks to maintain aesthetics while eliminating graphic and interaction barriers so that anyone can access the information and services offered by a website.",
+    "card": {
+      "title": "Accessibility Today",
+      "text": "What does the future of accessibility hold?.",
+      "link": "Learn more about accessibility"
+    }
   },
 
   "app-content-links": {

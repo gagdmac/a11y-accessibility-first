@@ -1,23 +1,28 @@
 <div class="c-home container-fluid p-0">
   <div class="row m-0">
     <div class="py-5 text-center">
-      <h2 class="display-2 fw-bold">Centered screenshot</h2>
+      <h2 class="display-2 fw-bold">
+        <span [tabIndex]="0">{{ 'home.intro-title' | translate }}</span>
+      </h2>
       <div class="col-lg-6 mx-auto">
-        <p class="lead">
-          Quickly design and customize responsive mobile-first sites with
-          Bootstrap, the world’s most popular front-end open source toolkit,
-          featuring Sass variables and mixins, responsive grid system, extensive
-          prebuilt components, and powerful JavaScript plugins.
+        <p class="lead" [tabIndex]="0">
+          {{ 'home.intro' | translate }}
         </p>
       </div>
     </div>
 
     <div class="card col-4 text-center rounded-0">
       <div class="card-body">
-        <h2 class="card-title fs-1 fw-bolder">Accessibility Today</h2>
+        <h2 class="card-title fs-1 fw-bolder">
+          <span [tabIndex]="0">{{ 'home.card.title' | translate }}</span>
+        </h2>
         <span class="svg svg-a11y-today"></span>
-        <p class="card-text">Que nos trae el futuro de la accesibilidad</p>
-        <a href="#" class="btn btn-primary">Saber mas sobre accesiblidad</a>
+        <p class="card-text">
+          <span [tabIndex]="0">{{ 'home.card.text' | translate }}</span>
+        </p>
+        <a href="#" class="btn btn-primary">{{
+          'home.card.link' | translate
+        }}</a>
       </div>
     </div>
 

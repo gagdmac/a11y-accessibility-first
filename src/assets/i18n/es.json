@@ -26,19 +26,15 @@
   },
 
   "home": {
-    "mainContent": "Ir al contenido principal",
-    "accessibilityOptions": "Abre las opciones de accesibilidad",
-    "accessibilityTitle": "Accesibilidad",
-    "accessibilityInfo": "se refiere al diseño de productos, dispositivos, servicios o entornos para que puedan ser utilizados por todas las personas, en la mayor medida posible,",
-    "accessibilityExtra": "sin necesidad de adaptación o diseño especializado.",
-    "accessibilityExtraB": "El objetivo de la accesibilidad es garantizar que las personas con una amplia gama de capacidades y discapacidades puedan acceder a ellos y utilizarlos de forma similar a quienes no tienen esas limitaciones.",
-    "a11y-accessibility": "Accesibilidad",
-    "a11y-universal": "Diseño universal",
-    "a11y-healcare": "Sanidad accesible",
-    "a11y-rights": "Derechos a la accesibilidad",
-    "a11y-inclusivity": "Inclusividad",
-    "a11y-phisical": "Accesibilidad física"
+    "intro-title": "Creatividad Accesible",
+    "intro": "Representa un enfoque fundamental en el diseño que busca mantener la estética eliminando las barreras gráficas y de interacción, para que cualquier persona pueda acceder a la información y servicios que ofrece un sitio web.",
+    "card": {
+      "title": "accesibilidad hoy",
+      "text": "¿Qué nos depara el futuro de la accesibilidad?.",
+      "link": "Saber más sobre accesibilidad"
+    }
   },
+
   "app-content-links": {
     "accessibility": "Accesibilidad",
     "universal": "Diseño Universal",
