@@ -30,6 +30,7 @@ import { MenuContentComponent } from './core/menu-content/menu-content.component
 import { AccessibilityTodayComponent } from './components/accessibility-today/accessibility-today.component';
 import { HomeContentComponent } from './core/home-content/home-content.component';
 import { CardComponent } from './shared/components/card/card.component';
+import { Empty404Component } from './core/empty-404/empty-404.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -55,6 +56,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MenuContentComponent,
     AccessibilityTodayComponent,
     HomeContentComponent,
+    Empty404Component,
   ],
   imports: [
     // ngx-translate and the loader module

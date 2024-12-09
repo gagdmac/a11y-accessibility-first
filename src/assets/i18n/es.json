@@ -45,6 +45,13 @@
     }
   },
 
+  "404": {
+    "404": "404 - Página no encontrada",
+    "text": "Parece que te has perdido",
+    "no-page": "La página que estás buscando no está disponible!",
+    "button": "Volver a la página de inicio"
+  },
+
   "app-content-links": {
     "accessibility": "Accesibilidad",
     "universal": "Diseño Universal",

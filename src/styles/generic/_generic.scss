@@ -70,19 +70,19 @@
 a:focus-visible {
   text-decoration: underline;
   color: #0056b3;
-  z-index: 2000;
+  z-index: 1;
 }
 
 input:focus-visible {
   border-color: blue;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  z-index: 2000;
+  z-index: 1;
 }
 
 button:focus-visible {
   transform: scale(1.05);
   background-color: #f8f9fa;
-  z-index: 2000;
+  z-index: 1;
 }
 
 /* Styles where only focus is supported */

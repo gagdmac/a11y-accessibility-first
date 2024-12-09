@@ -11,6 +11,7 @@ import { InclusivityComponent } from '../components/inclusivity/inclusivity.comp
 import { PhisicalAccessibilityComponent } from '../components/phisical-accessibility/phisical-accessibility.component';
 import { AccessibilityComponent } from '../components/accessibility/accessibility.component';
 import { AccessibilityTodayComponent } from '../components/accessibility-today/accessibility-today.component';
+import { Empty404Component } from '../core/empty-404/empty-404.component';
 
 // core components
 
@@ -60,6 +61,11 @@ const appRoutes: Routes = [
     path: 'phisical',
     component: PhisicalAccessibilityComponent,
     title: 'Phisical Accessibility',
+  },
+  {
+    path: '404',
+    component: Empty404Component,
+    title: 'No page found',
   },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },

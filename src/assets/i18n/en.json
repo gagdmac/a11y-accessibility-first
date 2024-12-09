@@ -45,6 +45,13 @@
     }
   },
 
+  "404": {
+    "404": "404 - Page not found",
+    "text": "Look like you're lost",
+    "no-page": "the page you are looking for is not avaible!",
+    "button": "Go to website home"
+  },
+
   "app-content-links": {
     "accessibility": "Accessibility",
     "universal": "Universal design",
