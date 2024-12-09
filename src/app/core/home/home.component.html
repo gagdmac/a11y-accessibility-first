@@ -12,12 +12,13 @@
     </div>
 
     <app-card
-      class="col-4 p-0"
+      class="col-4 p-0 m-0"
       title="{{ 'home.card1.title' | translate }}"
       text="{{ 'home.card1.text' | translate }}"
       link="{{ 'home.card1.link' | translate }}"
       iconClass="svg-a11y-today"
-      routerLink="/a11y-today"></app-card>
+      routerLink="/a11y-today"
+      [tabIndex]="0"></app-card>
 
     <app-card
       class="col-4 p-0"

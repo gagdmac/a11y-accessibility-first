@@ -13,6 +13,21 @@ h6,
 .h6 {
   font-family: 'Crison';
 }
+h1:focus-visible,
+h2:focus-visible,
+h3:focus-visible,
+h4:focus-visible,
+h5:focus-visible,
+h6:focus-visible,
+.h1:focus-visible,
+.h2:focus-visible,
+.h3:focus-visible,
+.h4:focus-visible,
+.h5:focus-visible,
+.h6:focus-visible {
+  outline: #7fb7ff dotted rem-calc(3) !important;
+  outline-offset: rem-calc(2) !important;
+}
 
 // h1 {
 //   font-size: rem-calc(24);

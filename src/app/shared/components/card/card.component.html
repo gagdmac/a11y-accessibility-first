@@ -1,12 +1,14 @@
-<div class="card text-center rounded-0">
-  <div class="card-body">
-    <h2 class="card-title fs-1 fw-bolder">
-      <span [tabIndex]="0">{{ title }}</span>
-    </h2>
-    <span class="svg" [ngClass]="iconClass"></span>
-    <p class="card-text">
-      <span [tabIndex]="0">{{ text }}</span>
-    </p>
-    <a [routerLink]="routerLink" class="btn btn-primary">{{ link }}</a>
-  </div>
-</div>
+<nav aria-label="Navigation Menu">
+  <a
+    href="{{ routerLink }}"
+    class="card text-center rounded-0 border-top border-black d-block text-decoration-none">
+    <div class="card-body" role="group" aria-label="Content home">
+      <h2 class="card-title fs-1 fw-bolder">{{ title }}</h2>
+      <span class="svg" [ngClass]="iconClass" aria-hidden="true"></span>
+      <p class="card-text">{{ text }}</p>
+      <span class="btn btn-primary d-inline-block" aria-hidden="true">
+        {{ link }}
+      </span>
+    </div>
+  </a>
+</nav>

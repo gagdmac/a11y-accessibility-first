@@ -1,4 +1,11 @@
 .c-home {
+  a {
+    text-decoration: none;
+    color: var(--bs-text-color);
+    &:hover {
+      color: var(--bs-button-text);
+    }
+  }
   // SVG IMAGE
   .svg {
     display: inline-block;
@@ -32,16 +39,18 @@
   //CARD
 
   .card {
+    cursor: pointer;
     -webkit-transition: background-color 0.5s ease-out;
     -moz-transition: background-color 0.5s ease-out;
     -o-transition: background-color 0.5s ease-out;
     transition: background-color 0.5s ease-out;
+
     &:hover {
       .svg {
         filter: grayscale(0%);
       }
       color: var(--bs-button-text);
-      background: var(--bs-link-color);
+      background: var(--bs-button-bg);
 
       .btn-primary {
         background-color: var(--bg-creme-color);
