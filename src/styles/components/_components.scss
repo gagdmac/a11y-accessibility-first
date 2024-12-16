@@ -1,23 +1,5 @@
-/*========= header =============*/
-@import './c-header';
+/*========= core =============*/
+@import './core/_core';
 
-/*========= a11y =============*/
-@import './c-a11y';
-
-/*========= HOME =============*/
-@import './c-home';
-
-/*========= card =============*/
-@import './c-card';
-
-/*========= menu content=============*/
-@import './c-menu-content';
-
-/*========= content display =============*/
-@import './c-content-display';
-
-/*========= footer =============*/
-@import './c-footer';
-
-/*========= 404 =============*/
-@import './c-404';
+/*========= general =============*/
+@import './general/_general';
