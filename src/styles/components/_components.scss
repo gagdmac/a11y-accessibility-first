@@ -1,28 +1,23 @@
-/*CORE*/
-
-/*========= HEADER =============*/
+/*========= header =============*/
 @import './c-header';
 
-/*========= FOOTER =============*/
-@import './c-footer';
-
-/*========= CONTENT =============*/
-@import './c-content-display';
-
-/*========= MENU content =============*/
-@import './c-menu-content';
-
-/*COMPONENTs*/
+/*========= a11y =============*/
+@import './c-a11y';
 
 /*========= HOME =============*/
 @import './c-home';
+
+/*========= card =============*/
 @import './c-card';
 
-/*========= ACCESSIBILITY OPTIONS  =============*/
-@import './c-a11y';
+/*========= menu content=============*/
+@import './c-menu-content';
 
-/*========= DIGITAL ACCESSIBILITY =============*/
-@import './c-digitalA11y';
+/*========= content display =============*/
+@import './c-content-display';
+
+/*========= footer =============*/
+@import './c-footer';
 
 /*========= 404 =============*/
 @import './c-404';
