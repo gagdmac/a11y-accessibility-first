@@ -1,15 +1,39 @@
-<main class="mt-5" *ngIf="blogPosts$ | async as blogPosts">
-  <div class="cb1" *ngFor="let blogPosts of blogPosts.items">
-    <img
-      [src]="blogPosts.fields.featureImage.fields.file.url"
-      alt=""
-      width="300px"
-      height="100%" />
-    <h2>{{ blogPosts.fields.title }}</h2>
-    <p>{{ blogPosts.fields.author }}</p>
-    <p>{{ blogPosts.fields.summary }}</p>
-    <a [routerLink]="['/blog', blogPosts.sys.id]">Read more</a>
+<div class="c-accessibility-today mt-5">
+  <div class="py-4 px-3 px-xxl-5 py-xxl-5">
+    <h2 class="display-2 fw-bolder">
+      <span [tabIndex]="0">{{ 'home.intro-title' | translate }}</span>
+    </h2>
+    <div class="col-lg-6">
+      <p class="lead" [tabIndex]="0">
+        {{ 'home.intro' | translate }}
+      </p>
+    </div>
   </div>
 
-  <!-- <pre>{{ blogPosts$ | async | json }}</pre> -->
-</main>
+  <section class="card mb-3 cb1" *ngIf="blogPosts$ | async as blogPosts">
+    <article class="row g-0 cb3" *ngFor="let blogPosts of blogPosts.items">
+      <div class="col-md-3">
+        <img [src]="blogPosts.fields.featureImage.fields.file.url" alt="" />
+      </div>
+      <div class="col-md-9 align-content-center">
+        <div class="card-body">
+          <h3 class="display-6 fw-bold u-ff-crison">
+            {{ blogPosts.fields.title }}
+          </h3>
+          <p class="">{{ blogPosts.fields.author }}</p>
+          <p class="card-text">
+            {{ blogPosts.fields.summary }}
+          </p>
+          <div class="d-grid gap-2">
+            <button
+              [routerLink]="['/blog', blogPosts.sys.id]"
+              class="btn btn-primary"
+              type="button">
+              Read more
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</div>
