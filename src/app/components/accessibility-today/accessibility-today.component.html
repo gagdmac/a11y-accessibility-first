@@ -54,10 +54,10 @@
     </section>
 
     <!-- Remaining Posts -->
-    <section class="container p-0 shadow my-5 grid gap-3">
+    <section class="container p-0 shadow my-3 my-lg-5 grid gap-3">
       <div class="row m-0">
         <div
-          class="col col-lg-6 p-5 border border-2 border-black"
+          class="col col-lg-6 p-5 border border-2 border-black mb-3 mb-lg-0"
           *ngFor="let post of blogPosts.items.slice(1)">
           <img [src]="post.fields.featureImage.fields.file.url" class="" />
 
