@@ -3,15 +3,15 @@
 import { Routes } from '@angular/router';
 import { A11yOptionsComponent } from '../components/a11y-options/a11y-options.component';
 import { HomeComponent } from '../core/home/home.component';
-import { DigitalAccessibilityComponent } from '../components/digital-accessibility/digital-accessibility.component';
-import { UniversalDesignComponent } from '../components/universal-design/universal-design.component';
-import { AccessibleHealthcareComponent } from '../components/accessible-healthcare/accessible-healthcare.component';
-import { DisabilityRightsComponent } from '../components/disability-rights/disability-rights.component';
-import { InclusivityComponent } from '../components/inclusivity/inclusivity.component';
-import { PhisicalAccessibilityComponent } from '../components/phisical-accessibility/phisical-accessibility.component';
-import { AccessibilityComponent } from '../components/accessibility/accessibility.component';
-import { AccessibilityTodayComponent } from '../components/accessibility-today/accessibility-today.component';
+import { UniversalDesignComponent } from '../components/accessibility-Info/universal-design/universal-design.component';
+import { AccessibleHealthcareComponent } from '../components/accessibility-Info/accessible-healthcare/accessible-healthcare.component';
+import { DisabilityRightsComponent } from '../components/accessibility-Info/disability-rights/disability-rights.component';
+import { InclusivityComponent } from '../components/accessibility-Info/inclusivity/inclusivity.component';
+import { PhisicalAccessibilityComponent } from '../components/accessibility-Info/phisical-accessibility/phisical-accessibility.component';
+import { AccessibilityComponent } from '../components/accessibility-Info/accessibility/accessibility.component';
+
 import { Empty404Component } from '../core/empty-404/empty-404.component';
+import { AccessibilityTodayComponent } from '../components/accessibility-today/accessibility-today.component';
 
 // core components
 
@@ -30,11 +30,6 @@ const appRoutes: Routes = [
     path: 'accessibility',
     component: AccessibilityComponent,
     title: 'Accessibility first',
-  },
-  {
-    path: 'digital',
-    component: DigitalAccessibilityComponent,
-    title: 'Digital accessibility',
   },
   {
     path: 'universal',

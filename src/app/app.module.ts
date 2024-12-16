@@ -18,19 +18,19 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeaderComponent } from '././core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { DigitalAccessibilityComponent } from './components/digital-accessibility/digital-accessibility.component';
-import { UniversalDesignComponent } from './components/universal-design/universal-design.component';
-import { AccessibleHealthcareComponent } from './components/accessible-healthcare/accessible-healthcare.component';
-import { DisabilityRightsComponent } from './components/disability-rights/disability-rights.component';
-import { InclusivityComponent } from './components/inclusivity/inclusivity.component';
-import { PhisicalAccessibilityComponent } from './components/phisical-accessibility/phisical-accessibility.component';
+import { UniversalDesignComponent } from './components/accessibility-Info/universal-design/universal-design.component';
+import { AccessibleHealthcareComponent } from './components/accessibility-Info/accessible-healthcare/accessible-healthcare.component';
+import { DisabilityRightsComponent } from './components/accessibility-Info/disability-rights/disability-rights.component';
+import { InclusivityComponent } from './components/accessibility-Info/inclusivity/inclusivity.component';
+import { PhisicalAccessibilityComponent } from './components/accessibility-Info/phisical-accessibility/phisical-accessibility.component';
 import { ContentDisplayComponent } from './core/content-display/content-display.component';
-import { AccessibilityComponent } from './components/accessibility/accessibility.component';
+
 import { MenuContentComponent } from './core/menu-content/menu-content.component';
 import { AccessibilityTodayComponent } from './components/accessibility-today/accessibility-today.component';
 import { HomeContentComponent } from './core/home-content/home-content.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { Empty404Component } from './core/empty-404/empty-404.component';
+import { AccessibilityComponent } from './components/accessibility-Info/accessibility/accessibility.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -45,7 +45,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    DigitalAccessibilityComponent,
     UniversalDesignComponent,
     AccessibleHealthcareComponent,
     DisabilityRightsComponent,
