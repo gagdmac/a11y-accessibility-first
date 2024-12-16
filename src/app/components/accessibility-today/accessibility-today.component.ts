@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ContentfulService } from 'src/app/services/contentful/contentful.service';
 
 @Component({
@@ -9,9 +10,9 @@ import { ContentfulService } from 'src/app/services/contentful/contentful.servic
 export class AccessibilityTodayComponent implements OnInit {
   constructor(private contentfulService: ContentfulService) {}
 
+  blogPosts$: Observable<any> | undefined;
+
   ngOnInit(): void {
-    this.contentfulService.getEntries().subscribe((response) => {
-      console.log('Contentful response:', response);
-    });
+    this.blogPosts$ = this.contentfulService.getEntries();
   }
 }

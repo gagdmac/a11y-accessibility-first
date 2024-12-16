@@ -22,8 +22,9 @@ export class ContentfulService {
   }
 
   getEntries(query?: object): Observable<EntryCollection<any>> {
-    console.log('Fetching entries with query:', query);
-    return from(this.client.getEntries(query)).pipe(
+    const promise = this.client.getEntries(query);
+    // console.log('Fetching entries with query:', query);
+    return from(promise).pipe(
       tap((response) => console.log('Contentful response:', response)),
       catchError((error) => {
         console.error('Contentful error:', error);
