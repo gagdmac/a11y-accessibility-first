@@ -5,7 +5,20 @@
     &:hover {
       color: var(--bs-button-text);
     }
+    &.disable {
+      pointer-events: none;
+      opacity: 0.6;
+      cursor: not-allowed;
+      .svg {
+        filter: grayscale(100%);
+      }
+
+      .btn-primary {
+        filter: grayscale(100%);
+      }
+    }
   }
+
   // SVG IMAGE
   .svg {
     display: inline-block;

@@ -1,6 +1,8 @@
 <nav aria-label="Navigation Menu">
   <a
-    href="{{ routerLink }}"
+    [attr.href]="!isDisabled ? routerLink : null"
+    [ngClass]="{ disable: isDisabled }"
+    [attr.aria-disabled]="isDisabled"
     class="card text-center rounded-0 border-top border-black d-block text-decoration-none">
     <div class="card-body" role="group" aria-label="Content home">
       <h2 class="card-title fs-1 fw-bolder">{{ title }}</h2>
