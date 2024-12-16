@@ -1,8 +1,8 @@
 // routerConfig.ts
 
 import { Routes } from '@angular/router';
-import { A11yOptionsComponent } from '../components/a11y-options/a11y-options.component';
-import { HomeComponent } from '../core/home/home.component';
+import { A11yOptionsComponent } from '../core/a11y-options/a11y-options.component';
+import { HomeComponent } from '../components/home/home.component';
 import { UniversalDesignComponent } from '../components/accessibility-Info/universal-design/universal-design.component';
 import { AccessibleHealthcareComponent } from '../components/accessibility-Info/accessible-healthcare/accessible-healthcare.component';
 import { DisabilityRightsComponent } from '../components/accessibility-Info/disability-rights/disability-rights.component';

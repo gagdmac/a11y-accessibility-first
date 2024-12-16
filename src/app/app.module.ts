@@ -8,9 +8,9 @@ import appRoutes from './routing/routerConfig';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { ServicesModule } from './services/services.module';
-import { A11yOptionsComponent } from './components/a11y-options/a11y-options.component';
+import { A11yOptionsComponent } from './core/a11y-options/a11y-options.component';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './core/home/home.component';
+import { HomeComponent } from './components/home/home.component';
 
 // import ngx-translate and the http loader
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
