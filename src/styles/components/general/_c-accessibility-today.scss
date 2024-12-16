@@ -4,4 +4,18 @@
     height: 18vw;
     object-fit: cover;
   }
+
+  .svg {
+    display: inline-block;
+    width: 55%;
+    height: 11vw;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    transition: filter 0.5s ease-out;
+
+    &-a11y-today {
+      background-image: url('../../../assets/img/icons/accessibility-future.svg');
+    }
+  }
 }

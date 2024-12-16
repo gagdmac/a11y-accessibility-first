@@ -1,22 +1,26 @@
 <div class="c-accessibility-today mt-5">
   <div class="py-4 px-3 px-xxl-5 py-xxl-5">
-    <h2 class="display-2 fw-bolder">
-      <span [tabIndex]="0">{{ 'home.intro-title' | translate }}</span>
-    </h2>
-    <div class="col-lg-6">
-      <p class="lead" [tabIndex]="0">
-        {{ 'home.intro' | translate }}
-      </p>
+    <div class="row">
+      <div class="col-lg-9">
+        <h2 class="display-2 fw-bolder">
+          <span [tabIndex]="0">{{ 'home.intro-title' | translate }}</span>
+        </h2>
+        <p class="lead" [tabIndex]="0">
+          {{ 'home.intro' | translate }}
+        </p>
+      </div>
+      <div class="col-3 align-content-center d-flex justify-content-center">
+        <span class="svg svg-a11y-today" aria-hidden="true"></span>
+      </div>
     </div>
   </div>
 
-  <section class="card mb-3 cb1" *ngIf="blogPosts$ | async as blogPosts">
+  <section
+    class="card container p-0 rounded-0 mb-3 cb1"
+    *ngIf="blogPosts$ | async as blogPosts">
     <article class="row g-0 cb3" *ngFor="let blogPosts of blogPosts.items">
-      <div class="col-md-3">
-        <img [src]="blogPosts.fields.featureImage.fields.file.url" alt="" />
-      </div>
       <div class="col-md-9 align-content-center">
-        <div class="card-body">
+        <div class="card-body ps-0">
           <h3 class="display-6 fw-bold u-ff-crison">
             {{ blogPosts.fields.title }}
           </h3>
@@ -33,6 +37,9 @@
             </button>
           </div>
         </div>
+      </div>
+      <div class="col-md-3">
+        <img [src]="blogPosts.fields.featureImage.fields.file.url" alt="" />
       </div>
     </article>
   </section>
