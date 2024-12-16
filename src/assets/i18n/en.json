@@ -45,6 +45,10 @@
     }
   },
 
+  "accessibility-today": {
+    "title": "Accessibility Today",
+    "intro": "Accessibility is transforming from a checkbox to a priority. Technology now empowers inclusivity, breaking barriers for people with disabilities through innovative design, AI-driven solutions, and universal digital experiences that celebrate human diversity and potential."
+  },
   "404": {
     "404": "404 - Page not found",
     "text": "Look like you're lost",
