@@ -12,6 +12,7 @@ import { AccessibilityComponent } from '../components/accessibility-Info/accessi
 
 import { Empty404Component } from '../core/empty-404/empty-404.component';
 import { AccessibilityTodayComponent } from '../components/accessibility-today/accessibility-today.component';
+import { BlogPostComponent } from '../components/accessibility-today/blog-post/blog-post.component';
 
 // core components
 
@@ -25,6 +26,11 @@ const appRoutes: Routes = [
     path: 'accessibility-today',
     component: AccessibilityTodayComponent,
     title: 'Accessibility today',
+  },
+  {
+    path: 'blog/:id',
+    component: BlogPostComponent,
+    title: 'blog/:id',
   },
   {
     path: 'accessibility',

@@ -1,0 +1,14 @@
+<main class="mt-5" *ngIf="blogPost$ | async as blogPosts">
+  <div class="container">
+    <img
+      [src]="blogPosts.fields.featureImage.fields.file.url"
+      alt=""
+      width="300px"
+      height="100%" />
+    <h2>{{ blogPosts.fields.title }}</h2>
+    <p>{{ blogPosts.fields.author }}</p>
+    <div [innerHTML]="richTextToHtml(blogPosts.fields.content)"></div>
+  </div>
+
+  <!-- <pre>{{ blogPost$ | async | json }}</pre> -->
+</main>

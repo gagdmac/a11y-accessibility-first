@@ -34,8 +34,9 @@ export class ContentfulService {
   }
 
   getEntry(entryId: string): Observable<Entry<any>> {
-    console.log('Fetching entry:', entryId);
-    return from(this.client.getEntry(entryId)).pipe(
+    const promise = this.client.getEntry(entryId);
+    // console.log('Fetching entry:', entryId);
+    return from(promise).pipe(
       tap((response) => console.log('Contentful entry response:', response)),
       catchError((error) => {
         console.error('Contentful error:', error);

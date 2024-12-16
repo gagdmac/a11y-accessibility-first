@@ -8,7 +8,7 @@
     <h2>{{ blogPosts.fields.title }}</h2>
     <p>{{ blogPosts.fields.author }}</p>
     <p>{{ blogPosts.fields.summary }}</p>
-    <a [routerLink]="['/home', blogPosts.sys.id]">Read more</a>
+    <a [routerLink]="['/blog', blogPosts.sys.id]">Read more</a>
   </div>
 
   <!-- <pre>{{ blogPosts$ | async | json }}</pre> -->
