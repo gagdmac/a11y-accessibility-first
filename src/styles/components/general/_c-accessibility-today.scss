@@ -5,10 +5,24 @@
     object-fit: cover;
   }
 
+  p {
+    &.intro {
+      font-size: 5vw;
+    }
+  }
+
+  @include respond-above(mdl) {
+    p {
+      &.intro {
+        font-size: rem-calc(20px) !important;
+      }
+    }
+  }
+
   .svg {
     display: inline-block;
-    width: 70%;
-    height: 11vw;
+    width: 45%;
+    height: 46vw;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -16,6 +30,19 @@
 
     &-a11y-today {
       background-image: url('../../../assets/img/icons/accessibility-future.svg');
+    }
+  }
+
+  @include respond-above(md) {
+    .svg {
+      width: 70%;
+      height: 13vw;
+    }
+  }
+  @include respond-above(xl) {
+    .svg {
+      width: 63%;
+      height: 9vw;
     }
   }
 

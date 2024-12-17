@@ -1,18 +1,19 @@
 <div class="c-accessibility-today mt-5">
-  <div class="container py-4 px-3 px-xxl-5 py-xxl-5">
+  <div class="container py-4 px-3 px-xxl-5 py-xl-5">
     <div class="row">
-      <div class="col-lg-9">
+      <div class="col-lg-9 text-lg-start text-center">
         <h2 class="display-2 fw-bolder">
           <span [tabIndex]="0">{{
             'accessibility-today.title' | translate
           }}</span>
         </h2>
-        <p class="lead" [tabIndex]="0">
+        <p class="intro" [tabIndex]="0">
           {{ 'accessibility-today.intro' | translate }}
         </p>
       </div>
-      <div class="col-3 align-content-center d-flex justify-content-center">
-        <span class="svg svg-a11y-today" aria-hidden="true"></span>
+      <div
+        class="col col-xl-3 align-content-center d-flex justify-content-center">
+        <span class="svg svg-a11y-today me-4 me-lg-0" aria-hidden="true"></span>
       </div>
     </div>
   </div>
@@ -31,14 +32,6 @@
             <p class="card-text">
               {{ blogPosts.items[0].fields.summary }}
             </p>
-            <!-- <div class="d-grid gap-2">
-              <button
-                [routerLink]="['/blog', blogPosts.items[0].sys.id]"
-                class="btn btn-primary"
-                type="button">
-                Read more
-              </button>
-            </div> -->
             <button
               [routerLink]="['/blog', blogPosts.items[0].sys.id]"
               class="btn btn-primary"
@@ -56,10 +49,10 @@
     </section>
 
     <!-- Remaining Posts -->
-    <section class="container p-0 shadow my-3 my-lg-5 grid gap-3">
+    <section class="container p-0 shadow my-5 my-lg-5 grid gap-3">
       <div class="row m-0">
         <div
-          class="col col-lg-6 p-5 border border-2 border-black mb-3 mb-lg-0"
+          class="col col-lg-6 p-5 border border-2 border-black mb-5 mb-lg-0"
           *ngFor="let post of blogPosts.items.slice(1)">
           <img
             [src]="post.fields.featureImage.fields.file.url"
