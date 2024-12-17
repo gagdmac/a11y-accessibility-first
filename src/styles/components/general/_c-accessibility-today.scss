@@ -91,19 +91,19 @@
       // width: 70%;
       // height: 12vw;
       width: 21%;
-      height: 15vw;
+      height: 17vw;
     }
   }
 
   @include respond-above(md) {
     .svg {
-      width: 70%;
-      height: 17vw;
+      width: 85%;
+      height: 16vw;
     }
   }
   @include respond-above(xl) {
     .svg {
-      width: 63%;
+      width: 83%;
       height: 13vw;
     }
   }
