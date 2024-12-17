@@ -1,11 +1,11 @@
 <div class="c-home container-fluid p-0">
   <div class="row m-0">
-    <div class="py-4 py-xxl-5 text-center">
+    <div class="pt-4 pb-3 py-xxl-5 text-center">
       <h2 class="display-2 fw-bold">
         <span [tabIndex]="0">{{ 'home.intro-title' | translate }}</span>
       </h2>
       <div class="col-lg-6 mx-auto">
-        <p class="lead" [tabIndex]="0">
+        <p class="lead fw-normal" [tabIndex]="0">
           {{ 'home.intro' | translate }}
         </p>
       </div>
@@ -13,7 +13,7 @@
 
     <app-card
       [isDisabled]="false"
-      class="col col-6 col-lg-4 p-0 m-0"
+      class="col col-12 col-lg-4 p-0 m-0"
       title="{{ 'home.card1.title' | translate }}"
       text="{{ 'home.card1.text' | translate }}"
       link="{{ 'home.card1.link' | translate }}"

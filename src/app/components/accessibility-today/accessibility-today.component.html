@@ -1,19 +1,27 @@
 <div class="c-accessibility-today mt-5">
   <div class="container py-4 px-3 px-xxl-5 py-xl-5">
     <div class="row">
-      <div class="col-lg-9 text-lg-start text-center">
-        <h2 class="display-2 fw-bolder">
-          <span [tabIndex]="0">{{
-            'accessibility-today.title' | translate
-          }}</span>
-        </h2>
+      <div class="col-lg-9 text-center text-lg-start">
+        <div
+          class="d-sm-flex justify-content-between align-items-center mb-4 mb-lg-0">
+          <h2 class="display-1 fw-bolder mt-3 mt-lg-0">
+            <span [tabIndex]="0">{{
+              'accessibility-today.title' | translate
+            }}</span>
+          </h2>
+          <span
+            class="svg svg-a11y-today svg-mobile me-4 me-lg-0"
+            aria-hidden="true"></span>
+        </div>
         <p class="intro" [tabIndex]="0">
           {{ 'accessibility-today.intro' | translate }}
         </p>
       </div>
       <div
         class="col col-xl-3 align-content-center d-flex justify-content-center">
-        <span class="svg svg-a11y-today me-4 me-lg-0" aria-hidden="true"></span>
+        <span
+          class="svg svg-a11y-today svg-desktop me-4 me-lg-0"
+          aria-hidden="true"></span>
       </div>
     </div>
   </div>

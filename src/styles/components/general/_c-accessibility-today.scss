@@ -11,16 +11,23 @@
     }
   }
 
+  @include respond-above(sm) {
+    p {
+      &.intro {
+        font-size: rem-calc(30px) !important;
+      }
+    }
+  }
+
   @include respond-above(mdl) {
     p {
       &.intro {
-        font-size: rem-calc(20px) !important;
+        font-size: rem-calc(20) !important;
       }
     }
   }
 
   .svg {
-    display: inline-block;
     width: 45%;
     height: 46vw;
     background-repeat: no-repeat;
@@ -30,6 +37,36 @@
 
     &-a11y-today {
       background-image: url('../../../assets/img/icons/accessibility-future.svg');
+    }
+
+    &-mobile {
+      display: none;
+    }
+
+    &-desktop {
+      display: inline-block;
+    }
+  }
+
+  @include respond-between(sm, lg) {
+    .svg {
+      // width: 21%;
+      // height: 18vw;
+      &-mobile {
+        display: inline-block;
+      }
+      &-desktop {
+        display: none;
+      }
+    }
+  }
+
+  @include respond-above(sm) {
+    .svg {
+      // width: 70%;
+      // height: 12vw;
+      width: 18%;
+      height: 15vw;
     }
   }
 
