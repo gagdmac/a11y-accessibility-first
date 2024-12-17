@@ -9,7 +9,8 @@
 
   "menu": {
     "home": "Home",
-    "accessibility": "Accessibility"
+    "accessibility": "Accessibility",
+    "accessibility-today": "Accessibility today"
   },
   "submenu": {
     "accessibility": "Accessibility",
