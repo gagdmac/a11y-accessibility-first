@@ -29,9 +29,10 @@
   <ng-container *ngIf="blogPosts$ | async as blogPosts">
     <!-- First Post -->
     <section
-      class="card shadow border-2 border-black ps-5 pe-0 container rounded-0 mb-3">
-      <article class="row g-0">
-        <div class="post0 col-md-9 align-content-center">
+      class="card shadow border-2 border-black ps-5 pe-4 py-5 py-lg-0 ps-lg-5 pe-lg-0 container rounded-0 mb-3">
+      <article
+        class="row g-0 d-flex flex-column flex-sm-row flex-column-reverse">
+        <div class="post0 col-md-9 align-content-center mt-4 mt-lg-0">
           <div class="card-body ps-0">
             <h3 class="display-6 fw-bold u-ff-crison" [tabIndex]="0">
               {{ blogPosts.items[0].fields.title }}
@@ -49,7 +50,7 @@
             </button>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 pe-4 pe-lg-0 pt-lg-0">
           <a [routerLink]="['/blog', blogPosts.items[0].sys.id]">
             <img
               [src]="blogPosts.items[0].fields.featureImage.fields.file.url"
