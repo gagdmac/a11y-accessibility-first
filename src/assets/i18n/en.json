@@ -9,7 +9,7 @@
 
   "menu": {
     "home": "Home",
-    "accessibility": "Accessibility",
+    "accessibility": "What is accessibility?",
     "accessibility-today": "Accessibility today"
   },
   "submenu": {
@@ -48,7 +48,8 @@
 
   "accessibility-today": {
     "title": "Accessibility Today",
-    "intro": "Accessibility is transforming from a checkbox to a priority. Technology now empowers inclusivity, breaking barriers for people with disabilities through innovative design, AI-driven solutions, and universal digital experiences that celebrate human diversity and potential."
+    "intro": "Accessibility is transforming from a checkbox to a priority. Technology now empowers inclusivity, breaking barriers for people with disabilities through innovative design, AI-driven solutions, and universal digital experiences that celebrate human diversity and potential.",
+    "read-more": "Read article >"
   },
   "404": {
     "404": "404 - Page not found",

@@ -64,3 +64,9 @@ $f-style: rem-calc(-3);
     transform: none !important;
   }
 }
+
+.btn-custom {
+  background: var(--bg-creme-color);
+  border: var(--border-creme-color);
+  color: var(--text-creme-color);
+}

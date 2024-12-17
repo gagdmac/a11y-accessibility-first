@@ -33,25 +33,28 @@
       <article class="row g-0">
         <div class="post0 col-md-9 align-content-center">
           <div class="card-body ps-0">
-            <h3 class="display-6 fw-bold u-ff-crison">
+            <h3 class="display-6 fw-bold u-ff-crison" [tabIndex]="0">
               {{ blogPosts.items[0].fields.title }}
             </h3>
-            <p>{{ blogPosts.items[0].fields.author }}</p>
-            <p class="card-text">
+            <p [tabIndex]="0">{{ blogPosts.items[0].fields.author }}</p>
+            <p class="card-text" [tabIndex]="0">
               {{ blogPosts.items[0].fields.summary }}
             </p>
             <button
               [routerLink]="['/blog', blogPosts.items[0].sys.id]"
-              class="btn btn-primary"
+              class="btn btn-primary mt-2"
               type="button">
-              Read more
+              {{ 'accessibility-today.read-more' | translate }}
+              {{ blogPosts.items[0].fields.title }}
             </button>
           </div>
         </div>
         <div class="col-md-3">
-          <img
-            [src]="blogPosts.items[0].fields.featureImage.fields.file.url"
-            alt="" />
+          <a [routerLink]="['/blog', blogPosts.items[0].sys.id]">
+            <img
+              [src]="blogPosts.items[0].fields.featureImage.fields.file.url"
+              alt="" />
+          </a>
         </div>
       </article>
     </section>
@@ -79,7 +82,8 @@
               [routerLink]="['/blog', post.sys.id]"
               class="btn btn-primary"
               type="button">
-              Read more
+              {{ 'accessibility-today.read-more' | translate }}
+              {{ post.fields.title }}
             </button>
           </div>
         </div>
