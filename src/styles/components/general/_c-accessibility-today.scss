@@ -1,8 +1,33 @@
 .c-accessibility-today {
   img {
     width: 100%;
-    height: 18vw;
+    height: 40vw;
     object-fit: cover;
+  }
+
+  @include respond-between(sm, lg) {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    &.post0 {
+      img {
+        height: 100%;
+      }
+    }
+    &.postN {
+      img {
+        height: auto;
+      }
+    }
+  }
+
+  @include respond-above(lg) {
+    img {
+      width: 100%;
+      height: 21vw;
+      object-fit: cover;
+    }
   }
 
   p {
@@ -65,7 +90,7 @@
     .svg {
       // width: 70%;
       // height: 12vw;
-      width: 18%;
+      width: 21%;
       height: 15vw;
     }
   }
@@ -73,13 +98,13 @@
   @include respond-above(md) {
     .svg {
       width: 70%;
-      height: 13vw;
+      height: 17vw;
     }
   }
   @include respond-above(xl) {
     .svg {
       width: 63%;
-      height: 9vw;
+      height: 13vw;
     }
   }
 

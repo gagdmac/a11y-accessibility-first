@@ -1,7 +1,7 @@
 <div class="c-accessibility-today mt-5">
   <div class="container py-4 px-3 px-xxl-5 py-xl-5">
     <div class="row">
-      <div class="col-lg-9 text-center text-lg-start">
+      <div class="col-lg-8 col-lg-8 text-center text-lg-start">
         <div
           class="d-sm-flex justify-content-between align-items-center mb-4 mb-lg-0">
           <h2 class="display-1 fw-bolder mt-3 mt-lg-0">
@@ -18,7 +18,7 @@
         </p>
       </div>
       <div
-        class="col col-xl-3 align-content-center d-flex justify-content-center">
+        class="col col-lg-4 col-xl-4 align-content-center d-flex justify-content-center">
         <span
           class="svg svg-a11y-today svg-desktop me-4 me-lg-0"
           aria-hidden="true"></span>
@@ -31,7 +31,7 @@
     <section
       class="card shadow border-2 border-black ps-5 pe-0 container rounded-0 mb-3">
       <article class="row g-0">
-        <div class="col-md-9 align-content-center">
+        <div class="post0 col-md-9 align-content-center">
           <div class="card-body ps-0">
             <h3 class="display-6 fw-bold u-ff-crison">
               {{ blogPosts.items[0].fields.title }}
@@ -57,10 +57,10 @@
     </section>
 
     <!-- Remaining Posts -->
-    <section class="container p-0 shadow my-5 my-lg-5 grid gap-3">
-      <div class="row m-0">
+    <section class="container p-0 my-5 my-lg-5 grid gap-3">
+      <article class="row m-0">
         <div
-          class="col col-lg-6 p-5 border border-2 border-black mb-5 mb-lg-0"
+          class="postN col-12 col-lg-6 shadow p-5 border border-2 border-black mb-5 mb-lg-0"
           *ngFor="let post of blogPosts.items.slice(1)">
           <img
             [src]="post.fields.featureImage.fields.file.url"
@@ -83,7 +83,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </article>
     </section>
   </ng-container>
 </div>
