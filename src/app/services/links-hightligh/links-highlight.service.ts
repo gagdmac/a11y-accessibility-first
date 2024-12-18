@@ -6,7 +6,7 @@ import { DOCUMENT } from '@angular/common';
 })
 export class LinkHighlightService {
   private renderer: Renderer2;
-  private highlightedLinks: HTMLAnchorElement[] = [];
+  private highlightedElements: Element[] = []; // Changed from HTMLAnchorElement[] to Element[]
   private highlightColor = 'yellow';
   private isHighlightActive = false;
   isHighlightActive$: any;
@@ -24,7 +24,7 @@ export class LinkHighlightService {
   }
 
   get highlightedLinksCount() {
-    return this.highlightedLinks.length;
+    return this.highlightedElements.length;
   }
 
   toggleLinkHighlight(): string {
@@ -48,24 +48,29 @@ export class LinkHighlightService {
   }
 
   private highlightLinks() {
-    const links = this.document.querySelectorAll('a');
-    links.forEach((link) => {
-      const linkElement = link as HTMLAnchorElement;
-      this.renderer.setStyle(
-        linkElement,
-        'background-color',
-        this.highlightColor
-      );
-      this.renderer.setStyle(linkElement, 'color', '#222222');
-      this.highlightedLinks.push(linkElement);
+    const elements = this.document.querySelectorAll(
+      'a:not(.no-highlight), [routerLink]:not(.no-highlight)'
+    );
+    elements.forEach((element) => {
+      if (!element.classList.contains('highlight-active')) {
+        this.renderer.setStyle(
+          element,
+          'background-color',
+          this.highlightColor
+        );
+        this.renderer.setStyle(element, 'color', '#222222');
+        this.renderer.addClass(element, 'highlight-active');
+        this.highlightedElements.push(element);
+      }
     });
   }
 
   private removeHighlights() {
-    this.highlightedLinks.forEach((link) => {
-      this.renderer.setStyle(link, 'background-color', 'transparent');
-      this.renderer.setStyle(link, 'color', '');
+    this.highlightedElements.forEach((element) => {
+      this.renderer.removeStyle(element, 'background-color');
+      this.renderer.removeStyle(element, 'color');
+      this.renderer.removeClass(element, 'highlight-active');
     });
-    this.highlightedLinks = [];
+    this.highlightedElements = [];
   }
 }
