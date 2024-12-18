@@ -16,6 +16,11 @@ export class LinkHighlightService {
     @Inject(DOCUMENT) private document: Document
   ) {
     this.renderer = this.rendererFactory.createRenderer(null, null);
+    // Check localStorage for saved state
+    this.isHighlightActive = localStorage.getItem('highlightLinks') === 'true';
+    if (this.isHighlightActive) {
+      this.highlightLinks();
+    }
   }
 
   get highlightedLinksCount() {
@@ -24,6 +29,8 @@ export class LinkHighlightService {
 
   toggleLinkHighlight(): string {
     this.isHighlightActive = !this.isHighlightActive;
+    localStorage.setItem('highlightLinks', this.isHighlightActive.toString());
+
     if (this.isHighlightActive) {
       this.highlightLinks();
       return 'a11y.removeHighlights';

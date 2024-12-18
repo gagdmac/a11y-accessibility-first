@@ -1,6 +1,14 @@
-import { Component, HostListener, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  Component,
+  HostListener,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+} from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { LinkHighlightService } from 'src/app/services/links-hightligh/links-highlight.service';
+import { filter } from 'rxjs/operators';
 
 interface MenuItem {
   route: string;
@@ -23,8 +31,18 @@ export class MenuContentComponent implements AfterViewInit {
 
   constructor(
     public router: Router,
-    private translate: TranslateService
-  ) {}
+    private translate: TranslateService,
+    private linkHighlightService: LinkHighlightService
+  ) {
+    // Subscribe to router events for navigation
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        setTimeout(() => {
+          this.linkHighlightService.refreshHighlights();
+        }, 100);
+      });
+  }
 
   menuItems: MenuItem[] = [
     { route: '/accessibility', label: 'app-content-links.accessibility' },
@@ -46,6 +64,7 @@ export class MenuContentComponent implements AfterViewInit {
       this.updateActiveItem();
       this.centerActiveItem();
     });
+    this.linkHighlightService.refreshHighlights();
   }
 
   private checkScrollButtons() {
@@ -56,7 +75,7 @@ export class MenuContentComponent implements AfterViewInit {
 
   private updateActiveItem() {
     const currentRoute = this.router.url;
-    this.menuItems.forEach(item => {
+    this.menuItems.forEach((item) => {
       item.active = item.route === currentRoute;
     });
   }
@@ -65,10 +84,13 @@ export class MenuContentComponent implements AfterViewInit {
     const activeItem = this.slider.nativeElement.querySelector('.active');
     if (activeItem) {
       const container = this.slider.nativeElement;
-      const scrollLeft = activeItem.offsetLeft - (container.clientWidth / 2) + (activeItem.offsetWidth / 2);
+      const scrollLeft =
+        activeItem.offsetLeft -
+        container.clientWidth / 2 +
+        activeItem.offsetWidth / 2;
       container.scrollTo({
         left: scrollLeft,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
       setTimeout(() => this.checkScrollButtons(), 100);
     }
@@ -79,7 +101,7 @@ export class MenuContentComponent implements AfterViewInit {
     const scrollAmount = el.clientWidth * 0.8;
     el.scrollBy({
       left: direction === 'left' ? -scrollAmount : scrollAmount,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
     setTimeout(() => this.checkScrollButtons(), 100);
   }
