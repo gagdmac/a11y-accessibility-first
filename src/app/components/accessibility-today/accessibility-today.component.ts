@@ -38,4 +38,10 @@ export class AccessibilityTodayComponent implements OnInit, AfterViewInit {
       subtree: true,
     });
   }
+
+  getTranslationKey(index: number): string {
+    // Ensure index is within valid range
+    const validIndex = Math.max(1, Math.min(index, 4)); // Assuming you have 4 translations
+    return `TRANSLATE.TITLE${validIndex}`;
+  }
 }

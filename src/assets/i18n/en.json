@@ -45,12 +45,20 @@
       "link": "Learn accessible design and development"
     }
   },
+  "TRANSLATE": {
+    "TITLE0": "title 0",
+    "TITLE1": "Beyond Limits: The Evolution of Accessibility in Sports",
+    "TITLE2": "The Economic Impact of Digital Accessibility: Why Inclusive Design Makes Business Sense",
+    "TITLE3": "What is today's accessibility?",
+    "TITLE4": "title 3"
+  },
 
   "accessibility-today": {
     "title": "Accessibility Today",
     "intro": "Accessibility is transforming from a checkbox to a priority. Technology now empowers inclusivity, breaking barriers for people with disabilities through innovative design, AI-driven solutions, and universal digital experiences that celebrate human diversity and potential.",
     "read-more": "Read article >"
   },
+
   "404": {
     "404": "404 - Page not found",
     "text": "Look like you're lost",
