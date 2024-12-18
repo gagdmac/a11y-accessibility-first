@@ -17,13 +17,7 @@ export class AccessibilityTodayComponent implements OnInit, AfterViewInit {
   blogPosts$: Observable<any> | undefined;
 
   ngOnInit(): void {
-    this.blogPosts$ = this.contentfulService.getEntries().pipe(
-      tap(() => {
-        requestAnimationFrame(() => {
-          this.linkHighlightService.refreshHighlights();
-        });
-      })
-    );
+    this.refreshContent();
   }
 
   ngAfterViewInit(): void {
@@ -39,9 +33,22 @@ export class AccessibilityTodayComponent implements OnInit, AfterViewInit {
     });
   }
 
-  getTranslationKey(index: number): string {
-    // Ensure index is within valid range
-    const validIndex = Math.max(1, Math.min(index, 4)); // Assuming you have 4 translations
-    return `TRANSLATE.TITLE${validIndex}`;
+  getTranslationKey(index: number, field: string): string {
+    const validIndex = Math.max(1, Math.min(index, 4));
+    return `TRANSLATE.${field}${validIndex}`;
+  }
+
+  refreshContent() {
+    this.blogPosts$ = this.contentfulService.getEntries().pipe(
+      tap(() => {
+        requestAnimationFrame(() => {
+          this.linkHighlightService.refreshHighlights();
+        });
+      })
+    );
+  }
+
+  onLanguageChange(lang: string) {
+    this.refreshContent();
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
-// import { AnimationService } from './services/animation/animation.service';
+import { ContentfulService } from './services/contentful/contentful.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,11 @@ import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'a11y';
 
-  constructor(private router: Router, private renderer: Renderer2) {
+  constructor(
+    private router: Router,
+    private renderer: Renderer2,
+    private contentfulService: ContentfulService
+  ) {
     // Listen to router events
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
@@ -29,4 +33,27 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  onLanguageChange(lang: string) {
+    this.contentfulService.setLocale(lang);
+
+    const currentUrl = this.router.url;
+    if (
+      currentUrl.includes('accessibility-today') ||
+      currentUrl.includes('blog')
+    ) {
+      // Force route refresh
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate([currentUrl]);
+      });
+    }
+  }
+
+  private broadcastLanguageChange(lang: string) {
+    // Remove the page reload
+    // window.location.reload();
+
+    // The components will automatically update when their data refreshes
+    console.log('Language changed to:', lang);
+  }
 }

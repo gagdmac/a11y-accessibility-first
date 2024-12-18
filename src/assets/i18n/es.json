@@ -48,9 +48,17 @@
   "TRANSLATE": {
     "TITLE0": "título 0",
     "TITLE1": "Más allá de los límites: La evolución de la accesibilidad en el deporte",
+    "AUTHOR1": "Nombre del Autor 1",
+    "SUMMARY1": "Texto resumen del artículo sobre accesibilidad en deportes",
     "TITLE2": "El impacto económico de la accesibilidad digital: Por qué el diseño inclusivo tiene sentido desde el punto de vista empresarial",
+    "AUTHOR2": "Nombre del Autor 2",
+    "SUMMARY2": "Texto resumen del artículo sobre impacto económico",
     "TITLE3": "¿Qué es la accesibilidad hoy en día?",
-    "TITLE4": "título 3"
+    "AUTHOR3": "Nombre del Autor 3",
+    "SUMMARY3": "Texto resumen del artículo sobre accesibilidad actual",
+    "TITLE4": "título 3",
+    "AUTHOR4": "Nombre del Autor 4",
+    "SUMMARY4": "Texto resumen del artículo sobre título 4"
   },
 
   "accessibility-today": {

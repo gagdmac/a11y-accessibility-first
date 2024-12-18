@@ -27,7 +27,11 @@
   </div>
 
   <ng-container *ngIf="blogPosts$ | async as blogPosts">
-    <!-- First Post -->
+    <!-- /////////////////////////////////////////////-->
+    <!-- /////////////////////////////////////////////-->
+    <!-- ////////////////First Post //////////////////-->
+    <!-- ////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////-->
     <section
       class="card shadow border-2 border-black ps-5 pe-4 py-5 py-lg-0 ps-lg-5 pe-lg-0 container rounded-0 mb-3">
       <article
@@ -35,10 +39,7 @@
         <div class="post0 col-md-9 align-content-center mt-4 mt-lg-0">
           <div class="card-body ps-0">
             <h3 class="display-6 fw-bold u-ff-crison" [tabIndex]="0">
-              {{
-                getTranslationKey(blogPosts.items[0].fields.translateIndex || 1)
-                  | translate
-              }}
+              {{ blogPosts.items[0].fields.title }}
             </h3>
             <p [tabIndex]="0">{{ blogPosts.items[0].fields.author }}</p>
             <p class="card-text" [tabIndex]="0">
@@ -49,40 +50,39 @@
               class="btn btn-primary mt-2 rounded-0"
               type="button">
               {{ 'accessibility-today.read-more' | translate }}
-              {{
-                getTranslationKey(blogPosts.items[0].fields.translateIndex || 1)
-                  | translate
-              }}
+              {{ blogPosts.items[0].fields.title }}
             </a>
           </div>
         </div>
         <div class="col-md-3 pe-4 pe-lg-0 pt-lg-0">
           <img
             [src]="blogPosts.items[0].fields.featureImage.fields.file.url"
-            alt="..." />
+            [alt]="blogPosts.items[0].fields.imageAlt || ''" />
         </div>
       </article>
     </section>
 
-    <!-- Remaining Posts -->
+    <!-- /////////////////////////////////////////////-->
+    <!-- /////////////////////////////////////////////-->
+    <!-- /////////////Remaining Post //////////////////-->
+    <!-- ////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////-->
     <section class="container p-0 my-5 my-lg-5 grid gap-3">
       <article class="row m-0">
         <div
           class="postN col-12 col-lg-6 shadow p-5 border border-2 border-black mb-5 mb-lg-0"
-          *ngFor="let post of blogPosts.items.slice(1); index as i">
+          *ngFor="let post of blogPosts.items.slice(1)">
           <img
             [src]="post.fields.featureImage.fields.file.url"
-            class=""
-            alt="..." />
+            [alt]="post.fields.imageAlt || ''" />
 
           <div class="card-body mt-5">
             <h3 class="display-6 fw-bold u-ff-crison">
-              {{
-                getTranslationKey(post.fields.translateIndex || i + 1)
-                  | translate
-              }}
+              {{ post.fields.title }}
             </h3>
-            <p>{{ post.fields.author }}</p>
+            <p>
+              {{ post.fields.author }}
+            </p>
             <p class="card-text">
               {{ post.fields.summary }}
             </p>
@@ -91,10 +91,7 @@
               class="btn btn-primary rounded-0"
               type="button">
               {{ 'accessibility-today.read-more' | translate }}
-              {{
-                getTranslationKey(post.fields.translateIndex || i + 1)
-                  | translate
-              }}
+              {{ post.fields.title }}
             </a>
           </div>
         </div>

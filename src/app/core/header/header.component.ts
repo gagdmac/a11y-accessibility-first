@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { ContentfulService } from 'src/app/services/contentful/contentful.service';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,20 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(public translate: TranslateService) {
+  @Output() languageChange = new EventEmitter<string>();
+
+  constructor(
+    public translate: TranslateService,
+    private contentfulService: ContentfulService
+  ) {
     translate.setDefaultLang('en');
     translate.use('en');
   }
 
   changeLanguage(lang: string) {
+    console.log('Language change requested:', lang);
     this.translate.use(lang);
+    this.contentfulService.setLocale(lang);
+    this.languageChange.emit(lang);
   }
 }

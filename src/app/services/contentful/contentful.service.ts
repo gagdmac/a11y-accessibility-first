@@ -14,12 +14,19 @@ export class ContentfulService {
     accessToken: environment.contentful.accessToken,
   });
 
+  private currentLocale = 'en-US';
+
   constructor(private translate: TranslateService) {
     // Verify connection on service initialization
     console.log('Contentful client initialized with:', {
       space: environment.contentful.spaceId,
       accessToken: environment.contentful.accessToken.substring(0, 5) + '...',
     });
+  }
+
+  setLocale(lang: string) {
+    this.currentLocale = lang === 'es' ? 'es-ES' : 'en-US'; // Changed 'es' to 'es-ES'
+    console.log('Contentful locale set to:', this.currentLocale);
   }
 
   private translateField(field: any): Observable<any> {
@@ -96,13 +103,20 @@ export class ContentfulService {
   }
 
   getEntries(query?: object): Observable<EntryCollection<any>> {
-    const promise = this.client.getEntries(query);
-    return from(promise).pipe(
-      switchMap((response) =>
-        this.translateContent(response.items).pipe(
-          map((translatedItems) => ({ ...response, items: translatedItems }))
-        )
-      ),
+    console.log('Getting entries with locale:', this.currentLocale);
+    const queryWithLocale = {
+      ...query,
+      locale: this.currentLocale,
+    };
+
+    return from(this.client.getEntries(queryWithLocale)).pipe(
+      tap((response) => {
+        console.log(
+          'Contentful response with locale:',
+          this.currentLocale,
+          response
+        );
+      }),
       catchError((error) => {
         console.error('Contentful error:', error);
         return throwError(() => error);
@@ -111,9 +125,9 @@ export class ContentfulService {
   }
 
   getEntry(entryId: string): Observable<Entry<any>> {
-    const promise = this.client.getEntry(entryId);
-    return from(promise).pipe(
-      switchMap((response) => this.translateContent(response)),
+    const locale = this.translate.currentLang === 'es' ? 'es-ES' : 'en-US'; // Changed 'es' to 'es-ES'
+
+    return from(this.client.getEntry(entryId, { locale })).pipe(
       catchError((error) => {
         console.error('Contentful error:', error);
         return throwError(() => error);
