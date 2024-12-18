@@ -52,14 +52,22 @@ export class LinkHighlightService {
       'a:not(.no-highlight), [routerLink]:not(.no-highlight)'
     );
     elements.forEach((element) => {
-      if (!element.classList.contains('highlight-active')) {
+      // Check for various disabled states
+      const isDisabled =
+        element.hasAttribute('disabled') ||
+        element.getAttribute('aria-disabled') === 'true' ||
+        element.classList.contains('disabled') ||
+        element.closest('[isDisabled="true"]') !== null ||
+        element.closest('[ng-reflect-is-disabled="true"]') !== null;
+
+      if (!element.classList.contains('highlight-active') && !isDisabled) {
         this.renderer.setStyle(
           element,
           'background-color',
           this.highlightColor
         );
         this.renderer.setStyle(element, 'color', '#222222');
-        this.renderer.setStyle(element, 'border', '1px solid #222222'); // Add border
+        this.renderer.setStyle(element, 'border', '1px solid #222222');
         this.renderer.addClass(element, 'highlight-active');
         this.highlightedElements.push(element);
       }

@@ -45,22 +45,6 @@
     }
   },
 
-  "TRANSLATE": {
-    "TITLE0": "título 0",
-    "TITLE1": "Más allá de los límites: La evolución de la accesibilidad en el deporte",
-    "AUTHOR1": "Nombre del Autor 1",
-    "SUMMARY1": "Texto resumen del artículo sobre accesibilidad en deportes",
-    "TITLE2": "El impacto económico de la accesibilidad digital: Por qué el diseño inclusivo tiene sentido desde el punto de vista empresarial",
-    "AUTHOR2": "Nombre del Autor 2",
-    "SUMMARY2": "Texto resumen del artículo sobre impacto económico",
-    "TITLE3": "¿Qué es la accesibilidad hoy en día?",
-    "AUTHOR3": "Nombre del Autor 3",
-    "SUMMARY3": "Texto resumen del artículo sobre accesibilidad actual",
-    "TITLE4": "título 3",
-    "AUTHOR4": "Nombre del Autor 4",
-    "SUMMARY4": "Texto resumen del artículo sobre título 4"
-  },
-
   "accessibility-today": {
     "title": "Accesibilidad hoy",
     "intro": "La accesibilidad está pasando de ser una casilla de verificación a una prioridad. La tecnología potencia ahora la inclusión, rompiendo barreras para las personas con discapacidad mediante un diseño innovador, soluciones basadas en la inteligencia artificial y experiencias digitales universales que celebran la diversidad y el potencial humanos.",
