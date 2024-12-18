@@ -10,24 +10,27 @@
         class="nav-link"
         aria-current="page"
         [routerLink]="item.route"
-        [routerLinkActive]="'active'"
+        [routerLinkActive]="' highlight'"
         >{{ item.label | translate }}</a
       >
     </span>
   </div>
-  
+
   <!-- Small screen slider -->
   <div class="mobile-menu px-3 py-2" *ngIf="screenWidth <= 1025">
-    <button class="scroll-btn left" (click)="scroll('left')" *ngIf="canScrollLeft">
-       <span class="sr-only">{{
-              'app-content-links.left' | translate
-            }}</span>
+    <button
+      class="scroll-btn left"
+      (click)="scroll('left')"
+      *ngIf="canScrollLeft">
+      <span class="sr-only">{{ 'app-content-links.left' | translate }}</span>
     </button>
     <div class="slider-container">
-      <div class="slider" #slider 
-           (touchstart)="onTouchStart($event)"
-           (touchmove)="onTouchMove($event)"
-           (touchend)="onTouchEnd()">
+      <div
+        class="slider"
+        #slider
+        (touchstart)="onTouchStart($event)"
+        (touchmove)="onTouchMove($event)"
+        (touchend)="onTouchEnd()">
         <span
           *ngFor="let item of menuItems"
           class="badge fw-normal rounded-pill"
@@ -43,10 +46,11 @@
         </span>
       </div>
     </div>
-    <button class="scroll-btn right" (click)="scroll('right')" *ngIf="canScrollRight">
-     <span class="sr-only">{{
-              'app-content-links.right' | translate
-            }}</span>
+    <button
+      class="scroll-btn right"
+      (click)="scroll('right')"
+      *ngIf="canScrollRight">
+      <span class="sr-only">{{ 'app-content-links.right' | translate }}</span>
     </button>
   </div>
 </div>

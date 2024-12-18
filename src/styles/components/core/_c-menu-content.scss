@@ -3,6 +3,10 @@
   display: flex;
   align-items: center;
 
+  .highlight {
+    font-weight: bold;
+  }
+
   .slider-container {
     overflow-x: hidden;
     width: 100%;

@@ -59,6 +59,7 @@ export class LinkHighlightService {
           this.highlightColor
         );
         this.renderer.setStyle(element, 'color', '#222222');
+        this.renderer.setStyle(element, 'border', '1px solid #222222'); // Add border
         this.renderer.addClass(element, 'highlight-active');
         this.highlightedElements.push(element);
       }
@@ -69,6 +70,7 @@ export class LinkHighlightService {
     this.highlightedElements.forEach((element) => {
       this.renderer.removeStyle(element, 'background-color');
       this.renderer.removeStyle(element, 'color');
+      this.renderer.removeStyle(element, 'border'); // Remove border
       this.renderer.removeClass(element, 'highlight-active');
     });
     this.highlightedElements = [];
