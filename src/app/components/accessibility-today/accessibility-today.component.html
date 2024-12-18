@@ -51,11 +51,9 @@
           </div>
         </div>
         <div class="col-md-3 pe-4 pe-lg-0 pt-lg-0">
-          <a [routerLink]="['/blog', blogPosts.items[0].sys.id]">
-            <img
-              [src]="blogPosts.items[0].fields.featureImage.fields.file.url"
-              alt="..." />
-          </a>
+          <img
+            [src]="blogPosts.items[0].fields.featureImage.fields.file.url"
+            alt="..." />
         </div>
       </article>
     </section>

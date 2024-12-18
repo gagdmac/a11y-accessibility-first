@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
       }
     });
   }
-  // private animationService: AnimationService
 
   ngOnInit() {}
 }
