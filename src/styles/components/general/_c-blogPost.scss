@@ -1,0 +1,24 @@
+.bp {
+  .feature {
+    img {
+      width: 100%;
+      height: 30vw;
+      object-fit: cover;
+      background-position: bottom;
+    }
+  }
+
+  span.author {
+    img {
+      width: rem-calc(80);
+      height: rem-calc(80);
+      display: inline-block;
+      bottom: rem-calc(30);
+      border: rem-calc(5) solid white;
+      object-fit: cover;
+    }
+    p {
+      bottom: rem-calc(20);
+    }
+  }
+}
