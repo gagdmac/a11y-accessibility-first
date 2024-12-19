@@ -1,8 +1,25 @@
 .bp {
-  .feature img {
-    width: 100%;
-    height: 30vw;
-    object-fit: cover;
-    background-position: bottom;
+  .feature {
+    img {
+      width: 100%;
+      height: 30vw;
+      object-fit: cover;
+      background-position: bottom;
+    }
+  }
+
+  span.author {
+    img {
+      width: 80px;
+      height: 80px;
+      display: inline-block;
+      background-color: red;
+      bottom: 30px;
+      border: 5px solid white;
+      object-fit: cover;
+    }
+    p {
+      bottom: 20px;
+    }
   }
 }

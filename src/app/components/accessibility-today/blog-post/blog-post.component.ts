@@ -6,13 +6,33 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { TranslateService } from '@ngx-translate/core';
 import { takeUntil } from 'rxjs/operators';
 
+interface BlogPost {
+  fields: {
+    title: string;
+    author: string;
+    content: any;
+    featureImage: {
+      fields: {
+        file: { url: string };
+        title: string;
+      };
+    };
+    authorImage?: {
+      fields: {
+        file: { url: string };
+        title: string;
+      };
+    };
+  };
+}
+
 @Component({
   selector: 'app-blog-post',
   templateUrl: './blog-post.component.html',
   styleUrls: ['./blog-post.component.scss'],
 })
 export class BlogPostComponent implements OnInit, OnDestroy {
-  blogPost$: Observable<any> | undefined;
+  blogPost$: Observable<BlogPost> | undefined;
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -37,9 +57,8 @@ export class BlogPostComponent implements OnInit, OnDestroy {
 
   private loadBlogPost() {
     const postId = this.route.snapshot.paramMap.get('id');
-    console.log('Refreshing content for post:', postId);
     if (postId) {
-      this.blogPost$ = this.contentfulService.getEntry(postId);
+      this.blogPost$ = this.contentfulService.getEntry<BlogPost>(postId);
     }
   }
 

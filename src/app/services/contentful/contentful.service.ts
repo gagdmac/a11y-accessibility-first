@@ -16,23 +16,14 @@ export class ContentfulService {
 
   private currentLocale = 'en-US';
 
-  constructor(private translate: TranslateService) {
-    // Verify connection on service initialization
-    console.log('Contentful client initialized with:', {
-      space: environment.contentful.spaceId,
-      accessToken: environment.contentful.accessToken.substring(0, 5) + '...',
-    });
-  }
+  constructor(private translate: TranslateService) {}
 
   setLocale(lang: string) {
     this.currentLocale = lang === 'es' ? 'es-ES' : 'en-US'; // Changed 'es' to 'es-ES'
-    console.log('Contentful locale set to:', this.currentLocale);
   }
 
   private translateField(field: any): Observable<any> {
-    console.log('translateField received:', field);
     if (typeof field === 'string' && field.startsWith('TRANSLATE.')) {
-      console.log('Attempting to translate:', field);
       return this.translate
         .get(field)
         .pipe(tap((result) => console.log('Translation result:', result)));
@@ -41,13 +32,10 @@ export class ContentfulService {
   }
 
   private translateContent(content: any): Observable<any> {
-    console.log('translateContent received:', content);
-
     if (!content) return from(Promise.resolve(content));
 
     // Handle Contentful Entry structure
     if (content.sys && content.fields) {
-      console.log('Processing Contentful entry:', content.fields);
       return from(
         Promise.all(
           Object.entries(content.fields).map(async ([key, value]) => ({
@@ -103,20 +91,12 @@ export class ContentfulService {
   }
 
   getEntries(query?: object): Observable<EntryCollection<any>> {
-    console.log('Getting entries with locale:', this.currentLocale);
     const queryWithLocale = {
       ...query,
       locale: this.currentLocale,
     };
 
     return from(this.client.getEntries(queryWithLocale)).pipe(
-      tap((response) => {
-        console.log(
-          'Contentful response with locale:',
-          this.currentLocale,
-          response
-        );
-      }),
       catchError((error) => {
         console.error('Contentful error:', error);
         return throwError(() => error);
@@ -124,13 +104,28 @@ export class ContentfulService {
     );
   }
 
-  getEntry(entryId: string): Observable<Entry<any>> {
-    const locale = this.translate.currentLang === 'es' ? 'es-ES' : 'en-US'; // Changed 'es' to 'es-ES'
+  getEntry<T>(
+    entryId: string,
+    locale: string = this.translate.currentLang
+  ): Observable<T> {
+    const contentfulLocale = locale === 'en' ? 'en-US' : 'es-ES';
 
-    return from(this.client.getEntry(entryId, { locale })).pipe(
+    return from(
+      this.client.getEntry(entryId, {
+        locale: contentfulLocale,
+        include: 10,
+      })
+    ).pipe(
+      map((entry: any) => {
+        if (!entry || !entry.fields) {
+          throw new Error('Invalid entry structure received from Contentful');
+        }
+        return entry;
+      }),
       catchError((error) => {
-        console.error('Contentful error:', error);
-        return throwError(() => error);
+        return throwError(
+          () => new Error(`Failed to fetch entry ${entryId}: ${error.message}`)
+        );
       })
     );
   }

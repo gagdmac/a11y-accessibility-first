@@ -32,14 +32,14 @@
 
   p {
     &.intro {
-      font-size: 5vw;
+      font-size: 3vw;
     }
   }
 
   @include respond-above(sm) {
     p {
       &.intro {
-        font-size: rem-calc(30px) !important;
+        font-size: rem-calc(30) !important;
       }
     }
   }

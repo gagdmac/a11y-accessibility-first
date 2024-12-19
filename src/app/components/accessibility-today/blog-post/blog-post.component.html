@@ -3,30 +3,41 @@
     <span class="container-fluid p-0 feature text-center bg-primary">
       <img
         [src]="blogPosts.fields.featureImage.fields.file.url"
-        alt="..."
+        [alt]="'Photo of ' + blogPosts.fields.featureImage.fields.title"
         class="" />
     </span>
-    <div class="card-body">
-      <h2>{{ blogPosts.fields.title }}</h2>
-      <p class="card-text">
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
+    <!-- *ngIf="blogPosts.fields.authorImage?.fields?.file?.url" -->
+    <span class="text-center author">
+      <img
+        [src]="blogPosts.fields.featureImage.fields.file.url"
+        [alt]="
+          'Photo of ' +
+          (blogPosts.fields.authorImage?.fields?.title ||
+            blogPosts.fields.author)
+        "
+        class="position-relative rounded-circle" />
+      <p class="position-relative">
+        <span>
+          {{ 'accessibility-today.blogPost.whittenBy' | translate }}
+        </span>
+        <span class="fw-bold">
+          {{ blogPosts.fields.author }}
+        </span>
       </p>
+    </span>
+    <div class="card-body container p-3 p-lg-5 pt-0">
+      <span class="text-center text-lg-start">
+        <h2 class="fw-bold display-4">{{ blogPosts.fields.title }}</h2>
+      </span>
+
+      <div
+        class="container mt-4 mt-lg-5"
+        [innerHTML]="richTextToHtml(blogPosts.fields.content)"></div>
       <p class="card-text">
         <small class="text-body-secondary">Last updated 3 mins ago</small>
       </p>
     </div>
   </div>
 
-  <div class="container">
-    <img
-      [src]="blogPosts.fields.featureImage.fields.file.url"
-      alt=""
-      width="300px"
-      height="100%" />
-    <h2>{{ blogPosts.fields.title }}</h2>
-    <p>{{ blogPosts.fields.author }}</p>
-    <div [innerHTML]="richTextToHtml(blogPosts.fields.content)"></div>
-  </div>
-  <!-- <pre>{{ blogPost$ | async | json }}</pre> -->
+  <pre>{{ blogPost$ | async | json }}</pre>
 </main>
