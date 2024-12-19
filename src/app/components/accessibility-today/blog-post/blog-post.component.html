@@ -33,6 +33,11 @@
       <div
         class="container mt-4 mt-lg-5"
         [innerHTML]="richTextToHtml(blogPosts.fields.content)"></div>
+
+      <hr />
+      <button (click)="goBack()" class="btn btn-primary mb-3">
+        {{ 'accessibility-today.blogPost.back' | translate }}
+      </button>
       <p class="card-text">
         <small class="text-body-secondary">Last updated 3 mins ago</small>
       </p>

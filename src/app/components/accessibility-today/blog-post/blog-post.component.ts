@@ -5,6 +5,7 @@ import { ContentfulService } from 'src/app/services/contentful/contentful.servic
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { TranslateService } from '@ngx-translate/core';
 import { takeUntil } from 'rxjs/operators';
+import { Location } from '@angular/common';
 
 interface BlogPost {
   fields: {
@@ -38,8 +39,13 @@ export class BlogPostComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private contentfulService: ContentfulService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private location: Location
   ) {}
+
+  goBack(): void {
+    this.location.back();
+  }
 
   ngOnInit(): void {
     this.loadBlogPost();
