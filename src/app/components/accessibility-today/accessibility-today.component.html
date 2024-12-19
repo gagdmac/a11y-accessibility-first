@@ -57,7 +57,7 @@
         <div class="col-md-3 pe-4 pe-lg-0 pt-lg-0">
           <img
             [src]="blogPosts.items[0].fields.featureImage.fields.file.url"
-            [alt]="blogPosts.items[0].fields.imageAlt || ''" />
+            [alt]="'Photo of ' + blogPosts.fields.featureImage.fields.title" />
         </div>
       </article>
     </section>
@@ -74,7 +74,7 @@
           *ngFor="let post of blogPosts.items.slice(1)">
           <img
             [src]="post.fields.featureImage.fields.file.url"
-            [alt]="post.fields.imageAlt || ''" />
+            [alt]="'Photo of ' + blogPosts.fields.featureImage.fields.title" />
 
           <div class="card-body mt-5">
             <h3 class="display-6 fw-bold u-ff-crison">
