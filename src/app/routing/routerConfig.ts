@@ -30,7 +30,7 @@ const appRoutes: Routes = [
   {
     path: 'blog/:id',
     component: BlogPostComponent,
-    title: 'blog/:id',
+    title: 'blog/:slug',
   },
   {
     path: 'accessibility',

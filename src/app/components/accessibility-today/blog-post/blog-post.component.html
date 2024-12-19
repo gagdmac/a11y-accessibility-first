@@ -1,4 +1,23 @@
-<main class="mt-5" *ngIf="blogPost$ | async as blogPosts">
+<main class="mt-5 bp" *ngIf="blogPost$ | async as blogPosts">
+  <div class="card mb-3 border-0">
+    <span class="container-fluid p-0 feature text-center bg-primary">
+      <img
+        [src]="blogPosts.fields.featureImage.fields.file.url"
+        alt="..."
+        class="" />
+    </span>
+    <div class="card-body">
+      <h2>{{ blogPosts.fields.title }}</h2>
+      <p class="card-text">
+        This is a wider card with supporting text below as a natural lead-in to
+        additional content. This content is a little bit longer.
+      </p>
+      <p class="card-text">
+        <small class="text-body-secondary">Last updated 3 mins ago</small>
+      </p>
+    </div>
+  </div>
+
   <div class="container">
     <img
       [src]="blogPosts.fields.featureImage.fields.file.url"
@@ -9,6 +28,5 @@
     <p>{{ blogPosts.fields.author }}</p>
     <div [innerHTML]="richTextToHtml(blogPosts.fields.content)"></div>
   </div>
-
   <!-- <pre>{{ blogPost$ | async | json }}</pre> -->
 </main>
