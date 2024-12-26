@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     title: 'Accessibility today',
   },
   {
-    path: 'blog/:id',
+    path: 'blog/:urlHandle',
     component: BlogPostComponent,
     title: 'blog/:slug',
   },

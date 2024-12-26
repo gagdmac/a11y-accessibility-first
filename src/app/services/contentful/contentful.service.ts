@@ -129,4 +129,26 @@ export class ContentfulService {
       })
     );
   }
+
+  getBlogPostByUrlHandle(urlHandle: string): Observable<any> {
+    return from(
+      this.client.getEntries({
+        content_type: 'blogPost',
+        'fields.urlHandle': urlHandle,
+        locale: this.currentLocale,
+        limit: 1,
+      })
+    ).pipe(
+      map((response) => {
+        if (!response.items || response.items.length === 0) {
+          throw new Error(`Blog post with urlHandle ${urlHandle} not found`);
+        }
+        return response.items[0];
+      }),
+      catchError((error) => {
+        console.error('Error fetching blog post:', error);
+        return throwError(() => error);
+      })
+    );
+  }
 }

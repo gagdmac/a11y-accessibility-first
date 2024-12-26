@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, Subscription, Subject } from 'rxjs';
+import { Observable, Subscription, Subject, from } from 'rxjs';
 import { ContentfulService } from 'src/app/services/contentful/contentful.service';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { TranslateService } from '@ngx-translate/core';
@@ -31,6 +31,7 @@ interface BlogPost {
         title: string;
       };
     };
+    urlHandle: string; // Add this field
   };
   sys: {
     id: string;
@@ -84,12 +85,25 @@ export class BlogPostComponent implements OnInit, OnDestroy {
   }
 
   private loadBlogPost() {
-    const postId = this.route.snapshot.paramMap.get('id');
-    if (postId) {
-      this.blogPost$ = this.contentfulService.getEntry<BlogPost>(postId);
-      this.blogPost$.pipe(takeUntil(this.destroy$)).subscribe((post) => {
-        this.currentBlogPost = post;
-      });
+    const urlHandle = this.route.snapshot.paramMap.get('urlHandle');
+    if (urlHandle) {
+      this.contentfulService
+        .getBlogPostByUrlHandle(urlHandle)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe({
+          next: (post: BlogPost) => {
+            this.currentBlogPost = post;
+            this.blogPost$ = new Observable((observer) => {
+              observer.next(post);
+              observer.complete();
+            });
+          },
+          error: (error) => {
+            console.error('Error fetching blog post:', error);
+            // Handle 404 or redirect to error page
+            this.location.back();
+          },
+        });
     }
   }
 

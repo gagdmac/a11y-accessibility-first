@@ -47,7 +47,7 @@
                 {{ blogPosts.items[0].fields.summary }}
               </p>
               <a
-                [routerLink]="['/blog', blogPosts.items[0].sys.id]"
+                [routerLink]="['/blog', blogPosts.items[0].fields.urlHandle]"
                 class="btn btn-primary mt-2 rounded-0"
                 type="button">
                 {{ 'accessibility-today.read-more' | translate }}
@@ -92,7 +92,7 @@
                 {{ post.fields.summary }}
               </p>
               <a
-                [routerLink]="['/blog', post.sys.id]"
+                [routerLink]="['/blog', post.fields.urlHandle]"
                 class="btn btn-primary rounded-0"
                 type="button">
                 {{ 'accessibility-today.read-more' | translate }}
