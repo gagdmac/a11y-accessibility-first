@@ -22,14 +22,6 @@ interface BlogPost {
         title: string;
       };
     };
-    authorImage?: {
-      fields: {
-        file: {
-          url: string;
-        };
-        title: string;
-      };
-    };
     img: {
       fields: {
         file: {
