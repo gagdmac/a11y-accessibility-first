@@ -6,6 +6,7 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { TranslateService } from '@ngx-translate/core';
 import { takeUntil } from 'rxjs/operators';
 import { Location } from '@angular/common';
+import { SocialShareService } from '../../../services/social-share/social-share.service';
 
 interface BlogPost {
   fields: {
@@ -43,14 +44,26 @@ interface BlogPost {
 })
 export class BlogPostComponent implements OnInit, OnDestroy {
   blogPost$: Observable<BlogPost> | undefined;
+  currentBlogPost: BlogPost | null = null;
   private destroy$ = new Subject<void>();
 
   constructor(
     private route: ActivatedRoute,
     private contentfulService: ContentfulService,
     private translateService: TranslateService,
-    private location: Location
+    private location: Location,
+    private socialShareService: SocialShareService
   ) {}
+
+  share(platform: 'facebook' | 'twitter' | 'linkedin') {
+    if (!this.currentBlogPost) return;
+
+    const currentUrl = window.location.href;
+    const title = this.currentBlogPost.fields.title;
+    const summary = this.currentBlogPost.fields.summary;
+
+    this.socialShareService.shareToSocial(platform, currentUrl, title, summary);
+  }
 
   goBack(): void {
     this.location.back();
@@ -74,6 +87,9 @@ export class BlogPostComponent implements OnInit, OnDestroy {
     const postId = this.route.snapshot.paramMap.get('id');
     if (postId) {
       this.blogPost$ = this.contentfulService.getEntry<BlogPost>(postId);
+      this.blogPost$.pipe(takeUntil(this.destroy$)).subscribe((post) => {
+        this.currentBlogPost = post;
+      });
     }
   }
 

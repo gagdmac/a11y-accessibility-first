@@ -34,6 +34,37 @@
       <button (click)="goBack()" class="btn btn-primary mb-3">
         {{ 'accessibility-today.blogPost.back' | translate }}
       </button>
+      <hr />
+      <div class="social-share-buttons mt-4">
+        <h3>Share this article</h3>
+        <div class="d-flex gap-2">
+          <button
+            class="btn btn-primary"
+            (click)="share('facebook')"
+            aria-label="Share on Facebook">
+            <i class="fab fa-facebook"></i>
+            <img
+              src="../../../../assets/img/icons/facebook.svg"
+              alt="Facebook" />
+          </button>
+
+          <!-- <button
+            class="btn btn-info"
+            (click)="share('twitter')"
+            aria-label="Share on Twitter">
+            <i class="fab fa-twitter"></i>
+          </button> -->
+
+          <button
+            class="btn btn-primary"
+            (click)="share('linkedin')"
+            aria-label="Share on LinkedIn">
+            <img
+              src="../../../../assets/img/icons/linkedin.svg"
+              alt="LinkedIn" />
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
