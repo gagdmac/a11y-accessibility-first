@@ -12,18 +12,35 @@ interface BlogPost {
     title: string;
     author: string;
     content: any;
+    summary: string;
+    imageAlt: string;
     featureImage: {
       fields: {
-        file: { url: string };
+        file: {
+          url: string;
+        };
         title: string;
       };
     };
     authorImage?: {
       fields: {
-        file: { url: string };
+        file: {
+          url: string;
+        };
         title: string;
       };
     };
+    img: {
+      fields: {
+        file: {
+          url: string;
+        };
+        title: string;
+      };
+    };
+  };
+  sys: {
+    id: string;
   };
 }
 

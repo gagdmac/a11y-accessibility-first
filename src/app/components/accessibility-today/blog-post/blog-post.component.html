@@ -9,12 +9,8 @@
     <!-- *ngIf="blogPosts.fields.authorImage?.fields?.file?.url" -->
     <span class="text-center author">
       <img
-        [src]="blogPosts.fields.featureImage.fields.file.url"
-        [alt]="
-          'Photo of ' +
-          (blogPosts.fields.authorImage?.fields?.title ||
-            blogPosts.fields.author)
-        "
+        [src]="blogPosts.fields.img.fields.file.url"
+        [alt]="blogPosts.fields.imageAlt || ''"
         class="position-relative rounded-circle bg-primary" />
       <p class="position-relative">
         <span>
