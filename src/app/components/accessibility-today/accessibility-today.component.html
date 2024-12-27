@@ -34,7 +34,7 @@
     <!-- ////////////////////////////////////////////-->
     <div class="container" *ngIf="blogPosts?.items[0]?.fields?.featurePost">
       <section
-        class="card shadow border-2 border-black ps-5 pe-4 py-5 py-lg-0 ps-lg-5 pe-lg-0 rounded-0 mb-3">
+        class="card shadow border-2 border-black ps-5 pe-4 py-5 py-lg-0 ps-lg-5 pe-lg-0 rounded-3 mb-3">
         <article
           class="row g-0 d-flex flex-column flex-sm-row flex-column-reverse">
           <div class="post0 col-md-9 align-content-center mt-4 mt-lg-0">
@@ -42,7 +42,15 @@
               <h3 class="display-6 fw-bold u-ff-crison" [tabIndex]="0">
                 {{ blogPosts.items[0].fields.title }}
               </h3>
-              <p [tabIndex]="0">{{ blogPosts.items[0].fields.author }}</p>
+              <p [tabIndex]="0">
+                <span class="badge text-bg-dark me-2">
+                  {{ 'accessibility-today.authorName' | translate }}
+                </span>
+
+                <span class="badge text-bg-light">
+                  {{ blogPosts.items[0].fields.author }}
+                </span>
+              </p>
 
               <p class="card-text" [tabIndex]="0">
                 {{ blogPosts.items[0].fields.summary }}
@@ -61,7 +69,7 @@
               </p>
             </div>
           </div>
-          <div class="col-md-3 pe-4 pe-lg-0 pt-lg-0">
+          <div class="col-md-3 pe-4 pe-lg-0 pt-lg-0 rounded-end">
             <img
               [src]="blogPosts.items[0].fields.featureImage.fields.file.url"
               [alt]="blogPosts.items[0].fields.imageAlt || ''" />
@@ -78,21 +86,26 @@
     <div class="container">
       <div class="row gy-4 my-5">
         <section
-          class="col-12 col-lg-6"
+          class="col-12 col-lg-6 col-xl-4"
           *ngFor="let post of blogPosts.items.slice(1)">
           <article
-            class="h-100 shadow p-5 border border-2 border-black bg-white">
+            class="h-100 shadow p-0 border border-2 border-black bg-white rounded-3">
             <img
-              class="img-fluid"
+              class="img-fluid n-img"
               [src]="post.fields.featureImage.fields.file.url"
               [alt]="post.fields.imageAlt || ''" />
 
-            <div class="card-body mt-4">
-              <h3 class="display-6 fw-bold u-ff-crison">
+            <div class="card-body p-3 mt-4">
+              <h3 class="fw-bold u-ff-crison mb-3">
                 {{ post.fields.title }}
               </h3>
               <p>
-                {{ post.fields.author }}
+                <span class="badge text-bg-dark me-2">
+                  {{ 'accessibility-today.authorName' | translate }}
+                </span>
+                <span class="badge text-bg-light">
+                  {{ post.fields.author }}
+                </span>
               </p>
 
               <p class="card-text">

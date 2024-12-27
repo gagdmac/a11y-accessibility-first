@@ -6,4 +6,25 @@
     background-size: cover;
     place-content: center;
   }
+
+  p {
+    &.intro {
+      font-size: 3vw;
+    }
+  }
+
+  @include respond-above(xs) {
+    p {
+      &.intro {
+        font-size: 2vw;
+      }
+    }
+  }
+  @include respond-above(md) {
+    p {
+      &.intro {
+        font-size: 1.05vw;
+      }
+    }
+  }
 }
