@@ -53,7 +53,8 @@
     "authorName": "Author:",
     "blogPost": {
       "whittenBy": "written by ",
-      "back": "Go back"
+      "back": "Go back",
+      "share": "Share this article"
     }
   },
 

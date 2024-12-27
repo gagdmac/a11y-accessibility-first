@@ -52,7 +52,8 @@
     "authorName": "Autor:",
     "blogPost": {
       "whittenBy": "escrito por ",
-      "back": "Ir atras"
+      "back": "Ir atras",
+      "share": "Compartir este artículo"
     }
   },
 
