@@ -43,16 +43,22 @@
                 {{ blogPosts.items[0].fields.title }}
               </h3>
               <p [tabIndex]="0">{{ blogPosts.items[0].fields.author }}</p>
+
               <p class="card-text" [tabIndex]="0">
                 {{ blogPosts.items[0].fields.summary }}
               </p>
               <a
                 [routerLink]="['/blog', blogPosts.items[0].sys.id]"
-                class="btn btn-primary mt-2 rounded-5 shadow"
+                class="btn btn-primary my-2 rounded-5 shadow"
                 type="button">
                 {{ 'accessibility-today.read-more' | translate }}
                 {{ blogPosts.items[0].fields.title }}
               </a>
+              <p class="text-muted mt-3" [tabIndex]="0">
+                <span class="badge text-bg-light">
+                  {{ formatDate(blogPosts.items[0].sys.createdAt) }}
+                </span>
+              </p>
             </div>
           </div>
           <div class="col-md-3 pe-4 pe-lg-0 pt-lg-0">
@@ -88,16 +94,22 @@
               <p>
                 {{ post.fields.author }}
               </p>
+
               <p class="card-text">
                 {{ post.fields.summary }}
               </p>
               <a
                 [routerLink]="['/blog', post.sys.id]"
-                class="btn btn-primary rounded-0"
+                class="btn btn-primary my-2 rounded-5 shadow"
                 type="button">
                 {{ 'accessibility-today.read-more' | translate }}
                 {{ post.fields.title }}
               </a>
+              <p class="text-muted mt-3">
+                <span class="badge text-bg-light">
+                  {{ formatDate(post.sys.createdAt) }}
+                </span>
+              </p>
             </div>
           </article>
         </section>

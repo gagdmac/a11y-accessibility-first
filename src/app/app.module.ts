@@ -1,6 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+import localeFr from '@angular/common/locales/fr';
 
 //routing
 import appRoutes from './routing/routerConfig';
@@ -13,7 +16,11 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 
 // import ngx-translate and the http loader
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import {
+  TranslateLoader,
+  TranslateModule,
+  TranslateService,
+} from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeaderComponent } from '././core/header/header.component';
@@ -75,7 +82,14 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     ServicesModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      deps: [TranslateService],
+      useFactory: (translateService: TranslateService) =>
+        translateService.currentLang || 'en',
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
