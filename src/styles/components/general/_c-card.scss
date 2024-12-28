@@ -42,23 +42,55 @@
     }
   }
 
-  @include respond-above(zx) {
+  //   $breakpoints: (
+  //   zz: 320px,
+  //   zx: 375px,
+  //   xs: 576px,
+  //   sm: 768px,
+  //   md: 992px,
+  //   mdl: 1025px,
+  //   lg: 1200px,
+  //   xl: 1400px,
+  //   xxl: 1800px,
+  //   xxxl: 2560px,
+  // );
+
+  @include respond-above(zz) {
     .svg {
-      width: 42%;
-      height: 42vw;
+      width: 47%;
+      height: 36vw;
     }
   }
+  // @include respond-above(zx) {
+  //   .svg {
+  //     width: 61%;
+  //     height: 51vw;
+  //   }
+  // }
 
-  @include respond-above(md) {
+  @include respond-between(zx, xs) {
+    .svg {
+      width: 61%;
+      height: 51vw;
+    }
+  }
+  @include respond-above(sm) {
     .svg {
       width: 51%;
-      height: 15vw;
+      height: 20vw;
     }
   }
+  // @include respond-above(md) {
+  //   .svg {
+  //     width: 51%;
+  //     height: 15vw;
+  //   }
+  // }
+
   @include respond-above(lg) {
     .svg {
-      width: 40%;
-      height: 13vw;
+      width: 50%;
+      height: 10vw;
     }
   }
 
@@ -90,11 +122,5 @@
     align-content: center;
     height: 100%;
     margin-top: 14px;
-  }
-  @include respond-above(xl) {
-    .card-body {
-      height: 53.4vh;
-      margin-top: 0;
-    }
   }
 }

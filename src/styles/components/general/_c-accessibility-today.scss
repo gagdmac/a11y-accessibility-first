@@ -34,30 +34,30 @@
     }
   }
 
-  p {
-    &.intro {
-      font-size: 3vw;
-    }
-  }
+  // p {
+  //   &.intro {
+  //     font-size: 1rem;
+  //   }
+  // }
 
-  @include respond-above(sm) {
-    p {
-      &.intro {
-        font-size: rem-calc(30) !important;
-      }
-    }
-  }
+  // @include respond-above(sm) {
+  //   p {
+  //     &.intro {
+  //       font-size: rem-calc(30) !important;
+  //     }
+  //   }
+  // }
 
-  @include respond-above(mdl) {
-    p {
-      &.intro {
-        font-size: rem-calc(20) !important;
-      }
-    }
-  }
+  // @include respond-above(mdl) {
+  //   p {
+  //     &.intro {
+  //       font-size: rem-calc(20) !important;
+  //     }
+  //   }
+  // }
 
   .svg {
-    width: 45%;
+    width: 56%;
     height: 46vw;
     background-repeat: no-repeat;
     background-position: center center;
