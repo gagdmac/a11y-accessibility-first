@@ -13,10 +13,28 @@
     object-fit: cover;
   }
 
-  @include respond-between(sm, lg) {
+  @include respond-between(sm, md) {
     img {
       width: 100%;
       object-fit: cover;
+      height: 100%;
+
+      &.n-img {
+        height: 25vw;
+      }
+    }
+    &.post0 {
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  @include respond-between(md, lg) {
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 22vw;
 
       &.n-img {
         height: 25vw;

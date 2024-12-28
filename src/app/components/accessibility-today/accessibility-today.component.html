@@ -33,12 +33,11 @@
     <!-- ////////////////////////////////////////////-->
     <!-- ////////////////////////////////////////////-->
     <div class="container" *ngIf="blogPosts?.items[0]?.fields?.featurePost">
-      <section
-        class="card shadow border-2 border-black ps-5 pe-4 py-5 py-lg-0 ps-lg-5 pe-sm-0 rounded-3 mb-3">
+      <section class="card shadow border-2 border-black ps-0 ps-md-3 ps-xl-4">
         <article
-          class="row g-0 d-flex flex-column flex-sm-row flex-column-reverse">
+          class="row g-0 d-flex flex-column flex-md-row flex-column-reverse">
           <div class="post0 col-md-9 align-content-center mt-4 mt-lg-0">
-            <div class="card-body ps-0">
+            <div class="card-body ps-3 ps-md-0">
               <h3 class="display-6 fw-bold u-ff-crison" [tabIndex]="0">
                 <a [routerLink]="['/blog', blogPosts.items[0].sys.id]">
                   {{ blogPosts.items[0].fields.title }}
@@ -64,7 +63,7 @@
               </p>
             </div>
           </div>
-          <div class="col-md-3 pe-4 pe-lg-0 pt-lg-0 rounded-end">
+          <div class="col-md-3 rounded-end">
             <img
               [src]="blogPosts.items[0].fields.featureImage.fields.file.url"
               [alt]="
@@ -82,7 +81,7 @@
     <!-- ////////////////////////////////////////////-->
     <!-- ////////////////////////////////////////////-->
     <div class="container">
-      <div class="row gy-4 my-5">
+      <div class="row gy-4 my-2">
         <section
           class="col-12 col-lg-6 col-xl-4"
           *ngFor="let post of blogPosts.items.slice(1)">
