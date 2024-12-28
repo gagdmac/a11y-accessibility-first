@@ -27,8 +27,8 @@
   },
 
   "home": {
-    "intro-title": "Accessible Creativity",
-    "intro": "It represents a fundamental approach to design that seeks to maintain aesthetics while eliminating graphic and interaction barriers so that anyone can access the information and services offered by a website.",
+    "intro-title": "Accessible First (a11y 1st)",
+    "intro": "Empowering creators to build a more inclusive digital world, Accessible First (a11y 1st) is your comprehensive guide to web accessibility. Whether you're a developer, designer, or content creator, our platform offers expert insights, practical tutorials, and hands-on courses to make accessibility an integral part of your workflow.",
     "card1": {
       "title": "Accessibility Blog",
       "text": "The future of accessibility.",
@@ -47,8 +47,8 @@
   },
 
   "accessibility-today": {
-    "title": "Accessibility Today",
-    "intro": "Accessibility is transforming from a checkbox to a priority. Technology now empowers inclusivity, breaking barriers for people with disabilities through innovative design, AI-driven solutions, and universal digital experiences that celebrate human diversity and potential.",
+    "title": "Accessibility Today: The Blog",
+    "intro": "Staying informed about accessibility isn't just about compliance—it's about creating a world where everyone can participate fully. From digital spaces to physical environments, understanding the latest accessibility developments helps us build a more inclusive society where no one is left behind.",
     "read-more": "Read article:",
     "authorName": "Author:",
     "blogPost": {
