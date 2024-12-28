@@ -11,6 +11,7 @@ import localeEs from '@angular/common/locales/es';
 import localeFr from '@angular/common/locales/fr';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { MetaTagService } from 'src/app/services/MetaTag/meta-tag.service';
 
 @Component({
   selector: 'app-accessibility-today',
@@ -24,6 +25,7 @@ export class AccessibilityTodayComponent
   private langSubscription: Subscription;
 
   constructor(
+    private metaTagService: MetaTagService,
     private router: Router,
     private contentfulService: ContentfulService,
     private linkHighlightService: LinkHighlightService,
@@ -113,5 +115,18 @@ export class AccessibilityTodayComponent
     if (this.langSubscription) {
       this.langSubscription.unsubscribe();
     }
+  }
+
+  setMetaTags() {
+    this.metaTagService.setTags({
+      title: 'Web Accessibility',
+      description:
+        'Learn about web accessibility standards and best practices for creating inclusive digital experiences.',
+      keywords: 'web accessibility, WCAG, digital inclusion, accessible design',
+      ogTitle: 'Web Accessibility - A11Y',
+      ogDescription:
+        'Learn about web accessibility standards and best practices for creating inclusive digital experiences.',
+      twitterCard: 'summary',
+    });
   }
 }

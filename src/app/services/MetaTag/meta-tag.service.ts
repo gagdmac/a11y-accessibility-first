@@ -16,6 +16,11 @@ interface MetaTagConfig {
   twitterImage?: string;
   canonicalUrl?: string;
   robots?: string;
+  ogUrl?: string;
+  ogSiteName?: string;
+  ogType?: string;
+  ogLocale?: string;
+  fbAppId?: string;
 }
 
 @Injectable({
@@ -60,14 +65,30 @@ export class MetaTagService {
       { name: 'description', content: config.description || '' },
       { name: 'keywords', content: config.keywords || '' },
       { name: 'robots', content: config.robots || '' },
+
+      // Updated OpenGraph tags
       { property: 'og:title', content: config.ogTitle || config.title || '' },
       {
         property: 'og:description',
         content: config.ogDescription || config.description || '',
       },
       { property: 'og:image', content: config.ogImage || '' },
-      { property: 'og:type', content: 'website' },
-      { name: 'twitter:card', content: config.twitterCard || '' },
+      { property: 'og:url', content: config.ogUrl || window.location.href },
+      { property: 'og:type', content: config.ogType || 'website' },
+      {
+        property: 'og:site_name',
+        content: config.ogSiteName || 'A11Y Accessibility First',
+      },
+      { property: 'og:locale', content: config.ogLocale || 'en_US' },
+
+      // Facebook specific
+      { property: 'fb:app_id', content: config.fbAppId || '' },
+
+      // Twitter tags
+      {
+        name: 'twitter:card',
+        content: config.twitterCard || 'summary_large_image',
+      },
       {
         name: 'twitter:title',
         content: config.twitterTitle || config.title || '',
@@ -76,10 +97,22 @@ export class MetaTagService {
         name: 'twitter:description',
         content: config.twitterDescription || config.description || '',
       },
-      { name: 'twitter:image', content: config.twitterImage || '' },
+      {
+        name: 'twitter:image',
+        content: config.twitterImage || config.ogImage || '',
+      },
     ];
 
+    // Ensure image URLs are absolute
     metaTags.forEach((tag) => {
+      if (
+        tag.content &&
+        (tag.property === 'og:image' || tag.name === 'twitter:image')
+      ) {
+        if (!tag.content.startsWith('http')) {
+          tag.content = `https:${tag.content}`;
+        }
+      }
       if (tag.content) {
         this.metaService.updateTag(tag);
       }

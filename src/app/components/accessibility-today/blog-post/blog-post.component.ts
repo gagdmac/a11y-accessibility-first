@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { takeUntil } from 'rxjs/operators';
 import { Location } from '@angular/common';
 import { SocialShareService } from '../../../services/social-share/social-share.service';
+import { MetaTagService } from 'src/app/services/MetaTag/meta-tag.service';
 
 interface BlogPost {
   fields: {
@@ -61,6 +62,7 @@ export class BlogPostComponent implements OnInit, OnDestroy {
   breadcrumbs: BreadcrumbItem[] = [];
 
   constructor(
+    private metaTagService: MetaTagService,
     private route: ActivatedRoute,
     private router: Router, // Add router to constructor
     private contentfulService: ContentfulService,
@@ -153,5 +155,18 @@ export class BlogPostComponent implements OnInit, OnDestroy {
 
   richTextToHtml(richText: any): string {
     return documentToHtmlString(richText);
+  }
+
+  setMetaTags() {
+    this.metaTagService.setTags({
+      title: 'Web Accessibility',
+      description:
+        'Learn about web accessibility standards and best practices for creating inclusive digital experiences.',
+      keywords: 'web accessibility, WCAG, digital inclusion, accessible design',
+      ogTitle: 'Web Accessibility - A11Y',
+      ogDescription:
+        'Learn about web accessibility standards and best practices for creating inclusive digital experiences.',
+      twitterCard: 'summary',
+    });
   }
 }
