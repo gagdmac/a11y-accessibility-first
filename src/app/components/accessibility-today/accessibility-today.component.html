@@ -40,28 +40,23 @@
           <div class="post0 col-md-9 align-content-center mt-4 mt-lg-0">
             <div class="card-body ps-0">
               <h3 class="display-6 fw-bold u-ff-crison" [tabIndex]="0">
-                {{ blogPosts.items[0].fields.title }}
+                <a [routerLink]="['/blog', blogPosts.items[0].sys.id]">
+                  {{ blogPosts.items[0].fields.title }}
+                </a>
               </h3>
               <p [tabIndex]="0">
-                <span class="badge text-bg-dark me-2">
-                  {{ 'accessibility-today.authorName' | translate }}
-                </span>
+                <span class="badge rounded-pill text-bg-light me-1">
+                  {{ 'accessibility-today.authorName' | translate }}</span
+                >
 
-                <span class="badge text-bg-light">
-                  {{ blogPosts.items[0].fields.author }}
-                </span>
+                <span class="badge rounded-pill text-bg-primary">
+                  {{ blogPosts.items[0].fields.author }}</span
+                >
               </p>
 
               <p class="card-text" [tabIndex]="0">
                 {{ blogPosts.items[0].fields.summary }}
               </p>
-              <a
-                [routerLink]="['/blog', blogPosts.items[0].sys.id]"
-                class="btn btn-primary my-2 rounded-5 shadow"
-                type="button">
-                {{ 'accessibility-today.read-more' | translate }}
-                {{ blogPosts.items[0].fields.title }}
-              </a>
               <p class="text-muted mt-3" [tabIndex]="0">
                 <span class="badge text-bg-light">
                   {{ formatDate(blogPosts.items[0].sys.createdAt) }}
@@ -72,7 +67,10 @@
           <div class="col-md-3 pe-4 pe-lg-0 pt-lg-0 rounded-end">
             <img
               [src]="blogPosts.items[0].fields.featureImage.fields.file.url"
-              [alt]="blogPosts.items[0].fields.imageAlt || ''" />
+              [alt]="
+                'Photo of ' +
+                blogPosts.items[0].fields.featureImage.fields.title
+              " />
           </div>
         </article>
       </section>
@@ -91,37 +89,32 @@
           <article
             class="h-100 shadow p-0 border border-2 border-black bg-white rounded-3">
             <img
-              class="img-fluid n-img"
+              class="img-fluid n-img rounded-top"
               [src]="post.fields.featureImage.fields.file.url"
-              [alt]="post.fields.imageAlt || ''" />
+              [alt]="'Photo of ' + post.fields.featureImage.fields.title" />
 
             <div class="card-body p-3 mt-4">
               <h3 class="fw-bold u-ff-crison mb-3" [tabIndex]="0">
-                {{ post.fields.title }}
+                <a [routerLink]="['/blog', post.sys.id]">
+                  {{ post.fields.title }}
+                </a>
               </h3>
               <p [tabIndex]="0">
-                <span class="badge text-bg-dark me-2">
-                  {{ 'accessibility-today.authorName' | translate }}
-                </span>
-                <span class="badge text-bg-light">
-                  {{ post.fields.author }}
-                </span>
+                <span class="badge rounded-pill text-bg-light">
+                  {{ 'accessibility-today.authorName' | translate }}</span
+                >
+                <span class="badge rounded-pill text-bg-primary">
+                  {{ post.fields.author }}</span
+                >
               </p>
 
               <p class="card-text" [tabIndex]="0">
                 {{ post.fields.summary }}
               </p>
-              <a
-                [routerLink]="['/blog', post.sys.id]"
-                class="btn btn-primary my-2 rounded-5 shadow"
-                type="button">
-                {{ 'accessibility-today.read-more' | translate }}
-                {{ post.fields.title }}
-              </a>
               <p class="text-muted mt-3">
-                <span class="badge text-bg-light" [tabIndex]="0">
-                  {{ formatDate(post.sys.createdAt) }}
-                </span>
+                <span class="badge rounded-pill text-bg-light" [tabIndex]="0">
+                  {{ formatDate(post.sys.createdAt) }}</span
+                >
               </p>
             </div>
           </article>
