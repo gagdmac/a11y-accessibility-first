@@ -33,9 +33,9 @@
       <hr />
       <div class="d-flex justify-content-between align-items-center">
         <div>
-          <button (click)="goBack()" class="btn btn-primary">
+          <a type="button" (click)="goBack()" class="btn btn-primary">
             {{ 'accessibility-today.blogPost.back' | translate }}
-          </button>
+          </a>
         </div>
         <div>
           <div
@@ -44,15 +44,15 @@
               {{ 'accessibility-today.blogPost.share' | translate }}
             </h3>
             <div class="d-flex gap-2">
-              <button
+              <a
+                type="button"
                 class="btn btn-primary"
-                (click)="share('facebook')"
-                aria-label="Share on Facebook">
+                (click)="share('facebook')">
                 <i class="fab fa-facebook"></i>
                 <img
                   src="../../../../assets/img/icons/facebook.svg"
                   alt="Facebook" />
-              </button>
+              </a>
 
               <!-- <button
             class="btn btn-info"
@@ -61,14 +61,14 @@
             <i class="fab fa-twitter"></i>
           </button> -->
 
-              <button
+              <a
+                type="button"
                 class="btn btn-primary"
-                (click)="share('linkedin')"
-                aria-label="Share on LinkedIn">
+                (click)="share('linkedin')">
                 <img
                   src="../../../../assets/img/icons/linkedin.svg"
                   alt="LinkedIn" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

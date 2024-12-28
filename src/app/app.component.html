@@ -1,6 +1,9 @@
-<a href="#main" class="mx-4 mx-xxl-5 mt-2 p-1 skip-to-content" [tabIndex]="0">{{
-  'home.mainContent' | translate
-}}</a>
+<a
+  href="#main"
+  class="mx-4 mx-xxl-5 mt-2 p-1 skip-to-content position-fixed"
+  [tabIndex]="0"
+  >{{ 'home.mainContent' | translate }}</a
+>
 <app-header (languageChange)="onLanguageChange($event)"></app-header>
 <aside class="aside">
   <app-a11y-options></app-a11y-options>
