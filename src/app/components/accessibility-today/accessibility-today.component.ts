@@ -50,26 +50,21 @@ export class AccessibilityTodayComponent
     });
   }
 
-  async loadBreadcrumbs() {
-    try {
-      this.breadcrumbs = await this.contentfulService.getBreadcrumbs(
-        this.router.url
-      );
-    } catch (error) {
-      console.error('Error loading breadcrumbs:', error);
-      this.breadcrumbs = [
-        {
-          label: 'Home',
-          url: '/',
-          isActive: false,
-        },
-        {
-          label: 'Accessibility Today',
-          url: this.router.url,
-          isActive: true,
-        },
-      ];
-    }
+  private async loadBreadcrumbs() {
+    this.breadcrumbs = [
+      {
+        label: await this.translateService.get('menu.home').toPromise(),
+        url: '/',
+        isActive: false,
+      },
+      {
+        label: await this.translateService
+          .get('accessibility-today.title')
+          .toPromise(),
+        url: '/accessibility-today',
+        isActive: true,
+      },
+    ];
   }
 
   ngAfterViewInit(): void {

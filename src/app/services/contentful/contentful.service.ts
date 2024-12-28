@@ -29,61 +29,42 @@ export class ContentfulService {
     try {
       // Add home
       breadcrumbs.push({
-        label: await this.translate.get('nav.home').toPromise(),
+        label: 'menu.home',
         url: '/',
         isActive: paths.length === 0,
       });
 
-      // Build path progressively and add intermediate breadcrumbs
-      let currentUrl = '';
-      for (let i = 0; i < paths.length; i++) {
-        currentUrl += `/${paths[i]}`;
-        const isLast = i === paths.length - 1;
-
-        // Try to get page from Contentful
-        const entry = await this.client.getEntries({
-          content_type: 'page',
-          'fields.slug': paths[i],
-          locale: this.currentLocale,
-          include: 1,
-        });
-
-        let label = '';
-        if (
-          entry.items.length > 0 &&
-          typeof entry.items[0].fields['title'] === 'string'
-        ) {
-          label = entry.items[0].fields['title'];
-        } else {
-          // Fallback to formatted path segment
-          label = paths[i]
-            .split('-')
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
+      // Add route-based breadcrumbs
+      if (paths.length > 0) {
+        const route = paths[0];
+        switch (route) {
+          case 'accessibility-today':
+            breadcrumbs.push({
+              label: 'accessibility-today.title',
+              url: '/accessibility-today',
+              isActive: paths.length === 1,
+            });
+            break;
+          // Add more cases as needed
+          default:
+            breadcrumbs.push({
+              label: route
+                .split('-')
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' '),
+              url: `/${route}`,
+              isActive: paths.length === 1,
+            });
         }
-
-        breadcrumbs.push({
-          label,
-          url: currentUrl,
-          isActive: isLast,
-        });
       }
     } catch (error) {
       console.error('Error generating breadcrumbs:', error);
-      // Fallback breadcrumbs
-      breadcrumbs.length = 0; // Clear array
-      breadcrumbs.push(
-        {
-          label: 'Home',
-          url: '/',
-          isActive: false,
-        },
-        {
-          label: 'Accessibility Today',
-          url: currentPath,
-          isActive: true,
-        }
-      );
+      breadcrumbs.length = 0;
+      breadcrumbs.push({
+        label: 'menu.home',
+        url: '/',
+        isActive: false,
+      });
     }
 
     return breadcrumbs;

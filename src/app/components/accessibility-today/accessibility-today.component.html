@@ -26,23 +26,16 @@
     </div>
   </div>
 
-  <div class="container mb-5 small px-3 px-xl-5">
-    <nav aria-label="breadcrumb" *ngIf="breadcrumbs?.length">
+  <div class="container mb-5 small px-3 px-xxl-5">
+    <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li
-          *ngFor="let crumb of breadcrumbs"
-          class="breadcrumb-item"
-          [class.active]="crumb.isActive">
-          <ng-container *ngIf="!crumb.isActive; else activeLink">
-            <a
-              [routerLink]="crumb.url"
-              [attr.aria-label]="'Navigate to ' + crumb.label">
-              {{ crumb.label }}
-            </a>
-          </ng-container>
-          <ng-template #activeLink>
-            <span aria-current="page">{{ crumb.label }}</span>
-          </ng-template>
+        <li class="breadcrumb-item">
+          <a [routerLink]="['/']" [attr.aria-label]="'menu.home' | translate">
+            {{ 'menu.home' | translate }}
+          </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <span>{{ 'accessibility-today.title' | translate }}</span>
         </li>
       </ol>
     </nav>
