@@ -26,6 +26,28 @@
     </div>
   </div>
 
+  <div class="container mb-5 small px-3 px-xl-5">
+    <nav aria-label="breadcrumb" *ngIf="breadcrumbs?.length">
+      <ol class="breadcrumb">
+        <li
+          *ngFor="let crumb of breadcrumbs"
+          class="breadcrumb-item"
+          [class.active]="crumb.isActive">
+          <ng-container *ngIf="!crumb.isActive; else activeLink">
+            <a
+              [routerLink]="crumb.url"
+              [attr.aria-label]="'Navigate to ' + crumb.label">
+              {{ crumb.label }}
+            </a>
+          </ng-container>
+          <ng-template #activeLink>
+            <span aria-current="page">{{ crumb.label }}</span>
+          </ng-template>
+        </li>
+      </ol>
+    </nav>
+  </div>
+
   <ng-container *ngIf="blogPosts$ | async as blogPosts">
     <!-- /////////////////////////////////////////////-->
     <!-- /////////////////////////////////////////////-->

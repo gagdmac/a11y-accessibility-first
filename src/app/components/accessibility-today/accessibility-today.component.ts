@@ -1,12 +1,16 @@
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { ContentfulService } from 'src/app/services/contentful/contentful.service';
+import {
+  Breadcrumb,
+  ContentfulService,
+} from 'src/app/services/contentful/contentful.service';
 import { LinkHighlightService } from 'src/app/services/links-hightligh/links-highlight.service';
 import { TranslateService } from '@ngx-translate/core';
 import { formatDate, registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import localeFr from '@angular/common/locales/fr';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-accessibility-today',
@@ -16,9 +20,11 @@ import { Subscription } from 'rxjs';
 export class AccessibilityTodayComponent
   implements OnInit, AfterViewInit, OnDestroy
 {
+  breadcrumbs: Breadcrumb[] = [];
   private langSubscription: Subscription;
 
   constructor(
+    private router: Router,
     private contentfulService: ContentfulService,
     private linkHighlightService: LinkHighlightService,
     private translateService: TranslateService
@@ -37,6 +43,33 @@ export class AccessibilityTodayComponent
 
   ngOnInit(): void {
     this.refreshContent();
+    this.loadBreadcrumbs();
+    // Subscribe to router events to update breadcrumbs when route changes
+    this.router.events.subscribe(() => {
+      this.loadBreadcrumbs();
+    });
+  }
+
+  async loadBreadcrumbs() {
+    try {
+      this.breadcrumbs = await this.contentfulService.getBreadcrumbs(
+        this.router.url
+      );
+    } catch (error) {
+      console.error('Error loading breadcrumbs:', error);
+      this.breadcrumbs = [
+        {
+          label: 'Home',
+          url: '/',
+          isActive: false,
+        },
+        {
+          label: 'Accessibility Today',
+          url: this.router.url,
+          isActive: true,
+        },
+      ];
+    }
   }
 
   ngAfterViewInit(): void {

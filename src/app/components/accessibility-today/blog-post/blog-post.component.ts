@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router'; // Add Router import
 import { Observable, Subscription, Subject } from 'rxjs';
 import { ContentfulService } from 'src/app/services/contentful/contentful.service';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
@@ -37,6 +37,18 @@ interface BlogPost {
   };
 }
 
+interface Breadcrumb {
+  label: string;
+  url: string;
+  isActive: boolean;
+}
+
+interface BreadcrumbItem {
+  label: string;
+  url: string;
+  isActive: boolean;
+}
+
 @Component({
   selector: 'app-blog-post',
   templateUrl: './blog-post.component.html',
@@ -46,9 +58,11 @@ export class BlogPostComponent implements OnInit, OnDestroy {
   blogPost$: Observable<BlogPost> | undefined;
   currentBlogPost: BlogPost | null = null;
   private destroy$ = new Subject<void>();
+  breadcrumbs: BreadcrumbItem[] = [];
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router, // Add router to constructor
     private contentfulService: ContentfulService,
     private translateService: TranslateService,
     private location: Location,
@@ -75,7 +89,9 @@ export class BlogPostComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => {
         this.loadBlogPost();
+        this.loadBreadcrumbs();
       });
+    this.setBreadcrumbs();
   }
 
   ngOnDestroy() {
@@ -89,8 +105,50 @@ export class BlogPostComponent implements OnInit, OnDestroy {
       this.blogPost$ = this.contentfulService.getEntry<BlogPost>(postId);
       this.blogPost$.pipe(takeUntil(this.destroy$)).subscribe((post) => {
         this.currentBlogPost = post;
+        this.loadBreadcrumbs(); // Update breadcrumbs after post loads
       });
     }
+  }
+
+  async loadBreadcrumbs() {
+    try {
+      // Get base breadcrumbs
+      this.breadcrumbs = await this.contentfulService.getBreadcrumbs('/blog');
+
+      // Add current blog post to breadcrumbs if available
+      if (this.currentBlogPost) {
+        this.breadcrumbs.push({
+          label: this.currentBlogPost.fields.title,
+          url: this.router.url,
+          isActive: true,
+        });
+      }
+    } catch (error) {
+      console.error('Error loading breadcrumbs:', error);
+      this.breadcrumbs = [
+        {
+          label: 'Home',
+          url: '/',
+          isActive: false,
+        },
+        {
+          label: 'Blog',
+          url: '/blog',
+          isActive: false,
+        },
+      ];
+    }
+  }
+
+  setBreadcrumbs() {
+    this.breadcrumbs = [
+      { label: 'Home', url: '/', isActive: false },
+      {
+        label: 'Accessibility Today',
+        url: '/accessibility-today',
+        isActive: false,
+      },
+    ];
   }
 
   richTextToHtml(richText: any): string {
