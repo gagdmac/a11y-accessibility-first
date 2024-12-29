@@ -1,4 +1,4 @@
-<footer
+<!-- <footer
   class="container-fluid bg-dark text-light text-center footer mt-auto pt-2 bg-primary position-fixed bottom-0">
   <div class="row">
     <div class="col-4">
@@ -13,6 +13,27 @@
     </div>
     <div class="col-4">
       <p>&copy; {{ 'footer.text' | translate }}</p>
+    </div>
+  </div>
+</footer> -->
+
+<footer
+  class="container-fluid bg-dark text-light text-center footer p-0 bg-primary position-fixed bottom-0">
+  <div class="d-flex justify-content-between">
+    <div class="col-4 d-flex justify-content-center align-items-center">
+      <a
+        class="profile align-content-center fw-bold bg-success link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasBottom"
+        aria-controls="offcanvasBottom">
+        {{ 'footer.me' | translate }}
+      </a>
+    </div>
+    <div class="col-4 bg-secondary">
+      <p class="rigths align-content-center text-white bg-dark">
+        &copy; {{ 'footer.text' | translate }}
+      </p>
     </div>
   </div>
 </footer>

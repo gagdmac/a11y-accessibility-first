@@ -61,7 +61,8 @@
                   aria-current="page"
                   routerLink="/"
                   routerLinkActive="active"
-                  [routerLinkActiveOptions]="{ exact: true }">
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  data-bs-dismiss="collapse">
                   {{ 'menu.home' | translate }}</a
                 >
               </li>
@@ -73,40 +74,59 @@
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false">
+                  aria-expanded="false"
+                  data-bs-dismiss="collapse">
                   {{ 'menu.accessibility' | translate }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" routerLink="accessibility">
+                    <a
+                      class="dropdown-item"
+                      routerLink="accessibility"
+                      data-bs-dismiss="collapse">
                       {{ 'submenu.accessibility' | translate }}</a
                     >
                   </li>
                   <li>
-                    <a class="dropdown-item" routerLink="universal">{{
-                      'submenu.universal' | translate
-                    }}</a>
+                    <a
+                      class="dropdown-item"
+                      routerLink="universal"
+                      data-bs-dismiss="collapse"
+                      >{{ 'submenu.universal' | translate }}</a
+                    >
                   </li>
                   <!-- <li><hr class="dropdown-divider" /></li> -->
                   <li>
-                    <a class="dropdown-item" routerLink="healthcare">{{
-                      'submenu.healthcare' | translate
-                    }}</a>
+                    <a
+                      class="dropdown-item"
+                      routerLink="healthcare"
+                      data-bs-dismiss="collapse"
+                      >{{ 'submenu.healthcare' | translate }}</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" routerLink="rights">{{
-                      'submenu.rights' | translate
-                    }}</a>
+                    <a
+                      class="dropdown-item"
+                      routerLink="rights"
+                      data-bs-dismiss="collapse"
+                      >{{ 'submenu.rights' | translate }}</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" routerLink="inclusivity">{{
-                      'submenu.inclusivity' | translate
-                    }}</a>
+                    <a
+                      class="dropdown-item"
+                      routerLink="inclusivity"
+                      data-bs-dismiss="collapse"
+                      >{{ 'submenu.inclusivity' | translate }}</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" routerLink="phisical">{{
-                      'submenu.phisical' | translate
-                    }}</a>
+                    <a
+                      class="dropdown-item"
+                      routerLink="phisical"
+                      data-bs-dismiss="collapse"
+                      >{{ 'submenu.phisical' | translate }}</a
+                    >
                   </li>
                 </ul>
               </li>
@@ -116,7 +136,8 @@
                   class="nav-link"
                   aria-current="page"
                   routerLink="accessibility-today"
-                  routerLinkActive="active">
+                  routerLinkActive="active"
+                  data-bs-dismiss="collapse">
                   {{ 'menu.accessibility-today' | translate }}</a
                 >
               </li>
