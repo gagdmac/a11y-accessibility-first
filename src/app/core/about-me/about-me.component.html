@@ -3,17 +3,46 @@
     class="offcanvas offcanvas-bottom"
     tabindex="-1"
     id="offcanvasBottom"
-    aria-labelledby="offcanvasBottomLabel">
+    [attr.aria-labelledby]="'footer.me' | translate">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasBottomLabel">
-        Offcanvas bottom
-      </h5>
+      <p class="offcanvas-title fw-bold fs-6" id="offcanvasBottomLabel">
+        {{ 'footer.me' | translate }}
+      </p>
       <button
         type="button"
         class="btn-close"
         data-bs-dismiss="offcanvas"
         aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body small">...</div>
+    <div class="offcanvas-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 cb2">
+            <div
+              class="card justify-content-center align-items-center border-black border-2 p-3">
+              <img
+                src="../../../assets/img/pics/gabriel-garcia-diaz.jpg"
+                alt="{{ 'header.logo' | translate }}"
+                width="200"
+                height="100%"
+                class="d-inline-block rounded-circle p-1 border-white shadow" />
+              <div class="card-body text-center">
+                <h2 class="card-title fw-bold">Gabriel Garcia Diaz</h2>
+                <p class="card-text lead fs-6 fw-medium m-0">
+                  Accessibility Especialist
+                </p>
+                <p class="card-text lead fs-6 fw-medium m-0">
+                  Product Designer
+                </p>
+                <p class="card-text lead fs-6 fw-medium m-0">
+                  Frontend Designer
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-8 cb3">col</div>
+        </div>
+      </div>
+    </div>
   </article>
 </section>
