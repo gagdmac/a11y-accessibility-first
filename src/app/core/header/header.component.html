@@ -60,7 +60,8 @@
                   class="nav-link active"
                   aria-current="page"
                   routerLink="/"
-                  routerLinkActive="active">
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }">
                   {{ 'menu.home' | translate }}</a
                 >
               </li>
@@ -115,7 +116,7 @@
                   class="nav-link"
                   aria-current="page"
                   routerLink="accessibility-today"
-                  routerLinkActive="">
+                  routerLinkActive="active">
                   {{ 'menu.accessibility-today' | translate }}</a
                 >
               </li>

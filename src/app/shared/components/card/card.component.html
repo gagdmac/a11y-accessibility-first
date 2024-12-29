@@ -1,6 +1,6 @@
 <nav aria-label="Navigation Menu">
   <a
-    [attr.href]="!isDisabled ? routerLink : null"
+    [routerLink]="!isDisabled ? routerLink : null"
     [ngClass]="{ disable: isDisabled }"
     [attr.aria-disabled]="isDisabled"
     class="card text-center rounded-3 border-2 border-black d-block text-decoration-none p-lg-2 p-xl-3 p-xxl-4">
