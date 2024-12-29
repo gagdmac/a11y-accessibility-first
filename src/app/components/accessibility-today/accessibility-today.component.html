@@ -54,7 +54,8 @@
           <div class="post0 col-md-9 align-content-center mt-4 mt-lg-0">
             <div class="card-body ps-3 ps-md-0">
               <h3 class="display-6 fw-bold u-ff-crison" [tabIndex]="0">
-                <a [routerLink]="['/blog', blogPosts.items[0].sys.id]">
+                <a
+                  [routerLink]="['/blog', blogPosts.items[0].fields.urlHandle]">
                   {{ blogPosts.items[0].fields.title }}
                 </a>
               </h3>
@@ -109,7 +110,7 @@
 
             <div class="card-body p-3 mt-4">
               <h3 class="fw-bold u-ff-crison mb-3" [tabIndex]="0">
-                <a [routerLink]="['/blog', post.sys.id]">
+                <a [routerLink]="['/blog', post.fields.urlHandle]">
                   {{ post.fields.title }}
                 </a>
               </h3>

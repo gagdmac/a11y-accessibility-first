@@ -4,6 +4,8 @@ import { from, Observable, throwError } from 'rxjs';
 import { tap, catchError, switchMap, map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 export interface Breadcrumb {
   label: string;
@@ -70,7 +72,20 @@ export class ContentfulService {
     return breadcrumbs;
   }
 
-  constructor(private translate: TranslateService) {}
+  constructor(
+    private translate: TranslateService,
+    private router: Router,
+    private location: Location
+  ) {}
+
+  getBlogPostByHandle(urlHandle: string) {
+    return this.client.getEntries({
+      content_type: 'blogPost',
+      'fields.urlHandle': urlHandle,
+      locale: this.currentLocale,
+      limit: 1,
+    });
+  }
 
   setLocale(lang: string) {
     this.currentLocale = lang === 'es' ? 'es-ES' : 'en-US'; // Changed 'es' to 'es-ES'
@@ -182,5 +197,16 @@ export class ContentfulService {
         );
       })
     );
+  }
+
+  updateBrowserUrl(newUrl: string, queryParams?: Record<string, string>) {
+    let url = newUrl;
+    if (queryParams) {
+      const params = new URLSearchParams(queryParams).toString();
+      url = `${newUrl}?${params}`;
+    }
+    window.history.pushState({}, '', url);
+    // Optional: notify Angular about the URL change
+    this.location.go(url);
   }
 }

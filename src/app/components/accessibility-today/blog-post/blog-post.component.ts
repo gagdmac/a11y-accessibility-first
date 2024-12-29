@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'; // Add Router import
-import { Observable, Subscription, Subject } from 'rxjs';
+import { Observable, Subscription, Subject, from } from 'rxjs';
 import { ContentfulService } from 'src/app/services/contentful/contentful.service';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { TranslateService } from '@ngx-translate/core';
-import { takeUntil } from 'rxjs/operators';
+import { map, takeUntil } from 'rxjs/operators';
 import { Location } from '@angular/common';
 import { SocialShareService } from '../../../services/social-share/social-share.service';
 import { MetaTagService } from 'src/app/services/MetaTag/meta-tag.service';
@@ -94,6 +94,12 @@ export class BlogPostComponent implements OnInit, OnDestroy {
         this.loadBreadcrumbs();
       });
     this.setBreadcrumbs();
+    this.route.params.subscribe((params) => {
+      const urlHandle = params['urlHandle'];
+      this.blogPost$ = from(
+        this.contentfulService.getBlogPostByHandle(urlHandle)
+      ).pipe(map((response: { items: any[] }) => response.items[0]));
+    });
   }
 
   ngOnDestroy() {
