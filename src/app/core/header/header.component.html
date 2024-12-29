@@ -141,14 +141,16 @@
               <li>
                 <a
                   class="dropdown-item d-flex justify-content-between"
-                  (click)="changeLanguage('es')"
+                  href="?lang=es"
+                  (click)="$event.preventDefault(); changeLanguage('es')"
                   >Español <span class="fi fi-es px-3"></span
                 ></a>
               </li>
               <li>
                 <a
                   class="dropdown-item d-flex justify-content-between"
-                  (click)="changeLanguage('en')"
+                  href="?lang=en"
+                  (click)="$event.preventDefault(); changeLanguage('en')"
                   >English <span class="fi fi-gb px-3"></span
                 ></a>
               </li>

@@ -23,5 +23,8 @@ export class HeaderComponent {
     this.translate.use(lang);
     this.contentfulService.setLocale(lang);
     this.languageChange.emit(lang);
+    // Get current path and update URL with language
+    const currentPath = window.location.pathname;
+    this.contentfulService.updateBrowserUrl(currentPath, { lang });
   }
 }
