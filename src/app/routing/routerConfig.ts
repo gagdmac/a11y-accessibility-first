@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    title: 'home',
+    title: 'Accessibility First',
   },
   {
     path: 'accessibility-today',

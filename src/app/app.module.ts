@@ -39,6 +39,7 @@ import { CardComponent } from './shared/components/card/card.component';
 import { Empty404Component } from './core/empty-404/empty-404.component';
 import { AccessibilityComponent } from './components/accessibility-Info/accessibility/accessibility.component';
 import { BlogPostComponent } from './components/accessibility-today/blog-post/blog-post.component';
+import { AboutMeComponent } from './core/about-me/about-me.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -65,6 +66,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     HomeContentComponent,
     Empty404Component,
     BlogPostComponent,
+    AboutMeComponent,
   ],
   imports: [
     // ngx-translate and the loader module

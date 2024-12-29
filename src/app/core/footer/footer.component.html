@@ -1,7 +1,18 @@
 <footer
-  class="container-fluid bg-dark text-light text-center footer mt-auto pt-2 bg-primary position-fixed bottom-0"
->
-  <div class="col">
-    <p>&copy; {{ "footer.text" | translate }}</p>
+  class="container-fluid bg-dark text-light text-center footer mt-auto pt-2 bg-primary position-fixed bottom-0">
+  <div class="row">
+    <div class="col-4">
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasBottom"
+        aria-controls="offcanvasBottom">
+        Toggle bottom offcanvas
+      </button>
+    </div>
+    <div class="col-4">
+      <p>&copy; {{ 'footer.text' | translate }}</p>
+    </div>
   </div>
 </footer>
