@@ -30,11 +30,6 @@
                 "glob": "robots.txt",
                 "input": "src",
                 "output": "/"
-              },
-              {
-                "glob": "mailjet-*.txt",
-                "input": "src/assets",
-                "output": "/"
               }
             ],
             "styles": [
