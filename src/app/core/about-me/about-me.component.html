@@ -49,9 +49,9 @@
     <div class="offcanvas-body">
       <div class="container">
         <div class="row" data-masonry='{"percentPosition": true }'>
-          <div class="col col-12 col-md-4 mb-4 mb-md-0">
+          <div class="col col-12 col-lg-4 mb-4 mb-md-0">
             <div
-              class="card justify-content-center align-items-center border-black border-2 p-3 shadow">
+              class="card justify-content-center align-items-center border-black border-2 p-3 m mb-4 mb-lg-0 shadow">
               <img
                 src="../../../assets/img/pics/gabriel-garcia-diaz.jpg"
                 [alt]="'about-me.img' | translate"
@@ -59,45 +59,41 @@
                 height="100%"
                 class="d-inline-block rounded-circle p-1 border-black shadow" />
               <h2 class="card-title fw-bolder mt-3 mb-0">
-                Gabriel Garcia Diaz
+                {{ 'about-me.gagd' | translate }}
               </h2>
 
               <div class="card-body text-center">
                 <span
                   class="d-block mb-2 px-3 rounded-pill bg-primary p-1 mb-2 text-dark bg-opacity-25 border-primary-subtle border border-2">
-                  Accessibility Especialist</span
+                  {{ 'about-me.specialist' | translate }}</span
                 >
                 <span
                   class="d-block mb-2 px-3 rounded-pill bg-warning p-1 mb-2 text-dark bg-opacity-25 border-warning-subtle border border-2">
-                  Product Designer</span
-                >
+                  {{ 'about-me.productD' | translate }}
+                </span>
                 <span
                   class="d-block px-3 rounded-pill bg-success p-1 mb-2 text-dark bg-opacity-25 border-success-subtle border border-2">
-                  Frontend Designer</span
-                >
+                  {{ 'about-me.front' | translate }}
+                </span>
               </div>
             </div>
           </div>
 
           <!--intro starts-->
-          <div class="col col-12 col-md-8">
+          <div class="col col-12 col-lg-8">
             <div class="list-group shadow">
               <a
                 class="list-group-item list-group-item-action border-black border-2"
                 aria-current="true">
                 <h3 class="fw-bolder mt-3">
-                  I Love what i do
+                  {{ 'about-me.believe' | translate }}
                   <img
                     class="love mb-1 mx-1"
                     src="../../../../assets/img/icons/heart.svg"
                     alt="Facebook" />
                 </h3>
                 <p class="lead fs-6 fw-medium">
-                  As an Accessibility Specialist, I approach each project with
-                  confidence and creativity. I understand the importance of
-                  balancing aesthetics with usability and accessibility,
-                  ensuring my designs are usable, robust and inclusive for all
-                  users.
+                  {{ 'about-me.intro' | translate }}
                 </p>
               </a>
               <a
@@ -105,12 +101,11 @@
                 ><p
                   class="m-0 m-0 px-3 py-2 justify-content-center align-items-center">
                   <span
-                    class="text-secondary-emphasis cg cg-1 fw-bold px-2 rounded-4 small me-2"
-                    >Tech skills</span
+                    class="text-secondary-emphasis cg cg-1 fw-bold px-2 rounded-4 small me-2">
+                    {{ 'about-me.tech' | translate }}</span
                   >
                   <span class="fw-regular">
-                    HTML5 • CSS • BEM • GITHUB • Bitbucket • NPM Plugins •
-                    Frontend Frameworks
+                    {{ 'about-me.tech-skills' | translate }}
                   </span>
                 </p>
               </a>
@@ -119,12 +114,11 @@
                 ><p
                   class="m-0 m-0 px-3 py-2 justify-content-center align-items-center">
                   <span
-                    class="text-secondary-emphasis cg-2 fw-bold px-2 rounded-4 small me-2 border-danger-subtle border-1 border"
-                    >Design skills</span
+                    class="text-secondary-emphasis cg-2 fw-bold px-2 rounded-4 small me-2 border-danger-subtle border-1 border">
+                    {{ 'about-me.design' | translate }}</span
                   >
                   <span class="fw-regular">
-                    UX • UI • Design Thinking • Prototyping • Wireframing •
-                    Figma • Invision
+                    {{ 'about-me.design-skills' | translate }}
                   </span>
                 </p></a
               >
@@ -132,30 +126,81 @@
 
             <div
               class="container-fluid mt-4 rounded-3 border-black border-2 p-0">
-              <div class="cb1 mb-4">
-                <div class="bd-example m-0 border-0 d-flex align-items-center">
-                  <p class="m-0 fw-bolder fs-4 u-ff-crison me-2 mb-2 mb-sm-0">
-                    Connect with me
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-primary me-2 mb-2 mb-sm-0">
-                    Linkedin
-                  </button>
-                  <button type="button" class="btn btn-secondary me-2">
-                    Gmail
-                  </button>
+              <div class="mb-3">
+                <div class="row m-0 border-0 d-flex align-items-center">
+                  <div class="col-12 col-lg-4">
+                    <p
+                      class="m-0 fw-bold fs-2 fs-md-4 u-ff-crison me-3 mb-2 mb-sm-0">
+                      {{ 'about-me.connect' | translate }}
+                    </p>
+                  </div>
+
+                  <div class="col-12 col-lg-8 p-0">
+                    <!--linkedin-->
+                    <div
+                      class="btn-group me-2"
+                      role="group"
+                      [attr.aria-labelledby]="'about-me.linkedin' | translate">
+                      <button
+                        type="button"
+                        class="btn btn-primary linkedin fw-bold">
+                        <a
+                          class="text-decoration-none"
+                          href="https://www.linkedin.com/in/gabrielgarciadiaz/"
+                          target="_blank"
+                          rel="noopener noreferrer">
+                          {{ 'about-me.linkedin' | translate }}
+                        </a>
+                      </button>
+
+                      <button type="button" class="btn btn-primary linkedin">
+                        <img
+                          src="../../../assets/img/icons/linkedin.svg"
+                          [alt]="'about-me.linkedIn' | translate"
+                          class="social-net mb-1" />
+                      </button>
+                    </div>
+
+                    <!--gmail-->
+                    <div
+                      class="btn-group me-2"
+                      role="group"
+                      [attr.aria-labelledby]="'about-me.gMail' | translate">
+                      <button
+                        type="button"
+                        class="btn btn-primary gmail fw-bold">
+                        {{ 'about-me.gmail' | translate }}
+                      </button>
+
+                      <button type="button" class="btn btn-primary gmail">
+                        <img
+                          src="../../../assets/img/icons/gmail.svg"
+                          [alt]="'about-me.gMail' | translate"
+                          class="social-net gmail" />
+                      </button>
+                    </div>
+                    <!--gmail-->
+                  </div>
                 </div>
               </div>
+
+              <!--download button-->
               <div class="d-grid gap-2">
                 <button
                   href="../../../assets/downloads/GAGD-CV-A11Y-EN-ES.pdf"
-                  class="btn btn-primary shadow"
+                  class="btn btn-primary shadow my-cv fw-bold text-start"
                   type="button"
                   download>
-                  DOWNLOAD MY CV
+                  {{ 'about-me.download' | translate
+                  }}<span class="badge ms-3 text-bg-warning">
+                    <img
+                      src="../../../assets/img/icons/download.svg"
+                      [alt]="'about-me.gMail' | translate"
+                      class="social-net"
+                  /></span>
                 </button>
               </div>
+              <!--download button-->
             </div>
           </div>
         </div>

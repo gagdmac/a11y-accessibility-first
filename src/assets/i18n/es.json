@@ -144,9 +144,25 @@
   },
 
   "about-me": {
+    "gagd": "Gabriel Garcia Diaz",
+    "specialist": " Especialista en Accesibilidad",
+    "productD": "Diseñador de Producto",
+    "front": "Diseñador Frontend",
+    "believe": "Yo creo en lo que hago",
+    "intro": "As an Accessibility Specialist, I approach each project with confidence and creativity. I understand the importance of balancing aesthetics with usability and accessibility, ensuring my designs are usable, robust and inclusive for all users.",
     "img": "Foto de Gabriel Garcia",
+    "tech": "Tech skills",
+    "tech-skills": "HTML5 • CSS • BEM • GITHUB • Bitbucket • NPM Plugins • Frontend Frameworks",
+    "design": "Design skills",
+    "design-skills": "UX • UI • Design Thinking • Prototyping • Wireframing • Figma • Invision",
     "about": "ACERCA DE MÍ",
-    "about-me": "Acerca de Gabriel Garcia"
+    "about-me": "Acerca de Gabriel Garcia",
+    "connect": "Conecta conmigo",
+    "linkedin": "LinkedIn",
+    "linkedIn": "Conecta conmigo en LinkedIn",
+    "gmail": "Gmail",
+    "gMail": "Envíame un correo electrónico a mi Gmail",
+    "download": "Descarga mi CV"
   },
 
   "footer": {

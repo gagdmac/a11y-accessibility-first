@@ -6,6 +6,19 @@
       width: rem-calc(20);
       height: rem-calc(20);
     }
+    &.social-net {
+      width: rem-calc(16);
+      height: rem-calc(16);
+
+      &.gmail {
+        width: rem-calc(26);
+        height: rem-calc(22);
+      }
+
+      svg {
+        fill: #ffcc00;
+      }
+    }
   }
   .offcanvas.offcanvas-bottom {
     height: 100%;
@@ -20,9 +33,37 @@
       background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
     }
   }
-  .btn-primary:hover {
-    background-color: var(--bg-creme-color);
-    border-color: var(--border-creme-color);
-    color: var(--text-creme-color);
+
+  .linkedin.btn-primary {
+    background-color: var(--linkedin);
+    color: var(--bs-button-text);
+    a {
+      color: var(--bs-button-text);
+    }
+
+    &:hover {
+      background-color: var(--bs-bg-color);
+      color: var(--linkedin);
+      a {
+        color: var(--linkedin);
+      }
+    }
+  }
+  .gmail.btn-primary {
+    background-color: var(--gmail);
+    border-color: var(--pink-900);
+    color: var(--bs-bg-color);
+
+    a {
+      color: var(--bs-button-text);
+    }
+
+    &:hover {
+      background-color: var(--bs-bg-color);
+      color: var(--gmail);
+      a {
+        color: var(--gmail);
+      }
+    }
   }
 }
