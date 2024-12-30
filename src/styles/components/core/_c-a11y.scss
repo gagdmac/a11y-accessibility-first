@@ -20,13 +20,13 @@
       border: none;
       &:hover {
         background: var(--bs-button-text);
-        color: var(--bs-text-color);
-        border: 1px dashed var(--green-700);
+        color: var(--bs-link-color);
+        border: 1px dashed var(--bs-link-color);
       }
       &:focus-visible {
         background: var(--bs-button-text);
-        color: var(--green-700);
-        border: 1px dashed var(--green-700);
+        color: var(--bs-link-color);
+        border: 1px dashed var(--bs-link-color);
       }
     }
   }
