@@ -28,10 +28,10 @@
         <p class="card-text fs-6" [tabindex]="0">
           {{ 'a11y.fontSizeDescription' | translate }}
         </p>
-        <button class="btn btn-primary py-0 me-1" (click)="increaseFontSize()">
+        <button class="btn btn-success py-0 me-1" (click)="increaseFontSize()">
           {{ 'a11y.fontSizeMore' | translate }}
         </button>
-        <button class="btn btn-primary py-0 me-1" (click)="decreaseFontSize()">
+        <button class="btn btn-danger py-0 me-1" (click)="decreaseFontSize()">
           {{ 'a11y.fontSizeLess' | translate }}
         </button>
         <div>
@@ -62,7 +62,7 @@
         </p>
 
         <button
-          class="btn btn-primary py-0 me-1"
+          class="btn btn-warning py-0 me-1"
           (click)="toggleLinkHighlight()">
           {{ buttonText | translate }}
         </button>

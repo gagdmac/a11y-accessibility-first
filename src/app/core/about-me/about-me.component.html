@@ -141,17 +141,14 @@
                       class="btn-group me-2"
                       role="group"
                       [attr.aria-labelledby]="'about-me.linkedin' | translate">
-                      <button
+                      <a
                         type="button"
-                        class="btn btn-primary linkedin fw-bold">
-                        <a
-                          class="text-decoration-none"
-                          href="https://www.linkedin.com/in/gabrielgarciadiaz/"
-                          target="_blank"
-                          rel="noopener noreferrer">
-                          {{ 'about-me.linkedin' | translate }}
-                        </a>
-                      </button>
+                        class="text-decoration-none btn btn-primary linkedin fw-bold"
+                        href="https://www.linkedin.com/in/gabrielgarciadiaz/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        {{ 'about-me.linkedin' | translate }}
+                      </a>
 
                       <button type="button" class="btn btn-primary linkedin">
                         <img
