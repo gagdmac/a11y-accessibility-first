@@ -32,8 +32,8 @@
                 "output": "/"
               },
               {
-                "glob": "mailjet-*.txt",
-                "input": "src/assets",
+                "glob": "e5983feafbe12dec2a2342c81be7f454.txt",
+                "input": "src/public",
                 "output": "/"
               }
             ],
