@@ -139,16 +139,18 @@
     "toggleLinkHighlightTitle": "Enlaces destacados",
     "toggleLinkHighlightDescription": "Puede Resaltar todos los enlaces.",
     "highlightLinks": "Resaltar Enlaces",
-    "removeHighlights": "Eliminar Resaltado"
+    "removeHighlights": "Eliminar Resaltado",
+    "about": "ACERCA DE MÍ"
   },
 
   "about-me": {
     "img": "Foto de Gabriel Garcia",
-    "me": "Acerca de Gabriel Garcia"
+    "about": "ACERCA DE MÍ",
+    "about-me": "Acerca de Gabriel Garcia"
   },
 
   "footer": {
     "text": "2024 AAA Primero",
-    "me": "ACERCA DE MÍ"
+    "about-me": "ACERCA DE MÍ"
   }
 }

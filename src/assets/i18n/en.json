@@ -139,16 +139,18 @@
     "toggleLinkHighlightTitle": "Links Highlight",
     "toggleLinkHighlightDescription": "You can Highlight all the links.",
     "highlightLinks": "Highlight Links",
-    "removeHighlights": "Remove Highlight"
+    "removeHighlights": "Remove Highlight",
+    "about": "ABOUT ME"
   },
 
   "about-me": {
     "img": "Photo of Gabriel Garcia",
-    "me": "About of Gabriel Garcia"
+    "about": "ABOUT ME",
+    "about-me": "About of Gabriel Garcia"
   },
 
   "footer": {
     "text": "2024 AAA First",
-    "me": "ABOUT ME"
+    "about-me": "ABOUT ME"
   }
 }
