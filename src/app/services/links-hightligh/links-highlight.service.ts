@@ -49,7 +49,7 @@ export class LinkHighlightService {
 
   private highlightLinks() {
     const elements = this.document.querySelectorAll(
-      'a:not(.no-highlight), [routerLink]:not(.no-highlight)'
+      'a:not(.no-highlight), [routerLink]:not(.no-highlight), button[type="button"]:not(.no-highlight)'
     );
     elements.forEach((element) => {
       // Check for various disabled states
