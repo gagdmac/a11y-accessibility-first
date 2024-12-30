@@ -142,8 +142,13 @@
     "removeHighlights": "Eliminar Resaltado"
   },
 
+  "about-me": {
+    "img": "Foto de Gabriel Garcia",
+    "me": "Acerca de Gabriel Garcia"
+  },
+
   "footer": {
     "text": "2024 AAA Primero",
-    "me": "Acerca de mi"
+    "me": "ACERCA DE MÍ"
   }
 }

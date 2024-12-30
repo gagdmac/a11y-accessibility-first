@@ -142,8 +142,13 @@
     "removeHighlights": "Remove Highlight"
   },
 
+  "about-me": {
+    "img": "Photo of Gabriel Garcia",
+    "me": "About of Gabriel Garcia"
+  },
+
   "footer": {
     "text": "2024 AAA First",
-    "me": "About Me"
+    "me": "ABOUT ME"
   }
 }

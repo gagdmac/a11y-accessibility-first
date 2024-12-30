@@ -3,7 +3,7 @@
     class="offcanvas offcanvas-bottom"
     tabindex="-1"
     id="offcanvasBottom"
-    [attr.aria-labelledby]="'footer.me' | translate">
+    [attr.aria-labelledby]="'about-me.me' | translate">
     <div class="offcanvas-header">
       <p class="offcanvas-title fw-bold fs-6" id="offcanvasBottomLabel">
         {{ 'footer.me' | translate }}
@@ -16,31 +16,102 @@
     </div>
     <div class="offcanvas-body">
       <div class="container">
-        <div class="row">
-          <div class="col-4 cb2">
+        <div class="row" data-masonry='{"percentPosition": true }'>
+          <div class="col col-12 col-md-4">
             <div
-              class="card justify-content-center align-items-center border-black border-2 p-3">
+              class="card justify-content-center align-items-center border-black border-2 p-3 shadow">
               <img
                 src="../../../assets/img/pics/gabriel-garcia-diaz.jpg"
-                alt="{{ 'header.logo' | translate }}"
-                width="200"
+                [attr.aria-labelledby]="'about-me.img' | translate"
+                width="160"
                 height="100%"
-                class="d-inline-block rounded-circle p-1 border-white shadow" />
+                class="d-inline-block rounded-circle p-1 border-black shadow" />
+              <h2 class="card-title fw-bolder mt-3 mb-0">
+                Gabriel Garcia Diaz
+              </h2>
+
               <div class="card-body text-center">
-                <h2 class="card-title fw-bold">Gabriel Garcia Diaz</h2>
-                <p class="card-text lead fs-6 fw-medium m-0">
-                  Accessibility Especialist
-                </p>
-                <p class="card-text lead fs-6 fw-medium m-0">
-                  Product Designer
-                </p>
-                <p class="card-text lead fs-6 fw-medium m-0">
-                  Frontend Designer
-                </p>
+                <span
+                  class="d-block mb-2 px-3 rounded-pill bg-primary p-1 mb-2 text-dark bg-opacity-25 border-primary-subtle border border-2">
+                  Accessibility Especialist</span
+                >
+                <span
+                  class="d-block mb-2 px-3 rounded-pill bg-warning p-1 mb-2 text-dark bg-opacity-25 border-warning-subtle border border-2">
+                  Product Designer</span
+                >
+                <span
+                  class="d-block px-3 rounded-pill bg-success p-1 mb-2 text-dark bg-opacity-25 border-success-subtle border border-2">
+                  Frontend Designer</span
+                >
               </div>
             </div>
           </div>
-          <div class="col-8 cb3">col</div>
+          <div class="col col-12 col-md-8">
+            <div class="list-group shadow">
+              <a
+                href="#"
+                class="list-group-item list-group-item-action border-black border-2"
+                aria-current="true">
+                <h3 class="fw-bolder mt-3">
+                  I Love what i do
+                  <img
+                    class="love mb-1 mx-1"
+                    src="../../../../assets/img/icons/heart.svg"
+                    alt="Facebook" />
+                </h3>
+                <p class="lead fs-6 fw-medium">
+                  As an Accessibility Specialist, I approach each project with
+                  confidence and creativity. I understand the importance of
+                  balancing aesthetics with usability and accessibility,
+                  ensuring my designs are usable, robust and inclusive for all
+                  users.
+                </p>
+              </a>
+              <a
+                href="#"
+                class="list-group-item list-group-item-action border-black border-2 border border-top-0 p-0"
+                ><p
+                  class="m-0 m-0 px-3 py-2 justify-content-center align-items-center">
+                  <span
+                    class="text-secondary-emphasis cg cg-1 fw-bold px-2 rounded-4 small me-2"
+                    >Tech skills</span
+                  >
+                  <span class="fw-regular">
+                    HTML5 • CSS • BEM • GITHUB • Bitbucket • NPM Plugins •
+                    Frontend Frameworks
+                  </span>
+                </p>
+              </a>
+              <a
+                href="#"
+                class="list-group-item list-group-item-action p-0 border-black border-2 border border-top-0"
+                ><p
+                  class="m-0 m-0 px-3 py-2 justify-content-center align-items-center">
+                  <span
+                    class="text-secondary-emphasis cg-2 fw-bold px-2 rounded-4 small me-2 border-danger-subtle border-1 border"
+                    >Design skills</span
+                  >
+                  <span class="fw-regular">
+                    UX • UI • Design Thinking • Prototyping • Wireframing •
+                    Figma • Invision
+                  </span>
+                </p></a
+              >
+            </div>
+
+            <div
+              class="container-fluid mt-4 rounded-3 border-black border-2 p-0">
+              <div class="d-grid gap-2">
+                <a
+                  href="../../../assets/downloads/GAGD-CV-A11Y-EN-ES.pdf"
+                  class="btn btn-primary shadow"
+                  type="button"
+                  download
+                  >DOWNLOAD MY CV</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
