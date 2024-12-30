@@ -1,14 +1,21 @@
 footer {
+  // margin-bottom: rem-calc(-1);
+  img {
+    margin-left: 10px;
+    width: rem-calc(25);
+    height: auto;
+  }
   a {
+    place-content: center;
     -webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
-    background: var(--green-700);
-    color: var(--bs-button-text);
+    background: #19d27b;
+    color: var(--bs-text-color);
     &:hover {
       background: var(--bs-button-text);
-      color: var(--green-700);
+      color: var(--bs-text-color);
       border: 1px dashed var(--green-700);
     }
     &:focus-visible {

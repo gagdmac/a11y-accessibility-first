@@ -3,13 +3,17 @@
   <div class="d-flex justify-content-between">
     <div class="col12 col-4 d-flex justify-content-center align-items-center">
       <a
-        class="profile align-content-center fw-bold link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+        class="profile fw-bold d-flex link-offset-2 link-underline-opacity-10 link-underline-opacity-100-hover p-1 align-items-center"
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasBottom"
         aria-controls="offcanvasBottom"
         tabindex="0">
         {{ 'footer.me' | translate }}
+        <img
+          src="../../../assets/img/icons/smiley-icon.svg"
+          [alt]="'about-me.img' | translate"
+          class="" />
       </a>
     </div>
     <div class="col-12 col-4 bg-secondary pe-5">
