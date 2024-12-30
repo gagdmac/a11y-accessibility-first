@@ -8,6 +8,20 @@
       <p class="offcanvas-title fw-bold fs-6" id="offcanvasBottomLabel">
         {{ 'footer.me' | translate }}
       </p>
+      <!--boton modulo accesibilidad starts-->
+      <button
+        class="btn btn-link mt-1"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasWithBothOptions"
+        aria-controls="offcanvasWithBothOptions"
+        aria-label="Opens accesibility options">
+        <span class="sr-only">{{
+          'home.accessibilityOptions' | translate
+        }}</span>
+        <div class="universal-access"></div>
+      </button>
+      <!--boton modulo accesibilidad ends-->
       <button
         type="button"
         class="btn-close"
@@ -101,13 +115,13 @@
             <div
               class="container-fluid mt-4 rounded-3 border-black border-2 p-0">
               <div class="d-grid gap-2">
-                <a
+                <button
                   href="../../../assets/downloads/GAGD-CV-A11Y-EN-ES.pdf"
                   class="btn btn-primary shadow"
                   type="button"
-                  download
-                  >DOWNLOAD MY CV</a
-                >
+                  download>
+                  DOWNLOAD MY CV
+                </button>
               </div>
               <div class="cb1 mt-4">
                 <div class="col-4 cb3">

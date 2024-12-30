@@ -132,6 +132,36 @@ body {
 }
 
 //=======================================
+// =========== A11Y ICON ================
+//=======================================
+
+.universal-access {
+  background-image: url('../../assets/img/universal-access-solid.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: inline-block;
+  background-size: cover;
+  width: rem-calc(32);
+  height: rem-calc(32);
+  filter: invert(23%) sepia(75%) saturate(2991%) hue-rotate(214deg)
+    brightness(112%) contrast(99%);
+}
+
+.universal-access:hover,
+.universal-access:focus {
+  filter: invert(19%) sepia(100%) saturate(5226%) hue-rotate(210deg)
+    brightness(91%) contrast(92%);
+}
+
+/* Add active state */
+.universal-access:active,
+.universal-access.active {
+  /* .active class for programmatic activation */
+  filter: invert(19%) sepia(100%) saturate(5226%) hue-rotate(210deg)
+    brightness(70%) contrast(110%); /* Darkened version for active state */
+}
+
+//=======================================
 // =========== SKIP CONTENT =============
 //=======================================
 

@@ -1,9 +1,10 @@
 <div
-  class="offcanvas offcanvas-start"
+  class="c-a11y-options offcanvas offcanvas-start"
   data-bs-scroll="true"
   tabindex="-1"
   [attr.aria-labelledby]="'a11y.title' | translate"
   id="offcanvasWithBothOptions">
+  <!--offcanvas-header START-->
   <div class="offcanvas-header">
     <p class="offcanvas-title lead fw-bold" id="offcanvasTitle">
       {{ 'a11y.title' | translate }}
@@ -14,6 +15,9 @@
       data-bs-dismiss="offcanvas"
       aria-label="Close"></button>
   </div>
+  <!--offcanvas-header ENDS-->
+
+  <!--offcanvas-body START-->
   <div class="offcanvas-body">
     <!--Font size STARS-->
     <div class="card cb2">
@@ -66,10 +70,28 @@
     </div>
     <!--toggle Link Highlight ENDS-->
 
-    <div class="container">
+    <!--toggle ABOUT ME STARTS-->
+    <div class="profile">
+      <button
+        class="btn-link position-absolute start-0 bottom-0 fw-bold d-flex link-offset-2 link-underline-opacity-10 link-underline-opacity-100-hover p-1 align-items-center"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasBottom"
+        aria-controls="offcanvasBottom"
+        tabindex="0">
+        {{ 'footer.me' | translate }}
+        <img
+          src="../../../assets/img/icons/smiley-icon.svg"
+          [alt]="'about-me.img' | translate"
+          class="" />
+      </button>
+    </div>
+    <!--toggle ABOUT ME ENDS-->
+
+    <!-- <div class="container">
       <div class="text-center">
-        <!--theme color starts-->
-        <!-- <p>Welcome to the Angular theme switcher with Bootstrap!</p>
+
+        <p>Welcome to the Angular theme switcher with Bootstrap!</p>
         <button class="btn btn-primary" (click)="switchTheme('light')">
           Light Mode
         </button>
@@ -85,9 +107,10 @@
         <br /><br />
         <button class="btn btn-info" (click)="toggleTheme()">
           Toggle Theme
-        </button> -->
-        <!--theme color ends-->
+        </button>
+
       </div>
-    </div>
+    </div> -->
   </div>
+  <!--offcanvas-body ENDS-->
 </div>
