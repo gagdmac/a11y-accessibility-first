@@ -30,7 +30,7 @@ const appRoutes: Routes = [
   {
     path: 'blog/:urlHandle',
     component: BlogPostComponent,
-    title: 'blog/:slug',
+    title: 'Accessibility Today: The BLOG',
   },
   {
     path: 'accessibility',
