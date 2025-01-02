@@ -71,14 +71,36 @@ export class BlogPostComponent implements OnInit, OnDestroy {
     private socialShareService: SocialShareService
   ) {}
 
-  share(platform: 'facebook' | 'twitter' | 'linkedin') {
-    if (!this.currentBlogPost) return;
+  share(platform: 'facebook' | 'linkedin') {
+    const currentUrl = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(this.currentBlogPost?.fields?.title || '');
 
-    const currentUrl = window.location.href;
-    const title = this.currentBlogPost.fields.title;
-    const summary = this.currentBlogPost.fields.summary;
+    try {
+      let shareUrl = '';
+      switch (platform) {
+        case 'facebook':
+          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+          break;
+        case 'linkedin':
+          // Updated LinkedIn sharing URL format
+          shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}&title=${title}`;
+          break;
+      }
 
-    this.socialShareService.shareToSocial(platform, currentUrl, title, summary);
+      // Open in a new window with specific dimensions
+      const width = 600;
+      const height = 400;
+      const left = window.screen.width / 2 - width / 2;
+      const top = window.screen.height / 2 - height / 2;
+
+      window.open(
+        shareUrl,
+        'share',
+        `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
+      );
+    } catch (error) {
+      console.error('Error sharing:', error);
+    }
   }
 
   goBack(): void {
