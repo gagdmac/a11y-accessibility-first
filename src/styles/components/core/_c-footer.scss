@@ -1,8 +1,8 @@
 footer {
   // margin-bottom: rem-calc(-1);
   img {
-    margin-left: 10px;
-    width: rem-calc(25);
+    margin-left: rem-calc(10);
+    width: rem-calc(20);
     height: auto;
   }
   button {
@@ -17,12 +17,12 @@ footer {
     &:hover {
       background: var(--bs-button-text);
       color: var(--bs-link-color);
-      border: 1px dashed var(--bs-link-color);
+      border: rem-calc(1) dashed var(--bs-link-color);
     }
     &:focus-visible {
       background: var(--bs-button-text);
       color: var(--bs-link-color);
-      border: 1px dashed var(--bs-link-color);
+      border: rem-calc(1) dashed var(--bs-link-color);
     }
   }
   .profile {

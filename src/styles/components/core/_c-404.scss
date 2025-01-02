@@ -3,7 +3,7 @@
 =======================*/
 
 .page_404 {
-  padding: 40px 0;
+  padding: rem-calc(40 0);
   background: #fff;
   font-family: 'Arvo', serif;
 }
@@ -19,20 +19,20 @@
 }
 
 .four_zero_four_bg h1 {
-  font-size: 80px;
+  font-size: rem-calc(80);
 }
 
 .four_zero_four_bg h3 {
-  font-size: 80px;
+  font-size: rem-calc(80);
 }
 
 .link_404 {
   color: #fff !important;
-  padding: 10px 20px;
+  padding: rem-calc(10 20);
   background: #39ac31;
-  margin: 20px 0;
+  margin: rem-calc(20 0);
   display: inline-block;
 }
 .contant_box_404 {
-  margin-top: -50px;
+  margin-top: rem-calc(-50);
 }

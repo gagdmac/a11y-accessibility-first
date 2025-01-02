@@ -23,7 +23,7 @@
     </span>
 
     <div class="card-body container p-3 p-lg-3 pt-0 mb-1 mb-md-3">
-      <!-- Add breadcrumbs -->
+      <!-- Add breadcrumbs STARTS-->
       <div class="container small pb-2">
         <nav aria-label="breadcrumb" class="">
           <ol class="breadcrumb">
@@ -43,16 +43,20 @@
           </ol>
         </nav>
       </div>
+      <!-- Add breadcrumbs ENDS-->
+
       <hr class="mb-2" />
       <span class="text-center text-lg-start">
-        <h2 class="fw-bold display-4 pe-0 ps-md-3">
+        <h2 class="fw-bold display-4 pe-0 ps-md-3" [tabIndex]="0">
           {{ blogPosts.fields.title }}
         </h2>
       </span>
       <hr class="m-0" />
-      <div
-        class="container mt-4 mt-lg-5"
-        [innerHTML]="richTextToHtml(blogPosts.fields.content)"></div>
+      <span [tabIndex]="0">
+        <div
+          class="container mt-4 mt-lg-5"
+          [innerHTML]="richTextToHtml(blogPosts.fields.content)"></div>
+      </span>
 
       <hr />
       <div class="d-flex justify-content-between align-items-center">

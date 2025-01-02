@@ -61,8 +61,8 @@
 
 /* Reset and customize focus styles globally */
 *:focus-visible {
-  outline: 2px solid rgb(255, 0, 0);
-  outline-offset: 2px;
+  outline: rem-calc(2) solid rgb(255, 0, 0);
+  outline-offset: rem-calc(2);
   transition: outline 0.2s ease;
   z-index: 1;
 }
@@ -76,7 +76,7 @@ a:focus-visible {
 
 input:focus-visible {
   border-color: blue;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: rem-calc(0 0 5) rgba(0, 123, 255, 0.5);
   z-index: 1;
 }
 

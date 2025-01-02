@@ -118,9 +118,22 @@ export class BlogPostComponent implements OnInit, OnDestroy {
     this.setBreadcrumbs();
     this.route.params.subscribe((params) => {
       const urlHandle = params['urlHandle'];
-      this.blogPost$ = from(
-        this.contentfulService.getBlogPostByHandle(urlHandle)
-      ).pipe(map((response: { items: any[] }) => response.items[0]));
+      if (urlHandle) {
+        from(this.contentfulService.getBlogPostByHandle(urlHandle))
+          .pipe(map((response: { items: any[] }) => response.items[0]))
+          .subscribe({
+            next: (post) => {
+              if (!post) {
+                this.router.navigate(['/404']);
+                return;
+              }
+              this.blogPost$ = from(Promise.resolve(post));
+            },
+            error: () => {
+              this.router.navigate(['/404']);
+            },
+          });
+      }
     });
   }
 
@@ -132,11 +145,23 @@ export class BlogPostComponent implements OnInit, OnDestroy {
   private loadBlogPost() {
     const postId = this.route.snapshot.paramMap.get('id');
     if (postId) {
-      this.blogPost$ = this.contentfulService.getEntry<BlogPost>(postId);
-      this.blogPost$.pipe(takeUntil(this.destroy$)).subscribe((post) => {
-        this.currentBlogPost = post;
-        this.loadBreadcrumbs(); // Update breadcrumbs after post loads
-      });
+      this.contentfulService
+        .getEntry<BlogPost>(postId)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe({
+          next: (post) => {
+            if (!post) {
+              this.router.navigate(['/404']);
+              return;
+            }
+            this.currentBlogPost = post;
+            this.blogPost$ = from(Promise.resolve(post));
+            this.loadBreadcrumbs();
+          },
+          error: () => {
+            this.router.navigate(['/404']);
+          },
+        });
     }
   }
 
