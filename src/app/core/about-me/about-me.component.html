@@ -183,19 +183,18 @@
 
               <!--download button-->
               <div class="d-grid gap-2">
-                <button
+                <a
                   href="../../../assets/downloads/GAGD-CV-A11Y-EN-ES.pdf"
                   class="btn btn-primary shadow my-cv fw-bold text-start"
-                  type="button"
                   download>
-                  {{ 'about-me.download' | translate
-                  }}<span class="badge ms-3 text-bg-warning">
+                  {{ 'about-me.download' | translate }}
+                  <span class="badge ms-3 text-bg-warning">
                     <img
                       src="../../../assets/img/icons/download.svg"
                       [alt]="'about-me.gMail' | translate"
-                      class="social-net"
-                  /></span>
-                </button>
+                      class="social-net" />
+                  </span>
+                </a>
               </div>
               <!--download button-->
             </div>
