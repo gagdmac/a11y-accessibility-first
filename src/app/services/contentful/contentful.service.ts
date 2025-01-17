@@ -11,7 +11,6 @@ import { environment } from '../../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { Feed } from 'feed';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { Document } from '@contentful/rich-text-types'; // Add this import
 
@@ -83,30 +82,46 @@ export class ContentfulService {
       .replace(/'/g, '&apos;');
   }
 
-  // Add RSS generation methods
-  async generateRssFeed(): Promise<string> {
-    const feed = new Feed({
-      title: environment.siteName || 'Accessible First',
-      description:
-        environment.siteDescription ||
-        'Empowering creators to build a more inclusive digital world',
-      id: `${environment.siteUrl}/accessibility-today`,
-      link: `${environment.siteUrl}/accessibility-today`,
-      language: this.currentLocale.split('-')[0],
-      favicon: `${environment.siteUrl}/favicon.ico`,
-      copyright: 'All rights reserved ' + new Date().getFullYear(),
-      generator: 'Custom RSS Generator',
-      feedLinks: {
-        rss2: `${environment.siteUrl}/feed.xml`,
-        atom: `${environment.siteUrl}/atom.xml`,
-      },
-      author: {
-        name: environment.siteAuthor?.name || 'Gabriel Garcia diaz',
-        email: 'garturogdiaz@gmail.com',
-        link: environment.siteUrl,
-      },
-    });
+  private createXmlFeed(posts: any[]): string {
+    const items = posts
+      .map(
+        (post) => `
+      <item>
+        <title>${this.sanitizeXmlContent(post.fields.title)}</title>
+        <link>${environment.siteUrl}/accessibility-today/blog/${
+          post.fields.urlHandle
+        }</link>
+        <guid>${post.sys.id}</guid>
+        <pubDate>${new Date(post.sys.createdAt).toUTCString()}</pubDate>
+        <description>${this.sanitizeXmlContent(
+          documentToHtmlString(post.fields.description)
+        )}</description>
+        <content:encoded><![CDATA[${documentToHtmlString(
+          post.fields.content
+        )}]]></content:encoded>
+        <author>${environment.siteAuthor?.email} (${
+          environment.siteAuthor?.name
+        })</author>
+      </item>
+    `
+      )
+      .join('\n');
 
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>${environment.siteName}</title>
+    <link>${environment.siteUrl}/accessibility-today</link>
+    <description>${environment.siteDescription}</description>
+    <language>${this.currentLocale.split('-')[0]}</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <generator>Custom RSS Generator</generator>
+    ${items}
+  </channel>
+</rss>`;
+  }
+
+  async generateRssFeed(): Promise<string> {
     try {
       console.log('Fetching entries from Contentful...');
       const response = await this.client.getEntries<BlogPost>({
@@ -116,56 +131,14 @@ export class ContentfulService {
         include: 2,
       });
 
-      console.log('Entries received:', response.items?.length || 0);
-
       if (!response.items?.length) {
         console.log('No blog posts found');
-        return feed.rss2();
+        return this.createXmlFeed([]);
       }
 
-      response.items.forEach((post) => {
-        console.log('Processing post:', post.fields?.title);
-
-        if (!post.fields) {
-          console.log('Post fields missing:', post);
-          return;
-        }
-
-        // Convert rich text content to HTML string
-        const contentHtml = documentToHtmlString(
-          post.fields.content as Document
-        );
-        const descriptionHtml = documentToHtmlString(
-          post.fields.description as Document
-        );
-
-        feed.addItem({
-          title: this.sanitizeXmlContent(String(post.fields.title || '')),
-          id: post.sys.id,
-          link: `${environment.siteUrl}/accessibility-today/blog/${post.fields.urlHandle}`,
-          description: this.sanitizeXmlContent(descriptionHtml),
-          content: this.sanitizeXmlContent(contentHtml),
-          date: new Date(post.sys.createdAt),
-          author: [
-            {
-              name: environment.siteAuthor?.name || 'Gabriel Garcia diaz',
-              email: environment.siteAuthor?.email || 'garturogdiaz@gmail.com',
-              link: environment.siteUrl,
-            },
-          ],
-        });
-      });
-
-      const feedXml = feed.rss2();
-      console.log('Feed generated successfully');
-      return feedXml;
+      return this.createXmlFeed(response.items);
     } catch (error) {
-      console.error('Detailed error generating RSS feed:', error);
-      if (error instanceof Error) {
-        console.error('Error name:', error.name);
-        console.error('Error message:', error.message);
-        console.error('Error stack:', error.stack);
-      }
+      console.error('Error generating RSS feed:', error);
       throw error;
     }
   }
