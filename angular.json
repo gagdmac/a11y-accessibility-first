@@ -46,6 +46,11 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "node_modules/masonry-layout/dist/masonry.pkgd.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "@contentful/rich-text-html-renderer",
+              "contentful",
+              "sax"
             ]
           },
           "configurations": {
