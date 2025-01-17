@@ -1,13 +1,13 @@
 export const environment = {
-  production: false,
-  siteUrl: 'http://127.0.0.1:4200', // Changed to base URL without path
+  production: true,
+  siteUrl: 'https://accessibilityfirst.vercel.app',
   siteName: 'Accessible First',
   siteDescription:
     'Empowering creators to build a more inclusive digital world',
   siteAuthor: {
     name: 'Gabriel Garcia Diaz',
     email: 'garturogdiaz@gmail.com',
-    link: 'http://127.0.0.1:4200',
+    link: 'https://accessibilityfirst.vercel.app',
   },
   contentful: {
     spaceId: 'fadq488dango',

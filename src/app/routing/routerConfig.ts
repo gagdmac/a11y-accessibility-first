@@ -13,6 +13,7 @@ import { AccessibilityComponent } from '../components/accessibility-Info/accessi
 import { Empty404Component } from '../core/empty-404/empty-404.component';
 import { AccessibilityTodayComponent } from '../components/accessibility-today/accessibility-today.component';
 import { BlogPostComponent } from '../components/accessibility-today/blog-post/blog-post.component';
+import { RssFeedComponent } from '../core/rss-feed/rss-feed.component';
 
 // core components
 
@@ -67,6 +68,11 @@ const appRoutes: Routes = [
     path: '404',
     component: Empty404Component,
     title: 'No page found',
+  },
+
+  {
+    path: 'feed.xml',
+    component: RssFeedComponent,
   },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },

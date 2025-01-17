@@ -1,16 +1,48 @@
 import { Injectable } from '@angular/core';
-import { createClient, Entry, EntryCollection } from 'contentful';
+import {
+  createClient,
+  Entry,
+  EntryCollection,
+  EntrySkeletonType,
+} from 'contentful';
 import { from, Observable, throwError } from 'rxjs';
 import { tap, catchError, switchMap, map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { Feed } from 'feed';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { Document } from '@contentful/rich-text-types'; // Add this import
 
 export interface Breadcrumb {
   label: string;
   url: string;
   isActive: boolean;
+}
+
+// Update the BlogPost interface to reflect the correct content type
+export interface BlogPost extends EntrySkeletonType {
+  fields: {
+    title: string;
+    urlHandle: string;
+    description: Document; // Change type to Document
+    content: Document; // Change type to Document
+    featuredImage?: {
+      fields: {
+        title: string;
+        file: {
+          url: string;
+          contentType: string;
+        };
+      };
+    };
+  };
+  sys: {
+    id: string;
+    createdAt: string;
+  };
+  contentTypeId: 'blogPost';
 }
 
 @Injectable({
@@ -23,6 +55,137 @@ export class ContentfulService {
   });
 
   private currentLocale = 'en-US';
+
+  // Add RSS cache
+  private rssCache: {
+    content: string;
+    timestamp: number;
+  } | null = null;
+
+  private readonly CACHE_DURATION = 1800000; // 30 minutes
+
+  constructor(
+    private translate: TranslateService,
+    private router: Router,
+    private location: Location
+  ) {}
+
+  // Update the sanitizeXmlContent method to handle non-string inputs
+  private sanitizeXmlContent(content: any): string {
+    if (!content) return '';
+    // Convert to string if it's not already
+    const stringContent = String(content);
+    return stringContent
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&apos;');
+  }
+
+  // Add RSS generation methods
+  async generateRssFeed(): Promise<string> {
+    const feed = new Feed({
+      title: environment.siteName || 'Accessible First',
+      description:
+        environment.siteDescription ||
+        'Empowering creators to build a more inclusive digital world',
+      id: `${environment.siteUrl}/accessibility-today`,
+      link: `${environment.siteUrl}/accessibility-today`,
+      language: this.currentLocale.split('-')[0],
+      favicon: `${environment.siteUrl}/favicon.ico`,
+      copyright: 'All rights reserved ' + new Date().getFullYear(),
+      generator: 'Custom RSS Generator',
+      feedLinks: {
+        rss2: `${environment.siteUrl}/feed.xml`,
+        atom: `${environment.siteUrl}/atom.xml`,
+      },
+      author: {
+        name: environment.siteAuthor?.name || 'Gabriel Garcia diaz',
+        email: 'garturogdiaz@gmail.com',
+        link: environment.siteUrl,
+      },
+    });
+
+    try {
+      console.log('Fetching entries from Contentful...');
+      const response = await this.client.getEntries<BlogPost>({
+        content_type: 'blogPost',
+        order: ['-sys.createdAt'],
+        limit: 10,
+        include: 2,
+      });
+
+      console.log('Entries received:', response.items?.length || 0);
+
+      if (!response.items?.length) {
+        console.log('No blog posts found');
+        return feed.rss2();
+      }
+
+      response.items.forEach((post) => {
+        console.log('Processing post:', post.fields?.title);
+
+        if (!post.fields) {
+          console.log('Post fields missing:', post);
+          return;
+        }
+
+        // Convert rich text content to HTML string
+        const contentHtml = documentToHtmlString(
+          post.fields.content as Document
+        );
+        const descriptionHtml = documentToHtmlString(
+          post.fields.description as Document
+        );
+
+        feed.addItem({
+          title: this.sanitizeXmlContent(String(post.fields.title || '')),
+          id: post.sys.id,
+          link: `${environment.siteUrl}/accessibility-today/blog/${post.fields.urlHandle}`,
+          description: this.sanitizeXmlContent(descriptionHtml),
+          content: this.sanitizeXmlContent(contentHtml),
+          date: new Date(post.sys.createdAt),
+          author: [
+            {
+              name: environment.siteAuthor?.name || 'Gabriel Garcia diaz',
+              email: environment.siteAuthor?.email || 'garturogdiaz@gmail.com',
+              link: environment.siteUrl,
+            },
+          ],
+        });
+      });
+
+      const feedXml = feed.rss2();
+      console.log('Feed generated successfully');
+      return feedXml;
+    } catch (error) {
+      console.error('Detailed error generating RSS feed:', error);
+      if (error instanceof Error) {
+        console.error('Error name:', error.name);
+        console.error('Error message:', error.message);
+        console.error('Error stack:', error.stack);
+      }
+      throw error;
+    }
+  }
+
+  // Add cached RSS feed getter
+  async getRssFeed(): Promise<string> {
+    if (
+      this.rssCache &&
+      Date.now() - this.rssCache.timestamp < this.CACHE_DURATION
+    ) {
+      return this.rssCache.content;
+    }
+
+    const feed = await this.generateRssFeed();
+    this.rssCache = {
+      content: feed,
+      timestamp: Date.now(),
+    };
+    return feed;
+  }
 
   async getBreadcrumbs(currentPath: string): Promise<Breadcrumb[]> {
     const paths = currentPath.split('/').filter((p) => p);
@@ -68,15 +231,8 @@ export class ContentfulService {
         isActive: false,
       });
     }
-
     return breadcrumbs;
   }
-
-  constructor(
-    private translate: TranslateService,
-    private router: Router,
-    private location: Location
-  ) {}
 
   getBlogPostByHandle(urlHandle: string) {
     return this.client.getEntries({
@@ -159,13 +315,16 @@ export class ContentfulService {
     return this.translateField(content);
   }
 
-  getEntries(query?: object): Observable<EntryCollection<any>> {
+  // Update the getEntries method to be generic
+  getEntries<T extends EntrySkeletonType>(
+    query?: object
+  ): Observable<EntryCollection<T>> {
     const queryWithLocale = {
       ...query,
       locale: this.currentLocale,
     };
 
-    return from(this.client.getEntries(queryWithLocale)).pipe(
+    return from(this.client.getEntries<T>(queryWithLocale)).pipe(
       catchError((error) => {
         console.error('Contentful error:', error);
         return throwError(() => error);
