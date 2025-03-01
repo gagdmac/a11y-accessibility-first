@@ -1,6 +1,7 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { ContentfulService } from './services/contentful/contentful.service';
+import { LoadingService } from './services/loading/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,18 @@ import { ContentfulService } from './services/contentful/contentful.service';
 })
 export class AppComponent implements OnInit {
   title = 'a11y';
+  isLoading = false;
 
   constructor(
     private router: Router,
     private renderer: Renderer2,
-    private contentfulService: ContentfulService
+    private contentfulService: ContentfulService,
+    private loadingService: LoadingService
   ) {
+    this.loadingService.loading$.subscribe(
+      (isLoading) => (this.isLoading = isLoading)
+    );
+
     // Listen to router events
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {

@@ -10,6 +10,7 @@
   <app-about-me></app-about-me>
 </aside>
 <main id="main" class="container-fluid mt-2 p-0 mt-4">
+  <app-loading *ngIf="isLoading"></app-loading>
   <article class="lh-0">
     <router-outlet></router-outlet>
   </article>

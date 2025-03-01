@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import localeFr from '@angular/common/locales/fr';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 //routing
 import appRoutes from './routing/routerConfig';
@@ -41,6 +43,7 @@ import { AccessibilityComponent } from './components/accessibility-Info/accessib
 import { BlogPostComponent } from './components/accessibility-today/blog-post/blog-post.component';
 import { AboutMeComponent } from './core/about-me/about-me.component';
 import { RssFeedComponent } from './core/rss-feed/rss-feed.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -69,6 +72,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     BlogPostComponent,
     AboutMeComponent,
     RssFeedComponent,
+    LoadingComponent,
   ],
   imports: [
     // ngx-translate and the loader module
@@ -92,6 +96,11 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
       deps: [TranslateService],
       useFactory: (translateService: TranslateService) =>
         translateService.currentLang || 'en',
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true,
     },
   ],
   bootstrap: [AppComponent],
