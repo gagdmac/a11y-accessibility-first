@@ -9,15 +9,42 @@
     }
 
     @include respond-below(md) {
-      position: absolute;
+      position: fixed;
       right: rem-calc(60);
-      top: 50%;
+      top: rem-calc(44);
       transform: translateY(-50%);
 
       .dropdown-menu {
         left: auto !important;
         right: 0 !important;
         min-width: max-content;
+      }
+    }
+  }
+  .accessibility-btn {
+    position: relative;
+    z-index: 1020;
+
+    @include respond-below(md) {
+      position: fixed;
+      top: rem-calc(17);
+      right: rem-calc(144);
+    }
+  }
+
+  .navbar-toggler {
+    padding: rem-calc(0 13);
+    border: 1px solid gray;
+    border-radius: rem-calc(5);
+  }
+
+  .navbar-nav {
+    .nav-item {
+      display: flex;
+      align-items: center;
+
+      .btn-link {
+        line-height: 1;
       }
     }
   }
