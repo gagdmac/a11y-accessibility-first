@@ -68,27 +68,45 @@
         </div>
         <!--APP LANGUAGUES SELECTION ENDS-->
 
+        <!--boton modulo accesibilidad mobile-->
+        <button
+          class="btn btn-link mt-1 accessibility-btn d-lg-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions"
+          aria-controls="offcanvasWithBothOptions"
+          aria-label="Opens accesibility options">
+          <span class="sr-only">{{
+            'home.accessibilityOptions' | translate
+          }}</span>
+          <div class="universal-access"></div>
+        </button>
+
         <!--APP MENU STARTS-->
         <div
           class="collapse navbar-collapse d-lg-flex justify-content-lg-end"
           id="navbarSupportedContent">
-          <!--boton modulo accesibilidad starts-->
-          <button
-            class="btn btn-link mt-1"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasWithBothOptions"
-            aria-controls="offcanvasWithBothOptions"
-            aria-label="Opens accesibility options">
-            <span class="sr-only">{{
-              'home.accessibilityOptions' | translate
-            }}</span>
-            <div class="universal-access"></div>
-          </button>
-          <!--boton modulo accesibilidad ends-->
+          <nav
+            aria-label="Primary navigation"
+            role="navigation"
+            class="d-flex align-items-center">
+            <ul class="navbar-nav me-2 mb-2 mb-lg-0 d-flex align-items-center">
+              <!--boton modulo accesibilidad desktop-->
+              <li class="nav-item d-flex align-items-center">
+                <button
+                  class="btn btn-link d-none d-lg-inline-block p-0 mx-3"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasWithBothOptions"
+                  aria-controls="offcanvasWithBothOptions"
+                  aria-label="Opens accesibility options">
+                  <span class="sr-only">{{
+                    'home.accessibilityOptions' | translate
+                  }}</span>
+                  <div class="universal-access"></div>
+                </button>
+              </li>
 
-          <nav aria-label="Primary navigation" role="navigation">
-            <ul class="navbar-nav me-2 mb-2 mb-lg-0">
               <li class="nav-item">
                 <a
                   class="nav-link active"
