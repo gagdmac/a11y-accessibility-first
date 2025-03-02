@@ -13,12 +13,6 @@
       right: rem-calc(60);
       top: rem-calc(44);
       transform: translateY(-50%);
-
-      .dropdown-menu {
-        left: auto !important;
-        right: 0 !important;
-        min-width: max-content;
-      }
     }
   }
   .accessibility-btn {
@@ -34,18 +28,14 @@
 
   .navbar-toggler {
     padding: rem-calc(0 13);
-    border: 1px solid gray;
+    border: rem-calc(1) solid gray;
     border-radius: rem-calc(5);
   }
 
-  .navbar-nav {
-    .nav-item {
-      display: flex;
-      align-items: center;
-
-      .btn-link {
-        line-height: 1;
-      }
-    }
+  .dropstart .dropdown-menu[data-bs-popper] {
+    top: 110%;
+    right: 100%;
+    left: -124%;
+    z-index: 1200;
   }
 }
