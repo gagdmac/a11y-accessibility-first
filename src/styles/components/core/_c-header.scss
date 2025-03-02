@@ -1,4 +1,24 @@
 .c-header {
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  .language-selector {
+    @include respond-above(md) {
+      order: 3;
+      margin-left: 1rem;
+    }
+
+    @include respond-below(md) {
+      position: absolute;
+      right: rem-calc(60);
+      top: 50%;
+      transform: translateY(-50%);
+
+      .dropdown-menu {
+        left: auto !important;
+        right: 0 !important;
+        min-width: max-content;
+      }
+    }
+  }
 }
