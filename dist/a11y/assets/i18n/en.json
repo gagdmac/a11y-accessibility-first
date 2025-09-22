@@ -1,0 +1,172 @@
+{
+  "en": "English",
+  "es": "Español",
+  "languages": {
+    "espanol": "Español",
+    "english": "English",
+    "languageSelection": "Language selection"
+  },
+
+  "menu": {
+    "home": "Home",
+    "accessibility": "What is accessibility?",
+    "accessibility-today": "Accessibility today"
+  },
+  "submenu": {
+    "accessibility": "Accessibility",
+    "universal": "Universal design",
+    "healthcare": "Accessible Healthcare",
+    "rights": "Disability Rights",
+    "inclusivity": "Inclusivity",
+    "phisical": "Phisical Accessibility"
+  },
+
+  "header": {
+    "logo": "Logo of Accesibility First",
+    "title": "accessibility first"
+  },
+
+  "home": {
+    "intro-title": "Accessible First (a11y 1st)",
+    "intro": "Empowering creators to build a more inclusive digital world, Accessible First (a11y 1st) is your comprehensive guide to web accessibility. Whether you're a developer, designer, or content creator, our platform offers expert insights, practical tutorials, and hands-on courses to make accessibility an integral part of your workflow.",
+    "card1": {
+      "title": "Accessibility Blog",
+      "text": "The future of accessibility.",
+      "link": "Blog room"
+    },
+    "card2": {
+      "title": "Tutorials",
+      "text": "The importance of accessibility.",
+      "link": "Accessibility tools"
+    },
+    "card3": {
+      "title": "Courses",
+      "text": "Accessible lifecycle .",
+      "link": "Accessible design & development"
+    }
+  },
+
+  "accessibility-today": {
+    "title": "Accessibility Today: The Blog",
+    "intro": "Staying informed about accessibility isn't just about compliance—it's about creating a world where everyone can participate fully. From digital spaces to physical environments, understanding the latest accessibility developments helps us build a more inclusive society where no one is left behind.",
+    "read-more": "Read article:",
+    "authorName": "Author:",
+    "blogPost": {
+      "whittenBy": "written by ",
+      "back": "Go back",
+      "share": "Share this article"
+    }
+  },
+
+  "404": {
+    "404": "404 - Page not found",
+    "text": "Look like you're lost",
+    "no-page": "the page you are looking for is not avaible!",
+    "button": "Go to website home"
+  },
+
+  "app-content-links": {
+    "accessibility": "Accessibility",
+    "universal": "Universal design",
+    "healcare": "Accessible healthcare",
+    "rights": "Disabilty rights",
+    "inclusivity": "Inclusivity",
+    "phisical": "Phisical accessibility",
+    "left": "move to the right",
+    "right": "move to the left"
+  },
+
+  "accessibility": {
+    "accessibilityTitle": "Accesibility",
+    "accessibilityInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
+    "accessibilityExtra": " without the need for adaptation or specialized design.",
+    "accessibilityExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
+  },
+
+  "universal": {
+    "universalTitle": "Universal Design",
+    "universalInfo": "is an approach to creating environments, products, and services that are inherently accessible to all people, regardless of their age, ability, or status in life ",
+    "universalExtra": " without the need for adaptation or specialized design.",
+    "universalExtraB": "It goes beyond basic accessibility requirements to create solutions that work well for everyone from the start.",
+    "universalDataTitle": "The 7 key principles of universal design are:",
+    "universalData": [
+      "Equitable Use",
+      "Flexibility in Use",
+      "Simple and Intuitive",
+      "Perceptible Information",
+      "Tolerance for Error",
+      "Low Physical Effort",
+      "Size and Space for Approach and Use"
+    ]
+  },
+
+  "accessible-healhcare": {
+    "accessible-healhcareTitle": "Accessible healhcare",
+    "accessible-healhcareInfo": "is a comprehensive approach to medical services that ensures all individuals, regardless of their physical abilities, economic status, cultural background, or geographic location,",
+    "accessible-healhcareExtra": " can effectively obtain, use, and benefit from health services and information.",
+    "accessible-healhcareExtraB": "It encompasses physical access to facilities, affordability of care, timely service delivery, and clear communication, all designed to provide appropriate and equitable healthcare for everyone in the community."
+  },
+
+  "disability-rights": {
+    "disability-rightsTitle": "Disability rights",
+    "disability-rightsInfo": "are legal and social protections ensuring that individuals with disabilities have equal opportunities, access, and treatment in all aspects of society. These rights aim to guarantee,",
+    "disability-rightsExtra": "full participation in economic, social, political, and cultural life freedoms as complete and equal members of society.",
+    "disability-rightsExtraB": "This encompasses protection against discrimination and ensures access to education, healthcare, transportation, and technology, and recognizes disability as a form of human diversity."
+  },
+  "inclusivity": {
+    "inclusivityTitle": "inclusivity",
+    "inclusivityInfo": " when related to accessibility, is the deliberate practice of designing environments, systems, and experiences that welcome and accommodate all individuals,",
+    "inclusivityExtra": " regardless of their physical, cognitive, sensory, or economic abilities.",
+    "inclusivityExtraB": "It ensures that every person can fully participate, understand, and engage without barriers, by creating adaptable spaces, communication methods, and services that recognize and respect diverse human capabilities."
+  },
+  "phisical-accessibility": {
+    "phisical-accessibilityTitle": "Phisical accessibility",
+    "phisical-accessibilityInfo": "is the design and implementation of spaces, environments, and infrastructure that can be independently and safely navigated and used by all individuals,",
+    "phisical-accessibilityExtra": " regardless of their physical abilities, mobility limitations, or assistive device requirements.",
+    "phisical-accessibilityExtraB": "It involves removing physical barriers and creating environments with features like ramps, wide doorways, level entrances, appropriate signage, adaptable equipment, and thoughtful spatial arrangements without assistance or unnecessary obstacles."
+  },
+
+  "me": {},
+
+  "a11y": {
+    "title": "Accessibility Options",
+    "fontSizeTitle": "Font Size",
+    "fontSizeDescription": "Change the font size of the web page.",
+    "fontSize": "Font Size: ",
+    "fontSizeMore": "More +",
+    "fontSizeLess": "Less -",
+    "fontSizeReset": "Reset",
+    "toggleLinkHighlightTitle": "Links Highlight",
+    "toggleLinkHighlightDescription": "You can Highlight all the links.",
+    "highlightLinks": "Highlight Links",
+    "removeHighlights": "Remove Highlight",
+    "about": "ABOUT ME"
+  },
+
+  "about-me": {
+    "gagd": "Gabriel Garcia Diaz",
+    "specialist": " Accessibility Especialist",
+    "productD": "Product Designer",
+    "front": "Frontend Designer",
+    "believe": "I Believe in what I do",
+    "intro": "As an Accessibility Specialist, I approach each project with confidence and creativity. I understand the importance of balancing aesthetics with usability and accessibility, ensuring my designs are usable, robust and inclusive for all users.",
+    "img": "Photo of Gabriel Garcia",
+    "tech": "Tech skills",
+    "tech-skills": "HTML5 • CSS • BEM • GITHUB • Bitbucket • NPM Plugins • Frontend Frameworks",
+    "design": "Design skills",
+    "design-skills": "UX • UI • Design Thinking • Prototyping • Wireframing • Figma • Invision",
+    "about": "ABOUT ME",
+    "about-me": "About of Gabriel Garcia",
+    "connect": "Connect with me",
+    "linkedin": "LinkedIn",
+    "linkedIn": "Connect with me on LinkedIn",
+    "gmail": "Gmail",
+    "gMail": "Send me an email to my Gmail",
+    "download": "Download my CV"
+  },
+
+  "footer": {
+    "text": "2024 AAA First",
+    "about-me": "About me"
+  }
+}

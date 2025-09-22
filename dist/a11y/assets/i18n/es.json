@@ -1,0 +1,172 @@
+{
+  "en": "English",
+  "es": "Español",
+  "languages": {
+    "espanol": "Español",
+    "english": "English",
+    "languageSelection": "Selección de idioma"
+  },
+
+  "menu": {
+    "home": "Inicio",
+    "accessibility": "¿Qué es la accesibilidad?"
+  },
+  "submenu": {
+    "accessibility": "Accesibilidad",
+    "universal": "Diseño Universal",
+    "healcare": "Sanidad accesible",
+    "rights": "Derechos a la accesibilidad",
+    "inclusivity": "Inclusividad",
+    "phisical": "Accesibilidad física"
+  },
+
+  "header": {
+    "logo": "Logo de Accesibilidad Primero",
+    "title": "accesibilidad primero"
+  },
+
+  "home": {
+    "intro-title": "Accesibilidad Primero (a11d 1º)",
+    "intro": "Accessible First (a11y 1st) es una guía completa sobre accesibilidad web que ayuda a los creadores a construir un mundo digital más inclusivo. Tanto si eres desarrollador, diseñador o creador de contenidos, nuestra plataforma ofrece información especializada, tutoriales prácticos y cursos prácticos para que la accesibilidad forme parte integral de tu flujo de trabajo.",
+    "card1": {
+      "title": "Accesibilidad hoy",
+      "text": "El futuro de la accesibilidad.",
+      "link": "Ir al blog"
+    },
+    "card2": {
+      "title": "Tutoriales",
+      "text": "La importancia de la accesibilidad.",
+      "link": "Herramientas web accesibles"
+    },
+    "card3": {
+      "title": "Cursos",
+      "text": "Ciclo accesible de vida del producto.",
+      "link": "Diseño & Desarrollo accesible"
+    }
+  },
+
+  "accessibility-today": {
+    "title": "Accesibilidad hoy: El Blog",
+    "intro": "Mantenerse informado sobre la accesibilidad no es sólo cumplir las normas: es crear un mundo en el que todos puedan participar plenamente. Desde los espacios digitales hasta los entornos físicos, conocer los últimos avances en accesibilidad nos ayuda a construir una sociedad más integradora en la que nadie se quede atrás.",
+    "read-more": "Leer artículo:",
+    "authorName": "Autor:",
+    "blogPost": {
+      "whittenBy": "escrito por ",
+      "back": "Ir atras",
+      "share": "Compartir este artículo"
+    }
+  },
+
+  "404": {
+    "404": "404 - Página no encontrada",
+    "text": "Parece que te has perdido",
+    "no-page": "La página que estás buscando no está disponible!",
+    "button": "Volver a la página de inicio"
+  },
+
+  "app-content-links": {
+    "accessibility": "Accesibilidad",
+    "universal": "Diseño Universal",
+    "healcare": "Sanidad accesible",
+    "rights": "Derechos a la accesibilidad",
+    "inclusivity": "Inclusividad",
+    "phisical": "Accesibilidad física",
+    "left": "mover a la derecha",
+    "right": "mover a la izquierda"
+  },
+
+  "accessibility": {
+    "accessibilityTitle": "Accesibilidad",
+    "accessibilityInfo": "se refiere al diseño de productos, dispositivos, servicios o entornos para que puedan ser utilizados por todas las personas, en la mayor medida posible,",
+    "accessibilityExtra": " sin necesidad de adaptación o diseño especializado.",
+    "accessibilityExtraB": "El objetivo del diseño universal es garantizar que las personas con una amplia gama de capacidades y discapacidades puedan acceder y utilizarlos de manera similar a quienes no tienen esas limitaciones."
+  },
+
+  "universal": {
+    "universalTitle": "Diseño Universal",
+    "universalInfo": "es un enfoque para crear entornos, productos y servicios que son inherentemente accesibles para todas las personas, independientemente de su edad, capacidad o condición en la vida,",
+    "universalExtra": " sin necesidad de adaptación o diseño especializado.",
+    "universalExtraB": "Va más allá de los requisitos básicos de accesibilidad para crear soluciones que funcionen bien para todos desde el principio.",
+    "universalDataTitle": "Los 7 principios clave del diseño universal son:",
+    "universalData": [
+      "Uso Equitativo",
+      "Flexibilidad en el Uso",
+      "Uso Simple e Intuitivo",
+      "Información Perceptible",
+      "Tolerancia al Error",
+      "Bajo Esfuerzo Físico",
+      "Tamaño y Espacio para el Acceso y Uso"
+    ]
+  },
+
+  "accessible-healhcare": {
+    "accessible-healhcareTitle": "Sanidad accesible",
+    "accessible-healhcareInfo": "es un enfoque integral de los servicios médicos que garantiza que todas las personas, independientemente de sus capacidades físicas, estado económico, antecedentes culturales o ubicación geográfica,",
+    "accessible-healhcareExtra": " puedan obtener, utilizar y beneficiarse efectivamente de los servicios e información de salud.",
+    "accessible-healhcareExtraB": "Abarca el acceso físico a las instalaciones, la asequibilidad de la atención, la prestación oportuna de servicios y una comunicación clara, todo diseñado para proporcionar atención médica apropiada y equitativa para todos en la comunidad."
+  },
+
+  "disability-rights": {
+    "disability-rightsTitle": "Derechos de discapacidad",
+    "disability-rightsInfo": "son protecciones legales y sociales que garantizan que las personas con discapacidad tengan igualdad de oportunidades, acceso y trato en todos los aspectos de la sociedad. Estos derechos tienen como objetivo garantizar",
+    "disability-rightsExtra": "la plena participación en las libertades de la vida económica, social, política y cultural como miembros completos e iguales de la sociedad.",
+    "disability-rightsExtraB": "Esto abarca la protección contra la discriminación y garantiza el acceso a la educación, la atención médica, el transporte y la tecnología, y reconoce la discapacidad como una forma de diversidad humana."
+  },
+  "inclusivity": {
+    "inclusivityTitle": "Inclusividad",
+    "inclusivityInfo": "cuando se relaciona con la accesibilidad, es la práctica deliberada de diseñar entornos, sistemas y experiencias que acogen y acomodan a todas las personas,",
+    "inclusivityExtra": " independientemente de sus capacidades físicas, cognitivas, sensoriales o económicas.",
+    "inclusivityExtraB": "Garantiza que cada persona pueda participar, comprender e interactuar plenamente sin barreras, mediante la creación de espacios adaptables, métodos de comunicación y servicios que reconocen y respetan las diversas capacidades humanas."
+  },
+
+  "phisical-accessibility": {
+    "phisical-accessibilityTitle": "Accesibilidad física",
+    "phisical-accessibilityInfo": "es el diseño e implementación de espacios, entornos e infraestructura que pueden ser navegados y utilizados de forma independiente y segura por todas las personas,",
+    "phisical-accessibilityExtra": " independientemente de sus capacidades físicas, limitaciones de movilidad o requisitos de dispositivos de asistencia.",
+    "phisical-accessibilityExtraB": "Implica eliminar barreras físicas y crear entornos con características como rampas, puertas anchas, entradas a nivel, señalización apropiada, equipos adaptables y disposiciones espaciales bien pensadas sin asistencia u obstáculos innecesarios."
+  },
+
+  "me": {},
+
+  "a11y": {
+    "title": "Opciones de accesibilidad",
+    "fontSizeTitle": "Tamaño de Fuente",
+    "fontSizeDescription": "Cambia el tamaño de la fuente de la web",
+    "fontSize": "Tamaño de fuente: ",
+    "fontSizeMore": "Mas +",
+    "fontSizeLess": "Menos -",
+    "fontSizeReset": "Resetear",
+    "toggleLinkHighlightTitle": "Enlaces destacados",
+    "toggleLinkHighlightDescription": "Puede Resaltar todos los enlaces.",
+    "highlightLinks": "Resaltar Enlaces",
+    "removeHighlights": "Eliminar Resaltado",
+    "about": "ACERCA DE MÍ"
+  },
+
+  "about-me": {
+    "gagd": "Gabriel Garcia Diaz",
+    "specialist": " Especialista en Accesibilidad",
+    "productD": "Diseñador de Producto",
+    "front": "Diseñador Frontend",
+    "believe": "Yo creo en lo que hago",
+    "intro": "Como especialista en accesibilidad, afronto cada proyecto con confianza y creatividad. Entiendo la importancia de equilibrar la estética con la usabilidad y la accesibilidad, asegurando que mis diseños sean usables, robustos e inclusivos para todos los usuarios.",
+    "img": "Foto de Gabriel Garcia",
+    "tech": "Tech skills",
+    "tech-skills": "HTML5 • CSS • BEM • GITHUB • Bitbucket • NPM Plugins • Frontend Frameworks",
+    "design": "Design skills",
+    "design-skills": "UX • UI • Design Thinking • Prototyping • Wireframing • Figma • Invision",
+    "about": "QUIEN SOY",
+    "about-me": "Acerca de Gabriel Garcia",
+    "connect": "Conecta conmigo",
+    "linkedin": "LinkedIn",
+    "linkedIn": "Conecta conmigo en LinkedIn",
+    "gmail": "Gmail",
+    "gMail": "Envíame un correo electrónico a mi Gmail",
+    "download": "Descarga mi CV"
+  },
+
+  "footer": {
+    "text": "2024 AAA Primero",
+    "about-me": "Conóceme"
+  }
+}

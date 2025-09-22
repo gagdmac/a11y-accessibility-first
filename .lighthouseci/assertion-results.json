@@ -1,0 +1,155 @@
+[
+  {
+    "name": "minScore",
+    "expected": 0.6,
+    "actual": 0.31,
+    "values": [
+      0.31
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://localhost:4200/home"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.6,
+    "actual": 0.32,
+    "values": [
+      0.32
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://localhost:4200/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.6,
+    "actual": 0.46,
+    "values": [
+      0.46,
+      0.44
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://localhost:4200/accessibility-today"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.6,
+    "actual": 0.55,
+    "values": [
+      0.53,
+      0.55
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://localhost:4200/accessibility"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.6,
+    "actual": null,
+    "values": [
+      null,
+      null
+    ],
+    "operator": ">=",
+    "passed": false,
+    "message": "Audit did not produce a value at all. \"minScore\" might not be a valid assertion for this audit.",
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://localhost:4200/universal"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.6,
+    "actual": null,
+    "values": [
+      null,
+      null
+    ],
+    "operator": ">=",
+    "passed": false,
+    "message": "Audit did not produce a value at all. \"minScore\" might not be a valid assertion for this audit.",
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://localhost:4200/healthcare"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.6,
+    "actual": null,
+    "values": [
+      null,
+      null
+    ],
+    "operator": ">=",
+    "passed": false,
+    "message": "Audit did not produce a value at all. \"minScore\" might not be a valid assertion for this audit.",
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://localhost:4200/rights"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.6,
+    "actual": null,
+    "values": [
+      null,
+      null
+    ],
+    "operator": ">=",
+    "passed": false,
+    "message": "Audit did not produce a value at all. \"minScore\" might not be a valid assertion for this audit.",
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://localhost:4200/inclusivity"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.6,
+    "actual": null,
+    "values": [
+      null,
+      null
+    ],
+    "operator": ">=",
+    "passed": false,
+    "message": "Audit did not produce a value at all. \"minScore\" might not be a valid assertion for this audit.",
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://localhost:4200/phisical"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.6,
+    "actual": 0.54,
+    "values": [
+      0.54,
+      0.54
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditProperty": "performance",
+    "auditId": "categories",
+    "level": "warn",
+    "url": "http://localhost:4200/a11y"
+  }
+]

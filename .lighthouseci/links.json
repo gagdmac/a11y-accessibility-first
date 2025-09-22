@@ -1,0 +1,12 @@
+{
+  "http://localhost:4200/home": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1758535045577-98615.report.html",
+  "http://localhost:4200/": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1758535046857-68395.report.html",
+  "http://localhost:4200/accessibility-today": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1758535047898-40615.report.html",
+  "http://localhost:4200/accessibility": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1758535048892-38210.report.html",
+  "http://localhost:4200/universal": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1758535049745-70580.report.html",
+  "http://localhost:4200/healthcare": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1758535050791-3190.report.html",
+  "http://localhost:4200/rights": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1758535051770-97943.report.html",
+  "http://localhost:4200/inclusivity": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1758535052366-31134.report.html",
+  "http://localhost:4200/phisical": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1758535052954-81021.report.html",
+  "http://localhost:4200/a11y": "https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1758535053395-77118.report.html"
+}
