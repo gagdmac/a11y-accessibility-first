@@ -1,7 +1,7 @@
 <div class="c-home container p-0">
   <div class="row m-0">
     <div class="pt-4 pb-3 pt-xxl-5 pb-xxl-3 text-center">
-      <h2 class="display-5 display-xl-1 fw-bold">
+      <h2 class="display-5 display-xl-1 fw-bold" id="home-title">
         <span [tabIndex]="0">{{ 'home.intro-title' | translate }}</span>
       </h2>
       <div class="col-lg-8 mx-auto">
@@ -11,6 +11,7 @@
       </div>
     </div>
 
+    <section aria-labelledby="home-title" class="row m-0">
     <app-card
       [isDisabled]="false"
       class="col col-12 col-md-6 col-lg-4 m-0 p-2"
@@ -18,8 +19,7 @@
       text="{{ 'home.card1.text' | translate }}"
       link="{{ 'home.card1.link' | translate }}"
       iconClass="svg-a11y-today"
-      routerLink="/accessibility-today"
-      [tabIndex]="0"></app-card>
+      routerLink="/accessibility-today"></app-card>
 
     <app-card
       [isDisabled]="true"
@@ -38,5 +38,6 @@
       link="{{ 'home.card3.link' | translate }}"
       iconClass="svg-courses"
       routerLink="/"></app-card>
+    </section>
   </div>
 </div>

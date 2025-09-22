@@ -46,17 +46,17 @@
       <!-- Add breadcrumbs ENDS-->
 
       <hr class="mb-2" />
-      <span class="text-center text-lg-start">
-        <h2 class="fw-bold display-4 pe-0 ps-md-3" [tabIndex]="0">
+      <header class="text-center text-lg-start">
+        <h1 class="fw-bold display-4 pe-0 ps-md-3" [tabIndex]="0" id="blog-post-title">
           {{ blogPosts.fields.title }}
-        </h2>
-      </span>
+        </h1>
+      </header>
       <hr class="m-0" />
-      <span [tabIndex]="0">
+      <main aria-labelledby="blog-post-title">
         <div
           class="container mt-4 mt-lg-5"
           [innerHTML]="richTextToHtml(blogPosts.fields.content)"></div>
-      </span>
+      </main>
 
       <hr />
       <div class="d-flex justify-content-between align-items-center">
