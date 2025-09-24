@@ -48,9 +48,14 @@
   }
 }
 
-//FOCUS
+// Define rem-calc function if not available elsewhere
+@function rem-calc($values) {
+  @return calc($values / 16) * 1rem;
+}
+
+//FOCUS - Make sure these are accessible globally
 $focus: #7fb7ff dotted rem-calc(3);
-$f-style: rem-calc(-3);
+$f-style: rem-calc(-3) !default;
 
 ////////////////////////////////////////////////////////////
 ///////// prefers-reduced-motion //////////////////////////
