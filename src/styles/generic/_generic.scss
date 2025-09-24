@@ -60,31 +60,32 @@
 //FOCUS
 
 /* Reset and customize focus styles globally */
-*:focus-visible {
-  outline: rem-calc(2) solid rgb(255, 0, 0);
-  outline-offset: rem-calc(2);
-  transition: outline 0.2s ease;
-  z-index: 1;
-}
+// *:focus-visible {
+//   outline: rem-calc(2) solid rgb(255, 0, 0);
+//   outline-offset: rem-calc(2);
+//   transition: outline 0.2s ease;
+//   z-index: 1;
+// }
 
 /* More specific element-level customizations */
-a:focus-visible {
-  text-decoration: underline;
-  color: #0056b3;
-  z-index: 1;
-}
+// a:focus-visible {
+//   text-decoration: underline;
+//   color: #0056b3;
+//   z-index: 1;
+//   outline: rem-calc(2) solid rgb(0, 123, 255);
+// }
 
-input:focus-visible {
-  border-color: blue;
-  box-shadow: rem-calc(0 0 5) rgba(0, 123, 255, 0.5);
-  z-index: 1;
-}
+// input:focus-visible {
+//   border-color: blue;
+//   box-shadow: rem-calc(0 0 5) rgba(0, 123, 255, 0.5);
+//   z-index: 1;
+// }
 
-button:focus-visible {
-  transform: scale(1.05);
-  background-color: #f8f9fa;
-  z-index: 1;
-}
+// button:focus-visible {
+//   transform: scale(1.05);
+//   background-color: #f8f9fa;
+//   z-index: 1;
+// }
 
 /* Styles where only focus is supported */
 // input:focus,

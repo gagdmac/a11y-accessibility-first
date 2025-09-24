@@ -1,4 +1,5 @@
 {
+  
   "en": "English",
   "es": "Español",
   "languages": {
@@ -27,6 +28,7 @@
   },
 
   "home": {
+    "mainContent": "go to main content",
     "intro-title": "Accessible First (a11y 1st)",
     "intro": "Empowering creators to build a more inclusive digital world, Accessible First (a11y 1st) is your comprehensive guide to web accessibility. Whether you're a developer, designer, or content creator, our platform offers expert insights, practical tutorials, and hands-on courses to make accessibility an integral part of your workflow.",
     "card1": {
