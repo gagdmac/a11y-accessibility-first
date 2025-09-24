@@ -2,6 +2,11 @@
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
+  span p.logo-text{
+    font-size: rem-calc(10) !important;
+    margin-bottom: 0 !important;
+  }
+
   .language-selector {
     @include respond-above(md) {
       order: 3;
