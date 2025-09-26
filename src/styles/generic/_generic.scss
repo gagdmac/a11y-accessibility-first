@@ -168,21 +168,27 @@ body {
 
 a.skip-to-content {
   color: transparent;
-  font-size: rem-calc(11);
+  font-size: rem-calc(14);
   position: absolute;
-  top: rem-calc(-10);
-  left: rem-calc(140);
+  top: rem-calc(5);
+  left: rem-calc(200);
   z-index: 1031;
   font-weight: 400;
-  padding-top: rem-calc(2);
 
   &:focus {
     color: #000000;
+    background-color: #ffffff;
     outline: $focus !important;
     box-shadow: none !important;
-    outline-style: $f-style;
-    outline-offset: rem-calc(1) !important;
+   // outline-style: dotted;
+    outline-offset: $f-style !important;
   }
+
+   @include respond-below(md) {
+     top: rem-calc(60);
+      left: rem-calc(100);
+    }
+
 }
 
 a[disabled],
