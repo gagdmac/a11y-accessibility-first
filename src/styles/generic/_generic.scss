@@ -118,6 +118,37 @@
 //   outline-offset: rem-calc(2);
 // }
 
+/* Global focus styles for entire application */
+*:focus {
+  outline: $focus !important;
+  outline-offset: $f-style !important;
+  box-shadow: none !important;
+}
+
+/* Specific focus styles for interactive elements */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: $focus !important;
+  outline-offset: $f-style !important;
+  box-shadow: none !important;
+}
+
+/* Focus-visible support for modern browsers */
+*:focus-visible {
+  outline: $focus !important;
+  outline-offset: $f-style !important;
+  box-shadow: none !important;
+}
+
+/* Remove default focus for elements that will use focus-visible */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
 ////////////////////////////////////////////////////////////
 ////////////////// GENERAL CLASES /////////////////////////
 //////////////////////////////////////////////////////////
