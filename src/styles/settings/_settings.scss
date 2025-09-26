@@ -98,15 +98,42 @@ body.offcanvas-open aside:not(:has(.offcanvas)) {
   pointer-events: auto !important;
 }
 
-.offcanvas.show {
-  visibility: visible !important;
+// Ensure offcanvas content is focusable
+.offcanvas * {
+  pointer-events: auto;
 }
 
-// Alternative: Use transform to move content out of viewport
-.offcanvas-open main,
-.offcanvas-open header:not(:has(.offcanvas)),
-.offcanvas-open footer {
-  transform: translateX(-100vw);
-  position: absolute;
-  left: -100vw;
+// Prevent TalkBack focus on offcanvas elements until they are opened
+.offcanvas:not(.show) {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.offcanvas:not(.show) * {
+  tabindex: -1 !important;
+  pointer-events: none !important;
+}
+
+// Restore focus when offcanvas is shown
+.offcanvas.show {
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.offcanvas.show * {
+  pointer-events: auto !important;
+}
+
+// Remove tabindex override for focusable elements when shown
+.offcanvas.show button,
+.offcanvas.show a,
+.offcanvas.show input,
+.offcanvas.show select,
+.offcanvas.show textarea,
+.offcanvas.show [tabindex] {
+  tabindex: 0 !important;
+}
+
+.offcanvas.show {
+  visibility: visible !important;
 }
