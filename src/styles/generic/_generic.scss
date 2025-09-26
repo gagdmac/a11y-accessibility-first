@@ -222,7 +222,7 @@ a.skip-to-content {
   font-size: rem-calc(14);
   position: absolute;
   top: rem-calc(5);
-  left: rem-calc(-20);
+  left: rem-calc(-20000);
   z-index: 1031;
   font-weight: 400;
 
@@ -232,7 +232,7 @@ a.skip-to-content {
     background-color: #ffffff;
     outline: $focus !important;
     box-shadow: none !important;
-   // outline-style: dotted;
+    left: rem-calc(-15);
     outline-offset: $f-style !important;
   }
 
