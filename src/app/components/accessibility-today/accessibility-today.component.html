@@ -102,8 +102,7 @@
           class="col-12 col-lg-6 col-xl-4"
           *ngFor="let post of blogPosts.items.slice(1)">
           <article
-            class="h-100 shadow p-0 border border-2 border-black bg-white rounded-3"
-            [attr.aria-labelledby]="'post-title-' + post.sys.id">
+            class="h-100 shadow p-0 border border-2 border-black bg-white rounded-3">
             <img
               class="img-fluid n-img rounded-top"
               [src]="post.fields.featureImage.fields.file.url"
@@ -139,3 +138,4 @@
     </div>
   </ng-container>
 </div>
+
