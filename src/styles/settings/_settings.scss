@@ -74,28 +74,39 @@ $f-style: rem-calc(0.5) !default;
   color: var(--text-creme-color);
 }
 
-// Prevent focus on background elements when offcanvas/modal is open
+// Prevent TalkBack focus on background elements when offcanvas is open
 .offcanvas-backdrop {
   pointer-events: auto !important;
 }
 
-// Hide background content from screen readers when offcanvas is open
-body:has(.offcanvas.show) main,
-body:has(.offcanvas.show) header,
-body:has(.offcanvas.show) footer {
-  aria-hidden: true;
+// Use inert attribute styling to completely hide background content
+body.offcanvas-open main,
+body.offcanvas-open header:not(:has(.offcanvas)),
+body.offcanvas-open footer,
+body.offcanvas-open aside:not(:has(.offcanvas)) {
+  visibility: hidden;
+  pointer-events: none;
+  position: relative;
+  z-index: -1;
 }
 
-// Alternative approach using CSS to prevent tabbing to background elements
-.offcanvas.show ~ * {
-  pointer-events: none;
+// Ensure offcanvas is always on top and focusable
+.offcanvas {
+  position: fixed !important;
+  z-index: 1055 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 .offcanvas.show {
-  pointer-events: auto;
+  visibility: visible !important;
 }
 
-// Ensure offcanvas content is focusable
-.offcanvas * {
-  pointer-events: auto;
+// Alternative: Use transform to move content out of viewport
+.offcanvas-open main,
+.offcanvas-open header:not(:has(.offcanvas)),
+.offcanvas-open footer {
+  transform: translateX(-100vw);
+  position: absolute;
+  left: -100vw;
 }
