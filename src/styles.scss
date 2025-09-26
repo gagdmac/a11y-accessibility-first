@@ -21,8 +21,3 @@
 
 /*========= UTILITIES =============*/
 @import 'styles/utilities/utilities';
-
-// Header flex order fix
-.navbar .container-fluid {
-  display: flex !important;
-}

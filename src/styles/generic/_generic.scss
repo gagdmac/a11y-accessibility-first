@@ -185,6 +185,18 @@ body {
     brightness(91%) contrast(92%);
 }
 
+/* Ensure universal-access has consistent focus with menu items */
+button .universal-access:focus,
+.btn .universal-access:focus {
+  outline: none !important;
+}
+
+button:focus .universal-access,
+.btn:focus .universal-access {
+  filter: invert(19%) sepia(100%) saturate(5226%) hue-rotate(210deg)
+    brightness(91%) contrast(92%);
+}
+
 /* Add active state */
 .universal-access:active,
 .universal-access.active {
