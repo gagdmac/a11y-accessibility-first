@@ -86,4 +86,14 @@ export class A11yOptionsComponent implements OnInit {
   toggleLinkHighlight() {
     this.linkHighlightService.toggleLinkHighlight();
   }
+
+  onOffcanvasShown(): void {
+    // Focus the title when offcanvas opens for TalkBack accessibility
+    setTimeout(() => {
+      const titleElement = document.getElementById('offcanvasTitle');
+      if (titleElement) {
+        titleElement.focus();
+      }
+    }, 100);
+  }
 }

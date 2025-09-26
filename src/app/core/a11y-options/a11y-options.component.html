@@ -1,12 +1,14 @@
 <div
   class="c-a11y-options offcanvas offcanvas-start"
   data-bs-scroll="true"
-
-  [attr.aria-labelledby]="'a11y.title' | translate"
-  id="offcanvasWithBothOptions">
+  id="offcanvasWithBothOptions"
+  (shown.bs.offcanvas)="onOffcanvasShown()">
   <!--offcanvas-header START-->
   <div class="offcanvas-header">
-    <p class="offcanvas-title lead fw-bold" id="offcanvasTitle">
+    <p 
+      class="offcanvas-title lead fw-bold" 
+      id="offcanvasTitle"
+      tabindex="-1">
       {{ 'a11y.title' | translate }}
     </p>
     <button
