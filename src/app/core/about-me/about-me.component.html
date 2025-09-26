@@ -1,15 +1,17 @@
 <section class="about-me">
   <article
     class="offcanvas offcanvas-bottom"
-   
     id="offcanvasBottom"
-    [attr.aria-labelledby]="'about-me.about-me' | translate">
+    (shown.bs.offcanvas)="onOffcanvasShown()">
     <div
       class="offcanvas-header p-0 border-bottom border-success bg-success-subtle">
       <div
         class="container d-flex col py-3 px-4 border-1 justify-content-between">
         <div>
-          <p class="offcanvas-title fw-bold fs-6" id="offcanvasBottomLabel">
+          <p 
+            class="offcanvas-title fw-bold fs-6" 
+            id="offcanvasBottomLabel"
+            tabindex="-1">
             {{ 'about-me.about' | translate }}
           </p>
         </div>

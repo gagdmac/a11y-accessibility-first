@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent {
-
+  onOffcanvasShown(): void {
+    // Focus the title when offcanvas opens for TalkBack accessibility
+    setTimeout(() => {
+      const titleElement = document.getElementById('offcanvasBottomLabel');
+      if (titleElement) {
+        titleElement.focus();
+      }
+    }, 100);
+  }
 }
