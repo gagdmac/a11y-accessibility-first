@@ -13,29 +13,12 @@
               height="40"
               class="d-inline-block align-text-top pe-0" />
           </a>
-
-          <!-- <p class="fs-6 ps-2 logo-text">
-            {{ 'header.title' | translate }}
-          </p> -->
         </span>
         <!--LOGO ENDS-->
 
-        <!--APP MENU toggler STARTS-->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!--APP MENU toggler ENDS-->
-
         <!--boton modulo accesibilidad mobile-->
         <button
-          class="btn btn-link mt-1 accessibility-btn d-lg-none"
+          class="btn btn-link mt-1 accessibility-btn d-lg-none order-2"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasWithBothOptions"
@@ -47,19 +30,68 @@
           <div class="universal-access"></div>
         </button>
 
+        <!--APP LANGUAGUES SELECTION STARTS-->
+        <div class="dropdown dropstart language-selector order-3">
+          <button
+            class="btn border border-secondary dropdown-toggle btn-sm me-4 mb-lg-0"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            [attr.aria-label]="'languages.languageSelection' | translate">
+            <!-- {{ 'languages.languageSelection' | translate }} -->
+            <span *ngIf="'en' === translate.currentLang; else es">
+              <span class="fi fi-gb px-3"></span>
+            </span>
+            <ng-template #es><span class="fi fi-es px-3"></span></ng-template>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a
+                class="dropdown-item d-flex justify-content-between"
+                href="?lang=es"
+                (click)="$event.preventDefault(); changeLanguage('es')"
+                >Español <span class="fi fi-es px-3"></span
+              ></a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item d-flex justify-content-between"
+                href="?lang=en"
+                (click)="$event.preventDefault(); changeLanguage('en')"
+                >English <span class="fi fi-gb px-3"></span
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <!--APP LANGUAGUES SELECTION ENDS-->
+
+        <!--APP MENU toggler STARTS-->
+        <button
+          class="navbar-toggler order-4"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--APP MENU toggler ENDS-->
+
         <!--APP MENU STARTS-->
         <div
-          class="collapse navbar-collapse d-lg-flex justify-content-lg-end"
+          class="collapse navbar-collapse d-lg-flex justify-content-lg-end order-5"
           id="navbarSupportedContent">
           <nav
             aria-label="Primary navigation"
             role="navigation"
             class="d-flex align-items-center">
             <ul class="navbar-nav me-2 mb-2 mb-lg-0 d-flex">
+             
               <!--boton modulo accesibilidad desktop-->
               <li class="nav-item d-flex align-items-center">
                 <button
-                  class="btn btn-link d-none d-lg-inline-block p-0 mx-3"
+                  class="btn btn-link p-0 mx-0 mx-md-3 mt-4 mt-md-1 d-none d-lg-inline-block"
                   type="button"
                   data-bs-toggle="offcanvas"
                   data-bs-target="#offcanvasWithBothOptions"
@@ -162,41 +194,8 @@
           </nav>
         </div>
         <!--APP MENU ENDS-->
-        <!--APP LANGUAGUES SELECTION STARTS-->
-        <div class="dropdown dropstart language-selector">
-          <button
-            class="btn border border-secondary dropdown-toggle btn-sm me-4 mb-lg-0"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            [attr.aria-label]="'languages.languageSelection' | translate">
-            <!-- {{ 'languages.languageSelection' | translate }} -->
-            <span *ngIf="'en' === translate.currentLang; else es">
-              <span class="fi fi-gb px-3"></span>
-            </span>
-            <ng-template #es><span class="fi fi-es px-3"></span></ng-template>
-          </button>
-          <ul class="dropdown-menu">
-            <li>
-              <a
-                class="dropdown-item d-flex justify-content-between"
-                href="?lang=es"
-                (click)="$event.preventDefault(); changeLanguage('es')"
-                >Español <span class="fi fi-es px-3"></span
-              ></a>
-            </li>
-            <li>
-              <a
-                class="dropdown-item d-flex justify-content-between"
-                href="?lang=en"
-                (click)="$event.preventDefault(); changeLanguage('en')"
-                >English <span class="fi fi-gb px-3"></span
-              ></a>
-            </li>
-          </ul>
-        </div>
-        <!--APP LANGUAGUES SELECTION ENDS-->
       </div>
     </nav>
   </div>
 </header>
+
