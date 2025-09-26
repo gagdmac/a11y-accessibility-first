@@ -16,7 +16,7 @@
     @include respond-below(md) {
       position: fixed;
       right: rem-calc(60);
-      top: rem-calc(44);
+      top: rem-calc(30);
       transform: translateY(-50%);
     }
   }
@@ -26,7 +26,7 @@
 
     @include respond-below(md) {
       position: fixed;
-      top: rem-calc(17);
+      top: rem-calc(3);
       right: rem-calc(144);
     }
   }
