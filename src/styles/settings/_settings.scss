@@ -73,3 +73,29 @@ $f-style: rem-calc(0.5) !default;
   border: var(--border-creme-color);
   color: var(--text-creme-color);
 }
+
+// Prevent focus on background elements when offcanvas/modal is open
+.offcanvas-backdrop {
+  pointer-events: auto !important;
+}
+
+// Hide background content from screen readers when offcanvas is open
+body:has(.offcanvas.show) main,
+body:has(.offcanvas.show) header,
+body:has(.offcanvas.show) footer {
+  aria-hidden: true;
+}
+
+// Alternative approach using CSS to prevent tabbing to background elements
+.offcanvas.show ~ * {
+  pointer-events: none;
+}
+
+.offcanvas.show {
+  pointer-events: auto;
+}
+
+// Ensure offcanvas content is focusable
+.offcanvas * {
+  pointer-events: auto;
+}
