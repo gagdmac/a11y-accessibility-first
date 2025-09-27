@@ -23,16 +23,17 @@
   },
 
   "header": {
-    "logo": "Accesibility First",
-    "title": "accessibility first"
+    "logo": "Accesibility First"
   },
 
   "home": {
 
     "accessibilityOptions": "Accesibility Options",
     "mainContent": "go to main content",
-    "intro-title": "Accessible First (a11y 1st)",
-    "intro": "Empowering creators to build a more inclusive digital world, Accessible First (a11y 1st) is your comprehensive guide to web accessibility. Whether you're a developer, designer, or content creator, our platform offers expert insights, practical tutorials, and hands-on courses to make accessibility an integral part of your workflow.",
+    "intro-title": "Accessible First",
+    "intro-a": "Empowering creators to build a more inclusive digital world, Accessible First is your comprehensive guide to web accessibility.",
+    "intro-b": "Whether you're a developer, designer, or content creator, our platform offers expert insights, practical tutorials, and hands-on courses to make accessibility an integral part of your workflow.",
+
     "card1": {
       "title": "Accessibility Blog",
       "text": "The future of accessibility.",

@@ -21,15 +21,15 @@
   },
 
   "header": {
-    "logo": "Accesibilidad Primero",
-    "title": "accesibilidad primero"
+    "logo": "Accesibilidad Primero"
   },
 
   "home": {
     "accessibilityOptions": "Opciones de accesibilidad",
     "mainContent": "Ir al contenido principal",
-    "intro-title": "Accesibilidad Primero (a11d 1º)",
-    "intro": "Accessible First (a11y 1st) es una guía completa sobre accesibilidad web que ayuda a los creadores a construir un mundo digital más inclusivo. Tanto si eres desarrollador, diseñador o creador de contenidos, nuestra plataforma ofrece información especializada, tutoriales prácticos y cursos prácticos para que la accesibilidad forme parte integral de tu flujo de trabajo.",
+    "intro-title": "Accesibilidad Primero",
+    "intro-a": "Accessible First es una guía completa sobre accesibilidad web que ayuda a los creadores a construir un mundo digital más inclusivo.",
+    "intro-b": "Tanto si eres desarrollador, diseñador o creador de contenidos, nuestra plataforma ofrece información especializada, tutoriales prácticos y cursos prácticos para que la accesibilidad forme parte integral de tu flujo de trabajo.",
     "card1": {
       "title": "Accesibilidad hoy",
       "text": "El futuro de la accesibilidad.",

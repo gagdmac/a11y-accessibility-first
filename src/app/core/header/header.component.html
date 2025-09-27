@@ -18,7 +18,7 @@
 
         <!--boton modulo accesibilidad mobile-->
         <button
-          class="btn btn-link accessibility-btn d-lg-none order-2"
+          class="btn btn-link accessibility-btn d-lg-none order-2 order-lg-2 me-2"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasWithBothOptions"
@@ -31,7 +31,7 @@
         </button>
 
         <!--APP LANGUAGUES SELECTION STARTS-->
-        <div class="dropdown dropstart language-selector order-3">
+        <div class="dropdown dropstart language-selector order-3 order-lg-3 d-lg-none">
           <button
             class="btn border border-secondary dropdown-toggle btn-sm me-4 mb-lg-0"
             type="button"
@@ -192,10 +192,45 @@
               </li>
             </ul>
           </nav>
+
+          <!--APP LANGUAGUES SELECTION DESKTOP-->
+          <div class="dropdown dropstart language-selector d-none d-lg-block ms-3">
+            <button
+              class="btn border border-secondary dropdown-toggle btn-sm me-4 mb-lg-0"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              [attr.aria-label]="'languages.languageSelection' | translate">
+              <span *ngIf="'en' === translate.currentLang; else es">
+                <span class="fi fi-gb px-3"></span>
+              </span>
+              <ng-template #es><span class="fi fi-es px-3"></span></ng-template>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item d-flex justify-content-between"
+                  href="?lang=es"
+                  (click)="$event.preventDefault(); changeLanguage('es')"
+                  >Español <span class="fi fi-es px-3"></span
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item d-flex justify-content-between"
+                  href="?lang=en"
+                  (click)="$event.preventDefault(); changeLanguage('en')"
+                  >English <span class="fi fi-gb px-3"></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <!--APP LANGUAGUES SELECTION DESKTOP ENDS-->
         </div>
         <!--APP MENU ENDS-->
       </div>
     </nav>
   </div>
 </header>
+
 
