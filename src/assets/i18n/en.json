@@ -28,6 +28,8 @@
   },
 
   "home": {
+
+    "accessibilityOptions": "Accesibility Options",
     "mainContent": "go to main content",
     "intro-title": "Accessible First (a11y 1st)",
     "intro": "Empowering creators to build a more inclusive digital world, Accessible First (a11y 1st) is your comprehensive guide to web accessibility. Whether you're a developer, designer, or content creator, our platform offers expert insights, practical tutorials, and hands-on courses to make accessibility an integral part of your workflow.",
@@ -146,11 +148,12 @@
   },
 
   "about-me": {
-    "gagd": "Gabriel Garcia Diaz",
+    "gagd": "Gabriel García Diaz",
     "specialist": " Accessibility Especialist",
     "productD": "Product Designer",
     "front": "Frontend Designer",
     "believe": "I Believe in what I do",
+    "love": "Heart showing love",
     "intro": "As an Accessibility Specialist, I approach each project with confidence and creativity. I understand the importance of balancing aesthetics with usability and accessibility, ensuring my designs are usable, robust and inclusive for all users.",
     "img": "Photo of Gabriel Garcia",
     "tech": "Tech skills",

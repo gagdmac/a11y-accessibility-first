@@ -11,8 +11,16 @@
 
 @font-face {
   font-family: 'Crison';
+  font-weight: 400;
   src: local('CrimsonText-Regular'),
     url('../../assets/fonts/CrimsonText-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Crison';
+  font-weight: 700;
+  src: local('CrimsonText-Bold'),
+    url('../../assets/fonts/CrimsonText-Bold.ttf') format('truetype');
 }
 
 //////////////////////////////
