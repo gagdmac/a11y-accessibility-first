@@ -5,7 +5,7 @@
   [attr.role]="isDisabled ? 'link' : null"
   [attr.tabindex]="isDisabled ? '0' : null"
   class="card text-center rounded-3 border-2 border-black d-block text-decoration-none p-lg-2 p-xl-3 p-xxl-4 shadow"
-  [attr.aria-label]="isDisabled ? (title + ': ' + text + ' - disabled') : (title + ': ' + text)">
+  [attr.aria-label]="title + ': ' + text">
   <div class="card-body mt-0">
     <h2 class="card-title fs-2 fw-bold" aria-hidden="true">{{ title }}</h2>
     <div class="svg" [ngClass]="iconClass" aria-hidden="true"></div>
