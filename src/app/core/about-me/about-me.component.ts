@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-about-me',
@@ -6,12 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent {
+  @ViewChild('aboutMeTitle') aboutMeTitle!: ElementRef<HTMLHeadingElement>;
+
+  // Set focus to the heading for TalkBack and other screen readers
   onOffcanvasShown(): void {
-    // Focus the title when offcanvas opens for TalkBack accessibility
     setTimeout(() => {
-      const titleElement = document.getElementById('offcanvasBottomLabel');
-      if (titleElement) {
-        titleElement.focus();
+      if (this.aboutMeTitle) {
+        this.aboutMeTitle.nativeElement.focus();
       }
     }, 100);
   }
