@@ -1,46 +1,47 @@
 <div class="c-home container p-0">
   <div class="row m-0">
-    <div class="pt-4 pb-3 pt-xxl-5 pb-xxl-3 text-center">
-      <h2 class="display-5 display-xl-1 fw-bold" id="home-title">
-        <span [tabIndex]="0">{{ 'home.intro-title' | translate }}</span>
-      </h2>
+    <header class="pt-4 pb-3 pt-xxl-5 pb-xxl-3 text-center">
+      <h1 class="display-5 display-xl-1 fw-bold" id="home-title">
+        {{ 'home.intro-title' | translate }}
+      </h1>
       <div class="col-lg-8 mx-auto">
-        <p class="intro fw-medium" [tabIndex]="0">
+        <p class="intro fw-medium">
           {{ 'home.intro-a' | translate }}
         </p>
-        <p class="intro fw-medium" [tabIndex]="0">
+        <p class="intro fw-medium">
           {{ 'home.intro-b' | translate }}
         </p>
       </div>
-    </div>
+    </header>
 
-    <section aria-labelledby="home-title" class="row m-0">
-    <app-card
-      [isDisabled]="false"
-      class="col col-12 col-md-6 col-lg-4 m-0 p-2"
-      title="{{ 'home.card1.title' | translate }}"
-      text="{{ 'home.card1.text' | translate }}"
-      link="{{ 'home.card1.link' | translate }}"
-      iconClass="svg-a11y-today"
-      routerLink="/accessibility-today"></app-card>
+    <nav class="row m-0" [attr.aria-label]="'home.navigationMenu' | translate">
+      <app-card
+        [isDisabled]="false"
+        class="col col-12 col-md-6 col-lg-4 m-0 p-2"
+        title="{{ 'home.card1.title' | translate }}"
+        text="{{ 'home.card1.text' | translate }}"
+        link="{{ 'home.card1.link' | translate }}"
+        iconClass="svg-a11y-today"
+        routerLink="/accessibility-today"></app-card>
 
-    <app-card
-      [isDisabled]="true"
-      class="col col-12 col-md-6 col-lg-4 p-2"
-      title="{{ 'home.card2.title' | translate }}"
-      text="{{ 'home.card2.text' | translate }}"
-      link="{{ 'home.card2.link' | translate }}"
-      iconClass="svg-tutorials"
-      routerLink="/"></app-card>
+      <app-card
+        [isDisabled]="true"
+        class="col col-12 col-md-6 col-lg-4 p-2"
+        title="{{ 'home.card2.title' | translate }}"
+        text="{{ 'home.card2.text' | translate }}"
+        link="{{ 'home.card2.link' | translate }}"
+        iconClass="svg-tutorials"
+        routerLink="/"></app-card>
 
-    <app-card
-      [isDisabled]="true"
-      class="col col-12 col-md-6 col-lg-4 p-2"
-      title="{{ 'home.card3.title' | translate }}"
-      text="{{ 'home.card3.text' | translate }}"
-      link="{{ 'home.card3.link' | translate }}"
-      iconClass="svg-courses"
-      routerLink="/"></app-card>
-    </section>
+      <app-card
+        [isDisabled]="true"
+        class="col col-12 col-md-6 col-lg-4 p-2"
+        title="{{ 'home.card3.title' | translate }}"
+        text="{{ 'home.card3.text' | translate }}"
+        link="{{ 'home.card3.link' | translate }}"
+        iconClass="svg-courses"
+        routerLink="/"></app-card>
+    </nav>
   </div>
 </div>
+
