@@ -33,6 +33,20 @@ const appRoutes: Routes = [
     component: BlogPostComponent,
     title: 'Accessibility Today: The BLOG',
   },
+
+  //Accessibility First section
+
+  // {
+  //   path: 'tutorials',
+  //   title: 'Tutorials',
+  // },
+
+  //  {
+  //   path: 'courses',
+  //   title: 'Courses',
+  // },
+
+  //Waht is accessibility? section
   {
     path: 'accessibility',
     component: AccessibilityComponent,

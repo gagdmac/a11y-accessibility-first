@@ -108,34 +108,32 @@
               class="container-fluid mt-4 rounded-3 border-black border-2 p-0">
               <div class="mb-3">
                 <div class="row m-0 border-0 d-flex align-items-center">
-                  <div class="col-12 col-lg-5">
+                  <div class="col-12 col-lg-4">
                     <p
                       class="m-0 fw-bold fs-2 fs-md-4 u-ff-crison me-3 mb-2 mb-sm-0">
                       {{ 'about-me.connect' | translate }}
                     </p>
                   </div>
 
-                  <div class="col-12 col-lg-7 p-0">
+                  <div class="col-12 col-lg-8 p-0">
                     <!--linkedin-->
                     <div
                       class="btn-group me-2"
                       role="group"
-                      [attr.aria-labelledby]="'about-me.linkedin' | translate">
+                    >
                       <a
                         type="button"
                         class="text-decoration-none btn btn-primary linkedin fw-bold"
                         href="https://www.linkedin.com/in/gabrielgarciadiaz/"
                         target="_blank"
                         rel="noopener noreferrer">
+                        <span class="sr-only">{{
+                             'about-me.linkedIn' | translate
+                        }}</span>
                         {{ 'about-me.linkedin' | translate }}
+                           
                       </a>
 
-                      <button type="button" class="btn btn-primary linkedin">
-                        <img
-                          src="../../../assets/img/icons/linkedin.svg"
-                          [alt]="'about-me.linkedIn' | translate"
-                          class="social-net mb-1" />
-                      </button>
                     </div>
 
                     <!--gmail-->
@@ -146,14 +144,10 @@
                       <button
                         type="button"
                         class="btn btn-primary gmail fw-bold">
+                          <span class="sr-only">{{
+                             'about-me.gMail' | translate
+                        }}</span>
                         {{ 'about-me.gmail' | translate }}
-                      </button>
-
-                      <button type="button" class="btn btn-primary gmail">
-                        <img
-                          src="../../../assets/img/icons/gmail.svg"
-                          [alt]="'about-me.gMail' | translate"
-                          class="social-net gmail" />
                       </button>
                     </div>
                     <!--gmail-->
@@ -171,7 +165,7 @@
                   <span class="badge ms-3 text-bg-warning">
                     <img
                       src="../../../assets/img/icons/download.svg"
-                      [alt]="'about-me.gMail' | translate"
+                      alt=""
                       class="social-net" />
                   </span>
                 </a>

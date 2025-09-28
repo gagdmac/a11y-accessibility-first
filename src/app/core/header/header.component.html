@@ -88,7 +88,7 @@
             class="d-flex align-items-center">
             <ul class="navbar-nav me-2 mb-2 mb-lg-0 d-flex">
              
-              <!--boton modulo accesibilidad desktop-->
+              <!--boton modulo accesibilidad desktop START-->
               <li class="nav-item d-flex align-items-center">
                 <button
                   class="btn btn-link p-0 mx-0 mx-md-3 mt-4 mt-md-1 d-none d-lg-inline-block"
@@ -103,7 +103,8 @@
                   <div class="universal-access"></div>
                 </button>
               </li>
-
+              <!--boton modulo accesibilidad desktop ENDS-->
+              
               <li class="nav-item mt-4 mt-md-0">
                 <a
                   class="nav-link active"
@@ -115,6 +116,56 @@
                   {{ 'menu.home' | translate }}</a
                 >
               </li>
+
+
+
+
+
+
+
+               <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  data-bs-dismiss="collapse">
+                  {{ 'menu.accessibility-first' | translate }}
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      routerLink="tutorials"
+                      data-bs-dismiss="collapse">
+                      {{ 'submenu.tutorials' | translate }}</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      routerLink="courses"
+                      data-bs-dismiss="collapse"
+                      >{{ 'submenu.courses' | translate }}</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
               <li class="nav-item dropdown">
                 <a

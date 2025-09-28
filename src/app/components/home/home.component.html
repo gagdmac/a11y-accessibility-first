@@ -16,32 +16,17 @@
 
     <nav class="row m-0" [attr.aria-label]="'home.navigationMenu' | translate">
       <app-card
-        [isDisabled]="false"
-        class="col col-12 col-md-6 col-lg-4 m-0 p-2"
-        title="{{ 'home.card1.title' | translate }}"
-        text="{{ 'home.card1.text' | translate }}"
-        link="{{ 'home.card1.link' | translate }}"
-        iconClass="svg-a11y-today"
-        routerLink="/accessibility-today"></app-card>
-
-      <app-card
-        [isDisabled]="true"
+        *ngFor="let card of cards"
+        [isDisabled]="card.isDisabled"
         class="col col-12 col-md-6 col-lg-4 p-2"
-        title="{{ 'home.card2.title' | translate }}"
-        text="{{ 'home.card2.text' | translate }}"
-        link="{{ 'home.card2.link' | translate }}"
-        iconClass="svg-tutorials"
-        routerLink="/"></app-card>
-
-      <app-card
-        [isDisabled]="true"
-        class="col col-12 col-md-6 col-lg-4 p-2"
-        title="{{ 'home.card3.title' | translate }}"
-        text="{{ 'home.card3.text' | translate }}"
-        link="{{ 'home.card3.link' | translate }}"
-        iconClass="svg-courses"
-        routerLink="/"></app-card>
+        [title]="card.title | translate"
+        [text]="card.text | translate"
+        [link]="card.link | translate"
+        [iconClass]="card.iconClass"
+        [routerLink]="card.routerLink">
+      </app-card>
     </nav>
   </div>
 </div>
-
+        
+    

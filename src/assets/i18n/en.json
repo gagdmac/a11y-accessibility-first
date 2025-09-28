@@ -10,6 +10,7 @@
 
   "menu": {
     "home": "Home",
+    "accessibility-first": "Accessibility first",
     "accessibility": "What is accessibility?",
     "accessibility-today": "Accessibility today"
   },
@@ -19,7 +20,9 @@
     "healthcare": "Accessible Healthcare",
     "rights": "Disability Rights",
     "inclusivity": "Inclusivity",
-    "phisical": "Phisical Accessibility"
+    "phisical": "Phisical Accessibility",
+    "tutorials": "Tutorials",
+    "courses": "Courses"
   },
 
   "header": {
@@ -165,9 +168,9 @@
     "about-me": "About of Gabriel Garcia",
     "connect": "Connect with me",
     "linkedin": "LinkedIn",
-    "linkedIn": "Connect with me on LinkedIn",
+    "linkedIn": "Connect with me in",
     "gmail": "Gmail",
-    "gMail": "Send me an email to my Gmail",
+    "gMail": "Send me an email to my",
     "download": "Download my CV"
   },
 

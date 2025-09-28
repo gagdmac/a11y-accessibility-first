@@ -9,7 +9,9 @@
 
   "menu": {
     "home": "Inicio",
-    "accessibility": "¿Qué es la accesibilidad?"
+    "accessibility-first": "Accessibilidad primero",
+    "accessibility": "¿Qué es la accesibilidad?",
+    "accessibility-today": "Accessibilidad hoy"
   },
   "submenu": {
     "accessibility": "Accesibilidad",
@@ -17,7 +19,9 @@
     "healcare": "Sanidad accesible",
     "rights": "Derechos a la accesibilidad",
     "inclusivity": "Inclusividad",
-    "phisical": "Accesibilidad física"
+    "phisical": "Accesibilidad física",
+    "tutorials": "Tutoriales",
+    "courses": "Cursos"
   },
 
   "header": {

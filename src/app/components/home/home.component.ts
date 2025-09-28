@@ -11,6 +11,33 @@ export class HomeComponent {
 
   isSmallScreen = false;
 
+  cards = [
+    {
+      isDisabled: false,
+      title: 'home.card1.title',
+      text: 'home.card1.text',
+      link: 'home.card1.link',
+      iconClass: 'svg-a11y-today',
+      routerLink: '/accessibility-today',
+    },
+    {
+      isDisabled: true,
+      title: 'home.card2.title',
+      text: 'home.card2.text',
+      link: 'home.card2.link',
+      iconClass: 'svg-tutorials',
+      routerLink: '/',
+    },
+    {
+      isDisabled: true,
+      title: 'home.card3.title',
+      text: 'home.card3.text',
+      link: 'home.card3.link',
+      iconClass: 'svg-courses',
+      routerLink: '/',
+    },
+  ];
+
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.checkScreenSize();
