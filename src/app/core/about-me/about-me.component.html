@@ -42,9 +42,9 @@
                 alt=""
                 width="160"
                 class="d-inline-block rounded-circle p-1 border-black shadow" />
-              <h2 class="card-title fw-bold mt-3 mb-0">
+              <h3 class="card-title fw-bold mt-3 mb-0">
                 {{ 'about-me.gagd' | translate }}
-              </h2>
+              </h3>
 
               <div class="card-body text-center">
                 <div
@@ -130,7 +130,7 @@
                       class="btn-group me-2"
                       role="group"
                     >
-                      <button
+                      <a
                         type="button"
                         class="text-decoration-none btn btn-primary linkedin fw-bold"
                         href="https://www.linkedin.com/in/gabrielgarciadiaz/"
@@ -141,23 +141,25 @@
                         }}</span>
                         {{ 'about-me.linkedin' | translate }}
                            
-                      </button>
+                      </a>
 
                     </div>
 
                     <!--gmail-->
                     <div
                       class="btn-group me-2"
-                      role="group"
-                      [attr.aria-labelledby]="'about-me.gMail' | translate">
-                      <button
+                      role="group">
+                      <a
                         type="button"
-                        class="btn btn-primary gmail fw-bold">
+                        class="btn btn-primary gmail fw-bold"
+                         href="mailto:garturogdiaz@gmail.com?subject=Accessibility%20Request&body=Hello,%0D%0A%0D%0AI%20need%20help%20with..."
+                        target="_blank"
+                        rel="noopener noreferrer">
                           <span class="sr-only">{{
                              'about-me.gMail' | translate
                         }}</span>
                         {{ 'about-me.gmail' | translate }}
-                      </button>
+                      </a>
                     </div>
                     <!--gmail-->
                   </div>
