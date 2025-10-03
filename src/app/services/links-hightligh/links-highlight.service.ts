@@ -10,6 +10,7 @@ export class LinkHighlightService {
   private highlightColor = 'yellow';
   private isHighlightActive = false;
   isHighlightActive$: any;
+  private announcementText = '';
 
   constructor(
     private rendererFactory: RendererFactory2,
@@ -26,17 +27,31 @@ export class LinkHighlightService {
     return this.highlightedElements.length;
   }
 
+  get announcement(): string {
+    return this.announcementText;
+  }
+
   toggleLinkHighlight(): string {
     this.isHighlightActive = !this.isHighlightActive;
     localStorage.setItem('highlightLinks', this.isHighlightActive.toString());
 
     if (this.isHighlightActive) {
       this.highlightLinks();
+      this.announcementText = `Links highlighted. ${this.highlightedLinksCount} links are now highlighted on the page.`;
+      this.clearAnnouncementAfterDelay();
       return 'a11y.removeHighlights';
     } else {
       this.removeHighlights();
+      this.announcementText = 'Link highlighting disabled. All link highlights have been removed.';
+      this.clearAnnouncementAfterDelay();
       return 'a11y.highlightLinks';
     }
+  }
+
+  private clearAnnouncementAfterDelay() {
+    setTimeout(() => {
+      this.announcementText = '';
+    }, 3000);
   }
 
   refreshHighlights() {

@@ -100,6 +100,10 @@ export class A11yOptionsComponent implements OnInit {
     this.linkHighlightService.toggleLinkHighlight();
   }
 
+  get linkHighlightAnnouncement(): string {
+    return this.linkHighlightService.announcement;
+  }
+
   onOffcanvasShown(): void {
     // Focus the title when offcanvas opens for TalkBack accessibility
     setTimeout(() => {
