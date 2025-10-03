@@ -150,13 +150,13 @@
     "toggleLinkHighlightTitle": "Links Highlight",
     "toggleLinkHighlightDescription": "You can Highlight all the links.",
     "highlightLinks": "Highlight Links",
-    "removeHighlights": "Remove Highlight",
+    "removeHighlights": "Remove Highlights",
     "about": "ABOUT ME"
   },
 
   "about-me": {
     "gagd": "Gabriel García Diaz",
-    "specialist": " Accessibility Especialist",
+    "specialist": " Accessibility Consultant",
     "productD": "Product Designer",
     "front": "Frontend Designer",
     "believe": "I Believe in what I do",
@@ -167,7 +167,7 @@
     "tech-skills": "HTML5 • CSS • BEM • GITHUB • Bitbucket • NPM Plugins • Frontend Frameworks",
     "design": "Design skills",
     "design-skills": "UX • UI • Design Thinking • Prototyping • Wireframing • Figma • Invision",
-    "about": "ABOUT ME",
+    "about": "About me",
     "about-me": "About of Gabriel Garcia",
     "connect": "Connect with me",
     "linkedin": "LinkedIn",
