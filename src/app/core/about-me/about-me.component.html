@@ -1,7 +1,11 @@
 <section class="about-me">
-  <article
+  <div
     class="offcanvas offcanvas-bottom"
     id="offcanvasBottom"
+    tabindex="-1"
+    aria-labelledby="offcanvasBottomLabel"
+    role="dialog"
+    aria-modal="true"
     (shown.bs.offcanvas)="onOffcanvasShown()">
     <div
       class="offcanvas-header p-0 border-bottom border-success bg-success-subtle">
@@ -11,7 +15,7 @@
           <h1 
             #aboutMeTitle
             class="offcanvas-title lead fw-bold fs-3" 
-            id="offcanvasBottomLabel"
+
             tabindex="-1">
             {{ 'about-me.about' | translate }}
           </h1>
@@ -62,21 +66,22 @@
           <!--intro starts-->
           <div class="col col-12 col-lg-8">
             <div class="list-group shadow">
-              <a
+              <div
                 class="list-group-item list-group-item-action border-black border-2"
-                aria-current="true">
+>
                 <h2 class="fw-bold mt-3 fs-4">
                   {{ 'about-me.believe' | translate }}
                   <img
                     class="love mb-1 mx-1"
                     src="../../../../assets/img/icons/heart.svg"
+                    aria-hidden="true"
                     alt="" />
                 </h2>
                 <p class="lead fs-6 fw-medium">
                   {{ 'about-me.intro' | translate }}
                 </p>
-              </a>
-              <a
+              </div>
+              <div
                 class="list-group-item list-group-item-action border-black border-2 border border-top-0 p-0"
                 ><p
                   class="m-0 m-0 px-3 py-2 justify-content-center align-items-center">
@@ -88,7 +93,7 @@
                     {{ 'about-me.tech-skills' | translate }}
                   </span>
                 </p>
-              </a>
+              </div>
               <a
                 class="list-group-item list-group-item-action p-0 border-black border-2 border border-top-0"
                 ><p
@@ -121,7 +126,7 @@
                       class="btn-group me-2"
                       role="group"
                     >
-                      <a
+                      <button
                         type="button"
                         class="text-decoration-none btn btn-primary linkedin fw-bold"
                         href="https://www.linkedin.com/in/gabrielgarciadiaz/"
@@ -132,7 +137,7 @@
                         }}</span>
                         {{ 'about-me.linkedin' | translate }}
                            
-                      </a>
+                      </button>
 
                     </div>
 
@@ -160,12 +165,14 @@
                 <a
                   href="../../../assets/downloads/GAGD-CV-A11Y-EN-ES.pdf"
                   class="btn btn-primary shadow my-cv fw-bold text-start"
-                  download>
+                  download="GAGD-CV-A11Y-EN-ES.pdf"
+                  [attr.aria-label]="('about-me.download' | translate) + ' - PDF'">
                   {{ 'about-me.download' | translate }}
-                  <span class="badge ms-3 text-bg-warning">
+                  <span class="badge ms-3 text-bg-warning" aria-hidden="true">
                     <img
                       src="../../../assets/img/icons/download.svg"
                       alt=""
+                      aria-hidden="true"
                       class="social-net" />
                   </span>
                 </a>
@@ -176,6 +183,7 @@
         </div>
       </div>
     </div>
-  </article>
+  </div>
 </section>
 
+div
