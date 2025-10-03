@@ -27,4 +27,14 @@ export class HeaderComponent {
     const currentPath = window.location.pathname;
     this.contentfulService.updateBrowserUrl(currentPath, { lang });
   }
+
+  closeMenu(): void {
+    const navbarCollapse = document.getElementById('navbarSupportedContent');
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      const bsCollapse = new (window as any).bootstrap.Collapse(navbarCollapse, {
+        toggle: false,
+      });
+      bsCollapse.hide();
+    }
+  }
 }
