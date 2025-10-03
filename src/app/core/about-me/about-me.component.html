@@ -42,9 +42,9 @@
                 alt=""
                 width="160"
                 class="d-inline-block rounded-circle p-1 border-black shadow" />
-              <h3 class="card-title fw-bold mt-3 mb-0">
+              <h2 class="card-title fw-bold mt-3 mb-0">
                 {{ 'about-me.gagd' | translate }}
-              </h3>
+              </h2>
 
               <div class="card-body text-center">
                 <div
@@ -65,9 +65,9 @@
 
           <!--intro starts-->
           <div class="col col-12 col-lg-8">
-            <div class="list-group shadow">
+            <div class="shadow">
               <div
-                class="list-group-item list-group-item-action border-black border-2"
+                class="px-3 border border-black border-2 rounded-top"
 >
                 <h2 class="fw-bold mt-3 fs-4">
                   {{ 'about-me.believe' | translate }}
@@ -81,36 +81,27 @@
                   {{ 'about-me.intro' | translate }}
                 </p>
               </div>
-              <div
-                class="list-group-item list-group-item-action border-black border-2 border border-top-0 p-0"
-                >
-                <div
-                  class="m-0 m-0 px-3 py-2 justify-content-center align-items-center">
-                    <div
-                  class="col col-md-2 small mt-2 mt-md-0 fw-bold mb-2 px-3 rounded-pill bg-secondary mb-2 text-dark bg-opacity-25 border-secondary-subtle border border-2">
-                  {{ 'about-me.tech' | translate }}</div
-                >
-                 
-                  <p class="fw-regular ms-2">
-                    {{ 'about-me.tech-skills' | translate }}
-                  </p>
-                </div>
-              
-              
-              </div>
-              <div
-                class="list-group-item list-group-item-action p-0 border-black border-2 border border-top-0">
-                <div
-                  class="m-0 m-0 px-3 py-2 justify-content-center align-items-center">
-                    <div
-                  class="col col-md-3 small mt-2 mt-md-0 fw-bold mb-2 px-3 rounded-pill bg-secondary mb-2 text-dark bg-opacity-25 border-secondary-subtle border border-2">
-                  {{ 'about-me.design' | translate }}</div
-                >
-                  <div class="fw-regular ms-2">
-                    {{ 'about-me.design-skills' | translate }}
-                  </div>
-                </div>
-              </div>
+             <div class="border border-black border-2 border border-top-0 p-0">
+  <section class="m-0 m-0 px-3 py-2 justify-content-center align-items-center">
+    <h3 class=" fs-6 col col-md-2  mt-2 mt-md-0 fw-bold mb-2 px-3 rounded-pill bg-secondary mb-2 text-dark bg-opacity-25 border-secondary-subtle border border-2">
+      {{ 'about-me.tech' | translate }}
+    </h3>
+    <p class="fw-regular ms-2 mb-0">
+      {{ 'about-me.tech-skills' | translate }}
+    </p>
+  </section>
+</div>
+
+<div class="border p-0 border-black border-2 border border-top-0 rounded-bottom">
+  <section class="m-0 m-0 px-3 py-2 justify-content-center align-items-center">
+    <h3 class="col col-md-2 px-lg-2 fs-6 mt-2 mt-md-0 fw-bold mb-2 px-3 rounded-pill bg-secondary mb-2 text-dark bg-opacity-25 border-secondary-subtle border border-2">
+      {{ 'about-me.design' | translate }}
+    </h3>
+    <p class="fw-regular ms-2 mb-0">
+      {{ 'about-me.design-skills' | translate }}
+    </p>
+  </section>
+</div>
             </div>
 
             <div
@@ -131,7 +122,6 @@
                       role="group"
                     >
                       <a
-                        type="button"
                         class="text-decoration-none btn btn-primary linkedin fw-bold"
                         href="https://www.linkedin.com/in/gabrielgarciadiaz/"
                         target="_blank"
@@ -150,10 +140,8 @@
                       class="btn-group me-2"
                       role="group">
                       <a
-                        type="button"
                         class="btn btn-primary gmail fw-bold"
                          href="mailto:garturogdiaz@gmail.com?subject=Accessibility%20Request&body=Hello,%0D%0A%0D%0AI%20need%20help%20with..."
-                        target="_blank"
                         rel="noopener noreferrer">
                           <span class="sr-only">{{
                              'about-me.gMail' | translate
