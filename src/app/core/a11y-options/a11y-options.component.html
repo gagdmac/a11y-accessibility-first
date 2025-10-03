@@ -38,7 +38,7 @@
         <button 
           class="btn btn-success py-0 me-1" 
           (click)="increaseFontSize()"
-          [attr.aria-describedby]="'fontSize-status'">
+          >
           {{ 'a11y.fontSizeM' | translate }}
            <span class="sr-only">{{
               'a11y.fontSizeMore' | translate
@@ -51,7 +51,7 @@
         <button 
           class="btn btn-danger py-0 me-1" 
           (click)="decreaseFontSize()"
-          [attr.aria-describedby]="'fontSize-status'">
+          >
           {{ 'a11y.fontSizeL' | translate }}
            <span class="sr-only">{{
               'a11y.fontSizeLess' | translate
@@ -75,8 +75,7 @@
       </div>
       <span
         id="fontSize-status"
-        class="badge text-bg-light d-flex justify-content-start px-3"
-        aria-live="polite">
+        class="badge text-bg-light d-flex justify-content-start px-3">
         {{ 'a11y.fontSize' | translate }}{{ fontSize }}%
       </span>
     </div>
