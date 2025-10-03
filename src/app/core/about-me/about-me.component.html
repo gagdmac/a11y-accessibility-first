@@ -15,7 +15,7 @@
           <h1 
             #aboutMeTitle
             class="offcanvas-title lead fw-bold fs-3" 
-
+            id="offcanvasBottomLabel"
             tabindex="-1">
             {{ 'about-me.about' | translate }}
           </h1>
@@ -34,7 +34,7 @@
     <div class="offcanvas-body">
       <div class="container">
         <div class="row" data-masonry='{"percentPosition": true }'>
-          <div class="col col-12 col-lg-4 mb-4 mb-md-0">
+          <div class="col col-12 col-lg-4 mb-1 mb-md-0">
             <div
               class="card justify-content-center align-items-center border-black border-2 p-3 m mb-4 mb-lg-0 shadow">
               <img
@@ -83,37 +83,41 @@
               </div>
               <div
                 class="list-group-item list-group-item-action border-black border-2 border border-top-0 p-0"
-                ><p
+                >
+                <div
                   class="m-0 m-0 px-3 py-2 justify-content-center align-items-center">
-                  <span
-                    class="text-secondary-emphasis cg cg-1 fw-bold px-2 rounded-4 small me-2">
-                    {{ 'about-me.tech' | translate }}</span
-                  >
-                  <span class="fw-regular">
+                    <div
+                  class="col col-md-2 small mt-2 mt-md-0 fw-bold mb-2 px-3 rounded-pill bg-secondary mb-2 text-dark bg-opacity-25 border-secondary-subtle border border-2">
+                  {{ 'about-me.tech' | translate }}</div
+                >
+                 
+                  <p class="fw-regular ms-2">
                     {{ 'about-me.tech-skills' | translate }}
-                  </span>
-                </p>
+                  </p>
+                </div>
+              
+              
               </div>
-              <a
-                class="list-group-item list-group-item-action p-0 border-black border-2 border border-top-0"
-                ><p
+              <div
+                class="list-group-item list-group-item-action p-0 border-black border-2 border border-top-0">
+                <div
                   class="m-0 m-0 px-3 py-2 justify-content-center align-items-center">
-                  <span
-                    class="text-secondary-emphasis cg-2 fw-bold px-2 rounded-4 small me-2 border-danger-subtle border-1 border">
-                    {{ 'about-me.design' | translate }}</span
-                  >
-                  <span class="fw-regular">
+                    <div
+                  class="col col-md-3 small mt-2 mt-md-0 fw-bold mb-2 px-3 rounded-pill bg-secondary mb-2 text-dark bg-opacity-25 border-secondary-subtle border border-2">
+                  {{ 'about-me.design' | translate }}</div
+                >
+                  <div class="fw-regular ms-2">
                     {{ 'about-me.design-skills' | translate }}
-                  </span>
-                </p></a
-              >
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div
               class="container-fluid mt-4 rounded-3 border-black border-2 p-0">
               <div class="mb-3">
                 <div class="row m-0 border-0 d-flex align-items-center">
-                  <div class="col-12 col-lg-5">
+                  <div class="col-12 col-lg-5 ps-0 ps-md-2">
                     <h3
                       class="m-0 fw-bold fs-2 fs-md-4 u-ff-crison me-3 mb-2 mb-sm-0">
                       {{ 'about-me.connect' | translate }}
@@ -161,7 +165,7 @@
               </div>
 
               <!--download button-->
-              <div class="d-grid gap-2">
+              <div class="d-grid gap-2 mb-4">
                 <a
                   href="../../../assets/downloads/GAGD-CV-A11Y-EN-ES.pdf"
                   class="btn btn-primary shadow my-cv fw-bold text-start"
@@ -185,5 +189,3 @@
     </div>
   </div>
 </section>
-
-div
