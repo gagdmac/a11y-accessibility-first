@@ -21,6 +21,11 @@
 
   <!--offcanvas-body START-->
   <div class="offcanvas-body">
+    <!-- Live region for announcements -->
+    <div aria-live="polite" aria-atomic="true" class="visually-hidden">
+      {{ fontSizeAnnouncement }}
+    </div>
+    
     <!--Font size STARS-->
     <div class="card cb2">
       <div class="card-body">
@@ -30,7 +35,10 @@
         <p class="card-text fs-6">
           {{ 'a11y.fontSizeDescription' | translate }}
         </p>
-        <button class="btn btn-success py-0 me-1" (click)="increaseFontSize()">
+        <button 
+          class="btn btn-success py-0 me-1" 
+          (click)="increaseFontSize()"
+          [attr.aria-describedby]="'fontSize-status'">
           {{ 'a11y.fontSizeM' | translate }}
            <span class="sr-only">{{
               'a11y.fontSizeMore' | translate
@@ -40,7 +48,10 @@
                     src="../../../../assets/img/icons/plus-solid.svg"
                     alt="" />
         </button>
-        <button class="btn btn-danger py-0 me-1" (click)="decreaseFontSize()">
+        <button 
+          class="btn btn-danger py-0 me-1" 
+          (click)="decreaseFontSize()"
+          [attr.aria-describedby]="'fontSize-status'">
           {{ 'a11y.fontSizeL' | translate }}
            <span class="sr-only">{{
               'a11y.fontSizeLess' | translate
@@ -55,14 +66,19 @@
             *ngIf="fontSize !== 100"
             class="btn btn-dark py-0 me-1 mt-2"
             (click)="resetFontSize()">
-            {{ 'a11y.fontSizeReset' | translate }}
+            {{ 'a11y.fontSizeR' | translate }}
+             <span class="sr-only">{{
+              'a11y.fontSizeReset' | translate
+           }}</span>
           </button>
         </div>
       </div>
       <span
+        id="fontSize-status"
         class="badge text-bg-light d-flex justify-content-start px-3"
-        >{{ 'a11y.fontSize' | translate }}{{ fontSize }}%</span
-      >
+        aria-live="polite">
+        {{ 'a11y.fontSize' | translate }}{{ fontSize }}%
+      </span>
     </div>
     <!--Font size ENDS-->
 

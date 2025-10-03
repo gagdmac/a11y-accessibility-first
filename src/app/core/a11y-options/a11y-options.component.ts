@@ -16,6 +16,9 @@ import { ThemeService } from 'src/app/services/themes-color/theme.service';
   styleUrls: ['./a11y-options.component.scss'],
 })
 export class A11yOptionsComponent implements OnInit {
+  currentFontSize = 100;
+  fontSizeAnnouncement = '';
+
   constructor(
     private themeService: ThemeService,
     public fontSizeService: FontSizeService,
@@ -48,10 +51,20 @@ export class A11yOptionsComponent implements OnInit {
 
   increaseFontSize() {
     this.fontSizeService.setFontSize(this.fontSize + 5);
+    this.fontSizeAnnouncement = `Font size increased to ${this.fontSize} percent`;
+
+    setTimeout(() => {
+      this.fontSizeAnnouncement = '';
+    }, 1000);
   }
 
   decreaseFontSize() {
     this.fontSizeService.setFontSize(this.fontSize - 5);
+    this.fontSizeAnnouncement = `Font size decreased to ${this.fontSize} percent`;
+
+    setTimeout(() => {
+      this.fontSizeAnnouncement = '';
+    }, 1000);
   }
 
   resetFontSize() {
