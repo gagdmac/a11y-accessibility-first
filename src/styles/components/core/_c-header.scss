@@ -74,6 +74,19 @@
           outline: 2px solid currentColor;
           outline-offset: -2px;
         }
+        
+        // Active language styling
+        &.active {
+          background-color: var(--bs-primary);
+          color: var(--bs-white);
+          font-weight: 600;
+          
+          &:hover,
+          &:focus {
+            background-color: var(--bs-primary);
+            color: var(--bs-white);
+          }
+        }
       }
     }
   }

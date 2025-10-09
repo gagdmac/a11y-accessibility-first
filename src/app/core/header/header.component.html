@@ -34,6 +34,7 @@
           <button
             class="btn border border-secondary dropdown-toggle btn-sm me-4 mb-lg-0"
             type="button"
+            id="languageSelectorMobile"
             data-bs-toggle="dropdown"
             aria-expanded="false"
             [attr.aria-label]="'languages.languageSelection' | translate">
@@ -43,22 +44,28 @@
             </span>
             <ng-template #es><span class="fi fi-es px-3"></span></ng-template>
           </button>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" aria-labelledby="languageSelectorMobile">
             <li>
               <a
                 class="dropdown-item d-flex justify-content-between"
+                [class.active]="'es' === translate.currentLang"
+                [attr.aria-current]="'es' === translate.currentLang ? 'true' : null"
                 href="?lang=es"
-                (click)="$event.preventDefault(); changeLanguage('es')"
-                >Español <span class="fi fi-es px-3"></span
-              ></a>
+                (click)="$event.preventDefault(); changeLanguage('es')">
+                Español <span class="fi fi-es px-3"></span>
+                <span *ngIf="'es' === translate.currentLang" class="sr-only">{{ 'languages.currentLanguage' | translate }}</span>
+              </a>
             </li>
             <li>
               <a
                 class="dropdown-item d-flex justify-content-between"
+                [class.active]="'en' === translate.currentLang"
+                [attr.aria-current]="'en' === translate.currentLang ? 'true' : null"
                 href="?lang=en"
-                (click)="$event.preventDefault(); changeLanguage('en')"
-                >English <span class="fi fi-gb px-3"></span
-              ></a>
+                (click)="$event.preventDefault(); changeLanguage('en')">
+                English <span class="fi fi-gb px-3"></span>
+                <span *ngIf="'en' === translate.currentLang" class="sr-only">{{ 'languages.currentLanguage' | translate }}</span>
+              </a>
             </li>
           </ul>
         </div>
@@ -121,22 +128,26 @@
                   id="navbarDropdown"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  data-bs-dismiss="collapse">
+                  [attr.aria-label]="'menu.accessibility-first' | translate">
                   {{ 'menu.accessibility-first' | translate }}
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
                     <a
-                      class="dropdown-item disabled" aria-disabled="true"
+                      class="dropdown-item disabled" 
+                      aria-disabled="true"
                       routerLink="tutorials"
+                      tabindex="-1"
                       (click)="closeMenu()">
                       {{ 'submenu.tutorials' | translate }}</a
                     >
                   </li>
                   <li>
                     <a
-                      class="dropdown-item disabled" aria-disabled="true"
+                      class="dropdown-item disabled" 
+                      aria-disabled="true"
                       routerLink="courses"
+                      tabindex="-1"
                       (click)="closeMenu()"
                       >{{ 'submenu.courses' | translate }}</a
                     >
@@ -151,7 +162,7 @@
                   id="navbarDropdownOne"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  data-bs-dismiss="collapse">
+                  [attr.aria-label]="'menu.accessibility' | translate">
                   {{ 'menu.accessibility' | translate }}
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownOne">
@@ -224,6 +235,7 @@
             <button
               class="btn border border-secondary dropdown-toggle btn-sm me-4 mb-lg-0"
               type="button"
+              id="languageSelectorDesktop"
               data-bs-toggle="dropdown"
               aria-expanded="false"
               [attr.aria-label]="'languages.languageSelection' | translate">
@@ -232,22 +244,28 @@
               </span>
               <ng-template #es><span class="fi fi-es px-3"></span></ng-template>
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" aria-labelledby="languageSelectorDesktop">
               <li>
                 <a
                   class="dropdown-item d-flex justify-content-between"
+                  [class.active]="'es' === translate.currentLang"
+                  [attr.aria-current]="'es' === translate.currentLang ? 'true' : null"
                   href="?lang=es"
-                  (click)="$event.preventDefault(); changeLanguage('es')"
-                  >Español <span class="fi fi-es px-3"></span
-                ></a>
+                  (click)="$event.preventDefault(); changeLanguage('es')">
+                  Español <span class="fi fi-es px-3"></span>
+                  <span *ngIf="'es' === translate.currentLang" class="sr-only">{{ 'languages.currentLanguage' | translate }}</span>
+                </a>
               </li>
               <li>
                 <a
                   class="dropdown-item d-flex justify-content-between"
+                  [class.active]="'en' === translate.currentLang"
+                  [attr.aria-current]="'en' === translate.currentLang ? 'true' : null"
                   href="?lang=en"
-                  (click)="$event.preventDefault(); changeLanguage('en')"
-                  >English <span class="fi fi-gb px-3"></span
-                ></a>
+                  (click)="$event.preventDefault(); changeLanguage('en')">
+                  English <span class="fi fi-gb px-3"></span>
+                  <span *ngIf="'en' === translate.currentLang" class="sr-only">{{ 'languages.currentLanguage' | translate }}</span>
+                </a>
               </li>
             </ul>
           </div>
