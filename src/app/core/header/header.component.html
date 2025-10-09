@@ -4,16 +4,14 @@
     <nav class="navbar navbar-expand-lg bg-light"  aria-label="Primary navigation">
       <div class="container-fluid">
         <!--LOGO STARTS-->
-        <span class="me-4">
-          <a routerLink="home">
-            <img
-              src="../../../assets/img/core/a11y-first-logo.svg"
-              alt="{{ 'header.logo' | translate }}"
-              width="92"
-              height="40"
-              class="d-inline-block align-text-top pe-0" />
-          </a>
-        </span>
+        <a routerLink="home" class="navbar-brand me-4">
+          <img
+            src="../../../assets/img/core/a11y-first-logo.svg"
+            alt="{{ 'header.logo' | translate }}"
+            width="92"
+            height="40"
+            class="d-inline-block align-text-top" />
+        </a>
         <!--LOGO ENDS-->
 
         <!--boton modulo accesibilidad mobile-->
@@ -23,11 +21,11 @@
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasWithBothOptions"
           aria-controls="offcanvasWithBothOptions"
-          aria-label="Opens accesibility options">
+          [attr.aria-label]="'home.accessibilityOptions' | translate">
           <span class="sr-only">{{
             'home.accessibilityOptions' | translate
           }}</span>
-          <div class="universal-access"></div>
+          <span class="universal-access" aria-hidden="true"></span>
         </button>
 
         <!--APP LANGUAGUES SELECTION STARTS-->
@@ -82,10 +80,6 @@
         <div
           class="collapse navbar-collapse d-lg-flex justify-content-lg-end order-5"
           id="navbarSupportedContent">
-          <nav
-             [attr.aria-label]="'mainNavigation' | translate"
-            role="navigation"
-            class="d-flex align-items-center">
             <ul class="navbar-nav me-2 mb-2 mb-lg-0 d-flex">
              
               <!--boton modulo accesibilidad desktop START-->
@@ -96,38 +90,38 @@
                   data-bs-toggle="offcanvas"
                   data-bs-target="#offcanvasWithBothOptions"
                   aria-controls="offcanvasWithBothOptions"
-                  aria-label="Opens accesibility options">
+                  [attr.aria-label]="'home.accessibilityOptions' | translate">
                   <span class="sr-only">{{
                     'home.accessibilityOptions' | translate
                   }}</span>
-                  <div class="universal-access"></div>
+                  <span class="universal-access" aria-hidden="true"></span>
                 </button>
               </li>
               <!--boton modulo accesibilidad desktop ENDS-->
               
               <li class="nav-item mt-4 mt-md-0">
                 <a
-                  class="nav-link active"
-                  aria-current="page"
+                  class="nav-link"
                   routerLink="/"
                   routerLinkActive="active"
                   [routerLinkActiveOptions]="{ exact: true }"
+                  #homeLink="routerLinkActive"
+                  [attr.aria-current]="homeLink.isActive ? 'page' : null"
                   (click)="closeMenu()">
                   {{ 'menu.home' | translate }}</a
                 >
               </li>
 
                <li class="nav-item dropdown">
-                <a
+                <button
                   class="nav-link dropdown-toggle"
-                  href="#"
+                  type="button"
                   id="navbarDropdown"
-                  role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                   data-bs-dismiss="collapse">
                   {{ 'menu.accessibility-first' | translate }}
-                </a>
+                </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
                     <a
@@ -149,16 +143,15 @@
               </li>
 
               <li class="nav-item dropdown">
-                <a
+                <button
                   class="nav-link dropdown-toggle"
-                  href="#"
+                  type="button"
                   id="navbarDropdownOne"
-                  role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                   data-bs-dismiss="collapse">
                   {{ 'menu.accessibility' | translate }}
-                </a>
+                </button>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownOne">
                   <li>
                     <a
@@ -222,7 +215,6 @@
                 >
               </li>
             </ul>
-          </nav>
 
           <!--APP LANGUAGUES SELECTION DESKTOP-->
           <div class="dropdown dropstart language-selector d-none d-lg-block ms-3">

@@ -7,86 +7,91 @@
   <div class="offcanvas-header">
     <h1 
       class="offcanvas-title lead fw-bold fs-3" 
-      id="offcanvasTitle"
-      tabindex="-1">
+      id="offcanvasTitle">
       {{ 'a11y.title' | translate }}
     </h1>
     <button
       type="button"
       class="btn-close"
       data-bs-dismiss="offcanvas"
-      aria-label="Close"></button>
+      [attr.aria-label]="'a11y.close' | translate"></button>
   </div>
   <!--offcanvas-header ENDS-->
 
   <!--offcanvas-body START-->
   <div class="offcanvas-body">
     <!-- Live region for announcements -->
-    <div aria-live="polite" aria-atomic="true" class="visually-hidden">
+    <div aria-live="polite" aria-atomic="true" class="visually-hidden" role="status">
       {{ fontSizeAnnouncement }}
       {{ linkHighlightAnnouncement }}
     </div>
     
-    <!--Font size STARS-->
-    <div class="card cb2">
+    <!--Font size STARTS-->
+    <section class="card cb2" aria-labelledby="fontSizeHeading">
       <div class="card-body">
-        <h2 class="card-title fs-4 fw-bold">
+        <h2 id="fontSizeHeading" class="card-title fs-4 fw-bold">
           {{ 'a11y.fontSizeTitle' | translate }}
         </h2>
         <p class="card-text fs-6">
           {{ 'a11y.fontSizeDescription' | translate }}
         </p>
-        <button 
-          #increaseFontSizeBtn
-          class="btn btn-success py-0 me-1" 
-          (click)="increaseFontSize()"
-          >
-          {{ 'a11y.fontSizeM' | translate }}
-           <span class="sr-only">{{
+        <div class="btn-group" role="group" aria-labelledby="fontSizeHeading" aria-describedby="fontSize-status">
+          <button 
+            #increaseFontSizeBtn
+            type="button"
+            class="btn btn-success py-0" 
+            (click)="increaseFontSize()">
+            {{ 'a11y.fontSizeM' | translate }}
+            <span class="sr-only">{{
               'a11y.fontSizeMore' | translate
-           }}</span>
-          <img
-                    class="fontSize mb-1 mx-1"
-                    src="../../../../assets/img/icons/plus-solid.svg"
-                    alt="" />
-        </button>
-        <button 
-          class="btn btn-danger py-0 me-1" 
-          (click)="decreaseFontSize()"
-          >
-          {{ 'a11y.fontSizeL' | translate }}
-           <span class="sr-only">{{
+            }}</span>
+            <img
+              class="fontSize mb-1 mx-1"
+              src="../../../../assets/img/icons/plus-solid.svg"
+              alt="" 
+              aria-hidden="true" />
+          </button>
+          <button 
+            type="button"
+            class="btn btn-danger py-0" 
+            (click)="decreaseFontSize()">
+            {{ 'a11y.fontSizeL' | translate }}
+            <span class="sr-only">{{
               'a11y.fontSizeLess' | translate
-           }}</span>
-           <img
-                    class="fontSize mb-1 mx-1"
-                    src="../../../../assets/img/icons/minus-solid.svg"
-                    alt="" />
-        </button>
-        <div>
+            }}</span>
+            <img
+              class="fontSize mb-1 mx-1"
+              src="../../../../assets/img/icons/minus-solid.svg"
+              alt="" 
+              aria-hidden="true" />
+          </button>
+        </div>
+        <div *ngIf="fontSize !== 100" class="mt-2">
           <button
-            *ngIf="fontSize !== 100"
-            class="btn btn-dark py-0 me-1 mt-2"
+            type="button"
+            class="btn btn-dark py-0"
             (click)="resetFontSize(); increaseFontSizeBtn.focus()">
             {{ 'a11y.fontSizeR' | translate }}
-             <span class="sr-only">{{
+            <span class="sr-only">{{
               'a11y.fontSizeReset' | translate
-           }}</span>
+            }}</span>
           </button>
         </div>
       </div>
-      <span
+      <div
         id="fontSize-status"
-        class="badge text-bg-light d-flex justify-content-start px-3">
+        class="badge text-bg-light d-flex justify-content-start px-3"
+        role="status"
+        aria-live="polite">
         {{ 'a11y.fontSize' | translate }}{{ fontSize }}%
-      </span>
-    </div>
+      </div>
+    </section>
     <!--Font size ENDS-->
 
     <!--toggle Link Highlight STARTS-->
-    <div class="card mt-3 cb2">
+    <section class="card mt-3 cb2" aria-labelledby="linkHighlightHeading">
       <div class="card-body">
-        <h2 class="card-title fs-4 fw-bold">
+        <h2 id="linkHighlightHeading" class="card-title fs-4 fw-bold">
           {{ 'a11y.toggleLinkHighlightTitle' | translate }}
         </h2>
         <p class="card-text fs-6">
@@ -94,12 +99,14 @@
         </p>
 
         <button
-          class="btn btn-warning py-0 me-1"
+          type="button"
+          class="btn btn-warning py-0"
           (click)="toggleLinkHighlight()">
           {{ buttonText | translate }}
         </button>
       </div>
-    </div>
+    </section>
+    <!--toggle Link Highlight ENDS-->
   </div>
   <!--offcanvas-body ENDS-->
 </div>

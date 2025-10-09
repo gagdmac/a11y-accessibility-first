@@ -1,19 +1,136 @@
+// ============================================================================
+// A11y Options Component Styles with Accessibility Enhancements
+// ============================================================================
+
 .c-a11y-options {
+  // Decorative icons within buttons
   img {
     object-fit: cover;
     width: rem-calc(20);
     height: rem-calc(20);
     margin-left: rem-calc(10);
     background: transparent;
+    // Prevent icons from interfering with screen readers
+    pointer-events: none;
 
     &.fontSize {
       width: rem-calc(14);
       height: rem-calc(14);
     }
   }
+
+  // Card sections for better organization
+  .card {
+    // Ensure proper spacing and readability
+    margin-bottom: rem-calc(16);
+
+    .card-body {
+      padding: rem-calc(16);
+    }
+
+    .card-title {
+      margin-bottom: rem-calc(12);
+      color: var(--bs-heading-color, inherit);
+    }
+
+    .card-text {
+      margin-bottom: rem-calc(16);
+      color: var(--bs-body-color, inherit);
+    }
+  }
+
+  // Button group for font size controls
+  .btn-group {
+    display: flex;
+    gap: rem-calc(8);
+    margin-bottom: rem-calc(8);
+    flex-wrap: wrap;
+    
+    // Ensure buttons are properly sized for accessibility
+    button {
+      // WCAG 2.1 Level AAA touch target size
+      min-width: 44px;
+      min-height: 44px;
+      padding: rem-calc(8 16);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: rem-calc(4);
+    }
+  }
+
+  // All buttons within the component
+  button {
+    // WCAG 2.1 Level AAA touch target size
+    min-width: 44px;
+    min-height: 44px;
+    padding: rem-calc(8 16);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    border: rem-calc(2) solid transparent;
+    
+    // Enhanced focus indicator for keyboard navigation
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+    }
+
+    // Hover states with sufficient contrast
+    &.btn-success {
+      &:hover,
+      &:focus {
+        background-color: darken(#198754, 10%);
+        border-color: darken(#198754, 15%);
+      }
+    }
+
+    &.btn-danger {
+      &:hover,
+      &:focus {
+        background-color: darken(#dc3545, 10%);
+        border-color: darken(#dc3545, 15%);
+      }
+    }
+
+    &.btn-warning {
+      &:hover,
+      &:focus {
+        background-color: darken(#ffc107, 10%);
+        border-color: darken(#ffc107, 15%);
+      }
+    }
+
+    &.btn-dark {
+      &:hover,
+      &:focus {
+        background-color: lighten(#212529, 10%);
+        border-color: lighten(#212529, 15%);
+      }
+    }
+  }
+
+  // Font size status badge
+  .badge {
+    padding: rem-calc(8 16);
+    font-size: rem-calc(14);
+    font-weight: 600;
+    min-height: rem-calc(36);
+    
+    // Ensure text is readable
+    &.text-bg-light {
+      color: #000;
+      background-color: #f8f9fa !important;
+      border-top: rem-calc(1) solid rgba(0, 0, 0, 0.125);
+    }
+  }
+
+  // Profile section (if present)
   .profile {
     button {
-      height: rem-calc(40);
+      height: rem-calc(44); // Updated to meet WCAG AAA
       width: 100%;
       place-content: center;
       -webkit-transition: all 0.5s ease-out;
@@ -23,16 +140,123 @@
       background: #19d27b;
       color: var(--bs-text-color);
       border: none;
+      
       &:hover {
         background: var(--bs-button-text);
         color: var(--bs-link-color);
         border: rem-calc(1) dashed var(--bs-link-color);
       }
+      
       &:focus-visible {
         background: var(--bs-button-text);
         color: var(--bs-link-color);
-        border: rem-calc(1) dashed var(--bs-link-color);
+        border: rem-calc(2) solid var(--bs-link-color);
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
       }
     }
+  }
+
+  // Offcanvas specific adjustments
+  &.offcanvas {
+    // Ensure proper width for content readability
+    @include respond-above(sm) {
+      max-width: 400px;
+    }
+  }
+
+  .offcanvas-header {
+    border-bottom: rem-calc(1) solid rgba(0, 0, 0, 0.125);
+    padding: rem-calc(16 20);
+
+    .offcanvas-title {
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .btn-close {
+      // WCAG 2.1 Level AAA touch target size
+      min-width: 44px;
+      min-height: 44px;
+      padding: rem-calc(12);
+      
+      &:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .offcanvas-body {
+    padding: rem-calc(20);
+  }
+
+  // Screen reader only text
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+// ============================================================================
+// Media Queries for Enhanced Accessibility
+// ============================================================================
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .c-a11y-options {
+    .card {
+      border: rem-calc(2) solid currentColor;
+    }
+
+    button {
+      border: rem-calc(2) solid currentColor !important;
+    }
+
+    .badge {
+      border: rem-calc(2) solid currentColor;
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .c-a11y-options {
+    button {
+      -webkit-transition: none !important;
+      -moz-transition: none !important;
+      -o-transition: none !important;
+      transition: none !important;
+    }
+
+    &.offcanvas {
+      transition: none !important;
+    }
+  }
+}
+
+// Dark mode optimizations
+@media (prefers-color-scheme: dark) {
+  .c-a11y-options {
+    .badge.text-bg-light {
+      color: #fff;
+      background-color: #343a40 !important;
+      border-top-color: rgba(255, 255, 255, 0.125);
+    }
+  }
+}
+
+// Print styles
+@media print {
+  .c-a11y-options {
+    display: none !important;
   }
 }

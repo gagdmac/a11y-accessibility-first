@@ -1,12 +1,36 @@
+// ============================================================================
+// Header Component Styles with Accessibility Enhancements
+// ============================================================================
+
 .c-header {
-  z-index: 1000;
+  z-index: 1030; // Increased from 1000 for better stacking context
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
-  span p.logo-text{
+  // Logo text styles
+  span p.logo-text {
     font-size: rem-calc(10) !important;
     margin-bottom: 0 !important;
   }
 
+  // Logo/Brand link with proper semantics
+  .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+    
+    img {
+      // Ensure proper image rendering for crisp logos
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+  }
+
+  // Language selector with responsive positioning and accessibility
   .language-selector {
     @include respond-above(md) {
       order: 3;
@@ -19,28 +43,245 @@
       top: rem-calc(30);
       transform: translateY(-50%);
     }
+
+    .dropdown-toggle {
+      // WCAG 2.1 Level AAA touch target size
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      
+      // Enhanced focus indicator for accessibility
+      &:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
+    }
+    
+    .dropdown-menu {
+      .dropdown-item {
+        // Ensure sufficient padding for touch targets
+        padding: rem-calc(8 16);
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        
+        &:focus-visible {
+          outline: 2px solid currentColor;
+          outline-offset: -2px;
+        }
+      }
+    }
   }
+
+  // Accessibility button with responsive positioning
   .accessibility-btn {
     position: relative;
     z-index: 1020;
+    // WCAG 2.1 Level AAA touch target size
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     @include respond-below(md) {
       position: fixed;
       top: rem-calc(7);
       right: rem-calc(144);
     }
+
+    // Enhanced focus indicator
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
   }
 
+  // Universal access icon (changed from div to span)
+  .universal-access {
+    display: inline-block;
+    width: rem-calc(24);
+    height: rem-calc(24);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none; // Prevent icon from being a separate target
+  }
+
+  // Navbar toggler (hamburger menu) with accessibility
   .navbar-toggler {
     padding: rem-calc(0 13);
     border: rem-calc(1) solid gray;
     border-radius: rem-calc(5);
+    // WCAG 2.1 Level AAA touch target size
+    min-width: 44px;
+    min-height: 44px;
+    
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+      box-shadow: none; // Remove default Bootstrap shadow for cleaner focus
+    }
   }
 
+  // Dropdown menu positioning
   .dropstart .dropdown-menu[data-bs-popper] {
     top: 110%;
     right: 100%;
     left: -124%;
     z-index: 1200;
+  }
+
+  // Navigation items with accessibility enhancements
+  .navbar-nav {
+    .nav-link {
+      position: relative;
+      padding: rem-calc(8 16);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      
+      // Enhanced focus indicator
+      &:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
+      
+      // Active state indicator with visual underline
+      &.active {
+        font-weight: 600;
+        
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: rem-calc(16);
+          right: rem-calc(16);
+          height: rem-calc(3);
+          background-color: currentColor;
+        }
+      }
+
+      // Dropdown toggle as button (proper semantic)
+      &.dropdown-toggle {
+        background: none;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        font-size: inherit;
+        font-family: inherit;
+        
+        &:hover {
+          color: inherit;
+        }
+      }
+    }
+    
+    // Dropdown menu items accessibility
+    .dropdown-menu {
+      .dropdown-item {
+        padding: rem-calc(8 16);
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        
+        &:focus-visible {
+          outline: 2px solid currentColor;
+          outline-offset: -2px;
+        }
+        
+        // Disabled items styling
+        &.disabled {
+          opacity: 0.5;
+          pointer-events: none;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  // Ensure all interactive buttons have proper focus
+  .btn-link {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  // Screen reader only text
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+// ============================================================================
+// Media Queries for Enhanced Accessibility
+// ============================================================================
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .c-header {
+    border-bottom: rem-calc(2) solid currentColor;
+  }
+  
+  .nav-link,
+  .dropdown-toggle,
+  .btn-link,
+  .navbar-brand {
+    border: rem-calc(1) solid currentColor;
+  }
+}
+
+// Reduced motion support for users with vestibular disorders
+@media (prefers-reduced-motion: reduce) {
+  .c-header {
+    .navbar-collapse {
+      transition: none !important;
+    }
+    
+    .dropdown-menu {
+      transition: none !important;
+    }
+
+    .language-selector {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+}
+
+// Print styles for better document output
+@media print {
+  .c-header {
+    position: static !important;
+    box-shadow: none !important;
+  }
+  
+  .navbar-toggler,
+  .accessibility-btn,
+  .language-selector {
+    display: none !important;
   }
 }
