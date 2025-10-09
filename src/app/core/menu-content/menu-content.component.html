@@ -1,30 +1,33 @@
-<div class="px-5 py-3">
+<div class="px-3 py-3">
   <!-- Large screen layout -->
-  <div class="desktop-menu" *ngIf="screenWidth > 1024">
-    <span
-      *ngFor="let item of menuItems"
-      class="badge fw-normal rounded-pill me-2 mb-2"
-      [class.text-bg-primary]="router.isActive(item.route, true)"
-      [class.text-bg-secondary]="!router.isActive(item.route, true)">
-      <a
-        class="nav-link"
-        aria-current="page"
-        [routerLink]="item.route"
-        [routerLinkActive]="' highlight'"
-        >{{ item.label | translate }}</a
-      >
-    </span>
-  </div>
+  <nav class="desktop-menu" aria-label="Content navigation" *ngIf="screenWidth > 1024">
+    <ul class="list-unstyled d-flex flex-wrap mb-0">
+      <li *ngFor="let item of menuItems; let i = index">
+        <a
+          #firstDesktopLink
+          class="badge fw-normal rounded-pill me-2 mb-2 text-decoration-none"
+          [class.text-bg-primary]="router.isActive(item.route, true)"
+          [class.text-bg-secondary]="!router.isActive(item.route, true)"
+          [attr.aria-current]="router.isActive(item.route, true) ? 'page' : null"
+          [routerLink]="item.route"
+          [routerLinkActive]="'highlight'">
+          {{ item.label | translate }}
+        </a>
+      </li>
+    </ul>
+  </nav>
 
   <!-- Small screen slider -->
-  <div class="mobile-menu px-3 py-2" *ngIf="screenWidth <= 1025">
+  <nav class="mobile-menu px-3 py-2" aria-label="Content navigation" *ngIf="screenWidth <= 1025">
     <button
       class="scroll-btn left"
+      type="button"
       (click)="scroll('left')"
-      *ngIf="canScrollLeft">
+      *ngIf="canScrollLeft"
+      [attr.aria-label]="'app-content-links.left' | translate">
       <span class="sr-only">{{ 'app-content-links.left' | translate }}</span>
     </button>
-    <div class="slider-container">
+    <div class="slider-container" role="list">
       <div
         class="slider"
         #slider
@@ -32,25 +35,29 @@
         (touchmove)="onTouchMove($event)"
         (touchend)="onTouchEnd()">
         <span
-          *ngFor="let item of menuItems"
-          class="badge fw-normal rounded-pill"
+          *ngFor="let item of menuItems; let i = index"
+          role="listitem"
+          class="badge fw-normal rounded-pill mx-2"
           [class.text-bg-primary]="router.isActive(item.route, true)"
           [class.text-bg-secondary]="!router.isActive(item.route, true)">
           <a
+            #firstMobileLink
             class="nav-link fs-6"
-            aria-current="page"
+            [attr.aria-current]="router.isActive(item.route, true) ? 'page' : null"
             [routerLink]="item.route"
-            [routerLinkActive]="'active'"
-            >{{ item.label | translate }}</a
-          >
+            [routerLinkActive]="'active'">
+            {{ item.label | translate }}
+          </a>
         </span>
       </div>
     </div>
     <button
       class="scroll-btn right"
+      type="button"
       (click)="scroll('right')"
-      *ngIf="canScrollRight">
+      *ngIf="canScrollRight"
+      [attr.aria-label]="'app-content-links.right' | translate">
       <span class="sr-only">{{ 'app-content-links.right' | translate }}</span>
     </button>
-  </div>
+  </nav>
 </div>

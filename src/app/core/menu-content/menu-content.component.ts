@@ -2,6 +2,8 @@ import {
   Component,
   HostListener,
   ViewChild,
+  ViewChildren,
+  QueryList,
   ElementRef,
   AfterViewInit,
 } from '@angular/core';
@@ -24,6 +26,8 @@ interface MenuItem {
 export class MenuContentComponent implements AfterViewInit {
   screenWidth: number = window.innerWidth;
   @ViewChild('slider') slider!: ElementRef;
+  @ViewChildren('firstDesktopLink') firstDesktopLinks!: QueryList<ElementRef>;
+  @ViewChildren('firstMobileLink') firstMobileLinks!: QueryList<ElementRef>;
   canScrollLeft = false;
   canScrollRight = false;
   private touchStartX = 0;
@@ -65,6 +69,31 @@ export class MenuContentComponent implements AfterViewInit {
       this.centerActiveItem();
     });
     this.linkHighlightService.refreshHighlights();
+    
+    // Set focus to first link when menu renders
+    this.setFocusToFirstLink();
+  }
+
+  /**
+   * Set focus to the first link in the menu
+   * This ensures keyboard and screen reader users start at the beginning
+   */
+  private setFocusToFirstLink() {
+    setTimeout(() => {
+      if (this.screenWidth > 1024) {
+        // Desktop menu
+        const firstLink = this.firstDesktopLinks?.first;
+        if (firstLink) {
+          firstLink.nativeElement.focus();
+        }
+      } else {
+        // Mobile menu
+        const firstLink = this.firstMobileLinks?.first;
+        if (firstLink) {
+          firstLink.nativeElement.focus();
+        }
+      }
+    }, 300);
   }
 
   private checkScrollButtons() {

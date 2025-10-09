@@ -1,3 +1,43 @@
+// ============================================================================
+// Menu Content Component Styles with Accessibility Enhancements
+// ============================================================================
+
+// Desktop menu navigation
+.desktop-menu {
+  nav {
+    ul {
+      li {
+        display: inline-block;
+
+        a.badge {
+          display: inline-block;
+          padding: rem-calc(8 16);
+          // WCAG 2.1 Level AAA touch target size
+          min-width: 44px;
+          min-height: 44px;
+          transition: all 0.3s ease;
+
+          &:focus-visible {
+            outline: 3px solid currentColor;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25);
+          }
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+          }
+
+          &.highlight {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile menu with horizontal scrolling
 .mobile-menu {
   position: relative;
   display: flex;
@@ -26,31 +66,133 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     flex-wrap: nowrap;
-    gap: 0.5rem;
+    gap: rem-calc(8);
 
     &::-webkit-scrollbar {
       display: none;
     }
+
+    // Individual menu items
+    span.badge {
+      flex-shrink: 0;
+
+      a.nav-link {
+        display: inline-block;
+        padding: rem-calc(8 16);
+        // WCAG 2.1 Level AAA touch target size
+        min-width: 44px;
+        // min-height: 44px;
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:focus-visible {
+          outline: 3px solid currentColor;
+          outline-offset: 2px;
+          box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25);
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+        }
+
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
   }
 
+  // Scroll buttons
   .scroll-btn {
     position: absolute;
     z-index: 1;
-    padding: 8px;
-    border: none;
+    padding: rem-calc(8);
+    border: 1px solid transparent;
     background: transparent;
-    border-radius: 0%;
+    border-radius: 4px;
     cursor: pointer;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: rem-calc(24);
+    // WCAG 2.1 Level AAA touch target size
+    min-width: 44px;
+    min-height: 44px;
+    transition: all 0.3s ease;
+
+    &:focus-visible {
+      outline: 3px solid currentColor;
+      outline-offset: 2px;
+      background-color: rgba(var(--bs-primary-rgb), 0.1);
+      border-color: currentColor;
+    }
+
+    &:hover {
+      background-color: rgba(var(--bs-primary-rgb), 0.1);
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
 
     &.left {
-      left: -20px;
+      left: rem-calc(-20);
       background-image: url('../../../assets/img/left.svg');
     }
 
     &.right {
-      right: -25px;
+      right: rem-calc(-20);
       background-image: url('../../../assets/img/right.svg');
     }
+  }
+}
+
+// Screen reader only helper class
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .desktop-menu nav ul li a.badge,
+  .mobile-menu .slider span.badge a.nav-link {
+    border: 2px solid currentColor;
+  }
+
+  .scroll-btn {
+    border: 2px solid currentColor;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .desktop-menu nav ul li a.badge,
+  .mobile-menu .slider span.badge a.nav-link,
+  .scroll-btn {
+    transition: none;
+  }
+
+  .slider {
+    scroll-behavior: auto;
+  }
+}
+
+// Print styles
+@media print {
+  .mobile-menu .scroll-btn {
+    display: none;
+  }
+
+  .slider-container {
+    overflow: visible;
   }
 }
