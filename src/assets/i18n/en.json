@@ -27,12 +27,12 @@
   },
 
   "header": {
-    "logo": "Accesibility First"
+    "logo": "Accessibility First"
   },
 
   "home": {
 
-    "accessibilityOptions": "Accesibility Options",
+    "accessibilityOptions": "Accessibility Options",
     "mainContent": "go to main content",
     "intro-title": "Accessible First",
     "intro-a": "Empowering creators to build a more inclusive digital world, Accessible First is your comprehensive guide to web accessibility.",
@@ -86,7 +86,7 @@
   },
 
   "accessibility": {
-    "accessibilityTitle": "Accesibility",
+    "accessibilityTitle": "Accessibility",
     "accessibilityInfo": "refers to the design of products, devices, services, or environments to be usable by all people, to the greatest extent possible,",
     "accessibilityExtra": " without the need for adaptation or specialized design.",
     "accessibilityExtraB": "The goal of universal design is to ensure that individuals with a wide range of abilities and disabilities can access and use these things in a way that is similar to those without such limitations."
@@ -141,6 +141,8 @@
     "close": "Close",
     "title": "Accessibility Options",
     "fontSizeTitle": "Font Size",
+    "fontSizeDecreased": "Font size decreased",
+    "fontSizeIncreased": "Font size increased", 
     "fontSizeDescription": "Change the font size of the web page.",
     "fontSize": "Font Size: ",
     "fontSizeM": "Increase",

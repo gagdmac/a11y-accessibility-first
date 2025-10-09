@@ -141,6 +141,8 @@
     "fontSizeTitle": "Tamaño de Fuente",
     "fontSizeDescription": "Cambia el tamaño de la fuente de la web",
     "fontSize": "Tamaño de fuente: ",
+    "fontSizeDecreased": "Tamaño de fuente disminuido",
+    "fontSizeIncreased": "Tamaño de fuente aumentado", 
     "fontSizeM": "Aumentar",
     "fontSizeMore": "el tamaño de la fuente de la página web",
     "fontSizeL": "Disminuir",

@@ -1,13 +1,14 @@
 <header
   class="c-header shadow container-fluid position-fixed top-0 u__position m-0 p-0">
   <div class="container-fluid p-0 cb2">
-    <nav class="navbar navbar-expand-lg bg-light"  aria-label="Primary navigation">
+    <div class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <!--LOGO STARTS-->
-        <a routerLink="home" class="navbar-brand me-4">
+        <a routerLink="home" class="navbar-brand me-4" [attr.aria-label]="'header.logo' | translate">
           <img
             src="../../../assets/img/core/a11y-first-logo.svg"
-            alt="{{ 'header.logo' | translate }}"
+            alt=""
+            aria-hidden="true"
             width="92"
             height="40"
             class="d-inline-block align-text-top" />
@@ -80,6 +81,7 @@
         <div
           class="collapse navbar-collapse d-lg-flex justify-content-lg-end order-5"
           id="navbarSupportedContent">
+          <nav aria-label="Primary navigation">
             <ul class="navbar-nav me-2 mb-2 mb-lg-0 d-flex">
              
               <!--boton modulo accesibilidad desktop START-->
@@ -215,6 +217,7 @@
                 >
               </li>
             </ul>
+          </nav>
 
           <!--APP LANGUAGUES SELECTION DESKTOP-->
           <div class="dropdown dropstart language-selector d-none d-lg-block ms-3">
@@ -252,7 +255,7 @@
         </div>
         <!--APP MENU ENDS-->
       </div>
-    </nav>
+    </div>
   </div>
 </header>
 
