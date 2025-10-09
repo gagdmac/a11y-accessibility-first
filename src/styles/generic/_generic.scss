@@ -120,34 +120,142 @@
 // }
 
 /* Global focus styles for entire application */
+/* ============================================================================
+ * CENTRALIZED FOCUS STYLES
+ * These styles provide consistent, accessible focus indicators throughout
+ * the application. Following WCAG 2.1 Level AA standards.
+ * ============================================================================ */
+
+/* Base focus style for all focusable elements */
 *:focus {
   outline: $focus !important;
   outline-offset: $f-style !important;
   box-shadow: none !important;
 }
 
-/* Specific focus styles for interactive elements */
-a:focus,
-button:focus,
-input:focus,
-select:focus,
-textarea:focus,
-[tabindex]:focus {
-  outline: $focus !important;
-  outline-offset: $f-style !important;
-  box-shadow: none !important;
-}
-
-/* Focus-visible support for modern browsers */
+/* Focus-visible support for modern browsers (keyboard navigation only) */
 *:focus-visible {
-  outline: $focus !important;
-  outline-offset: $f-style !important;
+  outline: 3px solid currentColor !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+}
+
+/* Remove focus outline for mouse clicks (focus-visible support) */
+*:focus:not(:focus-visible) {
+  outline: none !important;
   box-shadow: none !important;
 }
 
-/* Remove default focus for elements that will use focus-visible */
-*:focus:not(:focus-visible) {
-  outline: none;
+/* ============================================================================
+ * INTERACTIVE ELEMENTS - Enhanced focus styles
+ * ============================================================================ */
+
+/* Links */
+a:focus-visible {
+  outline: 3px solid currentColor !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+  text-decoration: underline;
+}
+
+/* Buttons */
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid currentColor !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+}
+
+/* Form controls */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid currentColor !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+  border-color: var(--bs-primary);
+}
+
+/* Custom tabindex elements */
+[tabindex]:focus-visible {
+  outline: 3px solid currentColor !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+}
+
+/* ============================================================================
+ * SPECIFIC COMPONENT OVERRIDES
+ * ============================================================================ */
+
+/* Bootstrap dropdowns and navigation */
+.dropdown-toggle:focus-visible,
+.nav-link:focus-visible {
+  outline: 3px solid currentColor !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+}
+
+/* Bootstrap badges used as links */
+.badge:focus-visible {
+  outline: 3px solid currentColor !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+}
+
+/* Close buttons (offcanvas, modals, etc.) */
+.btn-close:focus-visible {
+  outline: 3px solid currentColor !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+}
+
+/* Card and article elements that are focusable */
+article:focus-visible,
+.card:focus-visible {
+  outline: 3px solid currentColor !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+}
+
+/* Headings with tabindex="-1" for programmatic focus */
+h1[tabindex="-1"]:focus,
+h2[tabindex="-1"]:focus,
+h3[tabindex="-1"]:focus,
+h4[tabindex="-1"]:focus,
+h5[tabindex="-1"]:focus,
+h6[tabindex="-1"]:focus {
+  outline: 3px solid transparent !important; /* Hide outline for programmatic focus */
+}
+
+/* ============================================================================
+ * HIGH CONTRAST MODE SUPPORT
+ * ============================================================================ */
+@media (prefers-contrast: high) {
+  *:focus-visible {
+    outline: 3px solid currentColor !important;
+    outline-offset: 2px !important;
+    box-shadow: none !important;
+  }
+  
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 3px solid currentColor !important;
+    outline-offset: 2px !important;
+    border: 2px solid currentColor !important;
+  }
+}
+
+/* ============================================================================
+ * REDUCED MOTION SUPPORT
+ * ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *:focus-visible {
+    transition: none !important;
+  }
 }
 
 ////////////////////////////////////////////////////////////

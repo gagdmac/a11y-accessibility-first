@@ -37,7 +37,7 @@
         <span
           *ngFor="let item of menuItems; let i = index"
           role="listitem"
-          class="badge fw-normal rounded-pill mx-2"
+          class="badge fw-normal mx-2"
           [class.text-bg-primary]="router.isActive(item.route, true)"
           [class.text-bg-secondary]="!router.isActive(item.route, true)">
           <a
