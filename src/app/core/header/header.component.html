@@ -110,9 +110,8 @@
               <li class="nav-item mt-4 mt-md-1 ">
                 <a
                   class="nav-link"
-                  routerLink="/"
+                  routerLink="home"
                   routerLinkActive="active"
-                  [routerLinkActiveOptions]="{ exact: true }"
                   #homeLink="routerLinkActive"
                   [attr.aria-current]="homeLink.isActive ? 'page' : null"
                   (click)="closeMenu()">
