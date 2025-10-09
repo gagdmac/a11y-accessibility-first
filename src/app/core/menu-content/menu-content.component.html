@@ -5,7 +5,7 @@
       <li *ngFor="let item of menuItems; let i = index">
         <a
           #firstDesktopLink
-          class="badge fw-normal me-2 mb-2 text-decoration-none"
+          class="badge  me-3 mb-2 text-decoration-none"
           [class.text-bg-primary]="router.isActive(item.route, true)"
           [class.text-bg-secondary]="!router.isActive(item.route, true)"
           [attr.aria-current]="router.isActive(item.route, true) ? 'page' : null"
