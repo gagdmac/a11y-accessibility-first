@@ -182,6 +182,7 @@
 }
 
 // Reduced motion support
+// NOTE: Focus styles inherited from centralized focus system in src/styles/generic/_generic.scss
 @media (prefers-reduced-motion: reduce) {
   .c-home {
     a.card,

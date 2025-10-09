@@ -74,11 +74,9 @@
     transition: all 0.3s ease-out;
     border: rem-calc(2) solid transparent;
     
-    // Enhanced focus indicator for keyboard navigation
+    // NOTE: Using centralized focus mixin
     &:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
-      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+      @include focus-visible-styles;
     }
 
     // Hover states with sufficient contrast
@@ -150,12 +148,12 @@
         border: rem-calc(1) dashed var(--bs-link-color);
       }
       
+      // NOTE: Using centralized focus mixin + component-specific styles
       &:focus-visible {
+        @include focus-visible-styles;
         background: var(--bs-button-text);
         color: var(--bs-link-color);
         border: rem-calc(2) solid var(--bs-link-color);
-        outline: 2px solid currentColor;
-        outline-offset: 2px;
       }
     }
   }
@@ -183,10 +181,9 @@
       min-height: 44px;
       padding: rem-calc(12);
       
+      // NOTE: Using centralized focus mixin
       &:focus-visible {
-        outline: 2px solid currentColor;
-        outline-offset: 2px;
-        box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+        @include focus-visible-styles;
       }
     }
   }

@@ -135,9 +135,7 @@
 
 /* Focus-visible support for modern browsers (keyboard navigation only) */
 *:focus-visible {
-  outline: 3px solid currentColor !important;
-  outline-offset: 2px !important;
-  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+  @include focus-visible-styles;
 }
 
 /* Remove focus outline for mouse clicks (focus-visible support) */
@@ -152,35 +150,27 @@
 
 /* Links */
 a:focus-visible {
-  outline: 3px solid currentColor !important;
-  outline-offset: 2px !important;
-  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+  @include focus-visible-styles;
   text-decoration: underline;
 }
 
 /* Buttons */
 button:focus-visible,
 .btn:focus-visible {
-  outline: 3px solid currentColor !important;
-  outline-offset: 2px !important;
-  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+  @include focus-visible-styles;
 }
 
 /* Form controls */
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid currentColor !important;
-  outline-offset: 2px !important;
-  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+  @include focus-visible-styles;
   border-color: var(--bs-primary);
 }
 
 /* Custom tabindex elements */
 [tabindex]:focus-visible {
-  outline: 3px solid currentColor !important;
-  outline-offset: 2px !important;
-  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+  @include focus-visible-styles;
 }
 
 /* ============================================================================
@@ -189,32 +179,22 @@ textarea:focus-visible {
 
 /* Bootstrap dropdowns and navigation */
 .dropdown-toggle:focus-visible,
-.nav-link:focus-visible {
-  outline: 3px solid currentColor !important;
-  outline-offset: 2px !important;
-  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
-}
-
-/* Bootstrap badges used as links */
-.badge:focus-visible {
-  outline: 3px solid currentColor !important;
-  outline-offset: 2px !important;
-  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
-}
-
+.nav-link:focus-visible,
 /* Close buttons (offcanvas, modals, etc.) */
-.btn-close:focus-visible {
-  outline: 3px solid currentColor !important;
-  outline-offset: 2px !important;
-  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
-}
-
+.btn-close:focus-visible,
 /* Card and article elements that are focusable */
 article:focus-visible,
 .card:focus-visible {
-  outline: 3px solid currentColor !important;
-  outline-offset: 2px !important;
-  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.25) !important;
+  @include focus-visible-styles;
+}
+
+/* Bootstrap badges used as links */
+/* Using #222222 for better contrast instead of currentColor */
+.badge:focus-visible {
+  outline: rem-calc(2) dotted #222222 !important;
+  outline-offset: rem-calc(2) !important;
+  box-shadow: rem-calc(0 0 0 4) rgba(var(--bs-primary-rgb), 0.25) !important;
+  border-radius: rem-calc(2) !important;
 }
 
 /* Headings with tabindex="-1" for programmatic focus */
@@ -232,8 +212,8 @@ h6[tabindex="-1"]:focus {
  * ============================================================================ */
 @media (prefers-contrast: high) {
   *:focus-visible {
-    outline: 3px solid currentColor !important;
-    outline-offset: 2px !important;
+    outline: $focus-outline-width $focus-outline-style $focus-outline-color !important;
+    outline-offset: $focus-outline-offset !important;
     box-shadow: none !important;
   }
   
@@ -243,8 +223,8 @@ h6[tabindex="-1"]:focus {
   select:focus-visible,
   textarea:focus-visible,
   [tabindex]:focus-visible {
-    outline: 3px solid currentColor !important;
-    outline-offset: 2px !important;
+    outline: $focus-outline-width $focus-outline-style $focus-outline-color !important;
+    outline-offset: $focus-outline-offset !important;
     border: 2px solid currentColor !important;
   }
 }

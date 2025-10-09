@@ -26,7 +26,9 @@ footer {
       color: var(--bs-link-color);
       border: rem-calc(1) dashed var(--bs-link-color);
     }
+    // NOTE: Focus styles inherited from centralized focus system + component-specific styles
     &:focus-visible {
+      @include focus-visible-styles;
       background: var(--bs-button-text);
       color: var(--bs-link-color);
       border: rem-calc(1) dashed var(--bs-link-color);

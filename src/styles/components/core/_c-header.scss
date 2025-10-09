@@ -21,9 +21,9 @@
     align-items: center;
     text-decoration: none;
     
+    // NOTE: Using centralized focus mixin
     &:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
+      @include focus-visible-styles;
     }
     
     img {
@@ -55,10 +55,9 @@
       align-items: center;
       justify-content: center;
       
-      // Enhanced focus indicator for accessibility
+      // NOTE: Using centralized focus mixin
       &:focus-visible {
-        outline: 2px solid currentColor;
-        outline-offset: 2px;
+        @include focus-visible-styles;
       }
     }
     
@@ -70,9 +69,9 @@
         display: flex;
         align-items: center;
         
+        // NOTE: Using centralized focus mixin
         &:focus-visible {
-          outline: 2px solid currentColor;
-          outline-offset: -2px;
+          @include focus-visible-styles;
         }
         
         // Active language styling

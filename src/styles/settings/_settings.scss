@@ -65,6 +65,28 @@
 $focus: #007bff dotted rem-calc(2.5);
 $f-style: rem-calc(0.5) !default;
 
+// ============================================================================
+// FOCUS STYLE VARIABLES - WCAG 2.1 Level AA compliant
+// ============================================================================
+$focus-outline-width: rem-calc(2) !default;
+$focus-outline-style: dotted !default;
+$focus-outline-color: currentColor !default;
+$focus-outline-offset: rem-calc(2) !default;
+$focus-box-shadow-size: rem-calc(4) !default;
+$focus-box-shadow-color: rgba(var(--bs-primary-rgb), 0.25) !default;
+$focus-border-radius: rem-calc(2) !default;
+
+// ============================================================================
+// FOCUS MIXIN - Reusable focus styles
+// ============================================================================
+@mixin focus-visible-styles {
+  outline: $focus-outline-width $focus-outline-style $focus-outline-color !important;
+  outline-offset: $focus-outline-offset !important;
+  box-shadow: 0 0 0 $focus-box-shadow-size $focus-box-shadow-color !important;
+  border-radius: $focus-border-radius !important;
+}
+
+
 ////////////////////////////////////////////////////////////
 ///////// prefers-reduced-motion //////////////////////////
 //////////////////////////////////////////////////////////

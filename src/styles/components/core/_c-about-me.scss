@@ -51,6 +51,7 @@
 
   // H1 title with programmatic focus (tabindex="-1")
   // This allows focus without adding to tab order
+  // NOTE: Programmatic focus styling handled by centralized focus system
   .offcanvas-title {
     &:focus {
       outline: 3px solid transparent; // Remove visible outline for programmatic focus
@@ -58,25 +59,24 @@
   }
 
   // Section headings with proper focus
+  // NOTE: Using centralized focus mixin
   section {
     h3 {
       &:focus {
-        outline: 2px solid currentColor;
-        outline-offset: 2px;
+        @include focus-visible-styles;
       }
     }
   }
 
   // Close button accessibility
+  // NOTE: Using centralized focus mixin
   .btn-close {
     min-width: 44px;
     min-height: 44px;
     padding: rem-calc(12);
 
     &:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
-      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+      @include focus-visible-styles;
     }
   }
 
@@ -123,10 +123,9 @@
       }
     }
 
+    // NOTE: Using centralized focus mixin
     &:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
-      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+      @include focus-visible-styles;
     }
   }
 
@@ -162,10 +161,9 @@
       }
     }
 
+    // NOTE: Using centralized focus mixin
     &:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
-      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+      @include focus-visible-styles;
     }
   }
 
@@ -184,10 +182,9 @@
       transform: translateY(-2px);
     }
 
+    // NOTE: Using centralized focus mixin
     &:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
-      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+      @include focus-visible-styles;
     }
   }
 
@@ -205,10 +202,10 @@
   }
 
   // Heading that receives focus
+  // NOTE: Using centralized focus mixin
   .offcanvas-title {
     &:focus {
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
+      @include focus-visible-styles;
     }
   }
 }
