@@ -264,8 +264,9 @@ body {
   background-position: center center;
   display: inline-block;
   background-size: cover;
-  width: rem-calc(32);
-  height: rem-calc(32);
+  // Increased size for better visibility while maintaining accessibility
+  width: rem-calc(44);
+  height: rem-calc(44);
   filter: invert(23%) sepia(75%) saturate(2991%) hue-rotate(214deg)
     brightness(112%) contrast(99%);
 }
