@@ -8,12 +8,14 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 export class AboutMeComponent {
   @ViewChild('aboutMeTitle') aboutMeTitle!: ElementRef<HTMLHeadingElement>;
 
-  // Set focus to the heading for TalkBack and other screen readers
+  // Set focus to H1 for screen reader announcement following WCAG 1.3.2 meaningful sequence
+  // tabindex="-1" allows programmatic focus without adding to tab order
+  // Screen readers can navigate all content using virtual cursor
   onOffcanvasShown(): void {
     setTimeout(() => {
       if (this.aboutMeTitle) {
         this.aboutMeTitle.nativeElement.focus();
       }
-    }, 100);
+    }, 300); // Increased timeout to ensure offcanvas is fully rendered
   }
 }
