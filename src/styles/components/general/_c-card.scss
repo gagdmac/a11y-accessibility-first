@@ -7,16 +7,21 @@
 
 .c-home {
   // Card link styles
-  a.card {
+  a.card,
+  .card.disable {
     text-decoration: none;
     color: var(--bs-text-color);
     cursor: pointer;
     transition: all 0.3s ease-out;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     
     // Note: Focus styles inherited from global _generic.scss
     // Only hover and active states customized here
-    
+  }
+  
+  a.card {
     &:hover {
       color: var(--bs-button-text);
       background: var(--bs-button-bg);

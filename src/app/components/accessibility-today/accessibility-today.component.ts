@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import {
   Breadcrumb,
@@ -21,6 +21,8 @@ import { MetaTagService } from 'src/app/services/MetaTag/meta-tag.service';
 export class AccessibilityTodayComponent
   implements OnInit, AfterViewInit, OnDestroy
 {
+  @ViewChild('pageTitle') pageTitle!: ElementRef;
+  
   breadcrumbs: Breadcrumb[] = [];
   private langSubscription: Subscription;
 
@@ -70,6 +72,11 @@ export class AccessibilityTodayComponent
   }
 
   ngAfterViewInit(): void {
+    // Focus the H1 heading for accessibility
+    setTimeout(() => {
+      this.pageTitle?.nativeElement.focus();
+    }, 100);
+    
     const observer = new MutationObserver((mutations) => {
       if (mutations.some((mutation) => mutation.addedNodes.length > 0)) {
         this.linkHighlightService.refreshHighlights();

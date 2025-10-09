@@ -4,16 +4,14 @@
       <div class="col-12 col-xl-8 col-xxl-9 text-center text-md-start">
         <div
           class="d-md-flex justify-content-between align-items-center mb-4 mb-lg-0">
-          <h2 class="display-5 display-xl-1 fw-boldmt-3 mt-lg-0">
-            <span [tabIndex]="0">{{
-              'accessibility-today.title' | translate
-            }}</span>
-          </h2>
+          <h1 class="display-5 display-xl-1 fw-bold mt-3 mt-lg-0" #pageTitle tabindex="-1">
+            {{ 'accessibility-today.title' | translate }}
+          </h1>
           <span
             class="svg svg-a11y-today svg-mobile me-4 me-lg-0"
             aria-hidden="true"></span>
         </div>
-        <p class="intro lead fw-medium" [tabIndex]="0">
+        <p class="intro lead fw-medium">
           {{ 'accessibility-today.intro' | translate }}
         </p>
       </div>
