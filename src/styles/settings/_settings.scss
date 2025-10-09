@@ -72,8 +72,8 @@ $focus-outline-width: rem-calc(2) !default;
 $focus-outline-style: dotted !default;
 $focus-outline-color: currentColor !default;
 $focus-outline-offset: rem-calc(2) !default;
-$focus-box-shadow-size: rem-calc(4) !default;
-$focus-box-shadow-color: rgba(var(--bs-primary-rgb), 0.25) !default;
+$focus-box-shadow-size: 0 !default; // Removed blue box-shadow
+$focus-box-shadow-color: transparent !default; // Removed blue box-shadow
 $focus-border-radius: rem-calc(2) !default;
 
 // ============================================================================
@@ -82,7 +82,7 @@ $focus-border-radius: rem-calc(2) !default;
 @mixin focus-visible-styles {
   outline: $focus-outline-width $focus-outline-style $focus-outline-color !important;
   outline-offset: $focus-outline-offset !important;
-  box-shadow: 0 0 0 $focus-box-shadow-size $focus-box-shadow-color !important;
+  box-shadow: none !important; // No blue box-shadow
   border-radius: $focus-border-radius !important;
 }
 
@@ -140,7 +140,6 @@ body.offcanvas-open aside:not(:has(.offcanvas)) {
 }
 
 .offcanvas:not(.show) * {
-  tabindex: -1 !important;
   pointer-events: none !important;
 }
 
@@ -161,7 +160,7 @@ body.offcanvas-open aside:not(:has(.offcanvas)) {
 .offcanvas.show select,
 .offcanvas.show textarea,
 .offcanvas.show [tabindex] {
-  tabindex: 0 !important;
+  pointer-events: auto !important;
 }
 
 .offcanvas.show {
