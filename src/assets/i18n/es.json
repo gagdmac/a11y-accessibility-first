@@ -81,8 +81,11 @@
     "rights": "Derechos a la accesibilidad",
     "inclusivity": "Inclusividad",
     "phisical": "Accesibilidad física",
-    "left": "mover a la derecha",
-    "right": "mover a la izquierda"
+    "left": "Anterior",
+    "right": "Siguiente",
+    "disabled": "Deshabilitado",
+    "navigation": "Navegación de contenido",
+    "items": "elementos"
   },
 
   "accessibility": {

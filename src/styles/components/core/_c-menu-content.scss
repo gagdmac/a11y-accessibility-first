@@ -130,13 +130,19 @@
       border-color: currentColor;
     }
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: rgba(var(--bs-primary-rgb), 0.1);
       transform: scale(1.1);
     }
 
-    &:active {
+    &:active:not(:disabled) {
       transform: scale(0.95);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
     }
 
     &.left {

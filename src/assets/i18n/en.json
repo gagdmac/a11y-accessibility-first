@@ -83,8 +83,11 @@
     "rights": "Disabilty rights",
     "inclusivity": "Inclusivity",
     "phisical": "Phisical accessibility",
-    "left": "move to the right",
-    "right": "move to the left"
+    "left": "Previous",
+    "right": "Next",
+    "disabled": "Disabled",
+    "navigation": "Content navigation",
+    "items": "items"
   },
 
   "accessibility": {

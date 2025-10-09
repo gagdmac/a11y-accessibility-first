@@ -32,13 +32,12 @@
         <!--APP LANGUAGUES SELECTION STARTS-->
         <div class="dropdown dropstart language-selector order-3 order-lg-3 d-lg-none">
           <button
-            class="btn border border-secondary dropdown-toggle btn-sm me-4 mb-lg-0"
+            class="btn border border-secondary dropdown-toggle btn-sm me-4 mb-lg-0 mt-2"
             type="button"
             id="languageSelectorMobile"
             data-bs-toggle="dropdown"
             aria-expanded="false"
             [attr.aria-label]="'languages.languageSelection' | translate">
-            <!-- {{ 'languages.languageSelection' | translate }} -->
             <span *ngIf="'en' === translate.currentLang; else es">
               <span class="fi fi-gb px-3"></span>
             </span>

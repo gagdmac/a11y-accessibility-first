@@ -26,12 +26,15 @@ interface MenuItem {
 export class MenuContentComponent implements AfterViewInit {
   screenWidth: number = window.innerWidth;
   @ViewChild('slider') slider!: ElementRef;
+  @ViewChild('leftButton') leftButton!: ElementRef;
+  @ViewChild('rightButton') rightButton!: ElementRef;
   @ViewChildren('firstDesktopLink') firstDesktopLinks!: QueryList<ElementRef>;
-  @ViewChildren('firstMobileLink') firstMobileLinks!: QueryList<ElementRef>;
+  @ViewChildren('mobileLink') mobileLinks!: QueryList<ElementRef>;
   canScrollLeft = false;
   canScrollRight = false;
   private touchStartX = 0;
   private scrollStartX = 0;
+  private shouldFocusAfterScroll = false;
 
   constructor(
     public router: Router,
@@ -64,36 +67,122 @@ export class MenuContentComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.checkScrollButtons();
-    this.router.events.subscribe(() => {
-      this.updateActiveItem();
-      this.centerActiveItem();
-    });
+    
+    // Subscribe to navigation events to update active item and refocus
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.updateActiveItem();
+        this.centerActiveItem();
+        // Re-focus the active link after navigation
+        this.setFocusToActiveLink();
+      });
+    
     this.linkHighlightService.refreshHighlights();
     
-    // Set focus to first link when menu renders
-    this.setFocusToFirstLink();
+    // Set focus to active link when menu renders (especially for mobile after navigation)
+    this.setFocusToActiveLink();
   }
 
   /**
-   * Set focus to the first link in the menu
-   * This ensures keyboard and screen reader users start at the beginning
+   * Set focus to the active/current link in the menu
+   * This ensures keyboard and screen reader users land on the current page link after navigation
    */
-  private setFocusToFirstLink() {
+  private setFocusToActiveLink() {
     setTimeout(() => {
       if (this.screenWidth > 1024) {
-        // Desktop menu
-        const firstLink = this.firstDesktopLinks?.first;
-        if (firstLink) {
-          firstLink.nativeElement.focus();
+        // Desktop menu - find and focus the active link
+        const activeLink = this.firstDesktopLinks?.find((link: ElementRef) => {
+          return this.router.isActive(link.nativeElement.getAttribute('href') || '', true);
+        });
+        if (activeLink) {
+          activeLink.nativeElement.focus();
+        } else {
+          // Fallback to first link if no active link found
+          this.firstDesktopLinks?.first?.nativeElement.focus();
         }
       } else {
-        // Mobile menu
-        const firstLink = this.firstMobileLinks?.first;
-        if (firstLink) {
-          firstLink.nativeElement.focus();
+        // Mobile menu - find and focus the active link
+        const activeLink = this.mobileLinks?.find((link: ElementRef) => {
+          return this.router.isActive(link.nativeElement.getAttribute('href') || '', true);
+        });
+        if (activeLink) {
+          activeLink.nativeElement.focus();
+        } else {
+          // Fallback to first link if no active link found
+          this.mobileLinks?.first?.nativeElement.focus();
         }
       }
     }, 300);
+  }
+
+  /**
+   * Get aria-label for chevron buttons including disabled state
+   */
+  getChevronLabel(direction: 'left' | 'right'): string {
+    const translationKey = direction === 'left' ? 'app-content-links.left' : 'app-content-links.right';
+    const baseLabel = this.translate.instant(translationKey);
+    const canScroll = direction === 'left' ? this.canScrollLeft : this.canScrollRight;
+    
+    if (!canScroll) {
+      const disabledLabel = this.translate.instant('app-content-links.disabled');
+      return `${baseLabel}. ${disabledLabel}`;
+    }
+    return baseLabel;
+  }
+
+  /**
+   * Get aria-label for slider container with item count
+   */
+  getSliderLabel(): string {
+    const navigation = this.translate.instant('app-content-links.navigation');
+    const itemsLabel = this.translate.instant('app-content-links.items');
+    return `${navigation}. ${this.menuItems.length} ${itemsLabel}`;
+  }
+
+  /**
+   * Handle link click - don't navigate, let Angular Router handle it
+   */
+  onLinkClick() {
+    // Reset flag - navigation will be handled by router
+    this.shouldFocusAfterScroll = false;
+  }
+
+  /**
+   * Scroll the carousel and focus the next appropriate element
+   */
+  scrollAndFocusNext(direction: 'left' | 'right') {
+    this.shouldFocusAfterScroll = true;
+    this.scroll(direction);
+    
+    // After scrolling, focus the next visible item
+    setTimeout(() => {
+      if (this.shouldFocusAfterScroll) {
+        this.focusNextVisibleItem(direction);
+        this.shouldFocusAfterScroll = false;
+      }
+    }, 400);
+  }
+
+  /**
+   * Focus the next visible item after scrolling
+   */
+  private focusNextVisibleItem(direction: 'left' | 'right') {
+    const container = this.slider.nativeElement;
+    const links = this.mobileLinks.toArray();
+    
+    // Find the first fully visible link after scroll
+    for (const link of links) {
+      const element = link.nativeElement;
+      const rect = element.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      
+      // Check if element is visible in the container
+      if (rect.left >= containerRect.left && rect.right <= containerRect.right) {
+        element.focus();
+        return;
+      }
+    }
   }
 
   private checkScrollButtons() {
