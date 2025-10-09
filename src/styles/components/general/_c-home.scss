@@ -1,5 +1,13 @@
+// ============================================================================
+// Home Component Styles with Accessibility Enhancements
+// ============================================================================
+// NOTE: Global focus styles are centralized in src/styles/generic/_generic.scss
+// Component-specific focus styles below only override when needed for special cases
+// ============================================================================
+
 .c-home {
   margin-top: rem-calc(48);
+  
   &__background {
     background-repeat: no-repeat;
     background-position: center center;
@@ -7,9 +15,20 @@
     place-content: center;
   }
 
+  // Header section
+  header {
+    h1 {
+      line-height: 1.2;
+      margin-bottom: rem-calc(20);
+    }
+  }
+
+  // Intro text
   p {
     &.intro {
       font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: rem-calc(16);
     }
   }
 
@@ -19,5 +38,28 @@
         font-size: 1.2rem;
       }
     }
+  }
+
+  // Cards list container (role="list")
+  [role="list"] {
+    // Ensure proper list semantics
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .c-home {
+    header h1 {
+      font-weight: 800;
+    }
+  }
+}
+
+// Print styles
+@media print {
+  .c-home {
+    margin-top: 0;
   }
 }

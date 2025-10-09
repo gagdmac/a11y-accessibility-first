@@ -10,8 +10,7 @@ export class CardComponent {
 
   @Input() title!: string;
   @Input() text!: string;
-  @Input() link!: string;
   @Input() iconClass!: string;
-  @Input() routerLink!: string;
+  @Input() routerLinkValue!: string; // Changed from routerLink to routerLinkValue
   @Input() isDisabled: boolean = false;
 }

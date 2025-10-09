@@ -14,18 +14,18 @@
       </div>
     </header>
 
-    <nav class="row m-0">
+    <div class="row m-0" role="list" aria-label="Main navigation cards">
       <app-card
         *ngFor="let card of cards"
         [isDisabled]="card.isDisabled"
         class="col col-12 col-md-6 col-lg-4 p-2"
+        role="listitem"
         [title]="card.title | translate"
         [text]="card.text | translate"
-        [link]="card.link | translate"
         [iconClass]="card.iconClass"
-        [routerLink]="card.routerLink">
+        [routerLinkValue]="card.routerLink">
       </app-card>
-    </nav>
+    </div>
   </div>
 </div>
         
