@@ -51,7 +51,7 @@ export class A11yOptionsComponent implements OnInit {
 
   increaseFontSize() {
     this.fontSizeService.setFontSize(this.fontSize + 5);
-    this.fontSizeAnnouncement = `Font size increased to ${this.fontSize} percent`;
+    this.fontSizeAnnouncement = this.translate.instant('a11y.fontSizeIncreased', { size: this.fontSize });
 
     setTimeout(() => {
       this.fontSizeAnnouncement = '';
@@ -60,7 +60,7 @@ export class A11yOptionsComponent implements OnInit {
 
   decreaseFontSize() {
     this.fontSizeService.setFontSize(this.fontSize - 5);
-    this.fontSizeAnnouncement = `Font size decreased to ${this.fontSize} percent`;
+    this.fontSizeAnnouncement = this.translate.instant('a11y.fontSizeDecreased', { size: this.fontSize });
 
     setTimeout(() => {
       this.fontSizeAnnouncement = '';
@@ -69,6 +69,11 @@ export class A11yOptionsComponent implements OnInit {
 
   resetFontSize() {
     this.fontSizeService.resetFontSize();
+    this.fontSizeAnnouncement = this.translate.instant('a11y.fontSizeReset', { size: this.fontSize });
+
+    setTimeout(() => {
+      this.fontSizeAnnouncement = '';
+    }, 1000);
   }
 
   //////////////

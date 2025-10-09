@@ -136,6 +136,7 @@
   "me": {},
 
   "a11y": {
+    "close": "Cerrar",
     "title": "Opciones de accesibilidad",
     "fontSizeTitle": "Tamaño de Fuente",
     "fontSizeDescription": "Cambia el tamaño de la fuente de la web",

@@ -7,7 +7,8 @@
   <div class="offcanvas-header">
     <h1 
       class="offcanvas-title lead fw-bold fs-3" 
-      id="offcanvasTitle">
+      id="offcanvasTitle"
+      tabindex="-1">
       {{ 'a11y.title' | translate }}
     </h1>
     <button
@@ -35,11 +36,12 @@
         <p class="card-text fs-6">
           {{ 'a11y.fontSizeDescription' | translate }}
         </p>
-        <div class="btn-group" role="group" aria-labelledby="fontSizeHeading" aria-describedby="fontSize-status">
+        <div class="btn-group" role="group" aria-labelledby="fontSizeHeading">
           <button 
             #increaseFontSizeBtn
             type="button"
-            class="btn btn-success py-0" 
+            class="btn btn-success py-0"
+            aria-describedby="fontSize-status"
             (click)="increaseFontSize()">
             {{ 'a11y.fontSizeM' | translate }}
             <span class="sr-only">{{
@@ -53,7 +55,8 @@
           </button>
           <button 
             type="button"
-            class="btn btn-danger py-0" 
+            class="btn btn-danger py-0"
+            aria-describedby="fontSize-status"
             (click)="decreaseFontSize()">
             {{ 'a11y.fontSizeL' | translate }}
             <span class="sr-only">{{
@@ -70,6 +73,7 @@
           <button
             type="button"
             class="btn btn-dark py-0"
+            aria-describedby="fontSize-status"
             (click)="resetFontSize(); increaseFontSizeBtn.focus()">
             {{ 'a11y.fontSizeR' | translate }}
             <span class="sr-only">{{
@@ -81,8 +85,7 @@
       <div
         id="fontSize-status"
         class="badge text-bg-light d-flex justify-content-start px-3"
-        role="status"
-        aria-live="polite">
+        role="status">
         {{ 'a11y.fontSize' | translate }}{{ fontSize }}%
       </div>
     </section>
