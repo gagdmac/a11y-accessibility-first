@@ -46,6 +46,19 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * Handle skip to main content link
+   * Prevents navigation and manually focuses the main element
+   */
+  skipToMain(event: Event) {
+    event.preventDefault();
+    const mainElement = this.document.getElementById('main');
+    if (mainElement) {
+      mainElement.focus();
+      mainElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   onLanguageChange(lang: string) {
     this.contentfulService.setLocale(lang);
 

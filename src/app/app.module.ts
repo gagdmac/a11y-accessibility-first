@@ -88,7 +88,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     BrowserAnimationsModule,
     AppRoutingModule,
     ServicesModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {
+      anchorScrolling: 'enabled',
+      scrollPositionRestoration: 'enabled'
+    }),
   ],
   providers: [
     {

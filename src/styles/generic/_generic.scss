@@ -314,24 +314,37 @@ a.skip-to-content {
   font-size: rem-calc(14);
   position: absolute;
   top: rem-calc(5);
-  left: rem-calc(-20000);
+  left: rem-calc(-9999);
   z-index: 1031;
   font-weight: 400;
+  text-decoration: none;
+  padding: rem-calc(8 16);
+  border-radius: rem-calc(4);
+  white-space: nowrap;
 
   &:focus {
     color: #000000;
     font-weight: 700;
     background-color: #ffffff;
     outline: $focus !important;
-    box-shadow: none !important;
-    left: rem-calc(-15);
+    box-shadow: 0 rem-calc(4) rem-calc(8) rgba(0, 0, 0, 0.2) !important;
+    left: rem-calc(10);
     outline-offset: $f-style !important;
   }
 
    @include respond-below(md) {
      top: rem-calc(4.1);
+     
+     &:focus {
+       left: rem-calc(8);
+     }
     }
 
+}
+
+// Main element should not show outline when focused via skip link
+main[tabindex="-1"] {
+  outline: none;
 }
 
 a[disabled],
