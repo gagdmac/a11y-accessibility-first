@@ -87,7 +87,10 @@
     "right": "Next",
     "disabled": "Disabled",
     "navigation": "Content navigation",
-    "items": "items"
+    "items": "items",
+    "list": "List",
+    "youAreIn": "you are in",
+    "itemNumber": "item number"
   },
 
   "accessibility": {

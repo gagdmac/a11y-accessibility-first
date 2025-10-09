@@ -85,7 +85,10 @@
     "right": "Siguiente",
     "disabled": "Deshabilitado",
     "navigation": "Navegación de contenido",
-    "items": "elementos"
+    "items": "elementos",
+    "list": "Lista",
+    "youAreIn": "estás en",
+    "itemNumber": "elemento número"
   },
 
   "accessibility": {

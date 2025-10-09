@@ -26,15 +26,11 @@ interface MenuItem {
 export class MenuContentComponent implements AfterViewInit {
   screenWidth: number = window.innerWidth;
   @ViewChild('slider') slider!: ElementRef;
-  @ViewChild('leftButton') leftButton!: ElementRef;
-  @ViewChild('rightButton') rightButton!: ElementRef;
   @ViewChildren('firstDesktopLink') firstDesktopLinks!: QueryList<ElementRef>;
   @ViewChildren('mobileLink') mobileLinks!: QueryList<ElementRef>;
-  canScrollLeft = false;
-  canScrollRight = false;
   private touchStartX = 0;
   private scrollStartX = 0;
-  private shouldFocusAfterScroll = false;
+  private preventAutoCenter = false;
 
   constructor(
     public router: Router,
@@ -66,13 +62,12 @@ export class MenuContentComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.checkScrollButtons();
-    
     // Subscribe to navigation events to update active item and refocus
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
         this.updateActiveItem();
+        // Center carousel (will be skipped if user clicked a link directly)
         this.centerActiveItem();
         // Re-focus the active link after navigation
         this.setFocusToActiveLink();
@@ -117,21 +112,6 @@ export class MenuContentComponent implements AfterViewInit {
   }
 
   /**
-   * Get aria-label for chevron buttons including disabled state
-   */
-  getChevronLabel(direction: 'left' | 'right'): string {
-    const translationKey = direction === 'left' ? 'app-content-links.left' : 'app-content-links.right';
-    const baseLabel = this.translate.instant(translationKey);
-    const canScroll = direction === 'left' ? this.canScrollLeft : this.canScrollRight;
-    
-    if (!canScroll) {
-      const disabledLabel = this.translate.instant('app-content-links.disabled');
-      return `${baseLabel}. ${disabledLabel}`;
-    }
-    return baseLabel;
-  }
-
-  /**
    * Get aria-label for slider container with item count
    */
   getSliderLabel(): string {
@@ -141,54 +121,24 @@ export class MenuContentComponent implements AfterViewInit {
   }
 
   /**
-   * Handle link click - don't navigate, let Angular Router handle it
+   * Get accessible label for each link that announces:
+   * "List X items, you are in item number Y, [Link Name]"
    */
-  onLinkClick() {
-    // Reset flag - navigation will be handled by router
-    this.shouldFocusAfterScroll = false;
+  getLinkLabel(linkName: string, position: number, total: number): string {
+    const listLabel = this.translate.instant('app-content-links.list');
+    const itemsLabel = this.translate.instant('app-content-links.items');
+    const youAreInLabel = this.translate.instant('app-content-links.youAreIn');
+    const itemNumberLabel = this.translate.instant('app-content-links.itemNumber');
+    
+    return `${listLabel} ${total} ${itemsLabel}, ${youAreInLabel} ${itemNumberLabel} ${position}, ${linkName}`;
   }
 
   /**
-   * Scroll the carousel and focus the next appropriate element
+   * Handle link click - prevent carousel auto-centering
    */
-  scrollAndFocusNext(direction: 'left' | 'right') {
-    this.shouldFocusAfterScroll = true;
-    this.scroll(direction);
-    
-    // After scrolling, focus the next visible item
-    setTimeout(() => {
-      if (this.shouldFocusAfterScroll) {
-        this.focusNextVisibleItem(direction);
-        this.shouldFocusAfterScroll = false;
-      }
-    }, 400);
-  }
-
-  /**
-   * Focus the next visible item after scrolling
-   */
-  private focusNextVisibleItem(direction: 'left' | 'right') {
-    const container = this.slider.nativeElement;
-    const links = this.mobileLinks.toArray();
-    
-    // Find the first fully visible link after scroll
-    for (const link of links) {
-      const element = link.nativeElement;
-      const rect = element.getBoundingClientRect();
-      const containerRect = container.getBoundingClientRect();
-      
-      // Check if element is visible in the container
-      if (rect.left >= containerRect.left && rect.right <= containerRect.right) {
-        element.focus();
-        return;
-      }
-    }
-  }
-
-  private checkScrollButtons() {
-    const el = this.slider.nativeElement;
-    this.canScrollLeft = el.scrollLeft > 0;
-    this.canScrollRight = el.scrollLeft < el.scrollWidth - el.clientWidth;
+  onLinkClick(event?: Event) {
+    // Set flag immediately to prevent auto-centering when clicking a link
+    this.preventAutoCenter = true;
   }
 
   private updateActiveItem() {
@@ -199,6 +149,12 @@ export class MenuContentComponent implements AfterViewInit {
   }
 
   private centerActiveItem() {
+    // Skip if user clicked a link directly OR if on mobile screen
+    if (this.preventAutoCenter || this.screenWidth <= 1025) {
+      this.preventAutoCenter = false; // Reset flag
+      return;
+    }
+    
     const activeItem = this.slider.nativeElement.querySelector('.active');
     if (activeItem) {
       const container = this.slider.nativeElement;
@@ -210,18 +166,7 @@ export class MenuContentComponent implements AfterViewInit {
         left: scrollLeft,
         behavior: 'smooth',
       });
-      setTimeout(() => this.checkScrollButtons(), 100);
     }
-  }
-
-  scroll(direction: 'left' | 'right') {
-    const el = this.slider.nativeElement;
-    const scrollAmount = el.clientWidth * 0.8;
-    el.scrollBy({
-      left: direction === 'left' ? -scrollAmount : scrollAmount,
-      behavior: 'smooth',
-    });
-    setTimeout(() => this.checkScrollButtons(), 100);
   }
 
   onTouchStart(e: TouchEvent) {
@@ -235,6 +180,6 @@ export class MenuContentComponent implements AfterViewInit {
   }
 
   onTouchEnd() {
-    this.checkScrollButtons();
+    // Touch event ended - no additional action needed
   }
 }
