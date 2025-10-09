@@ -244,6 +244,10 @@ h6[tabindex="-1"]:focus {
 ////////////////// GENERAL CLASES /////////////////////////
 //////////////////////////////////////////////////////////
 
+// Base HTML and Body styles
+// Note: html font-size is set to 100% in _tools.scss to respect
+// user's browser/device font size preferences for accessibility.
+// All other sizes use rem units which scale proportionally.
 html,
 body {
   font-family: 'Open Sans', sans-serif !important;

@@ -5,6 +5,8 @@ $enable-negative-margins: true;
 // ----
 // rem mixins
 // ----
+// Use 16px as calculation base, but don't set it on html element
+// This allows the browser to respect user's font size preferences
 $rem-base: 16px !default;
 
 // list-separator polyfill by Hugo Giraudel (https://sass-compatibility.github.io/#list_separator_function)
@@ -23,8 +25,13 @@ $rem-base: 16px !default;
 }
 
 @mixin rem-base($zoom: 100%) {
-  // font-size: $zoom / 16px * $rem-base;
-  font-size: calc($zoom / 16px * $rem-base);
+  // Use percentage to respect user's browser/device font size settings
+  // 100% = user's preferred font size (usually 16px, but respects their settings)
+  @if $zoom == 100% {
+    font-size: 100%;
+  } @else {
+    font-size: calc($zoom / 100 * 100%);
+  }
 }
 
 @function rem-convert($to, $values...) {
