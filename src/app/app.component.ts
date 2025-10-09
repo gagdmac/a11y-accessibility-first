@@ -1,5 +1,7 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { ContentfulService } from './services/contentful/contentful.service';
 import { LoadingService } from './services/loading/loading.service';
 
@@ -11,12 +13,15 @@ import { LoadingService } from './services/loading/loading.service';
 export class AppComponent implements OnInit {
   title = 'a11y';
   isLoading = false;
+  languageChangeAnnouncement = '';
 
   constructor(
     private router: Router,
     private renderer: Renderer2,
     private contentfulService: ContentfulService,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private translate: TranslateService,
+    @Inject(DOCUMENT) private document: Document
   ) {
     this.loadingService.loading$.subscribe(
       (isLoading) => (this.isLoading = isLoading)
@@ -44,6 +49,17 @@ export class AppComponent implements OnInit {
   onLanguageChange(lang: string) {
     this.contentfulService.setLocale(lang);
 
+    // Update the lang attribute on the HTML element for screen readers
+    this.document.documentElement.lang = lang;
+
+    // Switch to the new language first
+    this.translate.use(lang).subscribe(() => {
+      // Announce language change to screen readers in the new language
+      const translationKey = lang === 'en' ? 'languages.changedToEnglish' : 'languages.changedToSpanish';
+      const announcement = this.translate.instant(translationKey);
+      this.announceToScreenReader(announcement);
+    });
+
     const currentUrl = this.router.url;
     if (
       currentUrl.includes('accessibility-today') ||
@@ -54,6 +70,18 @@ export class AppComponent implements OnInit {
         this.router.navigate([currentUrl]);
       });
     }
+  }
+
+  /**
+   * Announce a message to screen readers using ARIA live region
+   * @param message The message to announce
+   */
+  private announceToScreenReader(message: string) {
+    this.languageChangeAnnouncement = message;
+    // Clear after screen reader has time to read it
+    setTimeout(() => {
+      this.languageChangeAnnouncement = '';
+    }, 3000);
   }
 
   private broadcastLanguageChange(lang: string) {

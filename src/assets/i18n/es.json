@@ -7,7 +7,9 @@
     "english": "English",
     "languageSelection": "Selección de idioma",
     "currentLanguage": "Idioma activo ",
-     "mainNavigation": "Navegación principal"
+     "mainNavigation": "Navegación principal",
+    "changedToEnglish": "Idioma cambiado a Inglés",
+    "changedToSpanish": "Idioma cambiado a Español"
   },
 
   "menu": {

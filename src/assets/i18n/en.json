@@ -8,7 +8,9 @@
     "english": "English",
     "languageSelection": "Language selection",
     "currentLanguage": "Language active",
-    "mainNavigation": "Main navegation"
+    "mainNavigation": "Main navegation",
+    "changedToEnglish": "Language changed to English",
+    "changedToSpanish": "Language changed to Spanish"
   },
 
   "menu": {

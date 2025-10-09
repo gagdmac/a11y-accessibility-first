@@ -4,6 +4,14 @@
   [tabIndex]="0"
   >{{ 'home.mainContent' | translate }}</a
 >
+<!-- ARIA live region for screen reader announcements -->
+<div 
+  class="sr-only" 
+  role="status" 
+  aria-live="polite" 
+  aria-atomic="true">
+  {{ languageChangeAnnouncement }}
+</div>
 <app-header (languageChange)="onLanguageChange($event)"></app-header>
 <aside class="aside">
   <app-a11y-options></app-a11y-options>
