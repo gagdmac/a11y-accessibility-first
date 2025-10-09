@@ -31,6 +31,8 @@ export class MenuContentComponent implements AfterViewInit {
   private touchStartX = 0;
   private scrollStartX = 0;
   private preventAutoCenter = false;
+  private isScrolling = false;
+  private scrollTimeout: any;
 
   constructor(
     public router: Router,
@@ -75,8 +77,28 @@ export class MenuContentComponent implements AfterViewInit {
     
     this.linkHighlightService.refreshHighlights();
     
+    // Initialize circular slider position for mobile
+    if (this.screenWidth <= 1025) {
+      setTimeout(() => {
+        this.initializeCircularSlider();
+      }, 0);
+    }
+    
     // Set focus to active link when menu renders (especially for mobile after navigation)
     this.setFocusToActiveLink();
+  }
+
+  /**
+   * Initialize the circular slider
+   * No initial offset needed - we'll handle looping dynamically
+   */
+  private initializeCircularSlider() {
+    if (!this.slider?.nativeElement) return;
+    
+    const container = this.slider.nativeElement;
+    
+    // Start at position 0
+    container.scrollLeft = 0;
   }
 
   /**
@@ -134,11 +156,39 @@ export class MenuContentComponent implements AfterViewInit {
   }
 
   /**
-   * Handle link click - prevent carousel auto-centering
+   * Handle link click - center the clicked link in the slider
    */
   onLinkClick(event?: Event) {
     // Set flag immediately to prevent auto-centering when clicking a link
     this.preventAutoCenter = true;
+    
+    // Center the clicked link in the mobile slider
+    if (event && this.screenWidth <= 1025) {
+      const clickedElement = event.currentTarget as HTMLElement;
+      this.centerElementInSlider(clickedElement);
+    }
+  }
+
+  /**
+   * Center a specific element in the slider viewport
+   */
+  private centerElementInSlider(element: HTMLElement) {
+    if (!this.slider?.nativeElement) return;
+    
+    const container = this.slider.nativeElement;
+    const elementRect = element.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
+    
+    // Calculate the scroll position to center the element
+    const elementCenter = elementRect.left + elementRect.width / 2;
+    const containerCenter = containerRect.left + containerRect.width / 2;
+    const scrollOffset = elementCenter - containerCenter;
+    
+    // Scroll to center the element
+    container.scrollTo({
+      left: container.scrollLeft + scrollOffset,
+      behavior: 'smooth',
+    });
   }
 
   private updateActiveItem() {
@@ -149,23 +199,20 @@ export class MenuContentComponent implements AfterViewInit {
   }
 
   private centerActiveItem() {
-    // Skip if user clicked a link directly OR if on mobile screen
-    if (this.preventAutoCenter || this.screenWidth <= 1025) {
+    // Skip if user clicked a link directly
+    if (this.preventAutoCenter) {
       this.preventAutoCenter = false; // Reset flag
       return;
     }
     
-    const activeItem = this.slider.nativeElement.querySelector('.active');
-    if (activeItem) {
-      const container = this.slider.nativeElement;
-      const scrollLeft =
-        activeItem.offsetLeft -
-        container.clientWidth / 2 +
-        activeItem.offsetWidth / 2;
-      container.scrollTo({
-        left: scrollLeft,
-        behavior: 'smooth',
-      });
+    if (!this.slider?.nativeElement) return;
+    
+    // Find the active link element
+    const activeLink = this.slider.nativeElement.querySelector('a.text-bg-primary') || 
+                      this.slider.nativeElement.querySelector('a[aria-current="page"]');
+    
+    if (activeLink) {
+      this.centerElementInSlider(activeLink);
     }
   }
 
@@ -181,5 +228,44 @@ export class MenuContentComponent implements AfterViewInit {
 
   onTouchEnd() {
     // Touch event ended - no additional action needed
+  }
+
+  /**
+   * Handle scroll event to create infinite/circular scrolling effect
+   */
+  onSliderScroll() {
+    if (!this.slider?.nativeElement || this.isScrolling) return;
+
+    const container = this.slider.nativeElement;
+    const scrollLeft = container.scrollLeft;
+    const scrollWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+    
+    // Calculate the width of one set of items (half of total scroll width since we have duplicates)
+    const oneSetWidth = scrollWidth / 2;
+    
+    this.isScrolling = true;
+
+    // If we've scrolled to or past the duplicate set, jump back to the original set
+    if (scrollLeft >= oneSetWidth) {
+      // Use requestAnimationFrame for smooth transition
+      requestAnimationFrame(() => {
+        container.scrollLeft = scrollLeft - oneSetWidth;
+        setTimeout(() => {
+          this.isScrolling = false;
+        }, 10);
+      });
+    }
+    // If somehow scrolled before start (edge case), jump to equivalent position in duplicate set
+    else if (scrollLeft < 1) {
+      requestAnimationFrame(() => {
+        container.scrollLeft = oneSetWidth - clientWidth;
+        setTimeout(() => {
+          this.isScrolling = false;
+        }, 10);
+      });
+    } else {
+      this.isScrolling = false;
+    }
   }
 }

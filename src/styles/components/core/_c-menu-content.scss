@@ -48,11 +48,15 @@
   padding: rem-calc(12 24);
 
   .slider-container {
-    overflow-x: hidden;
+    overflow-x: auto;
+    overflow-y: visible; /* Allow focus outline to show above/below */
     width: 100%;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
+    /* Add padding to prevent focus outline clipping */
+    padding: rem-calc(4 0);
+    margin: rem-calc(-4 0);
 
     &::-webkit-scrollbar {
       display: none; /* Chrome, Safari, Opera */
@@ -61,7 +65,7 @@
 
   .slider {
     display: flex;
-    overflow-x: auto;
+    overflow: visible; /* Allow focus outline to be fully visible */
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -81,14 +85,19 @@
     // Individual navigation links
     a.badge {
       display: inline-block;
-      padding: rem-calc(24 16);
+      padding: rem-calc(8 16);
       white-space: nowrap;
       // WCAG 2.1 Level AAA touch target size
       min-width: 44px;
-      min-height: 44px;
+      min-height: 24px;
       transition: all 0.3s ease;
       
       // Note: Focus styles inherited from global _generic.scss
+      // Ensure focus outline has space and isn't clipped
+      &:focus-visible {
+        position: relative;
+        z-index: 1;
+      }
 
       &:hover {
         transform: translateY(-2px);
