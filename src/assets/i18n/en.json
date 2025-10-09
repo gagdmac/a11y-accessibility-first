@@ -38,8 +38,8 @@
     "accessibilityOptions": "Accessibility Options",
     "comingSoon": "Coming soon",
     "mainContent": "go to main content",
-    "intro-title": "Accessible First",
-    "intro-a": "Empowering creators to build a more inclusive digital world, Accessible First is your comprehensive guide to web accessibility.",
+    "intro-title": "Accessibility First",
+    "intro-a": "Empowering creators to build a more inclusive digital world, Accessibility First is your comprehensive guide to web accessibility.",
     "intro-b": "Whether you're a developer, designer, or content creator, our platform offers expert insights, practical tutorials, and hands-on courses to make accessibility an integral part of your workflow.",
 
     "card1": {
@@ -54,8 +54,8 @@
     },
     "card3": {
       "title": "Courses",
-      "text": "Accessible lifecycle .",
-      "link": "Accessible design & development"
+      "text": "Accessibility lifecycle .",
+      "link": "Accessibility design & development"
     }
   },
 
