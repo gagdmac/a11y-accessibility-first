@@ -188,9 +188,11 @@ article:focus-visible,
   @include focus-visible-styles;
 }
 
-/* Bootstrap badges used as links */
+/* Bootstrap badges and accessibility control buttons */
 /* Using #222222 for better contrast instead of currentColor */
-.badge:focus-visible {
+.badge:focus-visible,
+.c-a11y-options .card .btn-group button:focus-visible,
+.c-a11y-options .card .btn:focus-visible {
   outline: rem-calc(2) dotted #222222 !important;
   outline-offset: rem-calc(2) !important;
   box-shadow: rem-calc(0 0 0 4) rgba(var(--bs-primary-rgb), 0.25) !important;
