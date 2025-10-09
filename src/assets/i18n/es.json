@@ -32,6 +32,7 @@
   },
 
   "home": {
+    "comingSoon": "Próximamente",
     "accessibilityOptions": "Opciones de accesibilidad",
     "mainContent": "Ir al contenido principal",
     "intro-title": "Accesibilidad Primero",

@@ -35,18 +35,16 @@
   }
 
   // Disabled card styles
-  a.card.disable {
+  .card.disable {
     pointer-events: none;
     cursor: not-allowed;
     text-decoration: none;
-    // Use filter instead of opacity to avoid "dimmed" announcement
-    filter: grayscale(100%) brightness(0.9);
+    // Use border style to indicate non-interactive state
+    border-style: dashed !important;
+    border-color: var(--bs-secondary) !important;
     
     // Note: Focus styles inherited from global _generic.scss
-    // Visual indicator when focused via screen reader navigation
-    &:focus-visible {
-      filter: grayscale(100%) brightness(1);
-    }
+    // No opacity, filter, or visual degradation to avoid "dimmed" announcements
     
     .svg {
       filter: grayscale(100%);
@@ -59,7 +57,7 @@
 
   // SVG Icons
   .svg {
-    display: inline-block;
+    display: block;
     width: 40%;
     height: 13vw;
     background-repeat: no-repeat;
@@ -67,7 +65,10 @@
     background-size: contain;
     filter: grayscale(0%);
     transition: all 0.3s ease-out;
-    margin: rem-calc(16 0);
+    margin: rem-calc(16) auto;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 
     &-a11y-today {
       background-image: url('../../../assets/img/icons/accessibility-future.svg');
@@ -80,6 +81,14 @@
     &-courses {
       background-image: url('../../../assets/img/icons/courses.svg');
     }
+  }
+  
+  // Specific styling for img tags used as SVG containers
+  img.svg {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
   }
 
   // Responsive SVG sizing
