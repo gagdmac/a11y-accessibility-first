@@ -126,6 +126,7 @@
                   id="navbarDropdown"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  [class.active]="isAccessibilityFirstMenuActive()"
                   [attr.aria-label]="'menu.accessibility-first' | translate">
                   {{ 'menu.accessibility-first' | translate }}
                 </button>
@@ -135,6 +136,7 @@
                       class="dropdown-item disabled" 
                       aria-disabled="true"
                       routerLink="tutorials"
+                      routerLinkActive="active"
                       tabindex="-1"
                       (click)="closeMenu()">
                       {{ 'submenu.tutorials' | translate }}</a
@@ -145,6 +147,7 @@
                       class="dropdown-item disabled" 
                       aria-disabled="true"
                       routerLink="courses"
+                      routerLinkActive="active"
                       tabindex="-1"
                       (click)="closeMenu()"
                       >{{ 'submenu.courses' | translate }}</a
@@ -160,6 +163,7 @@
                   id="navbarDropdownOne"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  [class.active]="isAccessibilityMenuActive()"
                   [attr.aria-label]="'menu.accessibility' | translate">
                   {{ 'menu.accessibility' | translate }}
                 </button>
@@ -168,6 +172,7 @@
                     <a
                       class="dropdown-item"
                       routerLink="accessibility"
+                      routerLinkActive="active"
                       (click)="closeMenu()">
                       {{ 'submenu.accessibility' | translate }}</a
                     >
@@ -176,6 +181,7 @@
                     <a
                       class="dropdown-item"
                       routerLink="universal"
+                      routerLinkActive="active"
                       (click)="closeMenu()"
                       >{{ 'submenu.universal' | translate }}</a
                     >
@@ -185,6 +191,7 @@
                     <a
                       class="dropdown-item"
                       routerLink="healthcare"
+                      routerLinkActive="active"
                       (click)="closeMenu()"
                       >{{ 'submenu.healthcare' | translate }}</a
                     >
@@ -193,6 +200,7 @@
                     <a
                       class="dropdown-item"
                       routerLink="rights"
+                      routerLinkActive="active"
                       (click)="closeMenu()"
                       >{{ 'submenu.rights' | translate }}</a
                     >
@@ -201,6 +209,7 @@
                     <a
                       class="dropdown-item"
                       routerLink="inclusivity"
+                      routerLinkActive="active"
                       (click)="closeMenu()"
                       >{{ 'submenu.inclusivity' | translate }}</a
                     >
@@ -209,6 +218,7 @@
                     <a
                       class="dropdown-item"
                       routerLink="phisical"
+                      routerLinkActive="active"
                       (click)="closeMenu()"
                       >{{ 'submenu.phisical' | translate }}</a
                     >

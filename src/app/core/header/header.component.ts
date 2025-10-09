@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output, AfterViewInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ContentfulService } from 'src/app/services/contentful/contentful.service';
 
@@ -13,9 +14,16 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   private offcanvasListeners: Array<{ element: Element; listener: EventListener }> = [];
   private collapseListeners: Array<{ element: Element; listener: EventListener }> = [];
 
+  // Routes that belong to the "What is accessibility?" dropdown
+  accessibilityRoutes = ['accessibility', 'universal', 'healthcare', 'rights', 'inclusivity', 'phisical'];
+  
+  // Routes that belong to the "Accessibility First" dropdown
+  accessibilityFirstRoutes = ['tutorials', 'courses'];
+
   constructor(
     public translate: TranslateService,
-    private contentfulService: ContentfulService
+    private contentfulService: ContentfulService,
+    private router: Router
   ) {
     translate.setDefaultLang('en');
     translate.use('en');
@@ -103,6 +111,26 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     // Get current path and update URL with language
     const currentPath = window.location.pathname;
     this.contentfulService.updateBrowserUrl(currentPath, { lang });
+  }
+
+  /**
+   * Check if any of the accessibility submenu routes are currently active
+   * @returns true if user is on any accessibility section page
+   */
+  isAccessibilityMenuActive(): boolean {
+    const currentUrl = this.router.url.split('?')[0].replace(/^\//, ''); // Remove query params and leading slash
+    const currentRoute = currentUrl.split('/')[0]; // Get first path segment
+    return this.accessibilityRoutes.includes(currentRoute);
+  }
+
+  /**
+   * Check if any of the "Accessibility First" submenu routes are currently active
+   * @returns true if user is on tutorials or courses page
+   */
+  isAccessibilityFirstMenuActive(): boolean {
+    const currentUrl = this.router.url.split('?')[0].replace(/^\//, ''); // Remove query params and leading slash
+    const currentRoute = currentUrl.split('/')[0]; // Get first path segment
+    return this.accessibilityFirstRoutes.includes(currentRoute);
   }
 
   closeMenu() {
