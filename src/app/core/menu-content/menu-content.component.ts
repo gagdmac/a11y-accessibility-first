@@ -52,7 +52,7 @@ export class MenuContentComponent implements AfterViewInit {
   menuItems: MenuItem[] = [
     { route: '/accessibility', label: 'app-content-links.accessibility' },
     { route: '/universal', label: 'app-content-links.universal' },
-    { route: '/healthcare', label: 'app-content-links.healcare' },
+    { route: '/healthcare', label: 'app-content-links.healthcare' },
     { route: '/rights', label: 'app-content-links.rights' },
     { route: '/inclusivity', label: 'app-content-links.inclusivity' },
     { route: '/phisical', label: 'app-content-links.phisical' },
