@@ -14,10 +14,60 @@
     max-height: 80vh; // Limit to 80% of viewport height
     overflow-y: auto !important; // Enable vertical scrolling - important to override
     overflow-x: hidden; // Prevent horizontal scroll
+    width: auto !important; // Let content determine width
+    max-width: 90vw !important; // Allow wrapping at high zoom
+    min-width: 0 !important; // Remove Bootstrap's default min-width
     
     // Ensure dropdowns are scrollable at high zoom (400%)
     @include respond-below(sm) {
       max-height: 70vh; // Slightly smaller at narrow widths
+    }
+    
+    // On desktop at high zoom, ensure dropdown can be wider
+    @include respond-above(lg) {
+      max-width: 50vw !important; // Allow more width on desktop
+    }
+    
+    // Ensure dropdown items don't truncate text at high zoom
+    .dropdown-item {
+      white-space: normal !important; // Allow text wrapping
+      word-wrap: break-word !important; // Break long words
+      overflow-wrap: break-word !important; // Modern alternative
+      min-width: 0 !important; // Allow items to shrink
+      max-width: 100% !important; // Respect parent width
+      padding: rem-calc(8 16) !important; // Ensure adequate padding
+      display: block !important; // Use block for better wrapping
+      min-height: 44px !important; // Touch target size
+      line-height: 1.5 !important; // Better line spacing for wrapped text
+      
+      @include respond-below(lg) {
+        width: 100% !important; // Full width on mobile
+      }
+      
+      &:focus-visible {
+        outline: 2px solid currentColor !important;
+        outline-offset: -2px !important;
+      }
+      
+      // Disabled items styling
+      &.disabled {
+        opacity: 0.5 !important;
+        pointer-events: none !important;
+        cursor: not-allowed !important;
+      }
+      
+      // Active language styling
+      &.active {
+        background-color: var(--bs-primary) !important;
+        color: var(--bs-white) !important;
+        font-weight: 600 !important;
+        
+        &:hover,
+        &:focus {
+          background-color: var(--bs-primary) !important;
+          color: var(--bs-white) !important;
+        }
+      }
     }
     
     // Custom scrollbar styling for better UX
@@ -59,8 +109,8 @@
       max-height: 80vh; // Use viewport height instead of fixed calculation
       overflow-y: auto !important;
       overflow-x: hidden;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-left: .25rem;
+      padding-right: .25rem;
       
       // Custom scrollbar for mobile menu
       &::-webkit-scrollbar {
@@ -178,33 +228,7 @@
       }
     }
     
-    .dropdown-menu {
-      .dropdown-item {
-        // Ensure sufficient padding for touch targets
-        padding: rem-calc(8 16);
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-        
-        // NOTE: Using centralized focus mixin
-        &:focus-visible {
-          @include focus-visible-styles;
-        }
-        
-        // Active language styling
-        &.active {
-          background-color: var(--bs-primary);
-          color: var(--bs-white);
-          font-weight: 600;
-          
-          &:hover,
-          &:focus {
-            background-color: var(--bs-primary);
-            color: var(--bs-white);
-          }
-        }
-      }
-    }
+    // NOTE: dropdown-item styles are now in global .dropdown-menu .dropdown-item above
   }
 
   // Universal access icon (changed from div to span)
@@ -303,29 +327,7 @@
     }
     
     // Dropdown menu items accessibility
-    .dropdown-menu {
-      .dropdown-item {
-        padding: rem-calc(8 16);
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-        white-space: normal; // Allow text to wrap
-        word-wrap: break-word; // Break long words if needed
-        flex-wrap: wrap; // Allow content to wrap
-        
-        &:focus-visible {
-          outline: 2px solid currentColor;
-          outline-offset: -2px;
-        }
-        
-        // Disabled items styling
-        &.disabled {
-          opacity: 0.5;
-          pointer-events: none;
-          cursor: not-allowed;
-        }
-      }
-    }
+    // NOTE: Removed - consolidated into global .dropdown-menu .dropdown-item above
     
     // Ensure nav items on mobile have proper spacing
     .nav-item {
