@@ -137,7 +137,7 @@
     // On desktop, open dropdown to the left (dropstart behavior)
     @include respond-above(lg) {
       .dropdown-menu {
-        right: 0;
+        right: rem-calc(24);
         left: auto;
       }
     }
