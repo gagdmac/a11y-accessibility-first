@@ -491,14 +491,6 @@ button:focus .universal-access,
     brightness(91%) contrast(92%);
 }
 
-/* Reduce padding for mobile accessibility button */
-@include respond-below(lg) {
-  .accessibility-btn {
-    padding: rem-calc(4) !important;
-    margin: rem-calc(2) !important;
-  }
-}
-
 /* Add active state */
 .universal-access:active,
 .universal-access.active {

@@ -90,30 +90,6 @@
     }
   }
 
-  // Accessibility button with responsive positioning
-  .accessibility-btn {
-    position: relative;
-    z-index: 1020;
-    // WCAG 2.1 Level AAA touch target size
-    min-width: 44px;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    @include respond-below(md) {
-      position: fixed;
-      top: rem-calc(7);
-      right: rem-calc(144);
-    }
-
-    // Enhanced focus indicator
-    &:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
-    }
-  }
-
   // Universal access icon (changed from div to span)
   .universal-access {
     display: inline-block;
@@ -295,7 +271,6 @@
   }
   
   .navbar-toggler,
-  .accessibility-btn,
   .language-selector {
     display: none !important;
   }
