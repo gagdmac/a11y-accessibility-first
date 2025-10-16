@@ -134,6 +134,14 @@
       margin-left: 1rem;
     }
 
+    // On desktop, open dropdown to the left (dropstart behavior)
+    @include respond-above(lg) {
+      .dropdown-menu {
+        right: 0;
+        left: auto;
+      }
+    }
+
     // @include respond-below(md) {
     //   position: fixed;
     //   right: rem-calc(60);
