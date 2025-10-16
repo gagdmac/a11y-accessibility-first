@@ -114,9 +114,23 @@ export class MenuContentComponent implements AfterViewInit {
         });
         if (activeLink) {
           activeLink.nativeElement.focus();
+          // Scroll focused element into view, centered
+          activeLink.nativeElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+          });
         } else {
           // Fallback to first link if no active link found
-          this.firstDesktopLinks?.first?.nativeElement.focus();
+          const firstLink = this.firstDesktopLinks?.first;
+          if (firstLink) {
+            firstLink.nativeElement.focus();
+            firstLink.nativeElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'nearest',
+              inline: 'center'
+            });
+          }
         }
       } else {
         // Mobile menu - find and focus the active link
