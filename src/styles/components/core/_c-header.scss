@@ -134,6 +134,16 @@
       margin-left: 1rem;
     }
 
+    // On mobile, ensure dropdown opens downward and is fully visible
+    // @include respond-below(lg) {
+    //   .dropdown-menu {
+    //     position: absolute !important;
+    //     inset: 0px auto auto 0px !important;
+    //     margin: 0px !important;
+    //     transform: translate(0px, 40px) !important; // Position below button
+    //   }
+    // }
+
     // On desktop, open dropdown to the left (dropstart behavior)
     @include respond-above(lg) {
       .dropdown-menu {

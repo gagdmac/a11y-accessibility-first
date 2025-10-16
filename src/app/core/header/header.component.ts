@@ -70,6 +70,14 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
           const isLanguageSelector = dropdown.id.includes('languageSelector');
           
           if (isLanguageSelector) {
+            // Scroll navbar-collapse to bottom when language selector opens on mobile
+            const navbarCollapse = document.getElementById('navbarSupportedContent');
+            if (navbarCollapse && window.innerWidth < 1200) { // lg breakpoint
+              setTimeout(() => {
+                navbarCollapse.scrollTop = navbarCollapse.scrollHeight;
+              }, 50);
+            }
+            
             // For language selector, focus the current language
             const currentLang = this.translate.currentLang;
             const langLinks = dropdownMenu.querySelectorAll('a.dropdown-item');
