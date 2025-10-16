@@ -41,7 +41,9 @@
             #increaseFontSizeBtn
             type="button"
             class="btn btn-success py-0"
+            [class.disabled]="isMaxFontSize"
             aria-describedby="fontSize-status"
+            [attr.aria-disabled]="isMaxFontSize"
             (click)="increaseFontSize()">
             {{ 'a11y.fontSizeM' | translate }}
             <span class="sr-only">{{
@@ -54,9 +56,12 @@
               aria-hidden="true" />
           </button>
           <button 
+            #decreaseFontSizeBtn
             type="button"
             class="btn btn-danger py-0"
+            [class.disabled]="isMinFontSize"
             aria-describedby="fontSize-status"
+            [attr.aria-disabled]="isMinFontSize"
             (click)="decreaseFontSize()">
             {{ 'a11y.fontSizeL' | translate }}
             <span class="sr-only">{{
@@ -71,6 +76,7 @@
         </div>
         <div *ngIf="fontSize !== 100" class="mt-2">
           <button
+            #resetFontSizeBtn
             type="button"
             class="btn btn-dark py-0"
             aria-describedby="fontSize-status"

@@ -153,6 +153,8 @@
     "fontSizeTitle": "Font Size",
     "fontSizeDecreased": "Font size decreased",
     "fontSizeIncreased": "Font size increased", 
+    "fontSizeMaximum": "Font size maximum size reached",
+    "fontSizeMinimum": "Font size minimum size reached",
     "fontSizeDescription": "Change the font size of the web page.",
     "fontSize": "Font Size: ",
     "fontSizeM": "Increase",

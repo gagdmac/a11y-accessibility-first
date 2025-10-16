@@ -1,5 +1,5 @@
 // Angular imports
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 // NgX imports
 import { TranslateService } from '@ngx-translate/core';
@@ -16,6 +16,9 @@ import { ThemeService } from 'src/app/services/themes-color/theme.service';
   styleUrls: ['./a11y-options.component.scss'],
 })
 export class A11yOptionsComponent implements OnInit {
+  @ViewChild('increaseFontSizeBtn') increaseFontSizeBtn?: ElementRef<HTMLButtonElement>;
+  @ViewChild('decreaseFontSizeBtn') decreaseFontSizeBtn?: ElementRef<HTMLButtonElement>;
+  
   currentFontSize = 100;
   fontSizeAnnouncement = '';
 
@@ -49,8 +52,32 @@ export class A11yOptionsComponent implements OnInit {
     return this.fontSizeService.getFontSize();
   }
 
+  get isMaxFontSize() {
+    return this.fontSize >= this.fontSizeService.getMaxFontSize();
+  }
+
+  get isMinFontSize() {
+    return this.fontSize <= this.fontSizeService.getMinFontSize();
+  }
+
   increaseFontSize() {
-    this.fontSizeService.setFontSize(this.fontSize + 5);
+    if (this.isMaxFontSize) {
+      // Announce max size reached and focus the decrease button
+      this.fontSizeAnnouncement = this.translate.instant('a11y.fontSizeMaximum');
+      console.log('Max font size reached, focusing decrease button');
+      if (this.decreaseFontSizeBtn?.nativeElement) {
+        console.log('Decrease button found, focusing...');
+        this.decreaseFontSizeBtn.nativeElement.focus();
+      } else {
+        console.log('Decrease button not found');
+      }
+      setTimeout(() => {
+        this.fontSizeAnnouncement = '';
+      }, 1000);
+      return;
+    }
+
+    this.fontSizeService.setFontSize(this.fontSize + 25);
     this.fontSizeAnnouncement = this.translate.instant('a11y.fontSizeIncreased', { size: this.fontSize });
 
     setTimeout(() => {
@@ -59,7 +86,23 @@ export class A11yOptionsComponent implements OnInit {
   }
 
   decreaseFontSize() {
-    this.fontSizeService.setFontSize(this.fontSize - 5);
+    if (this.isMinFontSize) {
+      // Announce min size reached and focus the increase button
+      this.fontSizeAnnouncement = this.translate.instant('a11y.fontSizeMinimum');
+      console.log('Min font size reached, focusing increase button');
+      if (this.increaseFontSizeBtn?.nativeElement) {
+        console.log('Increase button found, focusing...');
+        this.increaseFontSizeBtn.nativeElement.focus();
+      } else {
+        console.log('Increase button not found');
+      }
+      setTimeout(() => {
+        this.fontSizeAnnouncement = '';
+      }, 1000);
+      return;
+    }
+
+    this.fontSizeService.setFontSize(this.fontSize - 25);
     this.fontSizeAnnouncement = this.translate.instant('a11y.fontSizeDecreased', { size: this.fontSize });
 
     setTimeout(() => {

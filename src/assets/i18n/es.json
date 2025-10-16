@@ -154,6 +154,8 @@
     "fontSize": "Tamaño de fuente: ",
     "fontSizeDecreased": "Tamaño de fuente disminuido",
     "fontSizeIncreased": "Tamaño de fuente aumentado", 
+    "fontSizeMaximum": "Tamaño de fuente máximo alcanzado",
+    "fontSizeMinimum": "Tamaño de fuente mínimo alcanzado",
     "fontSizeM": "Aumentar",
     "fontSizeMore": "el tamaño de la fuente de la página web",
     "fontSizeL": "Disminuir",

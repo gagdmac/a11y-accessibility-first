@@ -111,6 +111,23 @@
         border-color: lighten(#212529, 15%);
       }
     }
+
+    // Disabled state styling - grey out disabled buttons
+    &:disabled,
+    &.disabled {
+      background-color: #6c757d !important; // Grey color
+      border-color: #6c757d !important;
+      color: #fff !important;
+      opacity: 0.65;
+      cursor: not-allowed;
+      pointer-events: none;
+
+      &:hover,
+      &:focus {
+        background-color: #6c757d !important;
+        border-color: #6c757d !important;
+      }
+    }
   }
 
   // Font size status badge
@@ -169,10 +186,22 @@
   .offcanvas-header {
     border-bottom: rem-calc(1) solid rgba(0, 0, 0, 0.125);
     padding: rem-calc(16 20);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: rem-calc(12);
 
     .offcanvas-title {
       margin: 0;
       line-height: 1.4;
+      flex: 1 1 auto;
+      min-width: 0; // Allow text to wrap/truncate properly
+      word-wrap: break-word;
+      
+      // At high zoom, ensure title doesn't push close button off screen
+      @media screen and (max-width: 768px) {
+        font-size: clamp(1.25rem, 4vw, 1.75rem);
+      }
     }
 
     .btn-close {
@@ -180,6 +209,7 @@
       min-width: 44px;
       min-height: 44px;
       padding: rem-calc(12);
+      flex-shrink: 0; // Prevent close button from shrinking
       
       // NOTE: Using centralized focus mixin
       &:focus-visible {
