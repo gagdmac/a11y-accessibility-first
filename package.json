@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host 127.0.0.1",
+    "start": "ng serve --host 0.0.0.0 --port 4200 --disable-host-check",
+    "start:mobile": "ng serve --host 0.0.0.0 --port 4201 --disable-host-check",
+    "start:local": "ng serve --host 127.0.0.1 --port 4200",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",

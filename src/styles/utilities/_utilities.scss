@@ -2,7 +2,12 @@
 /// UTILITIES ///
 ////////////////
 
-//font size home
+/* ============================================================================
+ * WCAG 1.4.10 REFLOW UTILITIES
+ * Helper classes to ensure content reflows properly at narrow widths
+ * ============================================================================ */
+
+//font size home - responsive
 .u-fs {
   font-size: 1rem;
 }
@@ -15,6 +20,83 @@
 
 .u-ff-crison {
   font-family: 'Crison';
+}
+
+/* Prevent horizontal overflow */
+.u-no-overflow {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Enable text wrapping */
+.u-word-wrap {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Full width respecting container */
+.u-full-width {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Responsive images */
+.u-responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Allow horizontal scroll for exceptions (tables, diagrams) */
+.u-scroll-x-allowed {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+/* Fluid text sizing */
+.u-text-fluid {
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+}
+
+.u-text-fluid-sm {
+  font-size: clamp(0.875rem, 0.85rem + 0.125vw, 1rem);
+}
+
+.u-text-fluid-lg {
+  font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem);
+}
+
+/* Responsive spacing */
+.u-padding-responsive {
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+.u-margin-responsive {
+  margin: clamp(1rem, 2vw, 2rem);
+}
+
+/* Stack elements vertically at narrow widths */
+@media screen and (max-width: 320px) {
+  .u-stack-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .u-compact-mobile {
+    padding-left: rem-calc(8);
+    padding-right: rem-calc(8);
+  }
+}
+
+/* Stack at 200% zoom equivalent */
+@media screen and (max-width: 640px) {
+  .u-stack-zoom {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 // @include respond-above(md) {
