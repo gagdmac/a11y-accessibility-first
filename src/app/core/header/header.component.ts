@@ -111,6 +111,8 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     // Get current path and update URL with language
     const currentPath = window.location.pathname;
     this.contentfulService.updateBrowserUrl(currentPath, { lang });
+    // Close mobile menu after language selection
+    this.closeMenu();
   }
 
   /**
