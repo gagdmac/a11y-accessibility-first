@@ -7,7 +7,7 @@ export class FontSizeService {
   private baseFontSize = 100; // 100% of base font size
   private fontSize = this.baseFontSize;
   private minFontSize = 75; // 75% of base font size
-  private maxFontSize = 200; // 150% of base font size
+  private maxFontSize = 250; // 150% of base font size
   private renderer: Renderer2;
 
   constructor(private rendererFactory: RendererFactory2) {

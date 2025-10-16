@@ -28,7 +28,7 @@
     margin-bottom: rem-calc(16);
 
     .card-body {
-      padding: rem-calc(16);
+      padding: rem-calc(10);
     }
 
     .card-title {
@@ -209,6 +209,7 @@
       min-width: 44px;
       min-height: 44px;
       padding: rem-calc(12);
+      margin-left: 0;
       flex-shrink: 0; // Prevent close button from shrinking
       
       // NOTE: Using centralized focus mixin
@@ -219,7 +220,7 @@
   }
 
   .offcanvas-body {
-    padding: rem-calc(20);
+    padding: rem-calc(15);
   }
 
   // Screen reader only text

@@ -40,7 +40,7 @@
           <button 
             #increaseFontSizeBtn
             type="button"
-            class="btn btn-success py-0"
+            class="btn btn-success py-0 rounded"
             [class.disabled]="isMaxFontSize"
             aria-describedby="fontSize-status"
             [attr.aria-disabled]="isMaxFontSize"
@@ -58,7 +58,7 @@
           <button 
             #decreaseFontSizeBtn
             type="button"
-            class="btn btn-danger py-0"
+            class="btn btn-danger py-0 rounded"
             [class.disabled]="isMinFontSize"
             aria-describedby="fontSize-status"
             [attr.aria-disabled]="isMinFontSize"
@@ -90,7 +90,7 @@
       </div>
       <div
         id="fontSize-status"
-        class="badge text-bg-light d-flex justify-content-start px-3"
+        class="fw-bold text-bg-light d-flex justify-content-start px-3"
         role="status">
         {{ 'a11y.fontSize' | translate }}{{ fontSize }}%
       </div>
