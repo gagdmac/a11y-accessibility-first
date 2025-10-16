@@ -8,6 +8,100 @@
 .c-header {
   z-index: 1030; // Increased from 1000 for better stacking context
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  
+  // Make all dropdowns scrollable
+  .dropdown-menu {
+    max-height: 80vh; // Limit to 80% of viewport height
+    overflow-y: auto !important; // Enable vertical scrolling - important to override
+    overflow-x: hidden; // Prevent horizontal scroll
+    
+    // Ensure dropdowns are scrollable at high zoom (400%)
+    @include respond-below(sm) {
+      max-height: 70vh; // Slightly smaller at narrow widths
+    }
+    
+    // Custom scrollbar styling for better UX
+    &::-webkit-scrollbar {
+      width: rem-calc(8);
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: rem-calc(4);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: rem-calc(4);
+      
+      &:hover {
+        background: rgba(0, 0, 0, 0.3);
+      }
+    }
+    
+    // For Firefox
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.05);
+  }
+  
+  // Navbar collapse menu - needs to be scrollable at high zoom
+  .navbar-collapse {
+    // Desktop: allow overflow for dropdowns
+    @include respond-above(lg) {
+      overflow: visible !important;
+    }
+    
+    // Mobile/High Zoom: enable scrolling for the menu itself
+    @include respond-below(lg) {
+      max-height: calc(100vh - rem-calc(80)); // Leave room for header
+      overflow-y: auto !important;
+      overflow-x: hidden;
+      
+      // Custom scrollbar for mobile menu
+      &::-webkit-scrollbar {
+        width: rem-calc(8);
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: rem-calc(4);
+        
+        &:hover {
+          background: rgba(0, 0, 0, 0.3);
+        }
+      }
+      
+      // Firefox
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.05);
+    }
+    
+    &.show {
+      // When menu is open on mobile
+      @include respond-below(lg) {
+        overflow-y: auto !important;
+      }
+      
+      @include respond-above(lg) {
+        overflow: visible !important;
+      }
+    }
+  }
+  
+  // Ensure navbar container allows overflow on desktop
+  .navbar {
+    @include respond-above(lg) {
+      overflow: visible !important;
+    }
+    
+    @include respond-below(lg) {
+      overflow: hidden; // Contain the collapsible menu
+    }
+  }
 
   // Logo text styles
   span p.logo-text {
