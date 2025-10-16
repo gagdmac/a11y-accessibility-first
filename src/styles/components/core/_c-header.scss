@@ -53,9 +53,14 @@
     
     // Mobile/High Zoom: enable scrolling for the menu itself
     @include respond-below(lg) {
-      max-height: calc(100vh - rem-calc(80)); // Leave room for header
+      width: 100vw !important; // Full viewport width
+      max-width: 100vw !important;
+      margin-left: calc(-50vw + 50%) !important; // Center align to viewport
+      max-height: 80vh; // Use viewport height instead of fixed calculation
       overflow-y: auto !important;
       overflow-x: hidden;
+      padding-left: 1rem;
+      padding-right: 1rem;
       
       // Custom scrollbar for mobile menu
       &::-webkit-scrollbar {
@@ -239,6 +244,12 @@
 
   // Navigation items with accessibility enhancements
   .navbar-nav {
+    // Ensure nav items wrap on mobile/high zoom
+    @include respond-below(lg) {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    
     .nav-link {
       position: relative;
       padding: rem-calc(8 16);
@@ -246,6 +257,14 @@
       display: inline-flex;
       align-items: center;
       text-decoration: none;
+      white-space: normal; // Allow text to wrap
+      word-wrap: break-word; // Break long words if needed
+      
+      // On mobile/high zoom, allow full width
+      @include respond-below(lg) {
+        width: 100%;
+        flex-wrap: wrap;
+      }
       
       // Enhanced focus indicator
       &:focus-visible {
@@ -290,6 +309,9 @@
         min-height: 44px;
         display: flex;
         align-items: center;
+        white-space: normal; // Allow text to wrap
+        word-wrap: break-word; // Break long words if needed
+        flex-wrap: wrap; // Allow content to wrap
         
         &:focus-visible {
           outline: 2px solid currentColor;
@@ -302,6 +324,13 @@
           pointer-events: none;
           cursor: not-allowed;
         }
+      }
+    }
+    
+    // Ensure nav items on mobile have proper spacing
+    .nav-item {
+      @include respond-below(lg) {
+        width: 100%;
       }
     }
   }
