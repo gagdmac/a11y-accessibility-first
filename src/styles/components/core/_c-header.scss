@@ -134,12 +134,12 @@
       margin-left: 1rem;
     }
 
-    @include respond-below(md) {
-      position: fixed;
-      right: rem-calc(60);
-      top: rem-calc(30);
-      transform: translateY(-50%);
-    }
+    // @include respond-below(md) {
+    //   position: fixed;
+    //   right: rem-calc(60);
+    //   top: rem-calc(30);
+    //   transform: translateY(-50%);
+    // }
 
     .dropdown-toggle {
       // WCAG 2.1 Level AAA touch target size
