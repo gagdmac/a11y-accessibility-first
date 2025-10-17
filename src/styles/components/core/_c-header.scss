@@ -103,36 +103,9 @@
     
     // Mobile/High Zoom: enable scrolling for the menu itself
     @include respond-below(lg) {
-      width: 100vw !important; // Full viewport width
-      max-width: 100vw !important;
-      margin-left: calc(-50vw + 50%) !important; // Center align to viewport
       max-height: 80vh; // Use viewport height instead of fixed calculation
       overflow-y: auto !important;
       overflow-x: hidden;
-      padding-left: .25rem;
-      padding-right: .25rem;
-      
-      // Custom scrollbar for mobile menu
-      &::-webkit-scrollbar {
-        width: rem-calc(8);
-      }
-      
-      &::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.05);
-      }
-      
-      &::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: rem-calc(4);
-        
-        &:hover {
-          background: rgba(0, 0, 0, 0.3);
-        }
-      }
-      
-      // Firefox
-      scrollbar-width: thin;
-      scrollbar-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.05);
     }
     
     &.show {
@@ -189,30 +162,28 @@
       margin-left: 1rem;
     }
 
-    // On mobile, ensure dropdown opens downward and is fully visible
-    // @include respond-below(lg) {
-    //   .dropdown-menu {
-    //     position: absolute !important;
-    //     inset: 0px auto auto 0px !important;
-    //     margin: 0px !important;
-    //     transform: translate(0px, 40px) !important; // Position below button
-    //   }
-    // }
-
-    // On desktop, open dropdown to the left (dropstart behavior)
-    @include respond-above(lg) {
+    // On mobile/tablet - dropdown opens below button (default Bootstrap behavior)
+    @include respond-below(lg) {
       .dropdown-menu {
-        right: rem-calc(24);
-        left: auto;
+        position: absolute !important;
+        inset: 0px auto auto 0px !important;
+        margin: 0px !important;
+        transform: translate(0px, 40px) !important; // Position below button
+        left: auto !important;
+        right: 0 !important; // Align to right edge
       }
     }
 
-    // @include respond-below(md) {
-    //   position: fixed;
-    //   right: rem-calc(60);
-    //   top: rem-calc(30);
-    //   transform: translateY(-50%);
-    // }
+    // On desktop - dropdown opens to the left of button (dropstart)
+    @include respond-above(lg) {
+      .dropdown-menu {
+        right: 0 !important;
+        left: auto !important;
+        top: 100% !important;
+        margin-top: 0.125rem !important; // Bootstrap standard spacing
+        transform: none !important;
+      }
+    }
 
     .dropdown-toggle {
       // WCAG 2.1 Level AAA touch target size
@@ -225,6 +196,18 @@
       // NOTE: Using centralized focus mixin
       &:focus-visible {
         @include focus-visible-styles;
+      }
+      
+      // Remove caret if you want custom icon
+      &::after {
+        display: inline-block;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+        content: "";
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
       }
     }
     
@@ -330,11 +313,11 @@
     // NOTE: Removed - consolidated into global .dropdown-menu .dropdown-item above
     
     // Ensure nav items on mobile have proper spacing
-    .nav-item {
-      @include respond-below(lg) {
-        width: 100%;
-      }
-    }
+    // .nav-item {
+    //   @include respond-below(lg) {
+    //     width: 100%;
+    //   }
+    // }
   }
 
   // Ensure all interactive buttons have proper focus

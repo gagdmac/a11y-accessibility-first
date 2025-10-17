@@ -31,7 +31,8 @@
   },
 
   "header": {
-    "logo": "Accessibility First"
+    "logo": "Accessibility First",
+    "toggleNavigation": "Toggle navigation"
   },
 
   "home": {

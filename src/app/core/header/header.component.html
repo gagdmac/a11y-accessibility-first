@@ -15,6 +15,8 @@
         </a>
         <!--LOGO ENDS-->
 
+    
+
         <!--APP LANGUAGUES SELECTION STARTS-->
         <!-- <div class="dropdown dropstart language-selector order-3 order-lg-3 d-lg-none">
           <button
@@ -64,170 +66,167 @@
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation">
+          [attr.aria-label]="'header.toggleNavigation' | translate">
           <span class="navbar-toggler-icon"></span>
         </button>
         <!--APP MENU toggler ENDS-->
 
         <!--APP MENU STARTS-->
         <div
-          class="collapse navbar-collapse d-lg-flex justify-content-lg-end order-5"
+          class="collapse navbar-collapse"
           id="navbarSupportedContent">
-          <nav aria-label="Primary navigation">
-            <ul class="navbar-nav me-2 mb-2 mb-lg-0 d-flex mt-4 mt-lg-0 ms-1">
-             
-              <!--boton modulo accesibilidad desktop START-->
-              <li class="nav-item d-flex align-items-center ms-2">
-                <button
-                  class="btn btn-link p-0 mx-0 mx-md-3 mt-md-1"
-                  type="button"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasWithBothOptions"
-                  aria-controls="offcanvasWithBothOptions"
-                  [attr.aria-label]="'home.accessibilityOptions' | translate">
-                  <span class="sr-only">{{
-                    'home.accessibilityOptions' | translate
-                  }}</span>
-                  <span class="universal-access" aria-hidden="true"></span>
-                </button>
-              </li>
-              <!--boton modulo accesibilidad desktop ENDS-->
-              
-              <li class="nav-item mt-md-1 ">
-                <a
-                  class="nav-link"
-                  routerLink="home"
-                  routerLinkActive="active"
-                  #homeLink="routerLinkActive"
-                  [attr.aria-current]="homeLink.isActive ? 'page' : null"
-                  (click)="closeMenu()">
-                  {{ 'menu.home' | translate }}</a
-                >
-              </li>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+           
+            <!--boton modulo accesibilidad desktop START-->
+            <li class="nav-item d-flex align-items-center">
+              <button
+                class="btn btn-link p-0 mx-3"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBothOptions"
+                aria-controls="offcanvasWithBothOptions"
+                [attr.aria-label]="'home.accessibilityOptions' | translate">
+                <span class="sr-only">{{
+                  'home.accessibilityOptions' | translate
+                }}</span>
+                <span class="universal-access" aria-hidden="true"></span>
+              </button>
+            </li>
+            <!--boton modulo accesibilidad desktop ENDS-->
+            
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="home"
+                routerLinkActive="active"
+                #homeLink="routerLinkActive"
+                [attr.aria-current]="homeLink.isActive ? 'page' : null"
+                (click)="closeMenu()">
+                {{ 'menu.home' | translate }}</a
+              >
+            </li>
 
-               <li class="nav-item dropdown mt-md-1">
-                <button
-                  class="nav-link dropdown-toggle"
-                  type="button"
-                  id="navbarDropdown"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  [class.active]="isAccessibilityFirstMenuActive()"
-                  [attr.aria-label]="'menu.accessibility-first' | translate">
-                  {{ 'menu.accessibility-first' | translate }}
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <a
-                      class="dropdown-item disabled" 
-                      aria-disabled="true"
-                      routerLink="tutorials"
-                      routerLinkActive="active"
-                      tabindex="-1"
-                      (click)="closeMenu()">
-                      {{ 'submenu.tutorials' | translate }}</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item disabled" 
-                      aria-disabled="true"
-                      routerLink="courses"
-                      routerLinkActive="active"
-                      tabindex="-1"
-                      (click)="closeMenu()"
-                      >{{ 'submenu.courses' | translate }}</a
-                    >
-                  </li>
-                </ul>
-              </li>
+             <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                [class.active]="isAccessibilityFirstMenuActive()">
+                {{ 'menu.accessibility-first' | translate }}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a
+                    class="dropdown-item disabled" 
+                    aria-disabled="true"
+                    routerLink="tutorials"
+                    routerLinkActive="active"
+                    tabindex="-1"
+                    (click)="closeMenu()">
+                    {{ 'submenu.tutorials' | translate }}</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item disabled" 
+                    aria-disabled="true"
+                    routerLink="courses"
+                    routerLinkActive="active"
+                    tabindex="-1"
+                    (click)="closeMenu()"
+                    >{{ 'submenu.courses' | translate }}</a
+                  >
+                </li>
+              </ul>
+            </li>
 
-              <li class="nav-item dropdown mt-md-1 ">
-                <button
-                  class="nav-link dropdown-toggle"
-                  type="button"
-                  id="navbarDropdownOne"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  [class.active]="isAccessibilityMenuActive()"
-                  [attr.aria-label]="'menu.accessibility' | translate">
-                  {{ 'menu.accessibility' | translate }}
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownOne">
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      routerLink="accessibility"
-                      routerLinkActive="active"
-                      (click)="closeMenu()">
-                      {{ 'submenu.accessibility' | translate }}</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      routerLink="universal"
-                      routerLinkActive="active"
-                      (click)="closeMenu()"
-                      >{{ 'submenu.universal' | translate }}</a
-                    >
-                  </li>
-                  <!-- <li><hr class="dropdown-divider" /></li> -->
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      routerLink="healthcare"
-                      routerLinkActive="active"
-                      (click)="closeMenu()"
-                      >{{ 'submenu.healthcare' | translate }}</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      routerLink="rights"
-                      routerLinkActive="active"
-                      (click)="closeMenu()"
-                      >{{ 'submenu.rights' | translate }}</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      routerLink="inclusivity"
-                      routerLinkActive="active"
-                      (click)="closeMenu()"
-                      >{{ 'submenu.inclusivity' | translate }}</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      routerLink="phisical"
-                      routerLinkActive="active"
-                      (click)="closeMenu()"
-                      >{{ 'submenu.phisical' | translate }}</a
-                    >
-                  </li>
-                </ul>
-              </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownOne"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                [class.active]="isAccessibilityMenuActive()">
+                {{ 'menu.accessibility' | translate }}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownOne">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    routerLink="accessibility"
+                    routerLinkActive="active"
+                    (click)="closeMenu()">
+                    {{ 'submenu.accessibility' | translate }}</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    routerLink="universal"
+                    routerLinkActive="active"
+                    (click)="closeMenu()"
+                    >{{ 'submenu.universal' | translate }}</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    routerLink="healthcare"
+                    routerLinkActive="active"
+                    (click)="closeMenu()"
+                    >{{ 'submenu.healthcare' | translate }}</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    routerLink="rights"
+                    routerLinkActive="active"
+                    (click)="closeMenu()"
+                    >{{ 'submenu.rights' | translate }}</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    routerLink="inclusivity"
+                    routerLinkActive="active"
+                    (click)="closeMenu()"
+                    >{{ 'submenu.inclusivity' | translate }}</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    routerLink="phisical"
+                    routerLinkActive="active"
+                    (click)="closeMenu()"
+                    >{{ 'submenu.phisical' | translate }}</a
+                  >
+                </li>
+              </ul>
+            </li>
 
-              <li class="nav-item mt-md-1 ">
-                <a
-                  class="nav-link"
-                  routerLink="accessibility-today"
-                  routerLinkActive="active"
-                  (click)="closeMenu()">
-                  {{ 'menu.accessibility-today' | translate }}</a
-                >
-              </li>
-            </ul>
-          </nav>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="accessibility-today"
+                routerLinkActive="active"
+                (click)="closeMenu()">
+                {{ 'menu.accessibility-today' | translate }}</a
+              >
+            </li>
+          </ul>
 
           <!--APP LANGUAGUES SELECTION-->
-          <div class="dropdown language-selector ms-3">
+          <div class="dropdown language-selector">
             <button
-              class="btn border border-secondary dropdown-toggle btn-sm me-4 mb-lg-0 mt-2"
+              class="btn border border-secondary dropdown-toggle btn-sm"
               type="button"
               id="languageSelectorDesktop"
               data-bs-toggle="dropdown"

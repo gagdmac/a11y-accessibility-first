@@ -30,7 +30,8 @@
   },
 
   "header": {
-    "logo": "Accesibilidad Primero"
+    "logo": "Accesibilidad Primero",
+    "toggleNavigation": "Alternar navegación"
   },
 
   "home": {
