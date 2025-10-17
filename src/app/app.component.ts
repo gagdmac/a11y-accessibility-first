@@ -48,14 +48,25 @@ export class AppComponent implements OnInit {
 
   /**
    * Handle skip to main content link
-   * Prevents navigation and manually focuses the main element
+   * Focuses the first heading in main content instead of the container
    */
   skipToMain(event: Event) {
     event.preventDefault();
     const mainElement = this.document.getElementById('main');
     if (mainElement) {
-      mainElement.focus();
-      mainElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Find the first heading (h1-h6) in the main content
+      const firstHeading = mainElement.querySelector('h1, h2, h3, h4, h5, h6') as HTMLElement;
+      if (firstHeading) {
+        // Make heading focusable if it isn't already
+        if (!firstHeading.hasAttribute('tabindex')) {
+          firstHeading.setAttribute('tabindex', '-1');
+        }
+        firstHeading.focus();
+        firstHeading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        // Fallback to main element if no heading found
+        mainElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   }
 
