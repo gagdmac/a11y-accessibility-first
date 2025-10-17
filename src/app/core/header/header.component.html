@@ -60,7 +60,7 @@
 
         <!--APP MENU toggler STARTS-->
         <button
-          class="navbar-toggler order-4"
+          class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -73,9 +73,9 @@
 
         <!--APP MENU STARTS-->
         <div
-          class="collapse navbar-collapse"
+          class="collapse navbar-collapse "
           id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 justify-content-end">
            
             <!--boton modulo accesibilidad desktop START-->
             <li class="nav-item d-flex align-items-center">
@@ -240,23 +240,23 @@
             <ul class="dropdown-menu" aria-labelledby="languageSelectorDesktop">
               <li>
                 <a
-                  class="dropdown-item d-flex justify-content-between"
+                  class="dropdown-item"
                   [class.active]="'es' === translate.currentLang"
                   [attr.aria-current]="'es' === translate.currentLang ? 'true' : null"
                   href="?lang=es"
                   (click)="$event.preventDefault(); changeLanguage('es')">
-                  Español <span class="fi fi-es px-3"></span>
+                  Español <span class="fi fi-es ms-2"></span>
                   <span *ngIf="'es' === translate.currentLang" class="sr-only">{{ 'languages.currentLanguage' | translate }}</span>
                 </a>
               </li>
               <li>
                 <a
-                  class="dropdown-item d-flex justify-content-between"
+                  class="dropdown-item"
                   [class.active]="'en' === translate.currentLang"
                   [attr.aria-current]="'en' === translate.currentLang ? 'true' : null"
                   href="?lang=en"
                   (click)="$event.preventDefault(); changeLanguage('en')">
-                  English <span class="fi fi-gb px-3"></span>
+                  English <span class="fi fi-gb ms-2"></span>
                   <span *ngIf="'en' === translate.currentLang" class="sr-only">{{ 'languages.currentLanguage' | translate }}</span>
                 </a>
               </li>

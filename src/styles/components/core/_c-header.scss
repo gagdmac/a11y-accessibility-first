@@ -8,6 +8,7 @@
 .c-header {
   z-index: 1030; // Increased from 1000 for better stacking context
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: visible !important; // Allow dropdowns to overflow header
   
   // Make all dropdowns scrollable
   .dropdown-menu {
@@ -97,38 +98,26 @@
   // Navbar collapse menu - needs to be scrollable at high zoom
   .navbar-collapse {
     // Desktop: allow overflow for dropdowns
-    @include respond-above(lg) {
-      overflow: visible !important;
-    }
+    overflow: visible !important;
     
-    // Mobile/High Zoom: enable scrolling for the menu itself
+    // Mobile/High Zoom: enable scrolling for the menu itself only when collapsed
     @include respond-below(lg) {
-      max-height: 80vh; // Use viewport height instead of fixed calculation
-      overflow-y: auto !important;
-      overflow-x: hidden;
-    }
-    
-    &.show {
-      // When menu is open on mobile
-      @include respond-below(lg) {
+      &.show {
+        max-height: 80vh; // Use viewport height instead of fixed calculation
         overflow-y: auto !important;
-      }
-      
-      @include respond-above(lg) {
-        overflow: visible !important;
+        overflow-x: hidden;
       }
     }
   }
   
-  // Ensure navbar container allows overflow on desktop
+  // Ensure navbar container allows overflow
   .navbar {
-    @include respond-above(lg) {
-      overflow: visible !important;
-    }
-    
-    @include respond-below(lg) {
-      overflow: hidden; // Contain the collapsible menu
-    }
+    overflow: visible !important;
+  }
+  
+  // Allow container-fluid to overflow as well
+  .container-fluid {
+    overflow: visible !important;
   }
 
   // Logo text styles
@@ -162,26 +151,30 @@
       margin-left: 1rem;
     }
 
-    // On mobile/tablet - dropdown opens below button (default Bootstrap behavior)
-    @include respond-below(lg) {
-      .dropdown-menu {
-        position: absolute !important;
-        inset: 0px auto auto 0px !important;
-        margin: 0px !important;
-        transform: translate(0px, 40px) !important; // Position below button
-        left: auto !important;
-        right: 0 !important; // Align to right edge
+    // Dropdown menu positioning
+    .dropdown-menu {
+      position: absolute !important;
+      transform: none !important;
+      margin-top: 0.125rem !important;
+      
+      // On mobile - align to left edge
+      @include respond-below(lg) {
+        left: 0 !important;
+        right: auto !important;
       }
-    }
-
-    // On desktop - dropdown opens to the left of button (dropstart)
-    @include respond-above(lg) {
-      .dropdown-menu {
-        right: 0 !important;
+      
+      // On desktop - align to right edge (dropdown opens to the left)
+      @include respond-above(lg) {
         left: auto !important;
-        top: 100% !important;
-        margin-top: 0.125rem !important; // Bootstrap standard spacing
-        transform: none !important;
+        right: 0 !important;
+      }
+      
+      // Ensure language name and flag stay inline
+      .dropdown-item {
+        white-space: nowrap !important; // Keep language and flag on same line
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important; // Small gap between text and flag
       }
     }
 
